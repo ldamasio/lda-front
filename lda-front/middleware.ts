@@ -13,6 +13,10 @@ function getLocale(request: NextRequest): string {
   if (!acceptLang) return defaultLocale;
   const headers = { "accept-language": acceptLang };
   const languages = new Negotiator({ headers }).languages();
+  console.log('Getting locale...');
+  console.log(languages);
+  console.log(locales);
+  console.log(defaultLocale);
   return match(languages, locales, defaultLocale);
 }
 
@@ -30,6 +34,11 @@ export function middleware(request: NextRequest) {
   request.nextUrl.pathname = `/${locale}${pathname}`;
   const response = NextResponse.redirect(request.nextUrl);
   response.cookies.set(cookieName, locale);
+
+  console.log('Redirecting to locale...');
+  console.log(request.nextUrl.pathname);
+  console.log(locale);
+  console.log(response.cookies.get(cookieName));
   return response;
 }
 

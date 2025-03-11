@@ -57,7 +57,7 @@ const components: { title: string; href: string; description: string }[] = [
 export function NavMenu() {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="flex flex-col w-full md:flex-row">
         <NavigationMenuItem>
           <NavigationMenuTrigger>About Me</NavigationMenuTrigger>
           <NavigationMenuContent>

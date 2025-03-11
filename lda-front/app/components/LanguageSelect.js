@@ -19,6 +19,7 @@ const LanguageSelect = () => {
   const pathname = usePathname();
 
   const handleChange = (event) => {
+    // console.log(event);
     router.push(`/${event}`);
   };
 

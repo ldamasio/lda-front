@@ -1,0 +1,84 @@
+{
+    "page": {
+      "title": "Leandro Damasio. Minha Página Pessoal",
+      "desc": "Desenvolvedor Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
+      "introduction": "Desenvolvedor Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
+      "highlights": {
+        "project-01": {
+          "name": "",
+          "description": "",
+          "link": "",
+          "technologies": "",
+          "images": [
+            ""
+          ]
+        },
+        "project-02": {
+          "name": "",
+          "description": "",
+          "link": "",
+          "technologies": "",
+          "images": [
+            ""
+          ]
+        },
+        "project-03": {
+          "name": "",
+          "description": "",
+          "link": "",
+          "technologies": "",
+          "images": [
+            ""
+          ]
+        },
+        "project-04": {
+          "name": "",
+          "description": "",
+          "link": "",
+          "technologies": "",
+          "images": [
+            ""
+          ]
+        },
+        "project-05": {
+          "name": "",
+          "description": "",
+          "link": "",
+          "technologies": "",
+          "images": [
+            ""
+          ]
+        }
+      },
+      "links": {
+        "github": "https://github.com/leandrodamasio",
+        "linkedin": "https://www.linkedin.com/in/leandrodamasio/",
+        "email": "mailto:leandrodamasio@leandrodamasio.com"
+      }
+    },
+    "about-me": {
+      "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "desc": "Desenvolvedor Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
+      "bio": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "visual-skills": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "values": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "photo": "Leandro Damasio. Bem vindo à Minha Página Pessoal"
+    },
+    "portfolio": {
+      "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "desc": "Desenvolvedor Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
+      "projects-detailed": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "projects-categories": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "repositories": "Leandro Damasio. Bem vindo à Minha Página Pessoal"
+    },
+    "curriculum": {
+      "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "desc": "Desenvolvedor Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
+      "cv": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "cv-pdf-link": "Leandro Damasio. Bem vindo à Minha Página Pessoal"
+    },
+    "contact": {
+      "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+      "desc": "Desenvolvedor Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio"
+    }
+  }

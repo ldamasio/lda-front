@@ -1,5 +1,5 @@
 import { getDictionary } from './dictionaries';
-import { NavMenu } from '../components/NavigationMenu';
+
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
@@ -11,16 +11,16 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: s
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
+  // console.log(t);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <>
       <div>
-        <NavMenu />
+        <p className="">
+          {t.home.title}
+        </p>
+        {t.home.desc}
       </div>
 
-      <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-        {t.home.title}
-      </p>
-      {t.home.desc}
-    </main>
+    </>
   );
 }
