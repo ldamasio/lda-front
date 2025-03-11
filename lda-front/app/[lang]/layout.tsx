@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { NavMenu } from '../components/NavigationMenu';
+import { Footer } from '../components/Footer';
 
 interface LangParams {
   lang: string;
@@ -26,7 +27,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="flex flex-col items-center justify-between">
-          Rodapé
+          <Footer />
         </footer>
       </body>
     </html>
