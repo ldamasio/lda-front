@@ -14,7 +14,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
   // console.log(t);
   return (
     <>
-      <div>
+      <div className="p-4 md:p-6 lg:p-8">
         <p className="">
           {t.home.title}
         </p>
