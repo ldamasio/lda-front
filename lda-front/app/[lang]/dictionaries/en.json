@@ -1,11 +1,249 @@
 {
-    "page": {
-      "title": "Next.js i18n Demo",
-      "desc": "How to implement i18n with Next.js (based on App Router)"
+  "page": {
+    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis."
+  },
+  "home": {
+    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis.",
+    "introduction": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis.",
+    "highlights": {
+      "project-01": {
+        "name": "Robson Bot",
+        "description": "",
+        "link": "https://github.com/ldamasio/robson",
+        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "images": [
+          "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
+        ]
+      },
+      "project-02": {
+        "name": "Financial Fraud Detection RF XGBoost",
+        "description": "This project focuses on developing a robust fraud detection system using machine learning algorithms. It compares the performance of two popular ensemble methods: Random Forest and XGBoost, in classifying financial transactions as fraudulent or legitimate. The models are trained and evaluated on a real-world financial dataset.",
+        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
+        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
+        "images": [
+          ""
+        ]
+      },
+      "project-03": {
+        "name": "Cromo Financiamentos",
+        "description": "Car financing system developed with Django, Next, Shadcn, Docker, Kubernetes and Git.",
+        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
+        "technologies": "Django, Next, Shadcn",
+        "images": [
+          ""
+        ]
+      },
+      "project-04": {
+        "name": "GPT4 LangChain Chatbot ",
+        "description": "This project showcases the development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
+        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
+        "technologies": "gpt-4, langchain, openai, python",
+        "images": [
+          ""
+        ]
+      },
+      "project-05": {
+        "name": "MSX API v1.0",
+        "description": "A RESTful API in Python, using FastAPI, that allows the creation, reading, updating and deleting of vehicle records, with basic authentication and automatic documentation. It was built with TDD and uses libraries like pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "link": "https://github.com/ldamasio/msx-api-001",
+        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "images": [
+          ""
+        ]
+      },
+      "project-06": {
+        "name": "Space",
+        "description": "Space Backend - A robust backend built with Laravel, offering a RESTful API for the frontend. It uses modern architecture patterns to ensure scalability and maintainability.",
+        "link": "https://github.com/Arte-Arena/space-backend",
+        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "images": [
+          ""
+        ]
+      }
     },
-    "home": {
-      "title": "Hello, Next.js i18n",
-      "desc": "This is a demo of Next.js i18n"
+    "links": {
+      "github": "https://github.com/ldamasio",
+      "linkedin": "https://www.linkedin.com/in/ldamasio/",
+      "email": "info@leandrodamasio.com"
     }
+  },
+  "about-me": {
+    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis. https://leandrodamasio.com/portfolio",
+    "bio": "Leandro Damasio. Welcome to My Personal Page",
+    "visual-skills": "Leandro Damasio. Welcome to My Personal Page",
+    "values": "Leandro Damasio. Welcome to My Personal Page",
+    "photo": "Leandro Damasio. Welcome to My Personal Page"
+  },
+  "portfolio": {
+    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis. https://leandrodamasio.com/portfolio",
+    "projects-detailed": "Leandro Damasio. Welcome to My Personal Page",
+    "projects-categories": "Leandro Damasio. Welcome to My Personal Page",
+    "repositories": "Leandro Damasio. Welcome to My Personal Page"
+  },
+  "curriculum": {
+    "name": "Leandro Damasio",
+    "headline": "Principal Software Engineer | AI/ML Specialist | Cloud and DevOps Engineer",
+    "location": "São Paulo, SP - Brazil",
+    "resume": "Full-Stack Software Engineer and AI/ML Specialist, with over 10 years of experience in architecting and implementing scalable data products, advanced predictive models and robust cloud-native solutions. Demonstrates broad expertise across the full software development lifecycle, encompassing design architecture, implementation and automation of DevOps, across industrial, financial, commercial and research sectors. Employs asynchronous communication and distributed task management to build highly optimized systems, ensuring secure and stable performance to meet critical business demands. Committed to agile methodologies, promoting customer engagement and continuous delivery.",
+    "skills": {
+      "Languages": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "SQL",
+        "PHP",
+        "C++",
+        "Kotlin",
+        "Dart",
+        "Solidity"
+      ],
+      "FullStackDevelopment": [
+        "FastAPI",
+        "Django",
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "Restul API",
+        "GraphQL",
+        "React Native",
+        "Flutter",
+        "Blockchain"
+      ],
+      "DevOps": [
+        "Docker",
+        "Github Actions CI/CD pipelines",
+        "Kubernetes",
+        "Istio",
+        "ArgoCD",
+        "Pulumi"
+      ],
+      "Cloud": [
+        "AWS (EC2, S3, Lambda, EKS, Route53)",
+        "GCP (Document AI, Vertex AI)",
+        "Azure (Databricks, AKS)"
+      ],
+      "DataEngineering": [
+        "Data Migration",
+        "SQL (PostgreSQL, MySQL)",
+        "No-SQL (MongoDB)",
+        "Redis",
+        "RabbitMQ",
+        "Apache Kafka",
+        "Apache Spark",
+        "Apache Hadoop",
+        "Apache Airflow",
+        "Apache Solr",
+        "Apache Nifi",
+        "Apache Superset",
+        "Apache Druid",
+        "Apache Flink"
+      ],
+      "AIMLEngineering": [
+        "TensorFlow",
+        "PyTorch",
+        "Kubeflow",
+        "Scikit-learn",
+        "NLP",
+        "predictive analytics"
+      ],
+      "SoftwareArchitecture": [
+        "SOLID",
+        "Modular Monoliths",
+        "Microservices",
+        "serverless",
+        "MVC",
+        "MVT",
+        "MVVM",
+        "event-driven systems"
+      ],
+      "MonitoringLogging": [
+        "OpenTelemetry",
+        "Prometheus",
+        "ELK Stack",
+        "Grafana"
+      ]
+    },
+    "ProfessionalExperience": [
+      {
+        "Company": "Arte Arena",
+        "Title": "Technical Lead and Principal Software Engineer",
+        "Dates": "October 2024 – March 2025",
+        "Description": [
+          "Led the modernization of legacy systems by designing a cloud-native SaaS platform, accelerating the deployment of new features by 85% through the use of microservices and optimization of CI/CD.",
+          "Architected event-driven workflows using Kubernetes, Istio and ArgoCD, reducing infrastructure costs by 30%.",
+          "Led cross-functional teams to deliver full-stack products with React, FastAPI and AWS.",
+          "Developed innovative AI products using generative AI APIs to create personalized user experiences."
+        ]
+      },
+      {
+        "Company": "Stefanini / FAPESP",
+        "Title": "Senior Software Engineer",
+        "Dates": "October 2024 – March 2025",
+        "Description": [
+          "Reformulated the search engine of the FAPESP Virtual Library (Apache Solr), improving the response time of queries by 37% through the optimization of data indexing.",
+          "Directed a global full-stack team to deliver a Laravel-based application for academic research funding.",
+          "Resolved critical bugs in Django systems, improving the stability for over 500,000 monthly users."
+        ]
+      },
+      {
+        "Company": "NPL Brasil",
+        "Title": "Software Engineer",
+        "Dates": "December 2019 – January 2022",
+        "Description": [
+          "Automated data pipelines using Node.js and AWS, reducing manual processing time by 50%.",
+          "Integrated Google Cloud Document AI for automated document analysis, increasing operational efficiency.",
+          "Developed and implemented custom smart contracts on the Ethereum network, ensuring the security and integrity of cryptocurrency transactions."
+        ]
+      },
+      {
+        "Company": "Global Hitss",
+        "Title": "Software Engineer",
+        "Dates": "February 2017 – April 2019",
+        "Description": [
+          "Designed a scalable data lake with Hadoop and Spark, enabling real-time analysis for enterprise clients.",
+          "Reduced deployment cycles by 23% by automating CI/CD pipelines (ArgoCD, Docker).",
+          "Delivered full-stack applications using React and Nest.js for financial sector clients."
+        ]
+      }
+    ],
+    "Education": [
+      {
+        "Degree": "Bachelor of Computer Engineering",
+        "Institution": "UNIVESP"
+      },
+      {
+        "Degree": "Master of Public Administration and Government",
+        "Institution": "EAESP/FGV"
+      },
+      {
+        "Degree": "Bachelor of Public Administration",
+        "Institution": "ESAG/UDESC"
+      }
+    ],
+    "KeyAchievements": [
+      {
+        "Area": "AI/ML",
+        "Description": "Implemented MLOps pipelines with Kubeflow to train and deploy demand forecasting models, reducing training time by 40% and improving model accuracy by 14%."
+      },
+      {
+        "Area": "Cloud",
+        "Description": "Migrated over 17 legacy systems to AWS/GCP, achieving 99.9% uptime."
+      },
+      {
+        "Area": "Full Cycle Delivery",
+        "Description": "Led over 8 end-to-end product launches across various sectors, from fintech to R&D."
+      }
+    ]
+  },
+  "cv-pdf-link": "Leandro Damasio. Welcome to My Personal Page",
+  "contact": {
+    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": "Full Stack Developer experienced in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and analysis of large volumes of data. https://leandrodamasio.com/portfolio"
   }
-  
+}

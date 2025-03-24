@@ -15,51 +15,49 @@ import {
 } from "@/components/ui/navigation-menu"
 import LanguageSelect from '@/app/components/LanguageSelect';
 
+export function NavMenu({ lang, dictionary }: { lang: string, dictionary: any }) {
+  const t = dictionary;
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Robson Bot",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Space - Frontend",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Space - Backend",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "msx-api-001",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Financial-Fraud-Detection-RF-XGBoost",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "  GPT4-LangChain-Chatbot",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
+  const components = [
+    {
+      title: t.home.highlights["project-01"].name,
+      href: t.home.highlights["project-01"].link,
+      description: t.home.highlights["project-01"].description,
+    },
+    {
+      title: t.home.highlights["project-02"].name,
+      href: t.home.highlights["project-02"].link,
+      description: t.home.highlights["project-02"].description,
+    },
+    {
+      title: t.home.highlights["project-03"].name,
+      href: t.home.highlights["project-03"].link,
+      description: t.home.highlights["project-03"].description,
+    },
+    {
+      title: t.home.highlights["project-04"].name,
+      href: t.home.highlights["project-04"].link,
+      description: t.home.highlights["project-04"].description,
+    },
+    {
+      title: t.home.highlights["project-05"].name,
+      href: t.home.highlights["project-05"].link,
+      description: t.home.highlights["project-05"].description,
+    },
+    {
+      title: t.home.highlights["project-06"].name,
+      href: t.home.highlights["project-06"].link,
+      description: t.home.highlights["project-06"].description,
+    },
+  ];
 
-export function NavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList className="flex flex-col w-full md:flex-row">
         <NavigationMenuItem>
-          <NavigationMenuTrigger>About Me</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {lang === 'pt' ? 'Sobre Mim' : 'About Me'}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -70,24 +68,22 @@ export function NavMenu() {
                   >
                     <FaceIcon className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      Skills
+                      {t.curriculum.skills.Languages[0]}
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                      {t["about-me"].desc}
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Biography">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/docs" title={t["about-me"].bio}>
+                {t["about-me"].desc}
               </ListItem>
-              <ListItem href="/docs/installation" title="Curriulum">
-                How to install dependencies and structure your app.
+              <ListItem href="/docs/installation" title={t.curriculum.name}>
+                {t.curriculum.resume}
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Contact">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/docs/primitives/typography" title={t.contact.title}>
+                {t.contact.desc}
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -111,7 +107,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Articles
+              Artigos
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

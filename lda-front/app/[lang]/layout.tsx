@@ -1,5 +1,4 @@
 import "@/app/globals.css";
-import { NavMenu } from '../components/NavigationMenu';
 import { Footer } from '../components/Footer';
 
 interface LangParams {
@@ -20,9 +19,6 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body>
-        <header className="flex flex-col items-center justify-between">
-          <NavMenu />
-        </header>
         <main className="flex flex-col items-center justify-between min-h-[80vh]">
           {children}
         </main>

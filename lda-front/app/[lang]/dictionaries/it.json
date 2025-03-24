@@ -1,11 +1,249 @@
 {
-    "page": {
-      "title": "Next.js i18n Demo",
-      "desc": "How to implement i18n with Next.js (based on App Router)"
+  "page": {
+    "title": "Leandro Damasio. La Mia Pagina Personale",
+    "desc": "Sviluppatore Full Stack con esperienza in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati."
+  },
+  "home": {
+    "title": "Leandro Damasio. La Mia Pagina Personale",
+    "desc": "Sviluppatore Full Stack con esperienza in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati.",
+    "introduction": "Sviluppatore Full Stack con esperienza in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati.",
+    "highlights": {
+      "project-01": {
+        "name": "Robson Bot",
+        "description": "",
+        "link": "https://github.com/ldamasio/robson",
+        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "images": [
+          "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
+        ]
+      },
+      "project-02": {
+        "name": "Financial Fraud Detection RF XGBoost",
+        "description": "Questo progetto si concentra sullo sviluppo di un sistema di rilevamento frodi robusto utilizzando algoritmi di apprendimento automatico. Confronta le prestazioni di due metodi di ensemble popolari: Random Forest e XGBoost, nel classificare le transazioni finanziarie come fraudolente o legittime. I modelli sono addestrati e valutati su un set di dati finanziari del mondo reale.",
+        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
+        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
+        "images": [
+          ""
+        ]
+      },
+      "project-03": {
+        "name": "Cromo Financiamentos",
+        "description": "Sistema di finanziamento auto, sviluppato con Django, Next, Shadcn, Docker, Kubernetes e Git.",
+        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
+        "technologies": "Django, Next, Shadcn",
+        "images": [
+          ""
+        ]
+      },
+      "project-04": {
+        "name": "GPT4 LangChain Chatbot ",
+        "description": "Questo progetto mostra lo sviluppo di un chatbot intelligente utilizzando il potente modello di linguaggio GPT-4 e il framework LangChain. Dimostra come costruire un'IA conversazionale in grado di comprendere e rispondere alle domande degli utenti in modo naturale e coinvolgente.",
+        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
+        "technologies": "gpt-4, langchain, openai, python",
+        "images": [
+          ""
+        ]
+      },
+      "project-05": {
+        "name": "MSX API v1.0",
+        "description": "Un'API RESTful in Python, utilizzando FastAPI, che consente la creazione, la lettura, l'aggiornamento e la rimozione di record di veicoli, con autenticazione di base e documentazione automatica. È stata costruita con TDD e utilizza librerie come pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "link": "https://github.com/ldamasio/msx-api-001",
+        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "images": [
+          ""
+        ]
+      },
+      "project-06": {
+        "name": "Space",
+        "description": "Space Backend - Un backend robusto costruito con Laravel, che offre un'API RESTful per il frontend. Utilizza moderni modelli di architettura per garantire scalabilità e manutenibilità.",
+        "link": "https://github.com/Arte-Arena/space-backend",
+        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "images": [
+          ""
+        ]
+      }
     },
-    "home": {
-      "title": "Hello, Next.js i18n",
-      "desc": "This is a demo of Next.js i18n"
+    "links": {
+      "github": "https://github.com/ldamasio",
+      "linkedin": "https://www.linkedin.com/in/ldamasio/",
+      "email": "info@leandrodamasio.com"
     }
+  },
+  "about-me": {
+    "title": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "desc": "Sviluppatore Full Stack esperto in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati. https://leandrodamasio.com/portfolio",
+    "bio": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "visual-skills": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "values": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "photo": "Leandro Damasio. Benvenuto alla Mia Pagina Personale"
+  },
+  "portfolio": {
+    "title": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "desc": "Sviluppatore Full Stack esperto in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati. https://leandrodamasio.com/portfolio",
+    "projects-detailed": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "projects-categories": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "repositories": "Leandro Damasio. Benvenuto alla Mia Pagina Personale"
+  },
+  "curriculum": {
+    "name": "Leandro Damasio",
+    "headline": "Ingegnere Software Principale | Specialista Cloud e DevOps | Ingegnere AI/ML",
+    "location": "São Paulo, SP - Brasile",
+    "resume": "Ingegnere Software Full-Stack e Specialista AI/ML orientato ai risultati, con oltre 10 anni di esperienza nella progettazione e implementazione di prodotti di dati scalabili, modelli predittivi avanzati e soluzioni native del cloud robuste. Dimostra una vasta esperienza in tutto il ciclo di vita dello sviluppo software, comprendendo la progettazione architettonica, l'implementazione e l'automazione DevOps, nei settori industriali, finanziari, commerciali e di ricerca. Impiega abilmente Python, JavaScript e piattaforme cloud leader per promuovere l'innovazione e risolvere sfide complesse. Utilizza la comunicazione asincrona e la gestione delle attività distribuite per costruire sistemi altamente ottimizzati, garantendo prestazioni sicure e stabili per soddisfare le esigenze aziendali critiche. Impegnato nelle metodologie agili, promuovendo il coinvolgimento collaborativo del cliente e la consegna continua.",
+    "skills": {
+      "Languages": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "SQL",
+        "PHP",
+        "C++",
+        "Kotlin",
+        "Dart",
+        "Solidity"
+      ],
+      "FullStackDevelopment": [
+        "FastAPI",
+        "Django",
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "Restul API",
+        "GraphQL",
+        "React Native",
+        "Flutter",
+        "Blockchain"
+      ],
+      "DevOps": [
+        "Docker",
+        "Github Actions CI/CD pipelines",
+        "Kubernetes",
+        "Istio",
+        "ArgoCD",
+        "Pulumi"
+      ],
+      "Cloud": [
+        "AWS (EC2, S3, Lambda, EKS, Route53)",
+        "GCP (Document AI, Vertex AI)",
+        "Azure (Databricks, AKS)"
+      ],
+      "DataEngineering": [
+        "Data Migration",
+        "SQL (PostgreSQL, MySQL)",
+        "No-SQL (MongoDB)",
+        "Redis",
+        "RabbitMQ",
+        "Apache Kafka",
+        "Apache Spark",
+        "Apache Hadoop",
+        "Apache Airflow",
+        "Apache Solr",
+        "Apache Nifi",
+        "Apache Superset",
+        "Apache Druid",
+        "Apache Flink"
+      ],
+      "AIMLEngineering": [
+        "TensorFlow",
+        "PyTorch",
+        "Kubeflow",
+        "Scikit-learn",
+        "NLP",
+        "analisi predittiva"
+      ],
+      "SoftwareArchitecture": [
+        "SOLID",
+        "Monoliti Modulari",
+        "Microservizi",
+        "serverless",
+        "MVC",
+        "MVT",
+        "MVVM",
+        "sistemi guidati da eventi"
+      ],
+      "MonitoringLogging": [
+        "OpenTelemetry",
+        "Prometheus",
+        "ELK Stack",
+        "Grafana"
+      ]
+    },
+    "ProfessionalExperience": [
+      {
+        "Company": "Arte Arena",
+        "Title": "Responsabile Tecnico e Ingegnere Software Principale",
+        "Dates": "Ottobre 2024 – Marzo 2025",
+        "Description": [
+          "Ha guidato la modernizzazione dei sistemi legacy progettando una piattaforma SaaS nativa del cloud, accelerando l'implementazione delle funzionalità dell'85% attraverso l'uso di microservizi e l'ottimizzazione di CI/CD.",
+          "Ha progettato flussi di lavoro guidati da eventi utilizzando Kubernetes, Istio e ArgoCD, riducendo i costi dell'infrastruttura del 30%.",
+          "Ha guidato team interfunzionali per fornire prodotti full-stack con React, FastAPI e AWS.",
+          "Ha sviluppato prodotti AI innovativi utilizzando API AI generative per creare esperienze utente personalizzate."
+        ]
+      },
+      {
+        "Company": "Stefanini / FAPESP",
+        "Title": "Ingegnere Software Senior",
+        "Dates": "Ottobre 2024 – Marzo 2025",
+        "Description": [
+          "Ha riformulato il motore di ricerca della Biblioteca Virtuale FAPESP (Apache Solr), migliorando il tempo di risposta delle query del 37% attraverso l'ottimizzazione dell'indicizzazione dei dati.",
+          "Ha diretto un team globale full-stack per fornire un'applicazione basata su Laravel per il finanziamento della ricerca accademica.",
+          "Ha risolto bug critici nei sistemi Django, migliorando la stabilità per oltre 500.000 utenti mensili."
+        ]
+      },
+      {
+        "Company": "NPL Brasil",
+        "Title": "Ingegnere Software",
+        "Dates": "Dicembre 2019 – Gennaio 2022",
+        "Description": [
+          "Ha automatizzato le pipeline di dati utilizzando Node.js e AWS, riducendo i tempi di elaborazione manuale del 50%.",
+          "Ha integrato Google Cloud Document AI per l'analisi automatizzata dei documenti, aumentando l'efficienza operativa.",
+          "Ha sviluppato e implementato contratti intelligenti personalizzati sulla rete Ethereum, garantendo la sicurezza e l'integrità delle transazioni di criptovaluta."
+        ]
+      },
+      {
+        "Company": "Global Hitss",
+        "Title": "Ingegnere Software",
+        "Dates": "Febbraio 2017 – Aprile 2019",
+        "Description": [
+          "Ha progettato un data lake scalabile con Hadoop e Spark, consentendo l'analisi in tempo reale per i clienti aziendali.",
+          "Ha ridotto i cicli di implementazione del 23% automatizzando le pipeline CI/CD (ArgoCD, Docker).",
+          "Ha fornito applicazioni full-stack utilizzando React e Nest.js per i clienti del settore finanziario."
+        ]
+      }
+    ],
+    "Education": [
+      {
+        "Degree": "Laurea in Ingegneria Informatica",
+        "Institution": "UNIVESP"
+      },
+      {
+        "Degree": "Master in Pubblica Amministrazione e Governo",
+        "Institution": "EAESP/FGV"
+      },
+      {
+        "Degree": "Laurea in Pubblica Amministrazione",
+        "Institution": "ESAG/UDESC"
+      }
+    ],
+    "KeyAchievements": [
+      {
+        "Area": "AI/ML",
+        "Description": "Ha implementato pipeline MLOps con Kubeflow per addestrare e implementare modelli di previsione della domanda, riducendo i tempi di addestramento del 40% e migliorando la precisione del modello del 14%."
+      },
+      {
+        "Area": "Cloud",
+        "Description": "Ha migrato oltre 17 sistemi legacy su AWS/GCP, raggiungendo un uptime del 99,9%."
+      },
+      {
+        "Area": "Consegna del Ciclo Completo",
+        "Description": "Ha guidato oltre 8 lanci di prodotti end-to-end in vari settori, dalla fintech alla ricerca e sviluppo."
+      }
+    ]
+  },
+  "cv-pdf-link": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+  "contact": {
+    "title": "Leandro Damasio. Benvenuto alla Mia Pagina Personale",
+    "desc": "Sviluppatore Full Stack esperto in DevOps e Big Data. Leandro Damasio offre soluzioni nello sviluppo di software, automazione dell'infrastruttura e analisi di grandi volumi di dati. https://leandrodamasio.com/portfolio"
   }
-  
+}

@@ -1,11 +1,249 @@
 {
-    "page": {
-      "title": "Next.js i18n 示例",
-      "desc": "搞懂 Next.js 实现 i18n 国际化多语言(基于App Router)"
+  "page": {
+    "title": "Leandro Damasio. 我的个人页面",
+    "desc": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。"
+  },
+  "home": {
+    "title": "Leandro Damasio. 我的个人页面",
+    "desc": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
+    "introduction": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
+    "highlights": {
+      "project-01": {
+        "name": "罗布森机器人",
+        "description": "",
+        "link": "https://github.com/ldamasio/robson",
+        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "images": [
+          "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
+        ]
+      },
+      "project-02": {
+        "name": "金融欺诈检测 RF XGBoost",
+        "description": "本项目重点是使用机器学习算法开发一个强大的欺诈检测系统。它比较了两种流行的集成方法：随机森林和 XGBoost 在将金融交易分类为欺诈性或合法性方面的性能。这些模型在真实世界的金融数据集上进行训练和评估。",
+        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
+        "technologies": "随机森林, xgboost, scikit-learn, pandas, numpy",
+        "images": [
+          ""
+        ]
+      },
+      "project-03": {
+        "name": "克罗莫金融",
+        "description": "使用 Django、Next、Shadcn、Docker、Kubernetes 和 Git 开发的汽车融资系统。",
+        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
+        "technologies": "Django, Next, Shadcn",
+        "images": [
+          ""
+        ]
+      },
+      "project-04": {
+        "name": "GPT4 LangChain 聊天机器人",
+        "description": "本项目展示了使用强大的 GPT-4 语言模型和 LangChain 框架开发智能聊天机器人。它演示了如何构建能够以自然和引人入胜的方式理解和响应用户查询的对话式人工智能。",
+        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
+        "technologies": "gpt-4, langchain, openai, python",
+        "images": [
+          ""
+        ]
+      },
+      "project-05": {
+        "name": "MSX API v1.0",
+        "description": "一个使用 FastAPI 的 Python RESTful API，它允许创建、读取、更新和删除车辆记录，具有基本的身份验证和自动文档功能。它使用 TDD 构建，并使用 pydantic、SQL Alchemy、Alembic、PyJWT、argon2 等库。",
+        "link": "https://github.com/ldamasio/msx-api-001",
+        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "images": [
+          ""
+        ]
+      },
+      "project-06": {
+        "name": "空间",
+        "description": "空间后端 - 使用 Laravel 构建的强大后端，为前端提供 RESTful API。它使用现代架构模式来确保可扩展性和可维护性。",
+        "link": "https://github.com/Arte-Arena/space-backend",
+        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "images": [
+          ""
+        ]
+      }
     },
-    "home": {
-      "title": "你好, Next.js i18n",
-      "desc": "这是一个 Next.js i18n 示例"
+    "links": {
+      "github": "https://github.com/ldamasio",
+      "linkedin": "https://www.linkedin.com/in/ldamasio/",
+      "email": "info@leandrodamasio.com"
     }
+  },
+  "about-me": {
+    "title": "Leandro Damasio. 欢迎来到我的个人页面",
+    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
+    "bio": "Leandro Damasio. 欢迎来到我的个人页面",
+    "visual-skills": "Leandro Damasio. 欢迎来到我的个人页面",
+    "values": "Leandro Damasio. 欢迎来到我的个人页面",
+    "photo": "Leandro Damasio. 欢迎来到我的个人页面"
+  },
+  "portfolio": {
+    "title": "Leandro Damasio. 欢迎来到我的个人页面",
+    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
+    "projects-detailed": "Leandro Damasio. 欢迎来到我的个人页面",
+    "projects-categories": "Leandro Damasio. 欢迎来到我的个人页面",
+    "repositories": "Leandro Damasio. 欢迎来到我的个人页面"
+  },
+  "curriculum": {
+    "name": "Leandro Damasio",
+    "headline": "首席软件工程师 | 云和 DevOps 专家 | 人工智能/机器学习工程师",
+    "location": "巴西圣保罗",
+    "resume": "以结果为导向的全栈软件工程师和人工智能/机器学习专家，在架构和部署可扩展数据产品、高级预测模型和强大的云原生解决方案方面拥有超过 10 年的经验。在整个软件开发生命周期中展示了全面的专业知识，涵盖架构设计、实施和 DevOps 自动化，涉及工业、金融、商业和研究领域。熟练地利用 Python、JavaScript 和领先的云平台来促进创新并解决复杂的挑战。采用异步通信和分布式任务管理来构建高度优化的系统，确保安全稳定的性能，以满足关键的业务需求。致力于敏捷方法，促进协作式客户参与和持续交付。",
+    "skills": {
+      "Languages": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "SQL",
+        "PHP",
+        "C++",
+        "Kotlin",
+        "Dart",
+        "Solidity"
+      ],
+      "FullStackDevelopment": [
+        "FastAPI",
+        "Django",
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "Restul API",
+        "GraphQL",
+        "React Native",
+        "Flutter",
+        "Blockchain"
+      ],
+      "DevOps": [
+        "Docker",
+        "Github Actions CI/CD 管道",
+        "Kubernetes",
+        "Istio",
+        "ArgoCD",
+        "Pulumi"
+      ],
+      "Cloud": [
+        "AWS (EC2, S3, Lambda, EKS, Route53)",
+        "GCP (Document AI, Vertex AI)",
+        "Azure (Databricks, AKS)"
+      ],
+      "DataEngineering": [
+        "数据迁移",
+        "SQL (PostgreSQL, MySQL)",
+        "No-SQL (MongoDB)",
+        "Redis",
+        "RabbitMQ",
+        "Apache Kafka",
+        "Apache Spark",
+        "Apache Hadoop",
+        "Apache Airflow",
+        "Apache Solr",
+        "Apache Nifi",
+        "Apache Superset",
+        "Apache Druid",
+        "Apache Flink"
+      ],
+      "AIMLEngineering": [
+        "TensorFlow",
+        "PyTorch",
+        "Kubeflow",
+        "Scikit-learn",
+        "NLP",
+        "预测分析"
+      ],
+      "SoftwareArchitecture": [
+        "SOLID",
+        "模块化单体",
+        "微服务",
+        "无服务器",
+        "MVC",
+        "MVT",
+        "MVVM",
+        "事件驱动系统"
+      ],
+      "MonitoringLogging": [
+        "OpenTelemetry",
+        "Prometheus",
+        "ELK Stack",
+        "Grafana"
+      ]
+    },
+    "ProfessionalExperience": [
+      {
+        "Company": "Arte Arena",
+        "Title": "技术主管和首席软件工程师",
+        "Dates": "2024 年 10 月 – 2025 年 3 月",
+        "Description": [
+          "通过设计云原生 SaaS 平台，领导了遗留系统的现代化改造，通过微服务和 CI/CD 优化，将功能部署加速了 85%。",
+          "使用 Kubernetes、Istio 和 ArgoCD 设计了事件驱动的工作流，将基础设施成本降低了 30%。",
+          "领导跨职能团队交付了使用 React、FastAPI 和 AWS 的全栈产品。",
+          "利用生成式人工智能 API 开发了创新的人工智能产品，以创造个性化的用户体验。"
+        ]
+      },
+      {
+        "Company": "Stefanini / FAPESP",
+        "Title": "高级软件开发人员",
+        "Dates": "2024 年 10 月 – 2025 年 3 月",
+        "Description": [
+          "通过数据索引优化，重新设计了 FAPESP 虚拟图书馆的搜索引擎 (Apache Solr)，将查询响应时间提高了 37%。",
+          "指导全球全栈团队交付了一个基于 Laravel 的学术研究资助应用程序。",
+          "解决了 Django 系统中的关键错误，提高了超过 50 万月度用户的稳定性。"
+        ]
+      },
+      {
+        "Company": "NPL Brasil",
+        "Title": "软件工程师",
+        "Dates": "2019 年 12 月 – 2022 年 1 月",
+        "Description": [
+          "使用 Node.js 和 AWS 自动化了数据管道，将手动处理时间减少了 50%。",
+          "集成了 Google Cloud Document AI 以实现自动文档分析，提高了运营效率。",
+          "在 Ethereum 网络上开发并实现了自定义智能合约，确保了加密货币交易的安全性和完整性。"
+        ]
+      },
+      {
+        "Company": "Global Hitss",
+        "Title": "软件工程师",
+        "Dates": "2017 年 2 月 – 2019 年 4 月",
+        "Description": [
+          "使用 Hadoop 和 Spark 设计了一个可扩展的数据湖，为企业客户实现实时分析。",
+          "通过自动化 CI/CD 管道 (ArgoCD, Docker)，将部署周期缩短了 23%。",
+          "为金融行业的客户交付了使用 React 和 Nest.js 的全栈应用程序。"
+        ]
+      }
+    ],
+    "Education": [
+      {
+        "Degree": "计算机工程学士",
+        "Institution": "UNIVESP"
+      },
+      {
+        "Degree": "公共管理和政府硕士",
+        "Institution": "EAESP/FGV"
+      },
+      {
+        "Degree": "公共管理学士",
+        "Institution": "ESAG/UDESC"
+      }
+    ],
+    "KeyAchievements": [
+      {
+        "Area": "人工智能/机器学习",
+        "Description": "使用 Kubeflow 实施了 MLOps 管道来训练和部署需求预测模型，将训练时间缩短了 40%，并将模型精度提高了 14%。"
+      },
+      {
+        "Area": "云",
+        "Description": "将超过 17 个遗留系统迁移到 AWS/GCP，实现了 99.9% 的正常运行时间。"
+      },
+      {
+        "Area": "完整周期交付",
+        "Description": "领导了从金融科技到研发等多个行业的 8 多个端到端产品发布。"
+      }
+    ]
+  },
+  "cv-pdf-link": "Leandro Damasio. 欢迎来到我的个人页面",
+  "contact": {
+    "title": "Leandro Damasio. 欢迎来到我的个人页面",
+    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio"
   }
-  
+}
