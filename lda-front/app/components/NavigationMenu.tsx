@@ -15,7 +15,34 @@ import {
 } from "@/components/ui/navigation-menu"
 import LanguageSelect from '@/app/components/LanguageSelect';
 
-export function NavMenu({ lang, dictionary }: { lang: string, dictionary: any }) {
+interface Dictionary {
+  home: {
+    highlights: {
+      [key: string]: {
+        name: string;
+        link: string;
+        description: string;
+      };
+    };
+  };
+  curriculum: {
+    skills: {
+      Languages: string[];
+    };
+    name: string;
+    resume: string;
+  };
+  "about-me": {
+    bio: string;
+    desc: string;
+  };
+  contact: {
+    title: string;
+    desc: string;
+  };
+}
+
+export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictionary }) {
   const t = dictionary;
 
   const components = [
