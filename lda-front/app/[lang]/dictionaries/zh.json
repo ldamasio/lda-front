@@ -8,7 +8,7 @@
     "desc": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
     "introduction": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
     "highlights": {
-      "project-01": {
+      "project01": {
         "name": "罗布森机器人",
         "description": "",
         "link": "https://github.com/ldamasio/robson",
@@ -17,7 +17,7 @@
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
         ]
       },
-      "project-02": {
+      "project02": {
         "name": "金融欺诈检测 RF XGBoost",
         "description": "本项目重点是使用机器学习算法开发一个强大的欺诈检测系统。它比较了两种流行的集成方法：随机森林和 XGBoost 在将金融交易分类为欺诈性或合法性方面的性能。这些模型在真实世界的金融数据集上进行训练和评估。",
         "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
@@ -26,7 +26,7 @@
           ""
         ]
       },
-      "project-03": {
+      "project03": {
         "name": "克罗莫金融",
         "description": "使用 Django、Next、Shadcn、Docker、Kubernetes 和 Git 开发的汽车融资系统。",
         "link": "https://github.com/rbxrobotica/rbx-cro-backend",
@@ -35,7 +35,7 @@
           ""
         ]
       },
-      "project-04": {
+      "project04": {
         "name": "GPT4 LangChain 聊天机器人",
         "description": "本项目展示了使用强大的 GPT-4 语言模型和 LangChain 框架开发智能聊天机器人。它演示了如何构建能够以自然和引人入胜的方式理解和响应用户查询的对话式人工智能。",
         "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
@@ -44,7 +44,7 @@
           ""
         ]
       },
-      "project-05": {
+      "project05": {
         "name": "MSX API v1.0",
         "description": "一个使用 FastAPI 的 Python RESTful API，它允许创建、读取、更新和删除车辆记录，具有基本的身份验证和自动文档功能。它使用 TDD 构建，并使用 pydantic、SQL Alchemy、Alembic、PyJWT、argon2 等库。",
         "link": "https://github.com/ldamasio/msx-api-001",
@@ -53,7 +53,7 @@
           ""
         ]
       },
-      "project-06": {
+      "project06": {
         "name": "空间",
         "description": "空间后端 - 使用 Laravel 构建的强大后端，为前端提供 RESTful API。它使用现代架构模式来确保可扩展性和可维护性。",
         "link": "https://github.com/Arte-Arena/space-backend",
@@ -69,19 +69,19 @@
       "email": "info@leandrodamasio.com"
     }
   },
-  "about-me": {
+  "aboutMe": {
     "title": "Leandro Damasio. 欢迎来到我的个人页面",
     "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
     "bio": "Leandro Damasio. 欢迎来到我的个人页面",
-    "visual-skills": "Leandro Damasio. 欢迎来到我的个人页面",
+    "visualSkills": "Leandro Damasio. 欢迎来到我的个人页面",
     "values": "Leandro Damasio. 欢迎来到我的个人页面",
     "photo": "Leandro Damasio. 欢迎来到我的个人页面"
   },
   "portfolio": {
     "title": "Leandro Damasio. 欢迎来到我的个人页面",
     "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
-    "projects-detailed": "Leandro Damasio. 欢迎来到我的个人页面",
-    "projects-categories": "Leandro Damasio. 欢迎来到我的个人页面",
+    "projectsDetailed": "Leandro Damasio. 欢迎来到我的个人页面",
+    "projectsCategories": "Leandro Damasio. 欢迎来到我的个人页面",
     "repositories": "Leandro Damasio. 欢迎来到我的个人页面"
   },
   "curriculum": {
@@ -241,7 +241,7 @@
       }
     ]
   },
-  "cv-pdf-link": "Leandro Damasio. 欢迎来到我的个人页面",
+  "cvPdfLink": "Leandro Damasio. 欢迎来到我的个人页面",
   "contact": {
     "title": "Leandro Damasio. 欢迎来到我的个人页面",
     "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio"

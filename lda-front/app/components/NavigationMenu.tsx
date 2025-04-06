@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { FaceIcon } from '@radix-ui/react-icons'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,12 +28,18 @@ interface Dictionary {
     skills: {
       Languages: string[];
     };
-    name: string;
+    headline: string;
     resume: string;
+    location: string;
+    values: string;
   };
-  "about-me": {
-    bio: string;
+  "aboutMe": {
+    visualSkills: string;
+    photo: string;
     desc: string;
+    bio: string;
+    values: string;
+    title: string;
   };
   contact: {
     title: string;
@@ -47,34 +52,34 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
 
   const components = [
     {
-      title: t.home.highlights["project-01"].name,
-      href: t.home.highlights["project-01"].link,
-      description: t.home.highlights["project-01"].description,
+      title: t.home.highlights["project01"].name,
+      href: t.home.highlights["project01"].link,
+      description: t.home.highlights["project01"].description,
     },
     {
-      title: t.home.highlights["project-02"].name,
-      href: t.home.highlights["project-02"].link,
-      description: t.home.highlights["project-02"].description,
+      title: t.home.highlights["project02"].name,
+      href: t.home.highlights["project02"].link,
+      description: t.home.highlights["project02"].description,
     },
     {
-      title: t.home.highlights["project-03"].name,
-      href: t.home.highlights["project-03"].link,
-      description: t.home.highlights["project-03"].description,
+      title: t.home.highlights["project03"].name,
+      href: t.home.highlights["project03"].link,
+      description: t.home.highlights["project03"].description,
     },
     {
-      title: t.home.highlights["project-04"].name,
-      href: t.home.highlights["project-04"].link,
-      description: t.home.highlights["project-04"].description,
+      title: t.home.highlights["project04"].name,
+      href: t.home.highlights["project04"].link,
+      description: t.home.highlights["project04"].description,
     },
     {
-      title: t.home.highlights["project-05"].name,
-      href: t.home.highlights["project-05"].link,
-      description: t.home.highlights["project-05"].description,
+      title: t.home.highlights["project05"].name,
+      href: t.home.highlights["project05"].link,
+      description: t.home.highlights["project05"].description,
     },
     {
-      title: t.home.highlights["project-06"].name,
-      href: t.home.highlights["project-06"].link,
-      description: t.home.highlights["project-06"].description,
+      title: t.home.highlights["project06"].name,
+      href: t.home.highlights["project06"].link,
+      description: t.home.highlights["project06"].description,
     },
   ];
 
@@ -93,23 +98,22 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <FaceIcon className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      {t.curriculum.skills.Languages[0]}
-                    </div>
+                      {t["aboutMe"].photo}
+                    </div> 
                     <p className="text-sm leading-tight text-muted-foreground">
-                      {t["about-me"].desc}
+                      {t["aboutMe"].visualSkills}
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title={t["about-me"].bio}>
-                {t["about-me"].desc}
+              <ListItem href="/about-me" title={t["aboutMe"].title}>
+                {t["aboutMe"].values}
               </ListItem>
-              <ListItem href="/docs/installation" title={t.curriculum.name}>
-                {t.curriculum.resume}
+              <ListItem href="/cv" title={t.curriculum.headline}>
+                {t.curriculum.location}
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title={t.contact.title}>
+              <ListItem href="/contact" title={t.contact.title}>
                 {t.contact.desc}
               </ListItem>
             </ul>
@@ -132,9 +136,9 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/articles" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Artigos
+            {lang === 'pt' ? 'Artigos' : 'Articles'}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
