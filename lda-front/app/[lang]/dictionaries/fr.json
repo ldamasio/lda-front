@@ -8,7 +8,7 @@
     "desc": "Développeur Full Stack avec une expertise en DevOps et Big Data. Leandro Damasio propose des solutions en développement de logiciels, automatisation de l'infrastructure et analyse de grands volumes de données.",
     "introduction": "Développeur Full Stack avec une expertise en DevOps et Big Data. Leandro Damasio propose des solutions en développement de logiciels, automatisation de l'infrastructure et analyse de grands volumes de données.",
     "highlights": {
-      "project-01": {
+      "project01": {
         "name": "Robson Bot",
         "description": "",
         "link": "https://github.com/ldamasio/robson",
@@ -17,7 +17,7 @@
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
         ]
       },
-      "project-02": {
+      "project02": {
         "name": "Financial Fraud Detection RF XGBoost",
         "description": "Ce projet se concentre sur le développement d'un système robuste de détection de fraude utilisant des algorithmes d'apprentissage automatique. Il compare les performances de deux méthodes d'ensemble populaires : Random Forest et XGBoost, dans la classification des transactions financières comme frauduleuses ou légitimes. Les modèles sont entraînés et évalués sur un ensemble de données financières du monde réel.",
         "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
@@ -26,7 +26,7 @@
           ""
         ]
       },
-      "project-03": {
+      "project03": {
         "name": "Cromo Financiamentos",
         "description": "Système de financement de voitures, développé avec Django, Next, Shadcn, Docker, Kubernetes et Git.",
         "link": "https://github.com/rbxrobotica/rbx-cro-backend",
@@ -35,7 +35,7 @@
           ""
         ]
       },
-      "project-04": {
+      "project04": {
         "name": "GPT4 LangChain Chatbot ",
         "description": "Ce projet présente le développement d'un chatbot intelligent utilisant le puissant modèle linguistique GPT-4 et le framework LangChain. Il démontre comment construire une IA conversationnelle capable de comprendre et de répondre aux requêtes des utilisateurs de manière naturelle et engageante.",
         "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
@@ -44,7 +44,7 @@
           ""
         ]
       },
-      "project-05": {
+      "project05": {
         "name": "MSX API v1.0",
         "description": "Une API RESTful en Python, utilisant FastAPI, qui permet la création, la lecture, la mise à jour et la suppression des enregistrements de véhicules, avec des fonctionnalités d'authentification de base et de documentation automatique. Elle a été construite avec TDD et utilise des bibliothèques telles que pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
         "link": "https://github.com/ldamasio/msx-api-001",
@@ -53,7 +53,7 @@
           ""
         ]
       },
-      "project-06": {
+      "project06": {
         "name": "Space",
         "description": "Space Backend - Backend robuste construit avec Laravel, offrant une API RESTful pour le frontend. Utilise des modèles d'architecture modernes pour assurer l'évolutivité et la maintenabilité.",
         "link": "https://github.com/Arte-Arena/space-backend",
@@ -69,19 +69,19 @@
       "email": "info@leandrodamasio.com"
     }
   },
-  "about-me": {
+  "aboutMe": {
     "title": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "desc": "Développeur Full Stack expérimenté en DevOps et Big Data. Leandro Damasio propose des solutions en développement de logiciels, automatisation de l'infrastructure et analyse de grands volumes de données. https://leandrodamasio.com/portfolio",
     "bio": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
-    "visual-skills": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
+    "visualSkills": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "values": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "photo": "Leandro Damasio. Bienvenue sur Ma Page Personnelle"
   },
   "portfolio": {
     "title": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "desc": "Développeur Full Stack expérimenté en DevOps et Big Data. Leandro Damasio propose des solutions en développement de logiciels, automatisation de l'infrastructure et analyse de grands volumes de données. https://leandrodamasio.com/portfolio",
-    "projects-detailed": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
-    "projects-categories": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
+    "projectsDetailed": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
+    "projectsCategories": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "repositories": "Leandro Damasio. Bienvenue sur Ma Page Personnelle"
   },
   "curriculum": {
@@ -241,7 +241,7 @@
       }
     ]
   },
-  "cv-pdf-link": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
+  "cvPdfLink": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
   "contact": {
     "title": "Leandro Damasio. Bienvenue sur Ma Page Personnelle",
     "desc": "Développeur Full Stack expérimenté en DevOps et Big Data. Leandro Damasio propose des solutions en développement de logiciels, automatisation de l'infrastructure et analyse de grands volumes de données. https://leandrodamasio.com/portfolio"
