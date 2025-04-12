@@ -1,12 +1,14 @@
 {
   "page": {
-    "title": "Leandro Damasio. Minha Página Pessoal",
-    "desc": "Desenvolvedor Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados."
+    "photo": "programming.png",
+    "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+    "desc": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
+    "curriculum": "https://leandrodamasio.com/portfolio"
   },
   "home": {
-    "title": "Leandro Damasio. Minha Página Pessoal",
-    "desc": "Desenvolvedor Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
-    "introduction": "Desenvolvedor Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
+    "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+    "desc": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
+    "introduction": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
     "highlights": {
       "project01": {
         "name": "Robson Bot",
@@ -72,14 +74,14 @@
   "aboutMe": {
     "title": "Sobre mim",
     "desc": "https://leandrodamasio.com/portfolio",
-    "bio": "Leandro Damasio começou sua carreira como desenvolvedor nos anos 1990, com a linguagem PHP. Desde então, ele se destacou como um engenheiro de software experiente e inovador, trabalhando em projetos de desenvolvimento de grandes empresas e instituições como a FAPESP, NPL Brasil, Global Hitss, Arte Arena e Stefanini.",
+    "bio": "Leandro Damasio começou sua carreira como Engineer nos anos 1990, com a linguagem PHP. Desde então, ele se destacou como um engenheiro de software experiente e inovador, trabalhando em projetos de desenvolvimento de grandes empresas e instituições como a FAPESP, NPL Brasil, Global Hitss, Arte Arena e Stefanini.",
     "visualSkills": "Python, IA, Devops, Cloud, Data Engineering, Machine Learning, Big Data, Blockchain, Full Stack Development, Software Architecture, Monitoring, Logging",
     "values": "Inovação, Resultados, Colaboração, Eficiência, Segurança, Agilidade",
-    "photo": "ldamasio.png"
+    "photo": "ldamasio2.png"
   },
   "portfolio": {
     "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
-    "desc": "Desenvolvedor Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
+    "desc": "Engenheiro Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
     "projectsDetailed": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
     "projectsCategories": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
     "repositories": "Leandro Damasio. Bem vindo à Minha Página Pessoal"
@@ -183,7 +185,7 @@
       },
       {
         "Company": "Stefanini / FAPESP",
-        "Title": "Desenvolvedor de Software Sênior",
+        "Title": "Engineer de Software Sênior",
         "Dates": "Outubro 2024 – Março 2025",
         "Description": [
           "Reformulou o mecanismo de pesquisa da Biblioteca Virtual da FAPESP (Apache Solr), melhorando o tempo de resposta das consultas em 37% por meio de otimizações de indexação de dados.",
