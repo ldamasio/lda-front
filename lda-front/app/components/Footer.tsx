@@ -11,7 +11,7 @@ export const Footer = () => {
           Github
         </a>
         <a
-          href="https://www.linkedin.com/in/leandrodamasio/"
+          href="https://www.linkedin.com/in/ldamasio/"
           target="_blank"
           rel="noopener noreferrer"
         >
