@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "Licenciatura en Ingeniería Informática",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "July 2022 - May 2027 (estimated)"
       },
       {
         "Degree": "Maestría en Administración Pública y Gobierno",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "January 2009 - May 2021"
       },
       {
         "Degree": "Licenciatura en Administración Pública",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "July 2004 - August 2008"
+      },
+      {
+        "Degree": "Licenciatura en Filosofía",
+        "Institution": "CFH/UFSC",
+        "Dates": "January 2004 - June 2008"
       }
     ],
     "KeyAchievements": [

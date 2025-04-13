@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "Licence en Génie Informatique",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "Juillet 2022 - Mai 2027 (estimé)"
       },
       {
         "Degree": "Master en Administration Publique et Gouvernement",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "Janvier 2009 - Mai 2021"
       },
       {
         "Degree": "Licence en Administration Publique",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "Juillet 2004 - Août 2008"
+      },
+      {
+        "Degree": "Licence en Philosophie",
+        "Institution": "CFH/UFSC",
+        "Dates": "Janvier 2004 - Juin 2008"
       }
     ],
     "KeyAchievements": [

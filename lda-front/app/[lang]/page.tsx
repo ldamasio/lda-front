@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Card,
   CardDescription,
+  CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 
@@ -30,7 +31,9 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
         <NavMenu lang={lang} dictionary={t} />
 
         <h1 className={styles.title}>{t.home.title}</h1>
-        <p className={styles.description}>{t.home.introduction}</p>
+        <p className={styles.description}>
+          {t.home.introduction}
+        </p>
 
         <Tabs defaultValue="projects" className="w-[100%]">
           <TabsList>
@@ -40,11 +43,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
           </TabsList>
           <TabsContent value="projects">
             <section className={styles.projects}>
-
               <h2>Projetos Destacados</h2>
               <div>
                 {Object.entries(t.home.highlights).map(([key, project]) => (
-                  <div className={styles.projectCard} key={key}>
+                  <Card className={styles.projectCard} key={key}>
                     <a href={(project as Project).link}>
                       <h3>{(project as Project).name}</h3>
                     </a>
@@ -57,7 +59,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                         className={styles.projectImage}
                       />
                     }
-                  </div>
+                  </Card>
                 ))}
               </div>
             </section>
@@ -84,14 +86,19 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               </div>
             </section>
           </TabsContent>
+
           <TabsContent value="cv">
-            <section className={styles.curriculum}>
+            <section className={styles.links}>
               <h2>Currículo</h2>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t.curriculum.name}</CardTitle>
+                  <CardDescription>{t.curriculum.headline}</CardDescription>
+                  <CardDescription>{t.curriculum.location}</CardDescription>
+                </CardHeader>
+              </Card>
               <div className={styles.curriculumDetails}>
-                <h3>{t.curriculum.name}</h3>
-                <p>{t.curriculum.headline}</p>
-                <p>{t.curriculum.location}</p>
-                <p>{t.curriculum.resume}</p>
+                <p className="p-4 text-sm text-muted-foreground">{t.curriculum.resume}</p>
 
                 <h4>Habilidades</h4>
                 {Object.entries(t.curriculum.skills as SkillCategory).map(([category, skills]) => (
@@ -111,35 +118,52 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
                 <h4>Experiência Profissional</h4>
                 {t.curriculum.ProfessionalExperience.map((experience: Experience, index: number) => (
-                  <div key={index}>
-                    <h5>{experience.Company} - {experience.Title}</h5>
-                    <p>{experience.Dates}</p>
-                    <ul>
+                  <Card key={index} className="w-[100%] mt-4 p-4">
+                    <CardTitle>
+                      {experience.Company} - {experience.Title}
+                    </CardTitle>
+                    <p className="p-4 italic text-sm text-muted-foreground">{experience.Dates}</p>
+                    <CardDescription className="p-4 flex flex-wrap gap-4">
                       {experience.Description.map((desc, i) => (
-                        <li key={i}>{desc}</li>
+                        <p key={i}>
+                          {desc}
+                        </p>
                       ))}
-                    </ul>
-                  </div>
+                    </CardDescription>
+                  </Card>
                 ))}
 
                 <h4>Educação</h4>
                 {t.curriculum.Education.map((education: Education, index: number) => (
-                  <div key={index}>
-                    <h5>{education.Degree}</h5>
-                    <p>{education.Institution}</p>
-                  </div>
+                  <Card key={index} className="w-[100%] mt-4 p-4">
+                    <CardTitle>
+                      {education.Degree}
+                    </CardTitle>
+                    <CardDescription className="p-4 flex flex-wrap gap-4">
+                      {education.Institution} + {education.Dates}
+                    </CardDescription>
+                  </Card>
                 ))}
 
                 <h4>Conquistas Principais</h4>
                 {t.curriculum.KeyAchievements.map((achievement: Achievement, index: number) => (
-                  <div key={index}>
-                    <h5>{achievement.Area}</h5>
-                    <p>{achievement.Description}</p>
-                  </div>
+                  <Card key={index} className="w-[100%] mt-4 p-4">
+                    <CardTitle>
+                      {achievement.Area}
+                    </CardTitle>
+                    <CardDescription className="p-4 flex flex-wrap gap-4">
+                      {achievement.Description}
+                    </CardDescription>
+                  </Card>
                 ))}
               </div>
+
             </section>
           </TabsContent>
+
+
+
+
         </Tabs>
 
       </div>

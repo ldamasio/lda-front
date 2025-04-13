@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "计算机工程学士",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "2022 年 7 月 – 2027 年 5 月（预计）"
       },
       {
         "Degree": "公共管理和政府硕士",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "2009 年 1 月 – 2021 年 5 月"
       },
       {
         "Degree": "公共管理学士",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "2004 年 7 月 – 2008 年 8 月"
+      },
+      {
+        "Degree": "哲学学士",
+        "Institution": "CFH/UFSC",
+        "Dates": "2004 年 1 月 – 2008 年 6 月"
       }
     ],
     "KeyAchievements": [

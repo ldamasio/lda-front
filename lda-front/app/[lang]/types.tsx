@@ -19,6 +19,7 @@ export interface Project {
   }
   
   export interface Education {
+    Dates: string;
     Degree: string;
     Institution: string;
   }
