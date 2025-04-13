@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "Bachelor in Informatik-Ingenieurwesen",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "Juli 2022 - Mai 2027 (voraussichtlich)"
       },
       {
         "Degree": "Master in Öffentlicher Verwaltung und Regierung",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "Januar 2009 - Mai 2021"
       },
       {
         "Degree": "Bachelor in Öffentlicher Verwaltung",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "Juli 2004 - August 2008"
+      },
+      {
+        "Degree": "Bachelor in Philosophie",
+        "Institution": "CFH/UFSC",
+        "Dates": "Januar 2004 - Juni 2008"
       }
     ],
     "KeyAchievements": [

@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "Laurea in Ingegneria Informatica",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "Luglio 2022 - Maggio 2027 (previsto)"
       },
       {
         "Degree": "Master in Pubblica Amministrazione e Governo",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "Gennaio 2009 - Maggio 2021"
       },
       {
         "Degree": "Laurea in Pubblica Amministrazione",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "Luglio 2004 - Agosto 2008"
+      },
+      {
+        "Degree": "Laurea in Filosofia",
+        "Institution": "CFH/UFSC",
+        "Dates": "Gennaio 2004 - Giugno 2008"
       }
     ],
     "KeyAchievements": [

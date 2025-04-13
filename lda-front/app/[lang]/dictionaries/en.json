@@ -215,15 +215,23 @@
     "Education": [
       {
         "Degree": "Bachelor of Computer Engineering",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "July 2022 - May 2027 (estimated)"
       },
       {
         "Degree": "Master of Public Administration and Government",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "January 2009 - May 2021"
       },
       {
         "Degree": "Bachelor of Public Administration",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "July 2004 - August 2008"
+      },
+      {
+        "Degree": "Bachelor of Philosophy",
+        "Institution": "CFH/UFSC",
+        "Dates": "January 2004 - June 2008"
       }
     ],
     "KeyAchievements": [
