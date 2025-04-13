@@ -206,7 +206,7 @@
       {
         "Company": "Global Hitss",
         "Title": "Engenheiro de Software",
-        "Dates": "Fevereiro 2017 – Abril 2019",
+        "Dates": "Fevereiro 2017 - Abril 2019",
         "Description": [
           "Projetou um data lake escalável com Hadoop e Spark, permitindo análises em tempo real para clientes empresariais.",
           "Reduziu os ciclos de implantação em 23% por meio da automação de pipelines CI/CD (ArgoCD, Docker).",
