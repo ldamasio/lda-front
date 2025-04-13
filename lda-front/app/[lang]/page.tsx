@@ -3,7 +3,14 @@ import styles from './page.module.css';
 import { Project, SkillCategory, Experience, Education, Achievement } from './types';
 import { NavMenu } from '../components/NavigationMenu';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-// import Image from 'next/image';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
@@ -91,14 +98,18 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
                 <h4>Habilidades</h4>
                 {Object.entries(t.curriculum.skills as SkillCategory).map(([category, skills]) => (
-                  <div key={category}>
-                    <h5>{category}</h5>
-                    <ul>
+                  <Card key={category} className="w-[100%] mt-4 p-4">
+                    <CardTitle>
+                      {category}
+                    </CardTitle>
+                    <CardDescription className="p-4 flex flex-wrap gap-4">
                       {skills.map((skill) => (
-                        <li key={skill}>{skill}</li>
+                        <p key={skill} className="bg-gray-100 p-2 rounded-md">
+                          {skill}
+                        </p>
                       ))}
-                    </ul>
-                  </div>
+                    </CardDescription>
+                  </Card>
                 ))}
 
                 <h4>Experiência Profissional</h4>
