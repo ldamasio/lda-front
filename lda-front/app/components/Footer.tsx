@@ -1,3 +1,4 @@
+import { Github, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -8,14 +9,14 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Github
+          <Github className="w-4 h-4 inline-block" /> Github
         </a>
         <a
           href="https://www.linkedin.com/in/ldamasio/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Linkedin
+          <Linkedin className="w-4 h-4 inline-block" /> Linkedin
         </a>
       </div>
       <p className="text-center">
