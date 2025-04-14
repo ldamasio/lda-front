@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucide-react";
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
@@ -21,7 +22,6 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: s
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
-
   // console.log('Dictionary in page.tsx:', t);
 
   return (
@@ -43,7 +43,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
           </TabsList>
           <TabsContent value="projects">
             <section className={styles.projects}>
-              <h2>Projetos Destacados</h2>
+              <h2 className="flex items-center gap-2 text-xl font-bold pb-4">
+                <Code className="w-6 h-6 text-primary" />
+                Projetos Destacados
+              </h2>
               <div>
                 {Object.entries(t.home.highlights).map(([key, project]) => (
                   <Card className={styles.projectCard} key={key}>
@@ -66,7 +69,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
           </TabsContent>
           <TabsContent value="links">
             <section className={styles.links}>
-              <h2>Links</h2>
+              <h2 className="flex items-center gap-2 text-xl font-bold pb-4">
+                <Link className="w-6 h-6 text-primary" />
+                Links
+              </h2>
               <div>
                 <div className={styles.linkCard}>
                   <a href={t.home.links.github}>
@@ -89,7 +95,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
           <TabsContent value="cv">
             <section className={styles.links}>
-              <h2>Currículo</h2>
+              <h2 className="flex items-center gap-2 text-xl font-bold pb-4">
+                <BookOpen className="w-6 h-6 text-primary" />
+                Currículo
+              </h2>
               <Card>
                 <CardHeader>
                   <CardTitle>{t.curriculum.name}</CardTitle>
@@ -100,7 +109,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               <div className={styles.curriculumDetails}>
                 <p className="p-4 text-sm text-muted-foreground">{t.curriculum.resume}</p>
 
-                <h4>Habilidades</h4>
+                <h4 className="mt-4 font-bold flex items-center gap-2">
+                  <Brain className="w-6 h-6 text-primary" />
+                  Habilidades
+                </h4>
                 {Object.entries(t.curriculum.skills as SkillCategory).map(([category, skills]) => (
                   <Card key={category} className="w-[100%] mt-4 p-4">
                     <CardTitle>
@@ -116,7 +128,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   </Card>
                 ))}
 
-                <h4>Experiência Profissional</h4>
+                <h4 className="mt-4 font-bold flex items-center gap-2">
+                  <Briefcase className="w-6 h-6 text-primary" />
+                  Experiência Profissional
+                </h4>
                 {t.curriculum.ProfessionalExperience.map((experience: Experience, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
@@ -133,7 +148,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   </Card>
                 ))}
 
-                <h4>Educação</h4>
+                <h4 className="mt-4 font-bold flex items-center gap-2">
+                  <University className="w-6 h-6 text-primary" />
+                  Educação
+                </h4>
                 {t.curriculum.Education.map((education: Education, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
@@ -145,7 +163,10 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   </Card>
                 ))}
 
-                <h4>Conquistas Principais</h4>
+                <h4 className="mt-4 font-bold flex items-center gap-2">
+                  <Award className="w-6 h-6 text-primary" />
+                  Conquistas Principais
+                </h4>
                 {t.curriculum.KeyAchievements.map((achievement: Achievement, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
@@ -157,15 +178,9 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   </Card>
                 ))}
               </div>
-
             </section>
           </TabsContent>
-
-
-
-
         </Tabs>
-
       </div>
     </div>
   );
