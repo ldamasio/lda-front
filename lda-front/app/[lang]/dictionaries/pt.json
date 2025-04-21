@@ -1,75 +1,21 @@
 {
-  "page": {
+  "meta": {
     "photo": "programming.png",
     "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
     "desc": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
-    "curriculum": "https://leandrodamasio.com/portfolio"
+    "links": {
+      "github": "https://github.com/ldamasio",
+      "linkedin": "https://www.linkedin.com/in/ldamasio/",
+      "email": "info@leandrodamasio.com",
+      "curriculum": "https://leandrodamasio.com/pt/cv",
+      "cvPdfLink": "https://leandrodamasio.com/pt/cv/pdf/",
+      "portfolio": "https://leandrodamasio.com/pt/portfolio"
+    }
   },
   "home": {
     "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
     "desc": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
-    "introduction": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados.",
-    "highlights": {
-      "project01": {
-        "name": "Robson Bot",
-        "description": "",
-        "link": "https://github.com/ldamasio/robson",
-        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
-        "images": [
-          "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
-        ]
-      },
-      "project02": {
-        "name": "Financial Fraud Detection RF XGBoost",
-        "description": "This project focuses on developing a robust fraud detection system using machine learning algorithms. It compares the performance of two popular ensemble methods: Random Forest and XGBoost, in classifying financial transactions as fraudulent or legitimate. The models are trained and evaluated on a real-world financial dataset.",
-        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
-        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
-        "images": [
-          ""
-        ]
-      },
-      "project03": {
-        "name": "Cromo Financiamentos",
-        "description": "Sistema de financiamentos de carros, desenvolvido com Django, Next, Shadcn, Docker, Kubernetes e Git.",
-        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
-        "technologies": "Django, Next, Shadcn",
-        "images": [
-          ""
-        ]
-      },
-      "project04": {
-        "name": "GPT4 LangChain Chatbot ",
-        "description": "This project showcases the development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
-        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
-        "technologies": "gpt-4, langchain, openai, python",
-        "images": [
-          ""
-        ]
-      },
-      "project05": {
-        "name": "MSX API v1.0",
-        "description": "Uma API RESTful em Python, utilizando FastAPI, que permite a criação, leitura, atualização e remoção de registros de veículos, com funcionalidades básicas de autenticação e documentação automática. Foi construída com TDD e utiliza bibliotecas como pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
-        "link": "https://github.com/ldamasio/msx-api-001",
-        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
-        "images": [
-          ""
-        ]
-      },
-      "project06": {
-        "name": "Space",
-        "description": "Space Backend - Backend robusto construído com Laravel, oferecendo uma API RESTful para o frontend. Utiliza padrões de arquitetura modernos para garantir escalabilidade e manutenibilidade.",
-        "link": "https://github.com/Arte-Arena/space-backend",
-        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
-        "images": [
-          ""
-        ]
-      }
-    },
-    "links": {
-      "github": "https://github.com/ldamasio",
-      "linkedin": "https://www.linkedin.com/in/ldamasio/",
-      "email": "info@leandrodamasio.com"
-    }
+    "introduction": "Engenheiro Full Stack com expertise em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados."
   },
   "aboutMe": {
     "title": "Sobre mim",
@@ -80,11 +26,78 @@
     "photo": "ldamasio2.png"
   },
   "portfolio": {
-    "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
-    "desc": "Engenheiro Full Stack experiente em DevOps e Big Data. Leandro Damasio oferece soluções em desenvolvimento de software, automação de infraestrutura e análise de grandes volumes de dados. https://leandrodamasio.com/portfolio",
-    "projectsDetailed": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
-    "projectsCategories": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
-    "repositories": "Leandro Damasio. Bem vindo à Minha Página Pessoal"
+    "title": "",
+    "desc": "",
+    "projectsDetailed": "",
+    "projectsCategories": "",
+    "highlights": [
+      {
+        "name": "Robson Bot",
+        "description": "",
+        "repositories": [
+          "https://github.com/ldamasio/robson"
+        ],
+        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "images": [
+          "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
+        ]
+      },
+      {
+        "name": "Financial Fraud Detection RF XGBoost",
+        "description": "This project focuses on developing a robust fraud detection system using machine learning algorithms. It compares the performance of two popular ensemble methods: Random Forest and XGBoost, in classifying financial transactions as fraudulent or legitimate. The models are trained and evaluated on a real-world financial dataset.",
+        "repositories": [
+        "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
+        ],
+        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
+        "images": [
+          ""
+        ]
+      },
+      {
+        "name": "Cromo Financiamentos",
+        "description": "Sistema de financiamentos de carros, desenvolvido com Django, Next, Shadcn, Docker, Kubernetes e Git.",
+        "repositories": [
+          "https://github.com/rbxrobotica/rbx-cro-backend"
+        ],
+        "technologies": "Django, Next, Shadcn",
+        "images": [
+          ""
+        ]
+      },
+      {
+        "name": "GPT4 LangChain Chatbot ",
+        "description": "This project showcases the development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
+        "repositories": [
+          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+        ],
+        "technologies": "gpt-4, langchain, openai, python",
+        "images": [
+          ""
+        ]
+      },
+      {
+        "name": "MSX API v1.0",
+        "description": "Uma API RESTful em Python, utilizando FastAPI, que permite a criação, leitura, atualização e remoção de registros de veículos, com funcionalidades básicas de autenticação e documentação automática. Foi construída com TDD e utiliza bibliotecas como pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "repositories": [
+          "https://github.com/ldamasio/msx-api-001"
+        ],
+        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "images": [
+          ""
+        ]
+      },
+      {
+        "name": "Space",
+        "description": "Space Backend - Backend robusto construído com Laravel, oferecendo uma API RESTful para o frontend. Utiliza padrões de arquitetura modernos para garantir escalabilidade e manutenibilidade.",
+        "repositories": [
+          "https://github.com/Arte-Arena/space-backend"
+        ],
+        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "images": [
+          ""
+        ]
+      }
+    ]
   },
   "curriculum": {
     "name": "Leandro Damasio",
@@ -217,15 +230,23 @@
     "Education": [
       {
         "Degree": "Bacharel em Engenharia da Computação",
-        "Institution": "UNIVESP"
+        "Institution": "UNIVESP",
+        "Dates": "Julho 2022 - Maio 2027 (estimativa)"
       },
       {
         "Degree": "Mestre em Administração Pública e Governo",
-        "Institution": "EAESP/FGV"
+        "Institution": "EAESP/FGV",
+        "Dates": "Janeiro 2009 - Maio 2021"
       },
       {
         "Degree": "Bacharel em Administração Pública",
-        "Institution": "ESAG/UDESC"
+        "Institution": "ESAG/UDESC",
+        "Dates": "Julho 2004 - Agosto 2008"
+      },
+      {
+        "Degree": "Bacharel em Filosofia",
+        "Institution": "CFH/UFSC",
+        "Dates": "Janeiro 2004 - Junho 2008"
       }
     ],
     "KeyAchievements": [
@@ -242,10 +263,5 @@
         "Description": "Liderou mais de 8 lançamentos de produtos de ponta a ponta em vários setores, de fintech a P&D."
       }
     ]
-  },
-  "cvPdfLink": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
-  "contact": {
-    "title": "Entre em contato comigo",
-    "desc": "Estou aberto a discutir oportunidades de colaboração ou para saber mais sobre meus serviços."
   }
 }

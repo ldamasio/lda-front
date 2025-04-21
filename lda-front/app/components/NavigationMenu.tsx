@@ -16,14 +16,30 @@ import LanguageSelect from '@/app/components/LanguageSelect';
 
 interface Dictionary {
   home: {
-    highlights: {
-      [key: string]: {
-        name: string;
-        link: string;
-        description: string;
-      };
-    };
-  };
+    title: string;
+    desc: string;
+  }
+  aboutMe: {
+    visualSkills: string;
+    photo: string;
+    desc: string;
+    bio: string;
+    values: string;
+    title: string;
+  }
+  portfolio: {
+    title: string;
+    desc: string;
+    projectsDetailed: string;
+    projectsCategories: string;
+    highlights: Array<{
+      name: string;
+      description: string;
+      repositories: string[];
+      technologies: string;
+      images: string[];
+    }>;
+  },
   curriculum: {
     skills: {
       Languages: string[];
@@ -32,19 +48,7 @@ interface Dictionary {
     resume: string;
     location: string;
     values: string;
-  };
-  "aboutMe": {
-    visualSkills: string;
-    photo: string;
-    desc: string;
-    bio: string;
-    values: string;
-    title: string;
-  };
-  contact: {
-    title: string;
-    desc: string;
-  };
+  }
 }
 
 export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictionary }) {
@@ -52,34 +56,34 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
 
   const components = [
     {
-      title: t.home.highlights["project01"].name,
-      href: t.home.highlights["project01"].link,
-      description: t.home.highlights["project01"].description,
+      title: t.portfolio.highlights[0].name,
+      href: t.portfolio.highlights[0].repositories[0],
+      description: t.portfolio.highlights[0].description,
     },
     {
-      title: t.home.highlights["project02"].name,
-      href: t.home.highlights["project02"].link,
-      description: t.home.highlights["project02"].description,
+      title: t.portfolio.highlights[1].name,
+      href: t.portfolio.highlights[1].repositories[0],
+      description: t.portfolio.highlights[1].description,
     },
     {
-      title: t.home.highlights["project03"].name,
-      href: t.home.highlights["project03"].link,
-      description: t.home.highlights["project03"].description,
+      title: t.portfolio.highlights[2].name,
+      href: t.portfolio.highlights[2].repositories[0],
+      description: t.portfolio.highlights[2].description,
     },
     {
-      title: t.home.highlights["project04"].name,
-      href: t.home.highlights["project04"].link,
-      description: t.home.highlights["project04"].description,
+      title: t.portfolio.highlights[3].name,
+      href: t.portfolio.highlights[3].repositories[0],
+      description: t.portfolio.highlights[3].description,
     },
     {
-      title: t.home.highlights["project05"].name,
-      href: t.home.highlights["project05"].link,
-      description: t.home.highlights["project05"].description,
+      title: t.portfolio.highlights[4].name,
+      href: t.portfolio.highlights[4].repositories[0],
+      description: t.portfolio.highlights[4].description,
     },
     {
-      title: t.home.highlights["project06"].name,
-      href: t.home.highlights["project06"].link,
-      description: t.home.highlights["project06"].description,
+      title: t.portfolio.highlights[5].name,
+      href: t.portfolio.highlights[5].repositories[0],
+      description: t.portfolio.highlights[5].description,
     },
   ];
 
@@ -113,8 +117,8 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
               <ListItem href="/cv" title={t.curriculum.headline}>
                 {t.curriculum.location}
               </ListItem>
-              <ListItem href="/contact" title={t.contact.title}>
-                {t.contact.desc}
+              <ListItem href="/contact" title={t.home.title}>
+                {t.home.desc}
               </ListItem>
             </ul>
           </NavigationMenuContent>

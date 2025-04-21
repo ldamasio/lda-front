@@ -14,9 +14,9 @@ import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucid
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
   return {
-    title: t.page.title,
-    description: t.page.desc,
-    curriculum: t.page.curriculum,
+    title: t.home.title,
+    description: t.home.desc,
+    introduction: t.home.introduction,
   };
 }
 
@@ -48,7 +48,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                 Projetos Destacados
               </h2>
               <div>
-                {Object.entries(t.home.highlights).map(([key, project]) => (
+                {Object.entries(t.portfolio.highlights).map(([key, project]) => (
                   <Card className={styles.projectCard} key={key}>
                     <a href={(project as Project).link}>
                       <h3>{(project as Project).name}</h3>
@@ -75,17 +75,17 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               </h2>
               <div>
                 <div className={styles.linkCard}>
-                  <a href={t.home.links.github}>
+                  <a href={t.meta.links.github}>
                     <h3>GitHub</h3>
                   </a>
                 </div>
                 <div className={styles.linkCard}>
-                  <a href={t.home.links.linkedin}>
+                  <a href={t.meta.links.linkedin}>
                     <h3>LinkedIn</h3>
                   </a>
                 </div>
                 <div className={styles.linkCard}>
-                  <a href={`mailto:${t.home.links.email}`}>
+                  <a href={`mailto:${t.meta.links.email}`}>
                     <h3>Email</h3>
                   </a>
                 </div>
