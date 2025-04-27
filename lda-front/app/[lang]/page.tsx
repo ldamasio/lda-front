@@ -14,15 +14,14 @@ import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucid
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
   return {
-    title: t.home.title,
-    description: t.home.desc,
-    introduction: t.home.introduction,
+    title: t.meta.title,
+    description: t.meta.desc,
   };
 }
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
-  // console.log('Dictionary in page.tsx:', t);
+  console.log('Dictionary in page.tsx:', t);
 
   return (
     <div className={styles.container}>
@@ -30,9 +29,9 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
         <NavMenu lang={lang} dictionary={t} />
 
-        <h1 className={styles.title}>{t.home.title}</h1>
+        <h1 className={styles.title}>{t.meta.title}</h1>
         <p className={styles.description}>
-          {t.home.introduction}
+          {t.meta.desc[0]}
         </p>
 
         <Tabs defaultValue="projects" className="w-[100%]">
@@ -50,7 +49,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               <div>
                 {Object.entries(t.portfolio.highlights).map(([key, project]) => (
                   <Card className={styles.projectCard} key={key}>
-                    <a href={(project as Project).link}>
+                    <a href={(project as Project).repositories[0]}>
                       <h3>{(project as Project).name}</h3>
                     </a>
                     <p>{(project as Project).description}</p>

@@ -15,23 +15,13 @@ import {
 import LanguageSelect from '@/app/components/LanguageSelect';
 
 interface Dictionary {
-  home: {
-    title: string;
-    desc: string;
-  }
   aboutMe: {
-    visualSkills: string;
-    photo: string;
-    desc: string;
+    desc: string[];
     bio: string;
-    values: string;
+    values: string[];
     title: string;
   }
   portfolio: {
-    title: string;
-    desc: string;
-    projectsDetailed: string;
-    projectsCategories: string;
     highlights: Array<{
       name: string;
       description: string;
@@ -103,10 +93,10 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
                     href="/"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      {t["aboutMe"].photo}
+                      {/* {t["aboutMe"].photo} */}
                     </div> 
                     <p className="text-sm leading-tight text-muted-foreground">
-                      {t["aboutMe"].visualSkills}
+                      {/* {t["aboutMe"].visualSkills} */}
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -117,9 +107,9 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
               <ListItem href="/cv" title={t.curriculum.headline}>
                 {t.curriculum.location}
               </ListItem>
-              <ListItem href="/contact" title={t.home.title}>
+              {/* <ListItem href="/contact" title={t.home.title}>
                 {t.home.desc}
-              </ListItem>
+              </ListItem> */}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

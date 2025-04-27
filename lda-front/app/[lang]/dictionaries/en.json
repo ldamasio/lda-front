@@ -1,12 +1,22 @@
 {
-  "page": {
+  "meta": {
     "title": "Leandro Damasio. Welcome to My Personal Page",
+    "desc": [
+      "Senior Full Stack Software Engineer with a proven track record in architecting and delivering scalable, high-performance web applications. Deep expertise in both robust backend development (Python/Golang) and dynamic frontend implementation (React), complemented by a strong DevOps mindset. Proficient in designing efficient data collection and storage solutions, implementing comprehensive infrastructure automation and CI/CD pipelines, establishing proactive monitoring strategies, and optimizing application performance through strategic caching and architectural best practices.",
+      "In addition to core full-stack and DevOps capabilities, I possess extensive experience across technologies critical for modern software development and data-intensive applications. This includes orchestrating containerized environments with Kubernetes and managing ML workflows using Kubeflow. I excel at leveraging big data tools such as Hadoop and Spark for scalable data processing and analysis, underpinned by strong Linux and cloud proficiency across AWS, GCP, and Azure. My database expertise spans both relational (PostgreSQL, MySQL) and NoSQL solutions (MongoDB, Redis), further enhanced by comprehensive understanding of software architecture principles including microservices, serverless, and event-driven systems. Additionally, I implement robust monitoring and logging solutions using tools like Prometheus and the ELK stack, ensuring system reliability and providing actionable insights.",
+      "Complementing my technical expertise, I demonstrate strong leadership within multidisciplinary teams, successfully guiding the development and delivery of scalable products from conception to deployment. My collaborative approach fosters effective communication and empowers team members to achieve ambitious goals. I am particularly dedicated to harnessing technology for innovation and addressing meaningful challenges, as evidenced by my commitment to contributing to startup growth and exploring solutions for social impact. This experience has cultivated a proactive, results-oriented mindset, consistently focused on delivering high-quality solutions that align with strategic objectives and exceed stakeholder expectations."
+    ],
+    "links": {
+      "curriculum": "https://leandrodamasio.com/pt/cv",
+      "cvPdfLink": "https://leandrodamasio.com/pt/cv/pdf/",
+      "portfolio": "https://leandrodamasio.com/pt/portfolio"
+    }
+  },
+
+  "page": {
     "desc": "Senior Full Stack Software Engineer with a proven track record in architecting and delivering scalable, high-performance web applications. Deep expertise in both robust backend development (Python/Golang) and dynamic frontend implementation (React), complemented by a strong DevOps mindset. Proficient in designing efficient data collection and storage solutions, implementing comprehensive infrastructure automation and CI/CD pipelines, establishing proactive monitoring strategies, and optimizing application performance through strategic caching and architectural best practices."
   },
-  "home": {
-    "title": "Leandro Damasio. Welcome to My Personal Page",
-    "desc": "Senior Full Stack Software Engineer with a proven track record in architecting and delivering scalable, high-performance web applications. Deep expertise in both robust backend development (Python/Golang) and dynamic frontend implementation (React), complemented by a strong DevOps mindset. Proficient in designing efficient data collection and storage solutions, implementing comprehensive infrastructure automation and CI/CD pipelines, establishing proactive monitoring strategies, and optimizing application performance through strategic caching and architectural best practices.",
-    "introduction": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis.",
+  "portfolio": {
     "highlights": {
       "project01": {
         "name": "Robson Bot",
@@ -78,16 +88,8 @@
       "Complementing my technical expertise, I demonstrate strong leadership within multidisciplinary teams, successfully guiding the development and delivery of scalable products from conception to deployment. My collaborative approach fosters effective communication and empowers team members to achieve ambitious goals. I am particularly dedicated to harnessing technology for innovation and addressing meaningful challenges, as evidenced by my commitment to contributing to startup growth and exploring solutions for social impact. This experience has cultivated a proactive, results-oriented mindset, consistently focused on delivering high-quality solutions that align with strategic objectives and exceed stakeholder expectations."
     ],
     "bio": "Leandro Damasio. Welcome to My Personal Page",
-    "visualSkills": "Leandro Damasio. Welcome to My Personal Page",
     "values": "Leandro Damasio. Welcome to My Personal Page",
     "photo": "Leandro Damasio. Welcome to My Personal Page"
-  },
-  "portfolio": {
-    "title": "Leandro Damasio. Welcome to My Personal Page",
-    "desc": "Full Stack Developer with expertise in DevOps and Big Data. Leandro Damasio offers solutions in software development, infrastructure automation and large-scale data analysis. https://leandrodamasio.com/portfolio",
-    "projectsDetailed": "Leandro Damasio. Welcome to My Personal Page",
-    "projectsCategories": "Leandro Damasio. Welcome to My Personal Page",
-    "repositories": "Leandro Damasio. Welcome to My Personal Page"
   },
   "curriculum": {
     "name": "Leandro Damasio",
