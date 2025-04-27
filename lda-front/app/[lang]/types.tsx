@@ -12,19 +12,28 @@ export interface Project {
   }
   
   export interface Experience {
-    Company: string;
-    Title: string;
-    Dates: string;
-    Description: string[];
+    Company?: string;
+    Title?: string;
+    Dates?: string;
+    Description?: string[];
+    company?: string;
+    title?: string;
+    dates?: string;
+    description?: string[];
   }
   
   export interface Education {
-    Dates: string;
-    Degree: string;
-    Institution: string;
+    Dates?: string;
+    Degree?: string;
+    Institution?: string;
+    dates?: string;
+    degree?: string;
+    institution?: string;
   }
   
   export interface Achievement {
-    Area: string;
-    Description: string;
+    Area?: string;
+    Description?: string;
+    area?: string;
+    description?: string;
   }

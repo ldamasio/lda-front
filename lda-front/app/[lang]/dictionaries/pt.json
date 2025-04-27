@@ -8,9 +8,9 @@
       "Com mais de uma década de experiência como desenvolvedor de software, possuo um domínio robusto de diversas linguagens de programação (Python, JavaScript/TypeScript, Java, Go, PHP) e frameworks (Django, FastAPI, React, Node.js, Laravel), aliado a uma profunda expertise em DevOps e tecnologias de nuvem (Kubernetes, ArgoCD, Istio, Docker, AWS, GCP, Azure). Além disso, tenho uma base sólida em engenharia de dados, com experiência no design de soluções para armazenamento e processamento em tempo real de grandes volumes de dados. Minha paixão por arquitetura de software bem estruturada, evidenciada pela aplicação consistente dos princípios SOLID e Extreme Programming, impulsionou um histórico comprovado de entrega de APIs RESTful e GraphQL eficientes, seguras e escaláveis, juntamente com uma experiência abrangente em sistemas de mensageria, agendamento de tarefas e gerenciamento de infraestrutura. Como um solucionador de problemas altamente organizado e colaborativo, com paixão por inovação, entrego consistentemente resultados de alta qualidade em equipes multidisciplinares."
     ],
     "links": {
-      "curriculum": "https://leandrodamasio.com/pt/cv",
-      "cvPdfLink": "https://leandrodamasio.com/pt/cv/pdf/",
-      "portfolio": "https://leandrodamasio.com/pt/portfolio"
+      "curriculum": "https://www.leandrodamasio.com/pt/cv",
+      "cvPdfLink": "https://www.leandrodamasio.com/pt/cv/pdf/",
+      "portfolio": "https://www.leandrodamasio.com/pt/portfolio"
     }
   },
   "aboutMe": {
@@ -85,7 +85,7 @@
       },
       {
         "name": "Space",
-        "description": "Space Backend - Backend robusto construído com Laravel, oferecendo uma API RESTful para o frontend. Utiliza padrões de arquitetura modernos para garantir escalabilidade e manutenibilidade.",
+        "description": "Space Arena ERP. Frontend em React e Next.js. Backends robustos, seguros, confiáveis e otimizados ,construídos com Go, PHP, Laravel, oferecendo uma API RESTful para os setores de produção, administração e gerência, além de camada para interação com clientes finais. Utiliza padrões de arquitetura modernos para garantir escalabilidade e manutenibilidade.",
         "repositories": [
           "https://github.com/Arte-Arena/space-backend",
           "https://github.com/Arte-Arena/space-frontend",
