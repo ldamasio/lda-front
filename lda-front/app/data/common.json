@@ -78,7 +78,7 @@
       "MVVM",
       "Event-Driven Systems"
     ],
-    "monitoringLogging": [
+    "observability": [
       "OpenTelemetry",
       "Prometheus",
       "ELK Stack",

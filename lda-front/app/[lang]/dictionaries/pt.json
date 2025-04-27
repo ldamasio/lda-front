@@ -4,7 +4,8 @@
     "desc": [
       "Engenheiro de Software Sênior Full Stack com histórico comprovado na arquitetura e entrega de aplicações web escaláveis e de alto desempenho. Profunda expertise tanto em desenvolvimento robusto de backend (Python/Golang) quanto em implementação dinâmica de frontend (React), complementada por uma forte mentalidade DevOps. Proficiente no design de soluções eficientes de coleta e armazenamento de dados, implementação de automação de infraestrutura abrangente e pipelines de CI/CD, estabelecimento de estratégias de monitoramento proativo e otimização do desempenho de aplicações por meio de caching estratégico e melhores práticas de arquitetura.",
       "Além das capacidades essenciais de full-stack e DevOps, possuo vasta experiência em tecnologias críticas para o desenvolvimento de software moderno e aplicações intensivas em dados. Isso inclui a orquestração de ambientes containerizados com Kubernetes e o gerenciamento de fluxos de trabalho de ML usando Kubeflow. Sou especialista em aproveitar ferramentas de big data como Hadoop e Spark para processamento e análise de dados escaláveis, sustentado por forte proficiência em Linux e nuvem (AWS, GCP e Azure). Minha expertise em bancos de dados abrange tanto soluções relacionais (PostgreSQL, MySQL) quanto NoSQL (MongoDB, Redis), ainda mais aprimorada por uma compreensão abrangente de princípios de arquitetura de software, incluindo microsserviços, serverless e sistemas orientados a eventos. Adicionalmente, implemento soluções robustas de monitoramento e logging utilizando ferramentas como Prometheus e a stack ELK, garantindo a confiabilidade do sistema e fornecendo insights acionáveis.",
-      "Complementando minha expertise técnica, demonstro forte liderança em equipes multidisciplinares, guiando com sucesso o desenvolvimento e a entrega de produtos escaláveis desde a concepção até a implantação. Minha abordagem colaborativa promove comunicação eficaz e capacita os membros da equipe a alcançar metas ambiciosas. Sou particularmente dedicado a aproveitar a tecnologia para inovação e abordar desafios significativos, como evidenciado pelo meu compromisso em contribuir para o crescimento de startups e explorar soluções para impacto social. Essa experiência cultivou uma mentalidade proativa e orientada a resultados, consistentemente focada em entregar soluções de alta qualidade que se alinham com os objetivos estratégicos e superam as expectativas das partes interessadas."
+      "Complementando minha expertise técnica, demonstro forte liderança em equipes multidisciplinares, guiando com sucesso o desenvolvimento e a entrega de produtos escaláveis desde a concepção até a implantação. Minha abordagem colaborativa promove comunicação eficaz e capacita os membros da equipe a alcançar metas ambiciosas. Sou particularmente dedicado a aproveitar a tecnologia para inovação e abordar desafios significativos, como evidenciado pelo meu compromisso em contribuir para o crescimento de startups e explorar soluções para impacto social. Essa experiência cultivou uma mentalidade proativa e orientada a resultados, consistentemente focada em entregar soluções de alta qualidade que se alinham com os objetivos estratégicos e superam as expectativas das partes interessadas.",
+      "Com mais de uma década de experiência como desenvolvedor de software, possuo um domínio robusto de diversas linguagens de programação (Python, JavaScript/TypeScript, Java, Go, PHP) e frameworks (Django, FastAPI, React, Node.js, Laravel), aliado a uma profunda expertise em DevOps e tecnologias de nuvem (Kubernetes, ArgoCD, Istio, Docker, AWS, GCP, Azure). Além disso, tenho uma base sólida em engenharia de dados, com experiência no design de soluções para armazenamento e processamento em tempo real de grandes volumes de dados. Minha paixão por arquitetura de software bem estruturada, evidenciada pela aplicação consistente dos princípios SOLID e Extreme Programming, impulsionou um histórico comprovado de entrega de APIs RESTful e GraphQL eficientes, seguras e escaláveis, juntamente com uma experiência abrangente em sistemas de mensageria, agendamento de tarefas e gerenciamento de infraestrutura. Como um solucionador de problemas altamente organizado e colaborativo, com paixão por inovação, entrego consistentemente resultados de alta qualidade em equipes multidisciplinares."
     ],
     "links": {
       "curriculum": "https://leandrodamasio.com/pt/cv",
@@ -14,7 +15,7 @@
   },
   "aboutMe": {
     "title": "Sobre mim",
-    "desc": "https://leandrodamasio.com/portfolio",
+    "desc": "Engenheiro de Software Full-Stack e líder técnico apaixonado por tecnologia e inovação, com experiência em DevOps, IA/ML e soluções escaláveis (Kubernetes, Kubeflow, Machine Learning, Hadoop, Spark, Linux, Cloud, Blockchain, PostgreSQL, Python, Django, FastAPI, React, Next.js). Sólido histórico em liderança de equipes e desenvolvimento de produtos, focado em crescimento de startups e soluções para desafios sociais. Expertise em arquitetura de aplicações web de alta performance, backend (Python/Golang), frontend (React), DevOps, automação, CI/CD, monitoramento e otimização. Ampla experiência em tecnologias de big data, bancos de dados (SQL/NoSQL) e princípios de arquitetura (microsserviços, serverless). Forte liderança, comunicação eficaz e foco em resultados de alta qualidade. Mais de uma década de experiência em diversas linguagens/frameworks e engenharia de dados. Apaixonado por arquitetura bem estruturada e entrega de APIs escaláveis. Solucionador de problemas organizado e colaborativo, com paixão por inovação.",
     "bio": "Leandro Damasio começou sua carreira como Engineer nos anos 1990, com a linguagem PHP. Desde então, ele se destacou como um engenheiro de software experiente e inovador, trabalhando em projetos de desenvolvimento de grandes empresas e instituições como a FAPESP, NPL Brasil, Global Hitss, Arte Arena e Stefanini.",
     "values": [
       "Inovação",
@@ -33,7 +34,7 @@
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
-        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "technologies": "python, django, react, docker, kubernetes, git",
         "images": [
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
         ]
@@ -50,12 +51,12 @@
         ]
       },
       {
-        "name": "Cromo Financiamentos",
-        "description": "Sistema de financiamentos de carros, desenvolvido com Django, Next, Shadcn, Docker, Kubernetes e Git.",
+        "name": "Product Catalog Leads",
+        "description": "Sales management software with product catalog and customer data capture.",
         "repositories": [
-          "https://github.com/rbxrobotica/rbx-cro-backend"
+          "https://github.com/ldamasio/product-catalog-leads"
         ],
-        "technologies": "Django, Next, Shadcn",
+        "technologies": "python, selenium, instagram",
         "images": [
           ""
         ]
@@ -86,7 +87,11 @@
         "name": "Space",
         "description": "Space Backend - Backend robusto construído com Laravel, oferecendo uma API RESTful para o frontend. Utiliza padrões de arquitetura modernos para garantir escalabilidade e manutenibilidade.",
         "repositories": [
-          "https://github.com/Arte-Arena/space-backend"
+          "https://github.com/Arte-Arena/space-backend",
+          "https://github.com/Arte-Arena/space-frontend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/k8s"
         ],
         "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
         "images": [
@@ -172,6 +177,20 @@
       "Francês",
       "Português",
       "Espanhol"
+    ],
+    "skills": [
+      "Algoritmos",
+      "Estruturas de Dados",
+      "Linguagens de Programação",
+      "Desenvolvimento Full Stack",
+      "DevOps",
+      "Cloud",
+      "Dados",
+      "Inteligência Artificial",
+      "Machine Learning",
+      "Arquitetura de Software",
+      "Observabilidade",
+      "Testes Automatizados"
     ],
     "keyAchievements": [
       {
