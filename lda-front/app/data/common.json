@@ -1,22 +1,28 @@
 {
   "skills": {
-    "Languages": [
+    "languages": [
       "Python",
+      "Go",
+      "Java",
       "JavaScript",
       "TypeScript",
-      "Java",
-      "SQL",
       "PHP",
-      "C++",
+      "SQL",
       "Kotlin",
       "Dart",
-      "Solidity"
+      "C++",
+      "Solidity"    
     ],
-    "FullStackDevelopment": [
+    "fullStackDevelopment": [
       "FastAPI",
       "Django",
-      "Node.js",
+      "Laravel",
+      "Spring Boot",
       "React.js",
+      "pytest",
+      "Jest",
+      "JUnit",
+      "Node.js",
       "Next.js",
       "Nest.js",
       "Restul API",
@@ -25,23 +31,23 @@
       "Flutter",
       "Blockchain"
     ],
-    "DevOps": [
+    "devOps": [
       "Docker",
-      "Github Actions CI/CD pipelines",
+      "Github Actions",
       "Kubernetes",
       "Istio",
       "ArgoCD",
       "Pulumi"
     ],
-    "Cloud": [
+    "cloud": [
       "AWS (EC2, S3, Lambda, EKS, Route53)",
       "GCP (Document AI, Vertex AI)",
       "Azure (Databricks, AKS)"
     ],
-    "DataEngineering": [
+    "data": [
       "Data Migration",
-      "SQL (PostgreSQL, MySQL)",
-      "No-SQL (MongoDB)",
+      "PostgreSQL",
+      "MongoDB",
       "Redis",
       "RabbitMQ",
       "Apache Kafka",
@@ -54,15 +60,15 @@
       "Apache Druid",
       "Apache Flink"
     ],
-    "AIMLEngineering": [
+    "AIML": [
       "TensorFlow",
       "PyTorch",
       "Kubeflow",
       "Scikit-learn",
       "NLP",
-      "predictive analytics"
+      "Predictive Analytics"
     ],
-    "SoftwareArchitecture": [
+    "softwareArchitecture": [
       "SOLID",
       "Modular Monoliths",
       "Microservices",
@@ -70,9 +76,9 @@
       "MVC",
       "MVT",
       "MVVM",
-      "event-driven systems"
+      "Event-Driven Systems"
     ],
-    "MonitoringLogging": [
+    "monitoringLogging": [
       "OpenTelemetry",
       "Prometheus",
       "ELK Stack",
