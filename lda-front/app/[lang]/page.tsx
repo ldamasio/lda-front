@@ -1,7 +1,6 @@
 import { getDictionary } from './dictionaries-server'
-import { getSkills } from './skills-server'
 import styles from './page.module.css';
-import { Project, SkillCategory, Experience, Education, Achievement } from './types';
+import { Project, Experience, Education, Achievement } from './types';
 import { NavMenu } from '../components/NavigationMenu';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
@@ -24,7 +23,6 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: s
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
-  console.log('Dictionary in page.tsx:', t);
 
   return (
     <div className={styles.container}>

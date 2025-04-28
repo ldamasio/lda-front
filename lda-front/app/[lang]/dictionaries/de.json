@@ -108,9 +108,9 @@
     "professionalExperience": [
       {
         "company": "Arte Arena",
-        "title_de": "Tech Lead und Principal Software Engineer",
+        "title": "Tech Lead und Principal Software Engineer",
         "dates": "Oktober 2024 – März 2025",
-        "description_de": [
+        "description": [
           "Führung der Modernisierung von Altsystemen durch die Entwicklung einer Cloud-nativen SaaS-Plattform, Beschleunigung der Feature-Bereitstellung um 85 % durch Microservices und CI/CD-Optimierung.",
           "Architektur ereignisgesteuerter Workflows mit Kubernetes, Istio und ArgoCD, Reduzierung der Infrastrukturkosten um 30 %.",
           "Führung funktionsübergreifender Teams zur Bereitstellung eines Full-Stack-Produkts mit React, FastAPI und AWS.",
@@ -119,9 +119,9 @@
       },
       {
         "company": "Stefanini / FAPESP",
-        "title_de": "Senior Software Engineer",
+        "title": "Senior Software Engineer",
         "dates": "Oktober 2024 – März 2025",
-        "description_de": [
+        "description": [
           "Überarbeitung der Suchmaschine der Virtuellen Bibliothek von FAPESP (Apache Solr), Verbesserung der Abfrage-Reaktionszeit um 37 % durch Datenindexierungsoptimierungen.",
           "Leitung eines globalen Full-Stack-Teams zur Bereitstellung einer Laravel-basierten Anwendung für die akademische Forschungsförderung.",
           "Behebung kritischer Fehler in Django-Systemen, Verbesserung der Stabilität für über 500.000 monatliche Nutzer."
@@ -129,9 +129,9 @@
       },
       {
         "company": "NPL Brasil",
-        "title_de": "Software Engineer",
+        "title": "Software Engineer",
         "dates": "Dezember 2019 – Januar 2022",
-        "description_de": [
+        "description": [
           "Automatisierung von Datenpipelines mit Node.js und AWS, Reduzierung der manuellen Bearbeitungszeit um 50 %.",
           "Integration von Google Cloud Document AI zur automatisierten Dokumentenanalyse, Steigerung der betrieblichen Effizienz.",
           "Entwicklung und Implementierung benutzerdefinierter Smart Contracts im Ethereum-Netzwerk, Gewährleistung der Sicherheit und Integrität von Kryptowährungstransaktionen."
@@ -139,9 +139,9 @@
       },
       {
         "company": "Global Hitss",
-        "title_de": "Software Engineer",
+        "title": "Software Engineer",
         "dates": "Februar 2017 - April 2019",
-        "description_de": [
+        "description": [
           "Entwurf eines skalierbaren Data Lakes mit Hadoop und Spark, Ermöglichung von Echtzeitanalysen für Unternehmenskunden.",
           "Reduzierung der Bereitstellungszyklen um 23 % durch CI/CD-Pipeline-Automatisierung (ArgoCD, Docker).",
           "Bereitstellung von Full-Stack-Anwendungen mit React und Nest.js für Kunden im Finanzsektor."
@@ -150,23 +150,23 @@
     ],
     "education": [
       {
-        "degree_de": "Bachelor of Computer Engineering",
-        "institution_de": "UNIVESP",
+        "degree": "Bachelor of Computer Engineering",
+        "institution": "UNIVESP",
         "dates": "Juli 2022 - Mai 2027 (geschätzt)"
       },
       {
-        "degree_de": "Master in Public Administration and Government",
-        "institution_de": "EAESP/FGV",
+        "degree": "Master in Public Administration and Government",
+        "institution": "EAESP/FGV",
         "dates": "Januar 2009 - Mai 2021"
       },
       {
-        "degree_de": "Bachelor of Public Administration",
-        "institution_de": "ESAG/UDESC",
+        "degree": "Bachelor of Public Administration",
+        "institution": "ESAG/UDESC",
         "dates": "Juli 2004 - August 2008"
       },
       {
-        "degree_de": "Bachelor of Philosophy",
-        "institution_de": "CFH/UFSC",
+        "degree": "Bachelor of Philosophy",
+        "institution": "CFH/UFSC",
         "dates": "Januar 2004 - Juni 2008"
       }
     ],
@@ -194,16 +194,16 @@
     ],
     "keyAchievements": [
       {
-        "area_de": "KI/ML",
-        "description_de": "Implementierung von MLOps-Pipelines mit Kubeflow zum Trainieren und Bereitstellen von Modellen zur Bedarfsprognose, Reduzierung der Trainingszeit um 40 % und Verbesserung der Modellgenauigkeit um 14 %."
+        "area": "KI/ML",
+        "description": "Implementierung von MLOps-Pipelines mit Kubeflow zum Trainieren und Bereitstellen von Modellen zur Bedarfsprognose, Reduzierung der Trainingszeit um 40 % und Verbesserung der Modellgenauigkeit um 14 %."
       },
       {
-        "area_de": "Cloud",
-        "description_de": "Migration von über 17 Legacy-Systemen zu AWS/GCP, Erreichung einer Verfügbarkeit von 99,9 %."
+        "area": "Cloud",
+        "description": "Migration von über 17 Legacy-Systemen zu AWS/GCP, Erreichung einer Verfügbarkeit von 99,9 %."
       },
       {
-        "area_de": "Full Cycle Delivery",
-        "description_de": "Leitung von über 8 End-to-End-Produktlaunches in verschiedenen Sektoren, von Fintech bis F&E."
+        "area": "Full Cycle Delivery",
+        "description": "Leitung von über 8 End-to-End-Produktlaunches in verschiedenen Sektoren, von Fintech bis F&E."
       }
     ]
   },

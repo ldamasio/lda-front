@@ -108,9 +108,9 @@
     "professionalExperience": [
       {
         "company": "Arte Arena",
-        "title_fr": "Responsable technique et ingénieur logiciel principal",
+        "title": "Responsable technique et ingénieur logiciel principal",
         "dates": "Octobre 2024 – Mars 2025",
-        "description_fr": [
+        "description": [
           "A dirigé la modernisation des systèmes hérités en concevant une plateforme SaaS native du cloud, accélérant le déploiement des fonctionnalités de 85 % grâce aux microservices et à l'optimisation CI/CD.",
           "A conçu des flux de travail événementiels à l'aide de Kubernetes, Istio et ArgoCD, réduisant les coûts d'infrastructure de 30 %.",
           "A dirigé des équipes interfonctionnelles pour livrer un produit full-stack avec React, FastAPI et AWS.",
@@ -119,9 +119,9 @@
       },
       {
         "company": "Stefanini / FAPESP",
-        "title_fr": "Ingénieur logiciel senior",
+        "title": "Ingénieur logiciel senior",
         "dates": "Octobre 2024 – Mars 2025",
-        "description_fr": [
+        "description": [
           "A réorganisé le moteur de recherche de la bibliothèque virtuelle de la FAPESP (Apache Solr), améliorant le temps de réponse des requêtes de 37 % grâce à des optimisations d'indexation des données.",
           "A dirigé une équipe full-stack mondiale pour livrer une application basée sur Laravel pour le financement de la recherche académique.",
           "A résolu des bogues critiques dans les systèmes Django, améliorant la stabilité pour plus de 500 000 utilisateurs mensuels."
@@ -129,9 +129,9 @@
       },
       {
         "company": "NPL Brasil",
-        "title_fr": "Ingénieur logiciel",
+        "title": "Ingénieur logiciel",
         "dates": "Décembre 2019 – Janvier 2022",
-        "description_fr": [
+        "description": [
           "A automatisé les pipelines de données à l'aide de Node.js et AWS, réduisant le temps de traitement manuel de 50 %.",
           "A intégré Google Cloud Document AI pour l'analyse automatisée des documents, augmentant l'efficacité opérationnelle.",
           "A développé et mis en œuvre des contrats intelligents personnalisés sur le réseau Ethereum, garantissant la sécurité et l'intégrité des transactions de crypto-monnaie."
@@ -139,9 +139,9 @@
       },
       {
         "company": "Global Hitss",
-        "title_fr": "Ingénieur logiciel",
+        "title": "Ingénieur logiciel",
         "dates": "Février 2017 - Avril 2019",
-        "description_fr": [
+        "description": [
           "A conçu un lac de données évolutif avec Hadoop et Spark, permettant des analyses en temps réel pour les clients d'entreprise.",
           "A réduit les cycles de déploiement de 23 % grâce à l'automatisation des pipelines CI/CD (ArgoCD, Docker).",
           "A livré des applications full-stack à l'aide de React et Nest.js pour les clients du secteur financier."
@@ -150,23 +150,23 @@
     ],
     "education": [
       {
-        "degree_fr": "Licence en génie informatique",
-        "institution_fr": "UNIVESP",
+        "degree": "Licence en génie informatique",
+        "institution": "UNIVESP",
         "dates": "Juillet 2022 - Mai 2027 (estimation)"
       },
       {
-        "degree_fr": "Master en administration publique et gouvernement",
-        "institution_fr": "EAESP/FGV",
+        "degree": "Master en administration publique et gouvernement",
+        "institution": "EAESP/FGV",
         "dates": "Janvier 2009 - Mai 2021"
       },
       {
-        "degree_fr": "Licence en administration publique",
-        "institution_fr": "ESAG/UDESC",
+        "degree": "Licence en administration publique",
+        "institution": "ESAG/UDESC",
         "dates": "Juillet 2004 - Août 2008"
       },
       {
-        "degree_fr": "Licence en philosophie",
-        "institution_fr": "CFH/UFSC",
+        "degree": "Licence en philosophie",
+        "institution": "CFH/UFSC",
         "dates": "Janvier 2004 - Juin 2008"
       }
     ],
@@ -194,16 +194,16 @@
     ],
     "keyAchievements": [
       {
-        "area_fr": "IA/ML",
-        "description_fr": "A mis en œuvre des pipelines MLOps avec Kubeflow pour entraîner et déployer des modèles de prévision de la demande, réduisant le temps d'entraînement de 40 % et améliorant la précision du modèle de 14 %."
+        "area": "IA/ML",
+        "description": "A mis en œuvre des pipelines MLOps avec Kubeflow pour entraîner et déployer des modèles de prévision de la demande, réduisant le temps d'entraînement de 40 % et améliorant la précision du modèle de 14 %."
       },
       {
-        "area_fr": "Cloud",
-        "description_fr": "A migré plus de 17 systèmes hérités vers AWS/GCP, atteignant une disponibilité de 99,9 %."
+        "area": "Cloud",
+        "description": "A migré plus de 17 systèmes hérités vers AWS/GCP, atteignant une disponibilité de 99,9 %."
       },
       {
-        "area_fr": "Livraison de cycle complet",
-        "description_fr": "A dirigé plus de 8 lancements de produits de bout en bout dans divers secteurs, de la fintech à la R&D."
+        "area": "Livraison de cycle complet",
+        "description": "A dirigé plus de 8 lancements de produits de bout en bout dans divers secteurs, de la fintech à la R&D."
       }
     ]
   },

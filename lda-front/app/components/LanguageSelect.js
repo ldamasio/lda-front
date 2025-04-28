@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 
 const languages = [
@@ -14,13 +14,20 @@ const languages = [
   { value: 'zh', label: '中文', icon: '🇨🇳' },
 ];
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ currentPath }) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = currentPath;
 
   const handleChange = (event) => {
-    // console.log(event);
-    router.push(`/${event}`);
+    // Substitui o código da linguagem na URL atual
+    const segments = pathname.split('/');
+    if (segments.length > 1) {
+      segments[1] = event;
+      const newPath = segments.join('/') || '/';
+      router.push(newPath);
+    } else {
+      router.push(`/${event}`);
+    }
   };
 
   const currentLanguage = pathname?.split('/')[1] || 'en';
