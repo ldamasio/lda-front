@@ -14,7 +14,7 @@ import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucid
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
-  const s = await getSkills();
+  // const s = await getSkills();
   return {
     title: t.meta.title,
     description: t.meta.desc,
@@ -115,34 +115,16 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   <Brain className="w-6 h-6 text-primary" />
                   Habilidades
                 </h4>
-                {Array.isArray(t.curriculum.skills) ? (
-                  // If skills is a simple array (like in pt.json)
-                  <Card className="w-[100%] mt-4 p-4">
-                    <CardDescription className="p-4 flex flex-wrap gap-4">
-                      {t.curriculum.skills.map((skill: string, index: number) => (
-                        <p key={index} className="bg-gray-100 p-2 rounded-md">
-                          {skill}
-                        </p>
-                      ))}
-                    </CardDescription>
-                  </Card>
-                ) : (
-                  // If skills is an object with categories (like in en.json)
-                  Object.entries(t.curriculum.skills as SkillCategory).map(([category, skills]) => (
-                    <Card key={category} className="w-[100%] mt-4 p-4">
-                      <CardTitle>
-                        {category}
-                      </CardTitle>
-                      <CardDescription className="p-4 flex flex-wrap gap-4">
-                        {Array.isArray(skills) ? skills.map((skill, i) => (
-                          <p key={i} className="bg-gray-100 p-2 rounded-md">
-                            {skill}
-                          </p>
-                        )) : null}
-                      </CardDescription>
-                    </Card>
-                  ))
-                )}
+
+                <Card className="w-[100%] mt-4 p-4">
+                  <CardDescription className="p-4 flex flex-wrap gap-4">
+                    {t.curriculum.skills.map((skill: string, index: number) => (
+                      <p key={index} className="bg-gray-100 p-2 rounded-md">
+                        {skill}
+                      </p>
+                    ))}
+                  </CardDescription>
+                </Card>
 
                 <h4 className="mt-4 font-bold flex items-center gap-2">
                   <Briefcase className="w-6 h-6 text-primary" />

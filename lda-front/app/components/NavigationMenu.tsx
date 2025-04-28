@@ -19,7 +19,7 @@ interface Dictionary {
     desc: string[];
     bio: string;
     values: string[];
-    title: string;
+    skills: string[];
   }
   portfolio: {
     highlights: Array<{
@@ -80,39 +80,40 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
   return (
     <NavigationMenu>
       <NavigationMenuList className="flex flex-col w-full md:flex-row">
+
+
+
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>
             {lang === 'pt' ? 'Sobre Mim' : 'About Me'}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      {/* {t["aboutMe"].photo} */}
-                    </div> 
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      {/* {t["aboutMe"].visualSkills} */}
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/about-me" title={t["aboutMe"].title}>
-                {t["aboutMe"].values}
+              <ListItem href="/skills" title="Habilidades">
+              {t.aboutMe.desc}
               </ListItem>
-              <ListItem href="/cv" title={t.curriculum.headline}>
+              <ListItem href="/cv" title="Currículo">
+              {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href="/about-me" title="Portfolio">
+              {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href="/cv" title="Biografia">
                 {t.curriculum.location}
               </ListItem>
-              {/* <ListItem href="/contact" title={t.home.title}>
-                {t.home.desc}
-              </ListItem> */}
+              <ListItem href="/contact" title="Trabalhos">
+                {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href="/contact" title="Honrarias">
+                {t.aboutMe.desc}
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
+
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Portfolio</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -132,7 +133,7 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
         <NavigationMenuItem>
           <Link href="/articles" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            {lang === 'pt' ? 'Artigos' : 'Articles'}
+              Currículo
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

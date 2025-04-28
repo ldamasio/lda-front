@@ -11,7 +11,7 @@
       "curriculum": "https://www.leandrodamasio.com/pt/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/pt/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/pt/portfolio"
-    }
+    }   
   },
   "aboutMe": {
     "title": "Sobre mim",
@@ -175,8 +175,8 @@
       "Alemão",
       "Italiano",
       "Francês",
-      "Português",
-      "Espanhol"
+      "Espanhol",
+      "Português"
     ],
     "skills": [
       "Algoritmos",
