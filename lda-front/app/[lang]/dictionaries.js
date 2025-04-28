@@ -13,6 +13,6 @@ const dictionaries = {
 // export const getDictionary = async (locale) => dictionaries[locale]()
 
 export const getDictionary = async (locale) => {
-  console.log('Requested locale:', locale);
+  // console.log('Requested locale:', locale);
   return dictionaries[locale] ? dictionaries[locale]() : dictionaries['en']();
 }

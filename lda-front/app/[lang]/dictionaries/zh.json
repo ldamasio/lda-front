@@ -108,9 +108,9 @@
     "professionalExperience": [
       {
         "company": "Arte Arena",
-        "title_zh": "技术主管兼首席软件工程师",
+        "title": "技术主管兼首席软件工程师",
         "dates": "2024 年 10 月 – 2025 年 3 月",
-        "description_zh": [
+        "description": [
           "通过设计云原生 SaaS 平台，领导了遗留系统的现代化改造，通过微服务和 CI/CD 优化，将功能部署速度提高了 85%。",
           "使用 Kubernetes、Istio 和 ArgoCD 构建了事件驱动的工作流程，将基础设施成本降低了 30%。",
           "领导跨职能团队交付了使用 React、FastAPI 和 AWS 的全栈产品。",
@@ -119,9 +119,9 @@
       },
       {
         "company": "Stefanini / FAPESP",
-        "title_zh": "高级软件工程师",
+        "title": "高级软件工程师",
         "dates": "2024 年 10 月 – 2025 年 3 月",
-        "description_zh": [
+        "description": [
           "改进了 FAPESP 虚拟图书馆的搜索引擎 (Apache Solr)，通过数据索引优化，将查询响应时间提高了 37%。",
           "指导一个全球全栈团队交付了一个基于 Laravel 的学术研究资助应用程序。",
           "解决了 Django 系统中的关键错误，为超过 50 万月用户提高了稳定性。"
@@ -129,9 +129,9 @@
       },
       {
         "company": "NPL Brasil",
-        "title_zh": "软件工程师",
+        "title": "软件工程师",
         "dates": "2019 年 12 月 – 2022 年 1 月",
-        "description_zh": [
+        "description": [
           "使用 Node.js 和 AWS 自动化了数据管道，将手动处理时间减少了 50%。",
           "集成了 Google Cloud Document AI 以进行自动化文档分析，提高了运营效率。",
           "在以太坊网络上开发并实施了自定义智能合约，确保了加密货币交易的安全性和完整性。"
@@ -139,9 +139,9 @@
       },
       {
         "company": "Global Hitss",
-        "title_zh": "软件工程师",
+        "title": "软件工程师",
         "dates": "2017 年 2 月 - 2019 年 4 月",
-        "description_zh": [
+        "description": [
           "设计了一个可扩展的 Hadoop 和 Spark 数据湖，为企业客户实现了实时分析。",
           "通过 CI/CD 管道自动化（ArgoCD、Docker）将部署周期缩短了 23%。",
           "为金融行业的客户交付了使用 React 和 Nest.js 的全栈应用程序。"
@@ -150,23 +150,23 @@
     ],
     "education": [
       {
-        "degree_zh": "计算机工程学士",
-        "institution_zh": "UNIVESP",
+        "degree": "计算机工程学士",
+        "institution": "UNIVESP",
         "dates": "2022 年 7 月 - 2027 年 5 月（预计）"
       },
       {
-        "degree_zh": "公共管理与政府硕士",
-        "institution_zh": "EAESP/FGV",
+        "degree": "公共管理与政府硕士",
+        "institution": "EAESP/FGV",
         "dates": "2009 年 1 月 - 2021 年 5 月"
       },
       {
-        "degree_zh": "公共管理学士",
-        "institution_zh": "ESAG/UDESC",
+        "degree": "公共管理学士",
+        "institution": "ESAG/UDESC",
         "dates": "2004 年 7 月 - 2008 年 8 月"
       },
       {
-        "degree_zh": "哲学学士",
-        "institution_zh": "CFH/UFSC",
+        "degree": "哲学学士",
+        "institution": "CFH/UFSC",
         "dates": "2004 年 1 月 - 2008 年 6 月"
       }
     ],
@@ -194,16 +194,16 @@
     ],
     "keyAchievements": [
       {
-        "area_zh": "人工智能/机器学习",
-        "description_zh": "使用 Kubeflow 实施了 MLOps 管道，以训练和部署需求预测模型，将训练时间缩短了 40%，并将模型精度提高了 14%。"
+        "area": "人工智能/机器学习",
+        "description": "使用 Kubeflow 实施了 MLOps 管道，以训练和部署需求预测模型，将训练时间缩短了 40%，并将模型精度提高了 14%。"
       },
       {
-        "area_zh": "云",
-        "description_zh": "将超过 17 个遗留系统迁移到 AWS/GCP，实现了 99.9% 的正常运行时间。"
+        "area": "云",
+        "description": "将超过 17 个遗留系统迁移到 AWS/GCP，实现了 99.9% 的正常运行时间。"
       },
       {
-        "area_zh": "全周期交付",
-        "description_zh": "领导了从金融科技到研发等多个行业的 8 个以上端到端产品发布。"
+        "area": "全周期交付",
+        "description": "领导了从金融科技到研发等多个行业的 8 个以上端到端产品发布。"
       }
     ]
   },

@@ -108,9 +108,9 @@
     "professionalExperience": [
       {
         "company": "Arte Arena",
-        "title_it": "Tech Lead e Principal Software Engineer",
+        "title": "Tech Lead e Principal Software Engineer",
         "dates": "Ottobre 2024 – Marzo 2025",
-        "description_it": [
+        "description": [
           "Ha guidato la modernizzazione dei sistemi legacy progettando una piattaforma SaaS cloud-native, accelerando l'implementazione delle funzionalità dell'85% attraverso i microservizi e l'ottimizzazione CI/CD.",
           "Ha progettato flussi di lavoro event-driven utilizzando Kubernetes, Istio e ArgoCD, riducendo i costi dell'infrastruttura del 30%.",
           "Ha guidato team interfunzionali per fornire un prodotto full-stack con React, FastAPI e AWS.",
@@ -119,9 +119,9 @@
       },
       {
         "company": "Stefanini / FAPESP",
-        "title_it": "Senior Software Engineer",
+        "title": "Senior Software Engineer",
         "dates": "Ottobre 2024 – Marzo 2025",
-        "description_it": [
+        "description": [
           "Ha rinnovato il motore di ricerca della Biblioteca Virtuale FAPESP (Apache Solr), migliorando il tempo di risposta delle query del 37% attraverso ottimizzazioni dell'indicizzazione dei dati.",
           "Ha diretto un team full-stack globale per fornire un'applicazione basata su Laravel per il finanziamento della ricerca accademica.",
           "Ha risolto bug critici nei sistemi Django, migliorando la stabilità per oltre 500.000 utenti mensili."
@@ -129,9 +129,9 @@
       },
       {
         "company": "NPL Brasil",
-        "title_it": "Software Engineer",
+        "title": "Software Engineer",
         "dates": "Dicembre 2019 – Gennaio 2022",
-        "description_it": [
+        "description": [
           "Ha automatizzato le pipeline di dati utilizzando Node.js e AWS, riducendo i tempi di elaborazione manuale del 50%.",
           "Ha integrato Google Cloud Document AI per l'analisi automatizzata dei documenti, aumentando l'efficienza operativa.",
           "Ha sviluppato e implementato contratti intelligenti personalizzati sulla rete Ethereum, garantendo la sicurezza e l'integrità delle transazioni di criptovalute."
@@ -139,9 +139,9 @@
       },
       {
         "company": "Global Hitss",
-        "title_it": "Software Engineer",
+        "title": "Software Engineer",
         "dates": "Febbraio 2017 - Aprile 2019",
-        "description_it": [
+        "description": [
           "Ha progettato un data lake scalabile con Hadoop e Spark, consentendo analisi in tempo reale per i clienti aziendali.",
           "Ha ridotto i cicli di implementazione del 23% attraverso l'automazione della pipeline CI/CD (ArgoCD, Docker).",
           "Ha fornito applicazioni full-stack utilizzando React e Nest.js per clienti del settore finanziario."
@@ -150,23 +150,23 @@
     ],
     "education": [
       {
-        "degree_it": "Laurea in Ingegneria Informatica",
-        "institution_it": "UNIVESP",
+        "degree": "Laurea in Ingegneria Informatica",
+        "institution": "UNIVESP",
         "dates": "Luglio 2022 - Maggio 2027 (stimato)"
       },
       {
-        "degree_it": "Master in Pubblica Amministrazione e Governo",
-        "institution_it": "EAESP/FGV",
+        "degree": "Master in Pubblica Amministrazione e Governo",
+        "institution": "EAESP/FGV",
         "dates": "Gennaio 2009 - Maggio 2021"
       },
       {
-        "degree_it": "Laurea in Pubblica Amministrazione",
-        "institution_it": "ESAG/UDESC",
+        "degree": "Laurea in Pubblica Amministrazione",
+        "institution": "ESAG/UDESC",
         "dates": "Luglio 2004 - Agosto 2008"
       },
       {
-        "degree_it": "Laurea in Filosofia",
-        "institution_it": "CFH/UFSC",
+        "degree": "Laurea in Filosofia",
+        "institution": "CFH/UFSC",
         "dates": "Gennaio 2004 - Giugno 2008"
       }
     ],
@@ -194,16 +194,16 @@
     ],
     "keyAchievements": [
       {
-        "area_it": "IA/ML",
-        "description_it": "Implementato pipeline MLOps con Kubeflow per addestrare e distribuire modelli di previsione della domanda, riducendo i tempi di addestramento del 40% e migliorando l'accuratezza del modello del 14%."
+        "area": "IA/ML",
+        "description": "Implementato pipeline MLOps con Kubeflow per addestrare e distribuire modelli di previsione della domanda, riducendo i tempi di addestramento del 40% e migliorando l'accuratezza del modello del 14%."
       },
       {
-        "area_it": "Cloud",
-        "description_it": "Migrato oltre 17 sistemi legacy su AWS/GCP, raggiungendo un uptime del 99,9%."
+        "area": "Cloud",
+        "description": "Migrato oltre 17 sistemi legacy su AWS/GCP, raggiungendo un uptime del 99,9%."
       },
       {
-        "area_it": "Consegna a Ciclo Completo",
-        "description_it": "Guidato oltre 8 lanci di prodotti end-to-end in vari settori, dal fintech alla R&S."
+        "area": "Consegna a Ciclo Completo",
+        "description": "Guidato oltre 8 lanci di prodotti end-to-end in vari settori, dal fintech alla R&S."
       }
     ]
   },

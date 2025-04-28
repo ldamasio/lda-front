@@ -13,6 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import LanguageSelect from '@/app/components/LanguageSelect';
+import { usePathname } from "next/navigation";
 
 interface Dictionary {
   aboutMe: {
@@ -43,6 +44,7 @@ interface Dictionary {
 
 export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictionary }) {
   const t = dictionary;
+  const pathname = usePathname();
 
   const components = [
     {
@@ -138,7 +140,7 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <LanguageSelect />
+      <LanguageSelect currentPath={pathname} />
     </NavigationMenu>
   )
 }
