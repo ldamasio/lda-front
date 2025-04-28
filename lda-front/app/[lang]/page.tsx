@@ -1,4 +1,5 @@
 import { getDictionary } from './dictionaries-server'
+import { getSkills } from './skills-server'
 import styles from './page.module.css';
 import { Project, SkillCategory, Experience, Education, Achievement } from './types';
 import { NavMenu } from '../components/NavigationMenu';
@@ -13,16 +14,17 @@ import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucid
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
+  // const s = await getSkills();
   return {
-    title: t.page.title,
-    description: t.page.desc,
-    curriculum: t.page.curriculum,
+    title: t.meta.title,
+    description: t.meta.desc,
+    // skills: s.skills
   };
 }
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
-  // console.log('Dictionary in page.tsx:', t);
+  console.log('Dictionary in page.tsx:', t);
 
   return (
     <div className={styles.container}>
@@ -30,9 +32,9 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
         <NavMenu lang={lang} dictionary={t} />
 
-        <h1 className={styles.title}>{t.home.title}</h1>
+        <h1 className={styles.title}>{t.meta.title}</h1>
         <p className={styles.description}>
-          {t.home.introduction}
+          {t.meta.desc[0]}
         </p>
 
         <Tabs defaultValue="projects" className="w-[100%]">
@@ -48,9 +50,9 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                 Projetos Destacados
               </h2>
               <div>
-                {Object.entries(t.home.highlights).map(([key, project]) => (
+                {Object.entries(t.portfolio.highlights).map(([key, project]) => (
                   <Card className={styles.projectCard} key={key}>
-                    <a href={(project as Project).link}>
+                    <a href={(project as Project).repositories[0]}>
                       <h3>{(project as Project).name}</h3>
                     </a>
                     <p>{(project as Project).description}</p>
@@ -75,17 +77,17 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               </h2>
               <div>
                 <div className={styles.linkCard}>
-                  <a href={t.home.links.github}>
+                  <a href={t.meta.links.github}>
                     <h3>GitHub</h3>
                   </a>
                 </div>
                 <div className={styles.linkCard}>
-                  <a href={t.home.links.linkedin}>
+                  <a href={t.meta.links.linkedin}>
                     <h3>LinkedIn</h3>
                   </a>
                 </div>
                 <div className={styles.linkCard}>
-                  <a href={`mailto:${t.home.links.email}`}>
+                  <a href={`mailto:${t.meta.links.email}`}>
                     <h3>Email</h3>
                   </a>
                 </div>
@@ -113,33 +115,29 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   <Brain className="w-6 h-6 text-primary" />
                   Habilidades
                 </h4>
-                {Object.entries(t.curriculum.skills as SkillCategory).map(([category, skills]) => (
-                  <Card key={category} className="w-[100%] mt-4 p-4">
-                    <CardTitle>
-                      {category}
-                    </CardTitle>
-                    <CardDescription className="p-4 flex flex-wrap gap-4">
-                      {skills.map((skill) => (
-                        <p key={skill} className="bg-gray-100 p-2 rounded-md">
-                          {skill}
-                        </p>
-                      ))}
-                    </CardDescription>
-                  </Card>
-                ))}
+
+                <Card className="w-[100%] mt-4 p-4">
+                  <CardDescription className="p-4 flex flex-wrap gap-4">
+                    {t.curriculum.skills.map((skill: string, index: number) => (
+                      <p key={index} className="bg-gray-100 p-2 rounded-md">
+                        {skill}
+                      </p>
+                    ))}
+                  </CardDescription>
+                </Card>
 
                 <h4 className="mt-4 font-bold flex items-center gap-2">
                   <Briefcase className="w-6 h-6 text-primary" />
                   Experiência Profissional
                 </h4>
-                {t.curriculum.ProfessionalExperience.map((experience: Experience, index: number) => (
+                {(t.curriculum.ProfessionalExperience || t.curriculum.professionalExperience)?.map((experience: Experience, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
-                      {experience.Company} - {experience.Title}
+                      {experience.Company || experience.company} - {experience.Title || experience.title}
                     </CardTitle>
-                    <p className="p-4 italic text-sm text-muted-foreground">{experience.Dates}</p>
+                    <p className="p-4 italic text-sm text-muted-foreground">{experience.Dates || experience.dates}</p>
                     <CardDescription className="p-4 flex flex-wrap gap-4">
-                      {experience.Description.map((desc, i) => (
+                      {(experience.Description || experience.description)?.map((desc, i) => (
                         <p key={i}>
                           {desc}
                         </p>
@@ -152,13 +150,13 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   <University className="w-6 h-6 text-primary" />
                   Educação
                 </h4>
-                {t.curriculum.Education.map((education: Education, index: number) => (
+                {(t.curriculum.Education || t.curriculum.education)?.map((education: Education, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
-                      {education.Degree}
+                      {education.Degree || education.degree}
                     </CardTitle>
                     <CardDescription className="p-4 flex flex-wrap gap-4">
-                      {education.Institution} + {education.Dates}
+                      {education.Institution || education.institution} + {education.Dates || education.dates}
                     </CardDescription>
                   </Card>
                 ))}
@@ -167,13 +165,13 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                   <Award className="w-6 h-6 text-primary" />
                   Conquistas Principais
                 </h4>
-                {t.curriculum.KeyAchievements.map((achievement: Achievement, index: number) => (
+                {(t.curriculum.KeyAchievements || t.curriculum.keyAchievements)?.map((achievement: Achievement, index: number) => (
                   <Card key={index} className="w-[100%] mt-4 p-4">
                     <CardTitle>
-                      {achievement.Area}
+                      {achievement.Area || achievement.area}
                     </CardTitle>
                     <CardDescription className="p-4 flex flex-wrap gap-4">
-                      {achievement.Description}
+                      {achievement.Description || achievement.description}
                     </CardDescription>
                   </Card>
                 ))}

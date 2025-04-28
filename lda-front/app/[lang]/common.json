@@ -1,0 +1,88 @@
+{
+  "skills": {
+    "languages": [
+      "Python",
+      "Go",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "PHP",
+      "SQL",
+      "Kotlin",
+      "Dart",
+      "C++",
+      "Solidity"    
+    ],
+    "fullStackDevelopment": [
+      "FastAPI",
+      "Django",
+      "Laravel",
+      "Spring Boot",
+      "React.js",
+      "pytest",
+      "Jest",
+      "JUnit",
+      "Node.js",
+      "Next.js",
+      "Nest.js",
+      "Restul API",
+      "GraphQL",
+      "React Native",
+      "Flutter",
+      "Blockchain"
+    ],
+    "devOps": [
+      "Docker",
+      "Github Actions",
+      "Kubernetes",
+      "Istio",
+      "ArgoCD",
+      "Pulumi"
+    ],
+    "cloud": [
+      "AWS (EC2, S3, Lambda, EKS, Route53)",
+      "GCP (Document AI, Vertex AI)",
+      "Azure (Databricks, AKS)"
+    ],
+    "data": [
+      "Data Migration",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "RabbitMQ",
+      "Apache Kafka",
+      "Apache Spark",
+      "Apache Hadoop",
+      "Apache Airflow",
+      "Apache Solr",
+      "Apache Nifi",
+      "Apache Superset",
+      "Apache Druid",
+      "Apache Flink"
+    ],
+    "AIML": [
+      "TensorFlow",
+      "PyTorch",
+      "Kubeflow",
+      "Scikit-learn",
+      "NLP",
+      "Predictive Analytics"
+    ],
+    "softwareArchitecture": [
+      "SOLID",
+      "Modular Monoliths",
+      "Microservices",
+      "serverless",
+      "MVC",
+      "MVT",
+      "MVVM",
+      "Event-Driven Systems"
+    ],
+    "observability": [
+      "OpenTelemetry",
+      "Prometheus",
+      "ELK Stack",
+      "Grafana"
+    ]
+  }
+}
