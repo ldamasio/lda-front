@@ -1,257 +1,231 @@
 {
-  "page": {
-    "title": "Leandro Damasio. Meine Persönliche Seite",
-    "desc": "Full-Stack-Entwickler mit Fachkenntnissen in DevOps und Big Data. Leandro Damasio bietet Lösungen in Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen."
+  "meta": {
+    "title": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
+    "desc": [
+      "Erfahrener Full-Stack Software Engineer mit nachgewiesener Erfahrung in der Entwicklung und Bereitstellung skalierbarer, hochleistungsfähiger Webanwendungen. Umfassende Expertise in robuster Backend-Entwicklung (Python/Golang) und dynamischer Frontend-Implementierung (React), ergänzt durch eine starke DevOps-Mentalität. Kompetent im Entwurf effizienter Datenerfassungs- und Speicherlösungen, der Implementierung umfassender Infrastrukturautomatisierung und CI/CD-Pipelines, der Etablierung proaktiver Überwachungsstrategien und der Optimierung der Anwendungsleistung durch strategisches Caching und architektonische Best Practices.",
+      "Zusätzlich zu den Kernkompetenzen in Full-Stack und DevOps besitze ich umfangreiche Erfahrung in Technologien, die für die moderne Softwareentwicklung und datenintensive Anwendungen entscheidend sind. Dazu gehört die Orchestrierung containerisierter Umgebungen mit Kubernetes und die Verwaltung von ML-Workflows mit Kubeflow. Ich zeichne mich durch die Nutzung von Big-Data-Tools wie Hadoop und Spark für die skalierbare Datenverarbeitung und -analyse aus, untermauert durch starke Linux- und Cloud-Kenntnisse in AWS, GCP und Azure. Meine Datenbankexpertise umfasst sowohl relationale (PostgreSQL, MySQL) als auch NoSQL-Lösungen (MongoDB, Redis), weiter verbessert durch ein umfassendes Verständnis der Prinzipien der Softwarearchitektur, einschliesslich Microservices, Serverless und ereignisgesteuerte Systeme. Darüber hinaus implementiere ich robuste Überwachungs- und Protokollierungslösungen mit Tools wie Prometheus und dem ELK-Stack, um die Systemzuverlässigkeit zu gewährleisten und umsetzbare Erkenntnisse zu liefern.",
+      "Ergänzend zu meiner technischen Expertise zeige ich starke Führungsqualitäten in multidisziplinären Teams und leite erfolgreich die Entwicklung und Bereitstellung skalierbarer Produkte von der Konzeption bis zur Implementierung. Mein kollaborativer Ansatz fördert eine effektive Kommunikation und befähigt die Teammitglieder, ehrgeizige Ziele zu erreichen. Ich engagiere mich besonders für die Nutzung von Technologie zur Innovation und zur Bewältigung bedeutender Herausforderungen, wie mein Engagement für das Wachstum von Startups und die Erforschung von Lösungen für soziale Auswirkungen zeigt. Diese Erfahrung hat eine proaktive, ergebnisorientierte Denkweise gefördert, die konsequent auf die Lieferung hochwertiger Lösungen ausgerichtet ist, die mit strategischen Zielen übereinstimmen und die Erwartungen der Stakeholder übertreffen.",
+      "Mit über einem Jahrzehnt Erfahrung als Softwareentwickler verfüge ich über eine fundierte Beherrschung verschiedener Programmiersprachen (Python, JavaScript/TypeScript, Java, Go, PHP) und Frameworks (Django, FastAPI, React, Node.js, Laravel), verbunden mit tiefgreifender Expertise in DevOps- und Cloud-Technologien (Kubernetes, ArgoCD, Istio, Docker, AWS, GCP, Azure). Darüber hinaus verfüge ich über eine solide Grundlage in der Datenverarbeitung (Data Engineering) mit Erfahrung in der Entwicklung von Lösungen für die Echtzeit-Speicherung und -Verarbeitung grosser Datenmengen. Meine Leidenschaft für eine gut strukturierte Softwarearchitektur, die sich in der konsequenten Anwendung der SOLID-Prinzipien und des Extreme Programming zeigt, hat zu einer nachgewiesenen Erfolgsbilanz bei der Bereitstellung effizienter, sicherer und skalierbarer RESTful- und GraphQL-APIs geführt, zusammen mit umfassender Erfahrung in Messaging-Systemen, Aufgabenplanung und Infrastrukturmanagement. Als hochorganisierter und kollaborativer Problemlöser mit einer Leidenschaft für Innovation liefere ich konsequent qualitativ hochwertige Ergebnisse in multidisziplinären Teams."
+    ],
+    "links": {
+      "curriculum": "https://www.leandrodamasio.com/de/cv",
+      "cvPdfLink": "https://www.leandrodamasio.com/de/cv/pdf/",
+      "portfolio": "https://www.leandrodamasio.com/de/portfolio"
+    }
   },
-  "home": {
-    "title": "Leandro Damasio. Meine Persönliche Seite",
-    "desc": "Full-Stack-Entwickler mit Fachkenntnissen in DevOps und Big Data. Leandro Damasio bietet Lösungen in Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen.",
-    "introduction": "Full-Stack-Entwickler mit Fachkenntnissen in DevOps und Big Data. Leandro Damasio bietet Lösungen in Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen.",
-    "highlights": {
-      "project01": {
+  "aboutMe": {
+    "title": "Über mich",
+    "desc": "Leidenschaftlicher Full-Stack Software Engineer und Tech Lead mit starkem Fokus auf Technologie und Innovation, erfahren in DevOps, KI/ML und skalierbaren Lösungen (Kubernetes, Kubeflow, Machine Learning, Hadoop, Spark, Linux, Cloud, Blockchain, PostgreSQL, Python, Django, FastAPI, React, Next.js). Solide Erfolgsbilanz in Teamführung und Produktentwicklung, fokussiert auf Startup-Wachstum und Lösungen für soziale Herausforderungen. Expertise in hochperformanter Webanwendungsarchitektur, Backend (Python/Golang), Frontend (React), DevOps, Automatisierung, CI/CD, Monitoring und Optimierung. Umfangreiche Erfahrung in Big-Data-Technologien, Datenbanken (SQL/NoSQL) und Architekturprinzipien (Microservices, Serverless). Starke Führungsqualitäten, effektive Kommunikation und Fokus auf die Lieferung hochwertiger Ergebnisse. Über ein Jahrzehnt Erfahrung in verschiedenen Sprachen/Frameworks und Data Engineering. Leidenschaft für gut strukturierte Architektur und die Bereitstellung skalierbarer APIs. Organisierter und kollaborativer Problemlöser mit einer Leidenschaft für Innovation.",
+    "bio": "Leandro Damasio begann seine Karriere als Ingenieur in den 1990er Jahren mit der PHP-Sprache. Seitdem hat er sich als erfahrener und innovativer Softwareentwickler hervorgetan und an Entwicklungsprojekten für grosse Unternehmen und Institutionen wie FAPESP, NPL Brasil, Global Hitss, Arte Arena und Stefanini gearbeitet.",
+    "values": [
+      "Innovation",
+      "Ergebnisse",
+      "Kollaboration",
+      "Effizienz",
+      "Sicherheit",
+      "Agilität"
+    ]
+  },
+  "portfolio": {
+    "highlights": [
+      {
         "name": "Robson Bot",
         "description": "",
-        "link": "https://github.com/ldamasio/robson",
-        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "repositories": [
+          "https://github.com/ldamasio/robson"
+        ],
+        "technologies": "python, django, react, docker, kubernetes, git",
         "images": [
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
         ]
       },
-      "project02": {
-        "name": "Financial Fraud Detection RF XGBoost",
-        "description": "Dieses Projekt konzentriert sich auf die Entwicklung eines robusten Betrugserkennungssystems unter Verwendung von Algorithmen für maschinelles Lernen. Es vergleicht die Leistung von zwei beliebten Ensemble-Methoden: Random Forest und XGBoost, bei der Klassifizierung von Finanztransaktionen als betrügerisch oder legitim. Die Modelle werden auf einem realen Finanzdatensatz trainiert und bewertet.",
-        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
-        "technologies": "Random Forest, XGBoost, Scikit-learn, Pandas, Numpy",
+      {
+        "name": "Finanzbetrugserkennung RF XGBoost",
+        "description": "Dieses Projekt konzentriert sich auf die Entwicklung eines robusten Betrugserkennungssystems unter Verwendung von Algorithmen für maschinelles Lernen. Es vergleicht die Leistung zweier populärer Ensemble-Methoden: Random Forest und XGBoost, bei der Klassifizierung von Finanztransaktionen als betrügerisch oder legitim. Die Modelle werden auf einem realen Finanzdatensatz trainiert und evaluiert.",
+        "repositories": [
+          "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
+        ],
+        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
         "images": [
           ""
         ]
       },
-      "project03": {
-        "name": "Cromo Financiamentos",
-        "description": "Autofinanzierungssystem, entwickelt mit Django, Next, Shadcn, Docker, Kubernetes und Git.",
-        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
-        "technologies": "Django, Next, Shadcn",
+      {
+        "name": "Produktkatalog Leads",
+        "description": "Software zur Vertriebsverwaltung mit Produktkatalog und Kundendatenerfassung.",
+        "repositories": [
+          "https://github.com/ldamasio/product-catalog-leads"
+        ],
+        "technologies": "python, selenium, instagram",
         "images": [
           ""
         ]
       },
-      "project04": {
-        "name": "GPT4 LangChain Chatbot",
-        "description": "Dieses Projekt zeigt die Entwicklung eines intelligenten Chatbots unter Verwendung des leistungsstarken Sprachmodells GPT-4 und des LangChain-Frameworks. Es demonstriert, wie man eine Konversations-KI aufbaut, die Benutzeranfragen auf natürliche und ansprechende Weise verstehen und beantworten kann.",
-        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
-        "technologies": "GPT-4, LangChain, OpenAI, Python",
+      {
+        "name": "GPT4 LangChain Chatbot ",
+        "description": "Dieses Projekt zeigt die Entwicklung eines intelligenten Chatbots unter Verwendung des leistungsstarken Sprachmodells GPT-4 und des LangChain-Frameworks. Es demonstriert, wie eine Konversations-KI aufgebaut werden kann, die Benutzeranfragen auf natürliche und ansprechende Weise verstehen und beantworten kann.",
+        "repositories": [
+          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+        ],
+        "technologies": "gpt-4, langchain, openai, python",
         "images": [
           ""
         ]
       },
-      "project05": {
+      {
         "name": "MSX API v1.0",
-        "description": "Eine RESTful-API in Python, die FastAPI verwendet und die Erstellung, das Lesen, Aktualisieren und Entfernen von Fahrzeugdatensätzen mit grundlegenden Authentifizierungsfunktionen und automatischer Dokumentation ermöglicht. Sie wurde mit TDD erstellt und verwendet Bibliotheken wie Pydantic, SQL Alchemy, Alembic, PyJWT und Argon2.",
-        "link": "https://github.com/ldamasio/msx-api-001",
-        "technologies": "Python, FastAPI, SQL Alchemy, Alembic, PyJWT, Argon2, Pydantic",
+        "description": "Eine RESTful API in Python unter Verwendung von FastAPI, die das Erstellen, Lesen, Aktualisieren und Löschen von Fahrzeugdatensätzen mit grundlegender Authentifizierung und automatischen Dokumentationsfunktionen ermöglicht. Sie wurde mit TDD erstellt und verwendet Bibliotheken wie pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "repositories": [
+          "https://github.com/ldamasio/msx-api-001"
+        ],
+        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
         "images": [
           ""
         ]
       },
-      "project06": {
+      {
         "name": "Space",
-        "description": "Space Backend - Robustes Backend, das mit Laravel erstellt wurde und ein RESTful-API für das Frontend bietet. Es verwendet moderne Architekturmuster, um Skalierbarkeit und Wartbarkeit zu gewährleisten.",
-        "link": "https://github.com/Arte-Arena/space-backend",
+        "description": "Space Arena ERP. Frontend in React und Next.js. Robuste, sichere, zuverlässige und optimierte Backends, gebaut mit Go, PHP, Laravel, die eine RESTful API für die Bereiche Produktion, Administration und Management sowie eine Schnittstelle für die Interaktion mit Endkunden bieten. Es verwendet moderne Architekturmuster, um Skalierbarkeit und Wartbarkeit zu gewährleisten.",
+        "repositories": [
+          "https://github.com/Arte-Arena/space-backend",
+          "https://github.com/Arte-Arena/space-frontend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/k8s"
+        ],
         "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
         "images": [
           ""
         ]
       }
-    },
-    "links": {
-      "github": "https://github.com/ldamasio",
-      "linkedin": "https://www.linkedin.com/in/ldamasio/",
-      "email": "info@leandrodamasio.com"
-    }
-  },
-  "aboutMe": {
-    "title": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "desc": "Full-Stack-Entwickler mit Fachkenntnissen in DevOps und Big Data. Leandro Damasio bietet Lösungen in Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen. https://leandrodamasio.com/portfolio",
-    "bio": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "visualSkills": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "values": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "photo": "Leandro Damasio. Willkommen auf meiner persönlichen Seite"
-  },
-  "portfolio": {
-    "title": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "desc": "Full-Stack-Entwickler mit Fachkenntnissen in DevOps und Big Data. Leandro Damasio bietet Lösungen in Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen. https://leandrodamasio.com/portfolio",
-    "projectsDetailed": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "projectsCategories": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
-    "repositories": "Leandro Damasio. Willkommen auf meiner persönlichen Seite"
+    ]
   },
   "curriculum": {
     "name": "Leandro Damasio",
-    "headline": "Hauptsoftwareentwickler | Cloud- und DevOps-Spezialist | KI/ML-Ingenieur",
+    "headline": "Principal Software Engineer | Cloud- und DevOps-Spezialist | KI/ML-Ingenieur",
     "location": "São Paulo, SP - Brasilien",
-    "resume": "Ergebnisorientierter Full-Stack-Softwareentwickler und KI/ML-Spezialist mit über 10 Jahren Erfahrung in der Architektur und Bereitstellung skalierbarer Datenprodukte, fortschrittlicher Vorhersagemodelle und robuster Cloud-nativer Lösungen. Zeigt umfassende Expertise im gesamten Softwareentwicklungslebenszyklus, einschließlich architektonischem Design, Implementierung und DevOps-Automatisierung, in Industrie-, Finanz-, Handels- und Forschungssektoren. Nutzt geschickt Python, JavaScript und führende Cloud-Plattformen, um Innovationen zu fördern und komplexe Herausforderungen zu lösen. Setzt asynchrone Kommunikation und verteiltes Aufgabenmanagement ein, um hochoptimierte Systeme zu erstellen und eine sichere und stabile Leistung zu gewährleisten, um kritische Geschäftsanforderungen zu erfüllen. Engagiert sich für agile Methoden, fördert die kollaborative Kundenbeteiligung und die kontinuierliche Bereitstellung.",
-    "skills": {
-      "Languages": [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "Java",
-        "SQL",
-        "PHP",
-        "C++",
-        "Kotlin",
-        "Dart",
-        "Solidity"
-      ],
-      "FullStackDevelopment": [
-        "FastAPI",
-        "Django",
-        "Node.js",
-        "React.js",
-        "Next.js",
-        "Nest.js",
-        "Restul API",
-        "GraphQL",
-        "React Native",
-        "Flutter",
-        "Blockchain"
-      ],
-      "DevOps": [
-        "Docker",
-        "Github Actions CI/CD Pipelines",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD",
-        "Pulumi"
-      ],
-      "Cloud": [
-        "AWS (EC2, S3, Lambda, EKS, Route53)",
-        "GCP (Document AI, Vertex AI)",
-        "Azure (Databricks, AKS)"
-      ],
-      "DataEngineering": [
-        "Datenmigration",
-        "SQL (PostgreSQL, MySQL)",
-        "No-SQL (MongoDB)",
-        "Redis",
-        "RabbitMQ",
-        "Apache Kafka",
-        "Apache Spark",
-        "Apache Hadoop",
-        "Apache Airflow",
-        "Apache Solr",
-        "Apache Nifi",
-        "Apache Superset",
-        "Apache Druid",
-        "Apache Flink"
-      ],
-      "AIMLEngineering": [
-        "TensorFlow",
-        "PyTorch",
-        "Kubeflow",
-        "Scikit-learn",
-        "NLP",
-        "Prädiktive Analysen"
-      ],
-      "SoftwareArchitecture": [
-        "SOLID",
-        "Modulare Monolithen",
-        "Mikrodienste",
-        "Serverlos",
-        "MVC",
-        "MVT",
-        "MVVM",
-        "Ereignisgesteuerte Systeme"
-      ],
-      "MonitoringLogging": [
-        "OpenTelemetry",
-        "Prometheus",
-        "ELK Stack",
-        "Grafana"
-      ]
-    },
-    "ProfessionalExperience": [
+    "resume": "Ergebnisorientierter Full-Stack Software Engineer und KI/ML-Spezialist mit über 10 Jahren Erfahrung in der Entwicklung und Bereitstellung skalierbarer Datenprodukte, fortschrittlicher Vorhersagemodelle und robuster Cloud-nativer Lösungen. Umfassende Expertise über den gesamten Softwareentwicklungszyklus hinweg, von der Architekturplanung über die Implementierung bis zur DevOps-Automatisierung in Industrie, Finanzwesen, Handel und Forschung. Kompetenter Einsatz von Python, JavaScript und führenden Cloud-Plattformen zur Förderung von Innovation und zur Lösung komplexer Herausforderungen. Anwendung asynchroner Kommunikation und verteilter Aufgabenverwaltung zur Erstellung hochoptimierter Systeme, die sichere und stabile Leistung zur Erfüllung kritischer Geschäftsanforderungen gewährleisten. Engagement für agile Methoden, Förderung der kollaborativen Kundenbindung und der kontinuierlichen Lieferung.",
+    "professionalExperience": [
       {
-        "Company": "Arte Arena",
-        "Title": "Technischer Leiter und Hauptsoftwareentwickler",
-        "Dates": "Oktober 2024 – März 2025",
-        "Description": [
-          "Leitete die Modernisierung von Legacy-Systemen durch die Entwicklung einer Cloud-nativen SaaS-Plattform und beschleunigte die Bereitstellung von Funktionen um 85 % durch den Einsatz von Mikrodiensten und CI/CD-Optimierung.",
-          "Entwarf ereignisgesteuerte Workflows mit Kubernetes, Istio und ArgoCD und senkte die Infrastrukturkosten um 30 %.",
-          "Leitete funktionsübergreifende Teams, um ein Full-Stack-Produkt mit React, FastAPI und AWS zu liefern.",
-          "Entwickelte innovative KI-Produkte unter Nutzung generativer KI-APIs, um personalisierte Benutzererlebnisse zu schaffen."
+        "company": "Arte Arena",
+        "title_de": "Tech Lead und Principal Software Engineer",
+        "dates": "Oktober 2024 – März 2025",
+        "description_de": [
+          "Führung der Modernisierung von Altsystemen durch die Entwicklung einer Cloud-nativen SaaS-Plattform, Beschleunigung der Feature-Bereitstellung um 85 % durch Microservices und CI/CD-Optimierung.",
+          "Architektur ereignisgesteuerter Workflows mit Kubernetes, Istio und ArgoCD, Reduzierung der Infrastrukturkosten um 30 %.",
+          "Führung funktionsübergreifender Teams zur Bereitstellung eines Full-Stack-Produkts mit React, FastAPI und AWS.",
+          "Entwicklung innovativer KI-Produkte unter Nutzung generativer KI-APIs zur Schaffung personalisierter Benutzererlebnisse."
         ]
       },
       {
-        "Company": "Stefanini / FAPESP",
-        "Title": "Senior Softwareentwickler",
-        "Dates": "Oktober 2024 – März 2025",
-        "Description": [
-          "Überarbeitete die Suchmaschine der Virtuellen Bibliothek von FAPESP (Apache Solr) und verbesserte die Antwortzeit der Abfragen um 37 % durch Optimierung der Datenindizierung.",
-          "Leitete ein globales Full-Stack-Team, um eine Laravel-basierte Anwendung für die Finanzierung akademischer Forschung zu liefern.",
-          "Behob kritische Fehler in Django-Systemen und verbesserte die Stabilität für über 500.000 monatliche Benutzer."
+        "company": "Stefanini / FAPESP",
+        "title_de": "Senior Software Engineer",
+        "dates": "Oktober 2024 – März 2025",
+        "description_de": [
+          "Überarbeitung der Suchmaschine der Virtuellen Bibliothek von FAPESP (Apache Solr), Verbesserung der Abfrage-Reaktionszeit um 37 % durch Datenindexierungsoptimierungen.",
+          "Leitung eines globalen Full-Stack-Teams zur Bereitstellung einer Laravel-basierten Anwendung für die akademische Forschungsförderung.",
+          "Behebung kritischer Fehler in Django-Systemen, Verbesserung der Stabilität für über 500.000 monatliche Nutzer."
         ]
       },
       {
-        "Company": "NPL Brasil",
-        "Title": "Softwareentwickler",
-        "Dates": "Dezember 2019 – Januar 2022",
-        "Description": [
-          "Automatisierte Datenpipelines mit Node.js und AWS und reduzierte die manuelle Verarbeitungszeit um 50 %.",
-          "Integrierte Google Cloud Document AI für die automatisierte Dokumentenanalyse und steigerte die betriebliche Effizienz.",
-          "Entwickelte und implementierte benutzerdefinierte Smart Contracts im Ethereum-Netzwerk, um die Sicherheit und Integrität von Kryptowährungstransaktionen zu gewährleisten."
+        "company": "NPL Brasil",
+        "title_de": "Software Engineer",
+        "dates": "Dezember 2019 – Januar 2022",
+        "description_de": [
+          "Automatisierung von Datenpipelines mit Node.js und AWS, Reduzierung der manuellen Bearbeitungszeit um 50 %.",
+          "Integration von Google Cloud Document AI zur automatisierten Dokumentenanalyse, Steigerung der betrieblichen Effizienz.",
+          "Entwicklung und Implementierung benutzerdefinierter Smart Contracts im Ethereum-Netzwerk, Gewährleistung der Sicherheit und Integrität von Kryptowährungstransaktionen."
         ]
       },
       {
-        "Company": "Global Hitss",
-        "Title": "Softwareentwickler",
-        "Dates": "Februar 2017 – April 2019",
-        "Description": [
-          "Entwarf einen skalierbaren Data Lake mit Hadoop und Spark, der Echtzeitanalysen für Unternehmenskunden ermöglicht.",
-          "Reduzierte die Bereitstellungszyklen um 23 % durch die Automatisierung von CI/CD-Pipelines (ArgoCD, Docker).",
-          "Lieferte Full-Stack-Anwendungen mit React und Nest.js für Kunden aus dem Finanzsektor."
+        "company": "Global Hitss",
+        "title_de": "Software Engineer",
+        "dates": "Februar 2017 - April 2019",
+        "description_de": [
+          "Entwurf eines skalierbaren Data Lakes mit Hadoop und Spark, Ermöglichung von Echtzeitanalysen für Unternehmenskunden.",
+          "Reduzierung der Bereitstellungszyklen um 23 % durch CI/CD-Pipeline-Automatisierung (ArgoCD, Docker).",
+          "Bereitstellung von Full-Stack-Anwendungen mit React und Nest.js für Kunden im Finanzsektor."
         ]
       }
     ],
-    "Education": [
+    "education": [
       {
-        "Degree": "Bachelor in Informatik-Ingenieurwesen",
-        "Institution": "UNIVESP",
-        "Dates": "Juli 2022 - Mai 2027 (voraussichtlich)"
+        "degree_de": "Bachelor of Computer Engineering",
+        "institution_de": "UNIVESP",
+        "dates": "Juli 2022 - Mai 2027 (geschätzt)"
       },
       {
-        "Degree": "Master in Öffentlicher Verwaltung und Regierung",
-        "Institution": "EAESP/FGV",
-        "Dates": "Januar 2009 - Mai 2021"
+        "degree_de": "Master in Public Administration and Government",
+        "institution_de": "EAESP/FGV",
+        "dates": "Januar 2009 - Mai 2021"
       },
       {
-        "Degree": "Bachelor in Öffentlicher Verwaltung",
-        "Institution": "ESAG/UDESC",
-        "Dates": "Juli 2004 - August 2008"
+        "degree_de": "Bachelor of Public Administration",
+        "institution_de": "ESAG/UDESC",
+        "dates": "Juli 2004 - August 2008"
       },
       {
-        "Degree": "Bachelor in Philosophie",
-        "Institution": "CFH/UFSC",
-        "Dates": "Januar 2004 - Juni 2008"
+        "degree_de": "Bachelor of Philosophy",
+        "institution_de": "CFH/UFSC",
+        "dates": "Januar 2004 - Juni 2008"
       }
     ],
-    "KeyAchievements": [
+    "languages": [
+      "Englisch",
+      "Deutsch",
+      "Italienisch",
+      "Französisch",
+      "Spanisch",
+      "Portugiesisch"
+    ],
+    "skills": [
+      "Algorithmen",
+      "Datenstrukturen",
+      "Programmiersprachen",
+      "Full-Stack-Entwicklung",
+      "DevOps",
+      "Cloud",
+      "Daten",
+      "Künstliche Intelligenz",
+      "Maschinelles Lernen",
+      "Softwarearchitektur",
+      "Observability",
+      "Automatisierte Tests"
+    ],
+    "keyAchievements": [
       {
-        "Area": "KI/ML",
-        "Description": "Implementierte MLOps-Pipelines mit Kubeflow, um Nachfrageprognosemodelle zu trainieren und bereitzustellen, wodurch die Trainingszeit um 40 % reduziert und die Modellgenauigkeit um 14 % verbessert wurde."
+        "area_de": "KI/ML",
+        "description_de": "Implementierung von MLOps-Pipelines mit Kubeflow zum Trainieren und Bereitstellen von Modellen zur Bedarfsprognose, Reduzierung der Trainingszeit um 40 % und Verbesserung der Modellgenauigkeit um 14 %."
       },
       {
-        "Area": "Cloud",
-        "Description": "Migrierte über 17 Legacy-Systeme zu AWS/GCP und erreichte eine Betriebszeit von 99,9 %."
+        "area_de": "Cloud",
+        "description_de": "Migration von über 17 Legacy-Systemen zu AWS/GCP, Erreichung einer Verfügbarkeit von 99,9 %."
       },
       {
-        "Area": "Vollständige Zykluslieferung",
-        "Description": "Leitete über 8 End-to-End-Produkteinführungen in verschiedenen Sektoren, von Fintech bis F&E."
+        "area_de": "Full Cycle Delivery",
+        "description_de": "Leitung von über 8 End-to-End-Produktlaunches in verschiedenen Sektoren, von Fintech bis F&E."
       }
     ]
   },
-  "cvPdfLink": "Leandro Damasio. Willkommen auf Meiner Persönlichen Seite",
-  "contact": {
-    "title": "Leandro Damasio. Willkommen auf Meiner Persönlichen Seite",
-    "desc": "Full-Stack-Entwickler mit Expertise in DevOps und Big Data. Leandro Damasio bietet Lösungen in der Softwareentwicklung, Infrastrukturautomatisierung und Analyse großer Datenmengen. https://leandrodamasio.com/portfolio"
-  }
+  "works": [
+    "Aufsichtsperson der Ethik-Disziplin im Bachelorstudiengang Öffentliche Verwaltung an der Hochschule für Verwaltung und Management der Staatlichen Universität Santa Catarina",
+    "Gründungspräsident des Nationalen Verbands der Studierenden der Öffentlichen Verwaltung",
+    "Forscher an der Wirtschaftshochschule São Paulo der Getúlio Vargas Stiftung in Partnerschaft mit der Victor Civita Stiftung, in einem vergleichenden Forschungsprojekt zur Leistung in der Grundbildung im Bundesstaat São Paulo: Schulmanagement und Qualität der Bildung: eine Studie an zehn Schulen in São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
+    "Gründungspräsident des Rotaract Club São Paulo Aclimação",
+    "Analyst für öffentliche Politik bei e-Stratégia Pública",
+    "Technischer Berater des Kabinetts des Bürgermeisters von Florianópolis",
+    "Statistikmanager des Städtischen Bildungssekretariats der Stadtverwaltung von Florianópolis, Santa Catarina",
+    "Präsident des Think Tanks Instituto PVBLICA",
+    "Kandidat für den Stadtrat für PPS in Urussanga (SC)",
+    "Vereinbarungsmanager der Stadtverwaltung von Urussanga",
+    "Kandidat für den Stadtrat für PSOL in São José (SC)",
+    "Full-Stack-Entwickler bei NPL Brasil",
+    "Senior Python-Entwickler bei Global Hitss",
+    "Senior Python-Entwickler bei Stefanini / Fapesp",
+    "Senior Full-Stack-Entwickler bei Arte Arena"
+  ],
+  "honors": [
+    "Paul-Harris-Fellow - Rotary Club São Paulo Aclimação",
+    "Verdienstauszeichnung - Hochschule für Verwaltung und Management - Universität des Staates Santa Catarina - ESAG/UDESC"
+  ]
 }

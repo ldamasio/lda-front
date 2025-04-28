@@ -1,257 +1,231 @@
 {
-  "page": {
-    "title": "Leandro Damasio. 我的个人页面",
-    "desc": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。"
+  "meta": {
+    "title": "Leandro Damasio. 欢迎来到我的个人页面",
+    "desc": [
+      "资深全栈软件工程师，在架构和交付可扩展、高性能的 Web 应用程序方面拥有良好的记录。在强大的后端开发（Python/Golang）和动态前端实现（React）方面都拥有深厚的专业知识，并具备强大的 DevOps 思维。精通设计高效的数据收集和存储解决方案，实施全面的基础设施自动化和 CI/CD 管道，建立主动监控策略，并通过战略缓存和架构最佳实践优化应用程序性能。",
+      "除了核心的全栈和 DevOps 能力外，我还拥有现代软件开发和数据密集型应用程序所需的广泛技术经验。这包括使用 Kubernetes 编排容器化环境，以及使用 Kubeflow 管理机器学习工作流程。我擅长利用 Hadoop 和 Spark 等大数据工具进行可扩展的数据处理和分析，并以在 AWS、GCP 和 Azure 上的强大 Linux 和云技能为基础。我的数据库专业知识涵盖关系型数据库（PostgreSQL、MySQL）和 NoSQL 解决方案（MongoDB、Redis），并通过对微服务、无服务器和事件驱动系统等软件架构原则的全面理解得到进一步增强。此外，我还使用 Prometheus 和 ELK Stack 等工具实施强大的监控和日志记录解决方案，确保系统可靠性并提供可操作的见解。",
+      "除了我的技术专长外，我还在多学科团队中展现出强大的领导能力，成功地指导可扩展产品的从概念到部署的开发和交付。我的协作方式促进了有效的沟通，并使团队成员能够实现雄心勃勃的目标。我尤其致力于利用技术进行创新并解决有意义的挑战，正如我致力于为初创企业的成长和探索社会影响解决方案所证明的那样。这种经验培养了一种积极主动、注重结果的心态，始终专注于交付符合战略目标并超出利益相关者期望的高质量解决方案。",
+      "拥有超过十年的软件开发经验，我精通各种编程语言（Python、JavaScript/TypeScript、Java、Go、PHP）和框架（Django、FastAPI、React、Node.js、Laravel），并拥有深厚的 DevOps 和云技术（Kubernetes、ArgoCD、Istio、Docker、AWS、GCP、Azure）专业知识。此外，我在数据工程方面拥有扎实的基础，在设计大型数据量的实时存储和处理解决方案方面拥有丰富的经验。我对结构良好的软件架构充满热情，始终如一地应用 SOLID 原则和极限编程，这促使我成功交付了高效、安全且可扩展的 RESTful 和 GraphQL API，并拥有消息传递系统、任务调度和基础设施管理方面的全面经验。作为一名高度组织化和协作的问题解决者，我对创新充满热情，并始终在多学科团队中交付高质量的成果。"
+    ],
+    "links": {
+      "curriculum": "https://www.leandrodamasio.com/zh/cv",
+      "cvPdfLink": "https://www.leandrodamasio.com/zh/cv/pdf/",
+      "portfolio": "https://www.leandrodamasio.com/zh/portfolio"
+    }
   },
-  "home": {
-    "title": "Leandro Damasio. 我的个人页面",
-    "desc": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
-    "introduction": "在 DevOps 和大数据方面具有专业知识的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。",
-    "highlights": {
-      "project01": {
-        "name": "罗布森机器人",
+  "aboutMe": {
+    "title": "关于我",
+    "desc": "充满激情的全栈软件工程师和技术主管，专注于技术和创新，在 DevOps、人工智能/机器学习和可扩展解决方案（Kubernetes、Kubeflow、机器学习、Hadoop、Spark、Linux、云、区块链、PostgreSQL、Python、Django、FastAPI、React、Next.js）方面拥有丰富的经验。在团队领导和产品开发方面拥有扎实的记录，专注于初创企业增长和社会挑战解决方案。精通高性能 Web 应用程序架构、后端（Python/Golang）、前端（React）、DevOps、自动化、CI/CD、监控和优化。在大数据技术、数据库（SQL/NoSQL）和架构原则（微服务、无服务器）方面拥有广泛的经验。具有强大的领导力、有效的沟通能力和对交付高质量成果的关注。在各种语言/框架和数据工程方面拥有超过十年的经验。对结构良好的架构和交付可扩展的 API 充满热情。有组织、协作的问题解决者，对创新充满热情。",
+    "bio": "Leandro Damasio 于 20 世纪 90 年代以 PHP 语言开始了其工程师职业生涯。此后，他以经验丰富且富有创新精神的软件工程师而著称，曾参与 FAPESP、NPL Brasil、Global Hitss、Arte Arena 和 Stefanini 等主要公司和机构的开发项目。",
+    "values": [
+      "创新",
+      "成果",
+      "协作",
+      "效率",
+      "安全",
+      "敏捷"
+    ]
+  },
+  "portfolio": {
+    "highlights": [
+      {
+        "name": "Robson 机器人",
         "description": "",
-        "link": "https://github.com/ldamasio/robson",
-        "technologies": "Python, Django, React, Docker, Kubernetes, Git",
+        "repositories": [
+          "https://github.com/ldamasio/robson"
+        ],
+        "technologies": "python, django, react, docker, kubernetes, git",
         "images": [
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
         ]
       },
-      "project02": {
+      {
         "name": "金融欺诈检测 RF XGBoost",
-        "description": "本项目重点是使用机器学习算法开发一个强大的欺诈检测系统。它比较了两种流行的集成方法：随机森林和 XGBoost 在将金融交易分类为欺诈性或合法性方面的性能。这些模型在真实世界的金融数据集上进行训练和评估。",
-        "link": "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost",
-        "technologies": "随机森林, xgboost, scikit-learn, pandas, numpy",
+        "description": "该项目专注于开发一个使用机器学习算法的强大欺诈检测系统。它比较了两种流行的集成方法：随机森林和 XGBoost 在将金融交易分类为欺诈性或合法性方面的性能。这些模型在真实的金融数据集上进行训练和评估。",
+        "repositories": [
+          "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
+        ],
+        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
         "images": [
           ""
         ]
       },
-      "project03": {
-        "name": "克罗莫金融",
-        "description": "使用 Django、Next、Shadcn、Docker、Kubernetes 和 Git 开发的汽车融资系统。",
-        "link": "https://github.com/rbxrobotica/rbx-cro-backend",
-        "technologies": "Django, Next, Shadcn",
+      {
+        "name": "产品目录线索",
+        "description": "具有产品目录和客户数据捕获功能的销售管理软件。",
+        "repositories": [
+          "https://github.com/ldamasio/product-catalog-leads"
+        ],
+        "technologies": "python, selenium, instagram",
         "images": [
           ""
         ]
       },
-      "project04": {
+      {
         "name": "GPT4 LangChain 聊天机器人",
-        "description": "本项目展示了使用强大的 GPT-4 语言模型和 LangChain 框架开发智能聊天机器人。它演示了如何构建能够以自然和引人入胜的方式理解和响应用户查询的对话式人工智能。",
-        "link": "https://github.com/ldamasio/GPT4-LangChain-Chatbot",
+        "description": "该项目展示了使用强大的 GPT-4 语言模型和 LangChain 框架开发智能聊天机器人。它演示了如何构建一个能够以自然且引人入胜的方式理解和响应用户查询的对话式人工智能。",
+        "repositories": [
+          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+        ],
         "technologies": "gpt-4, langchain, openai, python",
         "images": [
           ""
         ]
       },
-      "project05": {
+      {
         "name": "MSX API v1.0",
-        "description": "一个使用 FastAPI 的 Python RESTful API，它允许创建、读取、更新和删除车辆记录，具有基本的身份验证和自动文档功能。它使用 TDD 构建，并使用 pydantic、SQL Alchemy、Alembic、PyJWT、argon2 等库。",
-        "link": "https://github.com/ldamasio/msx-api-001",
+        "description": "一个使用 FastAPI 的 Python RESTful API，允许创建、读取、更新和删除车辆记录，具有基本的身份验证和自动文档生成功能。它使用 TDD 构建，并使用 pydantic、SQL Alchemy、Alembic、PyJWT、argon2 等库。",
+        "repositories": [
+          "https://github.com/ldamasio/msx-api-001"
+        ],
         "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
         "images": [
           ""
         ]
       },
-      "project06": {
-        "name": "空间",
-        "description": "空间后端 - 使用 Laravel 构建的强大后端，为前端提供 RESTful API。它使用现代架构模式来确保可扩展性和可维护性。",
-        "link": "https://github.com/Arte-Arena/space-backend",
+      {
+        "name": "Space",
+        "description": "Space Arena ERP。前端使用 React 和 Next.js。后端使用 Go、PHP、Laravel 构建，稳健、安全、可靠且优化，为生产、管理和行政部门提供 RESTful API，并为最终客户互动提供接口。它利用现代架构模式来确保可扩展性和可维护性。",
+        "repositories": [
+          "https://github.com/Arte-Arena/space-backend",
+          "https://github.com/Arte-Arena/space-frontend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/space-client-backend",
+          "https://github.com/Arte-Arena/k8s"
+        ],
         "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
         "images": [
           ""
         ]
       }
-    },
-    "links": {
-      "github": "https://github.com/ldamasio",
-      "linkedin": "https://www.linkedin.com/in/ldamasio/",
-      "email": "info@leandrodamasio.com"
-    }
-  },
-  "aboutMe": {
-    "title": "Leandro Damasio. 欢迎来到我的个人页面",
-    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
-    "bio": "Leandro Damasio. 欢迎来到我的个人页面",
-    "visualSkills": "Leandro Damasio. 欢迎来到我的个人页面",
-    "values": "Leandro Damasio. 欢迎来到我的个人页面",
-    "photo": "Leandro Damasio. 欢迎来到我的个人页面"
-  },
-  "portfolio": {
-    "title": "Leandro Damasio. 欢迎来到我的个人页面",
-    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio",
-    "projectsDetailed": "Leandro Damasio. 欢迎来到我的个人页面",
-    "projectsCategories": "Leandro Damasio. 欢迎来到我的个人页面",
-    "repositories": "Leandro Damasio. 欢迎来到我的个人页面"
+    ]
   },
   "curriculum": {
     "name": "Leandro Damasio",
     "headline": "首席软件工程师 | 云和 DevOps 专家 | 人工智能/机器学习工程师",
     "location": "巴西圣保罗",
-    "resume": "以结果为导向的全栈软件工程师和人工智能/机器学习专家，在架构和部署可扩展数据产品、高级预测模型和强大的云原生解决方案方面拥有超过 10 年的经验。在整个软件开发生命周期中展示了全面的专业知识，涵盖架构设计、实施和 DevOps 自动化，涉及工业、金融、商业和研究领域。熟练地利用 Python、JavaScript 和领先的云平台来促进创新并解决复杂的挑战。采用异步通信和分布式任务管理来构建高度优化的系统，确保安全稳定的性能，以满足关键的业务需求。致力于敏捷方法，促进协作式客户参与和持续交付。",
-    "skills": {
-      "Languages": [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "Java",
-        "SQL",
-        "PHP",
-        "C++",
-        "Kotlin",
-        "Dart",
-        "Solidity"
-      ],
-      "FullStackDevelopment": [
-        "FastAPI",
-        "Django",
-        "Node.js",
-        "React.js",
-        "Next.js",
-        "Nest.js",
-        "Restul API",
-        "GraphQL",
-        "React Native",
-        "Flutter",
-        "Blockchain"
-      ],
-      "DevOps": [
-        "Docker",
-        "Github Actions CI/CD 管道",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD",
-        "Pulumi"
-      ],
-      "Cloud": [
-        "AWS (EC2, S3, Lambda, EKS, Route53)",
-        "GCP (Document AI, Vertex AI)",
-        "Azure (Databricks, AKS)"
-      ],
-      "DataEngineering": [
-        "数据迁移",
-        "SQL (PostgreSQL, MySQL)",
-        "No-SQL (MongoDB)",
-        "Redis",
-        "RabbitMQ",
-        "Apache Kafka",
-        "Apache Spark",
-        "Apache Hadoop",
-        "Apache Airflow",
-        "Apache Solr",
-        "Apache Nifi",
-        "Apache Superset",
-        "Apache Druid",
-        "Apache Flink"
-      ],
-      "AIMLEngineering": [
-        "TensorFlow",
-        "PyTorch",
-        "Kubeflow",
-        "Scikit-learn",
-        "NLP",
-        "预测分析"
-      ],
-      "SoftwareArchitecture": [
-        "SOLID",
-        "模块化单体",
-        "微服务",
-        "无服务器",
-        "MVC",
-        "MVT",
-        "MVVM",
-        "事件驱动系统"
-      ],
-      "MonitoringLogging": [
-        "OpenTelemetry",
-        "Prometheus",
-        "ELK Stack",
-        "Grafana"
-      ]
-    },
-    "ProfessionalExperience": [
+    "resume": "以结果为导向的全栈软件工程师和人工智能/机器学习专家，在架构和部署可扩展的数据产品、先进的预测模型和强大的云原生解决方案方面拥有超过 10 年的经验。在整个软件开发生命周期中展现出全面的专业知识，涵盖工业、金融、商业和研究领域的架构设计、实施和 DevOps 自动化。熟练地利用 Python、JavaScript 和领先的云平台来促进创新和解决复杂的挑战。采用异步通信和分布式任务管理来构建高度优化的系统，确保安全稳定的性能以满足关键业务需求。致力于敏捷方法，促进协作式客户参与和持续交付。",
+    "professionalExperience": [
       {
-        "Company": "Arte Arena",
-        "Title": "技术主管和首席软件工程师",
-        "Dates": "2024 年 10 月 – 2025 年 3 月",
-        "Description": [
-          "通过设计云原生 SaaS 平台，领导了遗留系统的现代化改造，通过微服务和 CI/CD 优化，将功能部署加速了 85%。",
-          "使用 Kubernetes、Istio 和 ArgoCD 设计了事件驱动的工作流，将基础设施成本降低了 30%。",
+        "company": "Arte Arena",
+        "title_zh": "技术主管兼首席软件工程师",
+        "dates": "2024 年 10 月 – 2025 年 3 月",
+        "description_zh": [
+          "通过设计云原生 SaaS 平台，领导了遗留系统的现代化改造，通过微服务和 CI/CD 优化，将功能部署速度提高了 85%。",
+          "使用 Kubernetes、Istio 和 ArgoCD 构建了事件驱动的工作流程，将基础设施成本降低了 30%。",
           "领导跨职能团队交付了使用 React、FastAPI 和 AWS 的全栈产品。",
-          "利用生成式人工智能 API 开发了创新的人工智能产品，以创造个性化的用户体验。"
+          "利用生成式人工智能 API 开发了创新的 AI 产品，以创建个性化的用户体验。"
         ]
       },
       {
-        "Company": "Stefanini / FAPESP",
-        "Title": "高级软件开发人员",
-        "Dates": "2024 年 10 月 – 2025 年 3 月",
-        "Description": [
-          "通过数据索引优化，重新设计了 FAPESP 虚拟图书馆的搜索引擎 (Apache Solr)，将查询响应时间提高了 37%。",
-          "指导全球全栈团队交付了一个基于 Laravel 的学术研究资助应用程序。",
-          "解决了 Django 系统中的关键错误，提高了超过 50 万月度用户的稳定性。"
+        "company": "Stefanini / FAPESP",
+        "title_zh": "高级软件工程师",
+        "dates": "2024 年 10 月 – 2025 年 3 月",
+        "description_zh": [
+          "改进了 FAPESP 虚拟图书馆的搜索引擎 (Apache Solr)，通过数据索引优化，将查询响应时间提高了 37%。",
+          "指导一个全球全栈团队交付了一个基于 Laravel 的学术研究资助应用程序。",
+          "解决了 Django 系统中的关键错误，为超过 50 万月用户提高了稳定性。"
         ]
       },
       {
-        "Company": "NPL Brasil",
-        "Title": "软件工程师",
-        "Dates": "2019 年 12 月 – 2022 年 1 月",
-        "Description": [
+        "company": "NPL Brasil",
+        "title_zh": "软件工程师",
+        "dates": "2019 年 12 月 – 2022 年 1 月",
+        "description_zh": [
           "使用 Node.js 和 AWS 自动化了数据管道，将手动处理时间减少了 50%。",
-          "集成了 Google Cloud Document AI 以实现自动文档分析，提高了运营效率。",
-          "在 Ethereum 网络上开发并实现了自定义智能合约，确保了加密货币交易的安全性和完整性。"
+          "集成了 Google Cloud Document AI 以进行自动化文档分析，提高了运营效率。",
+          "在以太坊网络上开发并实施了自定义智能合约，确保了加密货币交易的安全性和完整性。"
         ]
       },
       {
-        "Company": "Global Hitss",
-        "Title": "软件工程师",
-        "Dates": "2017 年 2 月 – 2019 年 4 月",
-        "Description": [
-          "使用 Hadoop 和 Spark 设计了一个可扩展的数据湖，为企业客户实现实时分析。",
-          "通过自动化 CI/CD 管道 (ArgoCD, Docker)，将部署周期缩短了 23%。",
+        "company": "Global Hitss",
+        "title_zh": "软件工程师",
+        "dates": "2017 年 2 月 - 2019 年 4 月",
+        "description_zh": [
+          "设计了一个可扩展的 Hadoop 和 Spark 数据湖，为企业客户实现了实时分析。",
+          "通过 CI/CD 管道自动化（ArgoCD、Docker）将部署周期缩短了 23%。",
           "为金融行业的客户交付了使用 React 和 Nest.js 的全栈应用程序。"
         ]
       }
     ],
-    "Education": [
+    "education": [
       {
-        "Degree": "计算机工程学士",
-        "Institution": "UNIVESP",
-        "Dates": "2022 年 7 月 – 2027 年 5 月（预计）"
+        "degree_zh": "计算机工程学士",
+        "institution_zh": "UNIVESP",
+        "dates": "2022 年 7 月 - 2027 年 5 月（预计）"
       },
       {
-        "Degree": "公共管理和政府硕士",
-        "Institution": "EAESP/FGV",
-        "Dates": "2009 年 1 月 – 2021 年 5 月"
+        "degree_zh": "公共管理与政府硕士",
+        "institution_zh": "EAESP/FGV",
+        "dates": "2009 年 1 月 - 2021 年 5 月"
       },
       {
-        "Degree": "公共管理学士",
-        "Institution": "ESAG/UDESC",
-        "Dates": "2004 年 7 月 – 2008 年 8 月"
+        "degree_zh": "公共管理学士",
+        "institution_zh": "ESAG/UDESC",
+        "dates": "2004 年 7 月 - 2008 年 8 月"
       },
       {
-        "Degree": "哲学学士",
-        "Institution": "CFH/UFSC",
-        "Dates": "2004 年 1 月 – 2008 年 6 月"
+        "degree_zh": "哲学学士",
+        "institution_zh": "CFH/UFSC",
+        "dates": "2004 年 1 月 - 2008 年 6 月"
       }
     ],
-    "KeyAchievements": [
+    "languages": [
+      "英语",
+      "德语",
+      "意大利语",
+      "法语",
+      "西班牙语",
+      "葡萄牙语"
+    ],
+    "skills": [
+      "算法",
+      "数据结构",
+      "编程语言",
+      "全栈开发",
+      "DevOps",
+      "云",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "软件架构",
+      "可观测性",
+      "自动化测试"
+    ],
+    "keyAchievements": [
       {
-        "Area": "人工智能/机器学习",
-        "Description": "使用 Kubeflow 实施了 MLOps 管道来训练和部署需求预测模型，将训练时间缩短了 40%，并将模型精度提高了 14%。"
+        "area_zh": "人工智能/机器学习",
+        "description_zh": "使用 Kubeflow 实施了 MLOps 管道，以训练和部署需求预测模型，将训练时间缩短了 40%，并将模型精度提高了 14%。"
       },
       {
-        "Area": "云",
-        "Description": "将超过 17 个遗留系统迁移到 AWS/GCP，实现了 99.9% 的正常运行时间。"
+        "area_zh": "云",
+        "description_zh": "将超过 17 个遗留系统迁移到 AWS/GCP，实现了 99.9% 的正常运行时间。"
       },
       {
-        "Area": "完整周期交付",
-        "Description": "领导了从金融科技到研发等多个行业的 8 多个端到端产品发布。"
+        "area_zh": "全周期交付",
+        "description_zh": "领导了从金融科技到研发等多个行业的 8 个以上端到端产品发布。"
       }
     ]
   },
-  "cvPdfLink": "Leandro Damasio. 欢迎来到我的个人页面",
-  "contact": {
-    "title": "Leandro Damasio. 欢迎来到我的个人页面",
-    "desc": "在 DevOps 和大数据方面经验丰富的全栈开发人员。Leandro Damasio 提供软件开发、基础设施自动化和大数据分析解决方案。https://leandrodamasio.com/portfolio"
-  }
+  "works": [
+    "圣卡塔琳娜州立大学高等管理学院公共服务管理本科课程伦理学科的监察员",
+    "全国公共管理学生联合会创始主席",
+    "与维克多·西维塔基金会合作，隶属于热图利奥·瓦加斯基金会圣保罗州企业管理学院的研究员，参与关于圣保罗州基础教育绩效的比较研究项目：学校管理和教育质量：对圣保罗十所学校的研究 - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
+    "圣保罗阿克利马桑扶轮青年团创始主席",
+    "e-Stratégia Pública 公共政策分析师",
+    "弗洛里亚诺波利斯市市长办公室技术顾问",
+    "圣卡塔琳娜州弗洛里亚诺波利斯市教育局统计经理",
+    "智库 Instituto PVBLICA 主席",
+    "乌鲁桑加（南卡塔琳娜州）人民社会主义党市议员候选人",
+    "乌鲁桑加市市政府协议经理",
+    "圣若泽（南卡塔琳娜州）自由与社会主义党市议员候选人",
+    "NPL Brasil 全栈开发工程师",
+    "Global Hitss 高级 Python 开发工程师",
+    "Stefanini / Fapesp 高级 Python 开发工程师",
+    "Arte Arena 高级全栈开发工程师"
+  ],
+  "honors": [
+    "保罗·哈里斯院士 - 圣保罗阿克利马桑扶轮社",
+    "功绩荣誉奖 - 圣卡塔琳娜州立大学高等管理学院 - ESAG/UDESC"
+  ]
 }
