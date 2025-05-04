@@ -43,7 +43,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "",
+        "description": "ROBSON BOT, un bot de negociación de criptomonedas de código abierto en Python, utiliza una arquitectura asíncrona y multiinquilino para decisiones basadas en análisis probabilísticos y técnicos. Incluye gestión de riesgos, difusión de señales, estrategias de negociación, una plataforma React para el panel y Kubernetes para la seguridad multiusuario.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],

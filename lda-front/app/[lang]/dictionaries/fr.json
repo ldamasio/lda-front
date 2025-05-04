@@ -43,7 +43,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "",
+        "description": "ROBSON BOT, un robot de trading de cryptomonnaies open source en Python, utilise une architecture asynchrone et multi-locataire pour des décisions basées sur des analyses probabilistes et techniques. Il inclut la gestion des risques, la diffusion de signaux, des stratégies de trading, une plateforme React pour le tableau de bord et Kubernetes pour la sécurité multi-utilisateurs.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
