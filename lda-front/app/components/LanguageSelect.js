@@ -33,7 +33,7 @@ const LanguageSelect = ({ currentPath }) => {
   const currentLanguage = pathname?.split('/')[1] || 'en';
 
   return (
-    <div>
+    <div className='md:ml-4 w-full md:w-auto'>
       <Select
         value={currentLanguage}
         onValueChange={handleChange}

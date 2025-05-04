@@ -80,10 +80,16 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
   ];
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList className="flex flex-col w-full md:flex-row">
+    <NavigationMenu className="mb-8">
+      <NavigationMenuList className="flex flex-col w-full md:flex-row gap-2 md:gap-0">
 
-
+        <NavigationMenuItem>
+          <Link href={`/${lang}/`} legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Home
+              </NavigationMenuLink>
+            </Link>
+        </NavigationMenuItem>
 
 
         <NavigationMenuItem>
@@ -93,13 +99,13 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <ListItem href={`/${lang}/skills`} title="Habilidades">
-              {t.aboutMe.desc}
+                {t.aboutMe.desc}
               </ListItem>
               <ListItem href={`/${lang}/cv`} title="Currículo">
-              {t.aboutMe.desc}
+                {t.aboutMe.desc}
               </ListItem>
               <ListItem href={`/${lang}/about-me`} title="Portfolio">
-              {t.aboutMe.desc}
+                {t.aboutMe.desc}
               </ListItem>
               <ListItem href={`/${lang}/cv`} title="Biografia">
                 {t.curriculum.location}
@@ -139,8 +145,17 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href={`/${lang}/contact`} legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact
+              </NavigationMenuLink>
+            </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <LanguageSelect currentPath={pathname} />
+        </NavigationMenuItem>
       </NavigationMenuList>
-      <LanguageSelect currentPath={pathname} />
     </NavigationMenu>
   )
 }
