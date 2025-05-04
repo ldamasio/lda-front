@@ -17,6 +17,8 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: s
   return {
     title: t.meta.title,
     description: t.meta.desc,
+    menu: t.meta.menu,
+    tabs: t.meta.tabs,
     // skills: s.skills
   };
 }
@@ -37,15 +39,15 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
 
         <Tabs defaultValue="projects" className="w-[100%]">
           <TabsList>
-            <TabsTrigger value="projects">Projetos Destacados</TabsTrigger>
-            <TabsTrigger value="links">Links</TabsTrigger>
-            <TabsTrigger value="cv">Currículo</TabsTrigger>
+            <TabsTrigger value="projects">{t.meta.tabs.featuredProjects}</TabsTrigger>
+            <TabsTrigger value="links">{t.meta.tabs.links}</TabsTrigger>
+            <TabsTrigger value="cv">{t.meta.menu.curriculumVitae}</TabsTrigger>
           </TabsList>
           <TabsContent value="projects">
             <section className={styles.projects}>
               <h2 className="flex items-center gap-2 text-xl font-bold pb-4">
                 <Code className="w-6 h-6 text-primary" />
-                Projetos Destacados
+                {t.meta.tabs.featuredProjects}
               </h2>
               <div>
                 {Object.entries(t.portfolio.highlights).map(([key, project]) => (

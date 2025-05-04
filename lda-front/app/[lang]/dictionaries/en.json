@@ -11,6 +11,19 @@
       "curriculum": "https://www.leandrodamasio.com/en/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/en/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/en/portfolio"
+    },
+    "menu": {
+      "aboutMe": "About Me",
+      "portfolio": "Portfolio",
+      "curriculumVitae": "Curriculum Vitae",
+      "skills": "Skills",
+      "biography": "Biography",
+      "works": "Works",
+      "honors": "Honors"
+    },
+    "tabs": {
+      "featuredProjects": "Featured Projects",
+      "links": "Links"
     }
   },
   "aboutMe": {

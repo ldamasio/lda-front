@@ -11,6 +11,19 @@
       "curriculum": "https://www.leandrodamasio.com/zh/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/zh/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/zh/portfolio"
+    },
+    "menu": {
+      "aboutMe": "关于我",
+      "portfolio": "作品集",
+      "curriculumVitae": "简历",
+      "skills": "技能",
+      "biography": "传记",
+      "works": "作品",
+      "honors": "荣誉"
+    },
+    "tabs": {
+      "featuredProjects": "精选项目",
+      "links": "链接"
     }
   },
   "aboutMe": {
