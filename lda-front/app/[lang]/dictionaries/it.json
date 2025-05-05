@@ -11,6 +11,19 @@
       "curriculum": "https://www.leandrodamasio.com/it/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/it/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/it/portfolio"
+    },
+    "menu": {
+      "aboutMe": "Chi sono",
+      "portfolio": "Portfolio",
+      "curriculumVitae": "Curriculum Vitae",
+      "skills": "Competenze",
+      "biography": "Biografia",
+      "works": "Lavori",
+      "honors": "Riconoscimenti"
+    },
+    "tabs": {
+      "featuredProjects": "Progetti in Evidenza",
+      "links": "Link"
     }
   },
   "aboutMe": {
@@ -30,7 +43,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "",
+        "description": "ROBSON BOT, un bot di trading di criptovalute open source in Python, utilizza un'architettura asincrona e multi-tenant per decisioni basate su analisi probabilistiche e tecniche. Include gestione del rischio, diffusione di segnali, strategie di trading, una piattaforma React per la dashboard e Kubernetes per la sicurezza multiutente.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],

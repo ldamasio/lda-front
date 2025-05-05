@@ -11,6 +11,19 @@
       "curriculum": "https://www.leandrodamasio.com/zh/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/zh/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/zh/portfolio"
+    },
+    "menu": {
+      "aboutMe": "关于我",
+      "portfolio": "作品集",
+      "curriculumVitae": "简历",
+      "skills": "技能",
+      "biography": "传记",
+      "works": "作品",
+      "honors": "荣誉"
+    },
+    "tabs": {
+      "featuredProjects": "精选项目",
+      "links": "链接"
     }
   },
   "aboutMe": {
@@ -30,7 +43,7 @@
     "highlights": [
       {
         "name": "Robson 机器人",
-        "description": "",
+        "description": "ROBSON BOT 是一款使用 Python 编写的开源加密货币交易机器人，它采用异步和多租户架构，基于概率和技术分析做出决策。它包括风险管理、信号分发、交易策略、用于仪表板的 React 平台以及用于多用户安全性的 Kubernetes。",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],

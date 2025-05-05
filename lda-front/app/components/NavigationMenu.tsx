@@ -16,6 +16,17 @@ import LanguageSelect from '@/app/components/LanguageSelect';
 import { usePathname } from "next/navigation";
 
 interface Dictionary {
+  meta: {
+    menu: {
+      aboutMe: string,
+      skills: string,
+      curriculumVitae: string,
+      portfolio: string,
+      biography: string,
+      works: string,
+      honors: string
+    }
+  }
   aboutMe: {
     desc: string[];
     bio: string;
@@ -80,34 +91,40 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
   ];
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList className="flex flex-col w-full md:flex-row">
+    <NavigationMenu className="mb-8">
+      <NavigationMenuList className="flex flex-col w-full md:flex-row gap-2 md:gap-0">
 
-
+        <NavigationMenuItem>
+          <Link href={`/${lang}/`} legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Home
+              </NavigationMenuLink>
+            </Link>
+        </NavigationMenuItem>
 
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            {lang === 'pt' ? 'Sobre Mim' : 'About Me'}
+            {t.meta.menu.aboutMe}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href={`/${lang}/skills`} title="Habilidades">
-              {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/cv`} title="Currículo">
-              {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/about-me`} title="Portfolio">
-              {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/cv`} title="Biografia">
-                {t.curriculum.location}
-              </ListItem>
-              <ListItem href={`/${lang}/contact`} title="Trabalhos">
+              <ListItem href={`/${lang}/skills`} title={`${t.meta.menu.skills}`}>
                 {t.aboutMe.desc}
               </ListItem>
-              <ListItem href={`/${lang}/contact`} title="Honrarias">
+              <ListItem href={`/${lang}/cv`} title={`${t.meta.menu.curriculumVitae}`}>
+                {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href={`/${lang}/portfolio`} title={`${t.meta.menu.portfolio}`}>
+                {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href={`/${lang}/biography`} title={`${t.meta.menu.biography}`}>
+                {t.curriculum.location}
+              </ListItem>
+              <ListItem href={`/${lang}/works`} title={`${t.meta.menu.works}`}>
+                {t.aboutMe.desc}
+              </ListItem>
+              <ListItem href={`/${lang}/honors`} title={`${t.meta.menu.honors}`}>
                 {t.aboutMe.desc}
               </ListItem>
             </ul>
@@ -117,7 +134,7 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
 
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Portfolio</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{t.meta.menu.portfolio}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -135,12 +152,21 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
         <NavigationMenuItem>
           <Link href={`/${lang}/articles`} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Currículo
+              {t.meta.menu.curriculumVitae}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href={`/${lang}/contact`} legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact
+              </NavigationMenuLink>
+            </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <LanguageSelect currentPath={pathname} />
+        </NavigationMenuItem>
       </NavigationMenuList>
-      <LanguageSelect currentPath={pathname} />
     </NavigationMenu>
   )
 }

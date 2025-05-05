@@ -11,7 +11,40 @@
       "curriculum": "https://www.leandrodamasio.com/pt/cv",
       "cvPdfLink": "https://www.leandrodamasio.com/pt/cv/pdf/",
       "portfolio": "https://www.leandrodamasio.com/pt/portfolio"
-    }   
+    },
+    "menu": {
+      "aboutMe": "Sobre Mim",
+      "portfolio": "Portfolio",
+      "curriculumVitae": "Currículo",
+      "skills": "Habilidades",
+      "biography": "Biografia",
+      "works": "Trabalhos",
+      "honors": "Honrarias"
+    },
+    "tabs": {
+      "featuredProjects": "Projetos Destacados",
+      "links": "Links"
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "desc": "Uma visão geral abrangente da minha experiência técnica e proficiência em vários domínios.",
+      "languages": "Linguagens",
+      "fullStackDev": "Desenvolvimento Full Stack",
+      "devops": "DevOps",
+      "cloud": "Nuvem",
+      "data": "Dados",
+      "aiml": "IA e Aprendizado de Máquina",
+      "softwareArchitecture": "Arquitetura de Software",
+      "observability": "Observabilidade"
+    },
+    "cv": {
+      "professionalExperience": "Experiência Profissional",
+      "education": "Educação",
+      "languages": "Idiomas",
+      "keyAchievements": "Principais Conquistas",
+      "detailedSkills": "Habilidades Detalhadas",
+      "additionalWorks": "Trabalhos Adicionais"
+    }
   },
   "aboutMe": {
     "title": "Sobre mim",
@@ -30,7 +63,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "",
+        "description": "O ROBSON BOT, um bot de negociação de criptomoedas de código aberto em Python, utiliza arquitetura assíncrona e multilocatário para decisões baseadas em análises probabilísticas e técnicas. Inclui gerenciamento de risco, disseminação de sinais, estratégias de negociação, plataforma React para o painel e Kubernetes para segurança em múltiplos usuários.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
