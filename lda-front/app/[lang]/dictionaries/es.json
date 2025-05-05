@@ -24,6 +24,26 @@
     "tabs": {
       "featuredProjects": "Proyectos Destacados",
       "links": "Enlaces"
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "desc": "Una visión general completa de mi experiencia técnica y competencia en varios dominios.",
+      "languages": "Idiomas",
+      "fullStackDev": "Desarrollo Full Stack",
+      "devops": "DevOps",
+      "cloud": "Nube",
+      "data": "Datos",
+      "aiml": "IA y Aprendizaje Automático",
+      "softwareArchitecture": "Arquitectura de Software",
+      "observability": "Observabilidad"
+    },
+    "cv": {
+      "professionalExperience": "Experiencia Profesional",
+      "education": "Educación",
+      "languages": "Idiomas",
+      "keyAchievements": "Logros Clave",
+      "detailedSkills": "Habilidades Detalladas",
+      "additionalWorks": "Trabajos Adicionales"
     }
   },
   "aboutMe": {

@@ -24,6 +24,26 @@
     "tabs": {
       "featuredProjects": "精选项目",
       "links": "链接"
+    },
+    "skills": {
+      "title": "技术能力",
+      "desc": "全面概述我在各种领域的技术专长和熟练程度。",
+      "languages": "语言",
+      "fullStackDev": "全栈开发",
+      "devops": "DevOps",
+      "cloud": "云计算",
+      "data": "数据",
+      "aiml": "人工智能和机器学习",
+      "softwareArchitecture": "软件架构",
+      "observability": "可观测性"
+    },
+    "cv": {
+      "professionalExperience": "职业经历",
+      "education": "教育背景",
+      "languages": "语言",
+      "keyAchievements": "主要成就",
+      "detailedSkills": "详细技能",
+      "additionalWorks": "其他作品"
     }
   },
   "aboutMe": {
