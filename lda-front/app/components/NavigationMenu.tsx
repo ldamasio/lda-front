@@ -150,7 +150,7 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href={`/${lang}/articles`} legacyBehavior passHref>
+          <Link href={`/${lang}/cv`} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t.meta.menu.curriculumVitae}
             </NavigationMenuLink>

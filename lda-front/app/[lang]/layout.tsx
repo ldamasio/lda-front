@@ -17,7 +17,7 @@ export default function RootLayout({
   params: LangParams;
 }>) {
   return (
-    <html lang={params.lang}>
+    <html lang={params.lang} className="dark">
       <body>
         <main className="flex flex-col items-center justify-between min-h-[80vh]">
           {children}

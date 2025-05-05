@@ -24,6 +24,26 @@
     "tabs": {
       "featuredProjects": "Projets Phares",
       "links": "Liens"
+    },
+    "skills": {
+      "title": "Compétences Techniques",
+      "desc": "Un aperçu complet de mon expertise technique et de mes compétences dans divers domaines.",
+      "languages": "Langues",
+      "fullStackDev": "Développement Full Stack",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "data": "Données",
+      "aiml": "IA et Apprentissage Automatique",
+      "softwareArchitecture": "Architecture Logicielle",
+      "observability": "Observabilité"
+    },
+    "cv": {
+      "professionalExperience": "Expérience Professionnelle",
+      "education": "Formation",
+      "languages": "Langues",
+      "keyAchievements": "Réalisations Clés",
+      "detailedSkills": "Compétences Détaillées",
+      "additionalWorks": "Travaux Supplémentaires"
     }
   },
   "aboutMe": {

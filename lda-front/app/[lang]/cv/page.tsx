@@ -25,12 +25,12 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
   const t = await getDictionary(lang);
 
   return (
-    <div className={styles.container}>
+    <div className="container mx-auto px-4 py-8">
       <div className={styles.main}>
         <NavMenu lang={lang} dictionary={t} />
 
         <div className="flex justify-between items-center w-full mb-6">
-          <h1 className="text-3xl font-bold">Curriculum Vitae</h1>
+          <h1 className="text-3xl font-bold">{t.meta.menu.curriculumVitae}</h1>
           {t.meta.links.cvPdfLink && (
             <Button variant="outline" size="sm" className="flex items-center gap-2">
               <Download className="w-4 h-4" />
@@ -48,18 +48,18 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
             <CardDescription>{t.curriculum.location}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700">{t.curriculum.resume}</p>
+            <p className="dark:text-gray-100">{t.curriculum.resume}</p>
           </CardContent>
         </Card>
 
         <section className="mb-8">
           <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
             <Brain className="w-6 h-6 text-primary" />
-            Habilidades
+            {t.meta.menu.skills}
           </h2>
           <div className="flex flex-wrap gap-2">
             {t.curriculum.skills.map((skill: string, index: number) => (
-              <span key={index} className="bg-gray-100 px-3 py-1 rounded-md text-sm">
+              <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
                 {skill}
               </span>
             ))}
@@ -69,7 +69,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
         <section className="mb-8">
           <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
             <Briefcase className="w-6 h-6 text-primary" />
-            Experiência Profissional
+            {t.meta.cv.professionalExperience}
           </h2>
           {(t.curriculum.ProfessionalExperience || t.curriculum.professionalExperience)?.map((experience: Experience, index: number) => (
             <Card key={index} className="w-full mb-4">
@@ -84,7 +84,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
               <CardContent>
                 <ul className="list-disc pl-5 space-y-2">
                   {(experience.Description || experience.description)?.map((desc, i) => (
-                    <li key={i} className="text-gray-700">
+                    <li key={i} className="text-gray-300">
                       {desc}
                     </li>
                   ))}
@@ -97,7 +97,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
         <section className="mb-8">
           <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
             <University className="w-6 h-6 text-primary" />
-            Educação
+            {t.meta.cv.education}
           </h2>
           {(t.curriculum.Education || t.curriculum.education)?.map((education: Education, index: number) => (
             <Card key={index} className="w-full mb-4">
@@ -117,11 +117,11 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
           <section className="mb-8">
             <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
               <BookOpen className="w-6 h-6 text-primary" />
-              Idiomas
+              {t.meta.cv.languages}
             </h2>
             <div className="flex flex-wrap gap-2">
               {t.curriculum.languages.map((language: string, index: number) => (
-                <span key={index} className="bg-gray-100 px-3 py-1 rounded-md text-sm">
+                <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
                   {language}
                 </span>
               ))}
@@ -132,7 +132,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
         <section className="mb-8">
           <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
             <Award className="w-6 h-6 text-primary" />
-            Conquistas Principais
+            {t.meta.cv.keyAchievements}
           </h2>
           {(t.curriculum.KeyAchievements || t.curriculum.keyAchievements)?.map((achievement: Achievement, index: number) => (
             <Card key={index} className="w-full mb-4">
@@ -141,7 +141,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
                   {achievement.Area || achievement.area}
                 </CardTitle>
                 <CardContent className="pt-4">
-                  <p className="text-gray-700">
+                  <p className="text-gray-300">
                     {achievement.Description || achievement.description}
                   </p>
                 </CardContent>
@@ -154,13 +154,13 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
           <section className="mb-8">
             <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
               <Award className="w-6 h-6 text-primary" />
-              Honras e Prêmios
+              {t.meta.menu.honors}
             </h2>
             <Card>
               <CardContent className="pt-6">
                 <ul className="list-disc pl-5 space-y-2">
                   {t.honors.map((honor: string, index: number) => (
-                    <li key={index} className="text-gray-700">
+                    <li key={index} className="text-gray-300">
                       {honor}
                     </li>
                   ))}
@@ -174,7 +174,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
         <section className="mb-8">
           <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
             <Brain className="w-6 h-6 text-primary" />
-            Habilidades Detalhadas
+            {t.meta.cv.detailedSkills}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(common.skills).map(([category, skills]) => {
@@ -218,13 +218,13 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
           <section className="mb-8">
             <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
               <Briefcase className="w-6 h-6 text-primary" />
-              Trabalhos Adicionais
+              {t.meta.cv.additionalWorks}
             </h2>
             <Card>
               <CardContent className="pt-6">
                 <ul className="list-disc pl-5 space-y-2">
                   {t.works.map((work: string, index: number) => (
-                    <li key={index} className="text-gray-700">
+                    <li key={index} className="text-gray-300">
                       {work}
                     </li>
                   ))}
