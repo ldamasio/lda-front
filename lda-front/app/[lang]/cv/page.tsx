@@ -25,12 +25,12 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
   const t = await getDictionary(lang);
 
   return (
-    <div className={styles.container}>
+    <div className="container mx-auto px-4 py-8">
       <div className={styles.main}>
         <NavMenu lang={lang} dictionary={t} />
 
         <div className="flex justify-between items-center w-full mb-6">
-          <h1 className="text-3xl font-bold">Curriculum Vitae</h1>
+          <h1 className="text-3xl font-bold">{t.meta.menu.curriculumVitae}</h1>
           {t.meta.links.cvPdfLink && (
             <Button variant="outline" size="sm" className="flex items-center gap-2">
               <Download className="w-4 h-4" />
@@ -48,7 +48,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
             <CardDescription>{t.curriculum.location}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700">{t.curriculum.resume}</p>
+            <p className="dark:text-gray-100">{t.curriculum.resume}</p>
           </CardContent>
         </Card>
 
@@ -59,7 +59,7 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
           </h2>
           <div className="flex flex-wrap gap-2">
             {t.curriculum.skills.map((skill: string, index: number) => (
-              <span key={index} className="bg-gray-100 px-3 py-1 rounded-md text-sm">
+              <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
                 {skill}
               </span>
             ))}
@@ -117,11 +117,11 @@ export default async function CV({ params: { lang } }: { params: { lang: string 
           <section className="mb-8">
             <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
               <BookOpen className="w-6 h-6 text-primary" />
-              Idiomas
+              {t.meta.cv.languages}
             </h2>
             <div className="flex flex-wrap gap-2">
               {t.curriculum.languages.map((language: string, index: number) => (
-                <span key={index} className="bg-gray-100 px-3 py-1 rounded-md text-sm">
+                <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
                   {language}
                 </span>
               ))}

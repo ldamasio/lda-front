@@ -24,6 +24,26 @@
     "tabs": {
       "featuredProjects": "Ausgewählte Projekte",
       "links": "Links"
+    },
+    "skills": {
+      "title": "Technische Fähigkeiten",
+      "desc": "Ein umfassender Überblick über meine technische Expertise und Kompetenz in verschiedenen Bereichen.",
+      "languages": "Sprachen",
+      "fullStackDev": "Full-Stack-Entwicklung",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "data": "Daten",
+      "aiml": "KI und Maschinelles Lernen",
+      "softwareArchitecture": "Softwarearchitektur",
+      "observability": "Observabilität"
+    },
+    "cv": {
+      "professionalExperience": "Berufserfahrung",
+      "education": "Bildung",
+      "languages": "Sprachen",
+      "keyAchievements": "Wichtigste Erfolge",
+      "detailedSkills": "Detaillierte Fähigkeiten",
+      "additionalWorks": "Zusätzliche Arbeiten"
     }
   },
   "aboutMe": {
