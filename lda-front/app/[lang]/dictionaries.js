@@ -1,3 +1,4 @@
+// [lang]/dictionaries.js
 import 'server-only'
  
 const dictionaries = {

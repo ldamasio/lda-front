@@ -1,3 +1,4 @@
+// [lang]/page.tsx
 import { getDictionary } from './dictionaries-server'
 import styles from './page.module.css';
 import { Project, Experience, Education, Achievement } from './types';

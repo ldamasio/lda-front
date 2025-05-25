@@ -1,3 +1,4 @@
+// [lang]/layout.tsx
 import "@/app/globals.css";
 import { Footer } from '../components/Footer';
 
