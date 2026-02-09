@@ -34,9 +34,11 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
         <NavMenu lang={lang} dictionary={t} />
 
         <h1 className={styles.title}>{t.meta.title}</h1>
-        <p className={styles.description}>
-          {t.meta.desc[0]}
-        </p>
+        <div className={styles.description}>
+          {t.meta.desc.map((p: string, i: number) => (
+             <p key={i} className="mb-4">{p}</p>
+          ))}
+        </div>
 
         <Tabs defaultValue="projects" className="w-[100%]">
           <TabsList>
