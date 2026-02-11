@@ -86,12 +86,12 @@
         ]
       },
       {
-        "name": "Produktkatalog-Leads",
-        "description": "Vertriebsmanagementsoftware mit Produktkatalog und Kundendatenerfassung.",
+        "name": "x.sh",
+        "description": "Ein governed Execution Runtime für Menschen und Agenten. Ein local-first Shell-Wrapper, der echte Befehle in dauerhafte, kausale, maschinenlesbare Beweise verwandelt und eine harte Vertrauensgrenze zwischen tatsächlicher Ausführung und KI-Interpretation schafft.",
         "repositories": [
-          "https://github.com/ldamasio/product-catalog-leads"
+          "https://github.com/ldamasio/x.sh"
         ],
-        "technologies": "python, selenium, instagram",
+        "technologies": "bash, shell, json",
         "images": [
           ""
         ]
@@ -108,12 +108,12 @@
         ]
       },
       {
-        "name": "MSX API v1.0",
-        "description": "Eine RESTful-API in Python unter Verwendung von FastAPI, die das Erstellen, Lesen, Aktualisieren und Löschen von Fahrzeugdatensätzen mit grundlegenden Authentifizierungs- und automatischen Dokumentationsfunktionen ermöglicht. Sie wurde mit TDD erstellt und verwendet Bibliotheken wie pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "name": "playlist-fs",
+        "description": "Playlists als Filesystem-Projektionen über eine kanonische Musikbibliothek. Ein lokales, dateibasiertes Toolkit, bei dem Playlists symlinkte Filesystem-Ansichten sind. Kein Daemon, keine Cloud, kein Login. Nur Dateien, Symlinks und Shell.",
         "repositories": [
-          "https://github.com/ldamasio/msx-api-001"
+          "https://github.com/ldamasio/playlist-fs"
         ],
-        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "technologies": "shell, bash, filesystem, symlinks",
         "images": [
           ""
         ]

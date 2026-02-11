@@ -86,12 +86,12 @@
         ]
       },
       {
-        "name": "产品目录线索",
-        "description": "具有产品目录和客户数据捕获功能的销售管理软件。",
+        "name": "x.sh",
+        "description": "人类和代理的治理执行运行时。一个本地优先的 shell 包装器，将真实命令转换为持久、因果、机器可读的证据，在实际执行和 AI 解释之间创建严格的信任边界。",
         "repositories": [
-          "https://github.com/ldamasio/product-catalog-leads"
+          "https://github.com/ldamasio/x.sh"
         ],
-        "technologies": "python, selenium, instagram",
+        "technologies": "bash, shell, json",
         "images": [
           ""
         ]
@@ -108,12 +108,12 @@
         ]
       },
       {
-        "name": "MSX API v1.0",
-        "description": "一个使用 FastAPI 的 Python RESTful API，允许创建、读取、更新和删除车辆记录，具有基本的身份验证和自动文档生成功能。它使用 TDD 构建，并使用 pydantic、SQL Alchemy、Alembic、PyJWT、argon2 等库。",
+        "name": "playlist-fs",
+        "description": "播放列表作为规范音乐库上的文件系统投影。一个本地优先的基于文件的工具包，其中播放列表是带有符号链接的文件系统视图。无守护进程，无云，无登录。只有文件、符号链接和 shell。",
         "repositories": [
-          "https://github.com/ldamasio/msx-api-001"
+          "https://github.com/ldamasio/playlist-fs"
         ],
-        "technologies": "python, fastapi, sql alchemy, alembic, pyjwt, argon2, pydantic",
+        "technologies": "shell, bash, filesystem, symlinks",
         "images": [
           ""
         ]
