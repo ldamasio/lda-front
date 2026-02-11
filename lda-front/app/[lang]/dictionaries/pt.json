@@ -142,14 +142,32 @@
     "resume": "Engenheiro de Software Full-Stack e Especialista em IA/ML orientado a resultados, com mais de 10 anos de experiência em arquitetar e implantar produtos de dados escaláveis, modelos preditivos avançados e soluções nativas da nuvem robustas. Demonstra expertise abrangente no ciclo de vida completo de desenvolvimento de software, abrangendo design arquitetônico, implementação e automação de DevOps, em setores industriais, financeiros, comerciais e de pesquisa. Utiliza habilmente Python, JavaScript e plataformas de nuvem líderes para fomentar a inovação e resolver desafios complexos. Emprega comunicação assíncrona e gerenciamento de tarefas distribuídas para construir sistemas altamente otimizados, garantindo desempenho seguro e estável para atender às demandas críticas de negócios. Comprometido com metodologias ágeis, promovendo o engajamento colaborativo do cliente e a entrega contínua.",
     "professionalExperience": [
       {
-        "company": "Arte Arena",
-        "title": "Líder Técnico e Engenheiro de Software Principal",
-        "dates": "Outubro 2024 – Março 2025",
+        "company": "Enforce",
+        "title": "Engenheiro de IA",
+        "dates": "Outubro 2025 – Presente",
         "description": [
-          "Liderou a modernização de sistemas legados projetando uma plataforma SaaS nativa da nuvem, acelerando a implantação de recursos em 85% por meio de microsserviços e otimização de CI/CD.",
-          "Arquitetou fluxos de trabalho orientados a eventos usando Kubernetes, Istio e ArgoCD, reduzindo os custos de infraestrutura em 30%.",
-          "Liderou equipes multifuncionais para entregar um produto full-stack com React, FastAPI e AWS.",
-          "Desenvolveu produtos de IA inovadores aproveitando APIs de IA generativa para criar experiências de usuário personalizadas."
+          "Enforce faz parte do Grupo BTG Pactual e foca em crédito distressed e gestão de ativos.",
+          "Projetou e implementou o \"Forja\", uma plataforma interna de experimentação e governança de LLM com pipelines RAG, bancos de dados vetoriais (pgvector/ParadeDB) e versionamento de prompts, reduzindo o tempo para testar novos workflows de IA de dias para horas para equipes de dados e produto.",
+          "Construiu o \"Prompt-Maker\", um backend FastAPI para centralizar a governança de prompts e workflows, possibilitando o uso consistente e auditável de IA Generativa em múltiplos sistemas internos.",
+          "Desenvolveu o assistente conversacional \"Atena\", conectando LLMs a dados legais e financeiros através de pipelines de retrieval e embeddings, reduzindo significativamente o tempo de análise para documentos e casos complexos.",
+          "Contribuiu com a plataforma de analytics legais \"Fase\", integrando componentes de IA aos workflows de recuperação de crédito e jurídicos, melhorando visibilidade e suporte à decisão para portfolios de alto volume.",
+          "Estruturou um ambiente Kubernetes (k3s) + ArgoCD + GitOps para serviços de IA, padronizando deployments, isolamento e monitoramento de workloads de GenAI.",
+          "Promoveu melhores práticas de AI Engineering — versionamento, observabilidade, avaliação e design com compliance — garantindo que sistemas de IA sejam robustos, rastreáveis e alinhados com requisitos do setor financeiro.",
+          "Tech: Python, FastAPI, Kubernetes (k3s), ArgoCD, GitOps, Postgres/ParadeDB, pgvector, RAG pipelines, LLMs, embeddings, CI/CD, observabilidade."
+        ]
+      },
+      {
+        "company": "Arte Arena",
+        "title": "Engenheiro de Software Principal",
+        "dates": "Novembro 2024 – Outubro 2025",
+        "description": [
+          "Tech Lead & Principal Software Engineer, liderando modernização de sistemas legados para uma plataforma SaaS cloud-native.",
+          "Migrou uma API Laravel crítica para Go, alcançando um ciclo de deployment 42% mais rápido e redução de 39% nos custos de computação, além de melhorar escalabilidade e confiabilidade.",
+          "Liderou o design de uma plataforma SaaS cloud-native usando Python FastAPI e microsserviços, acelerando a entrega de features em 85% através de modularização e CI/CD melhorado.",
+          "Arquitetou workflows event-driven com Kubernetes, Istio e ArgoCD, cortando custos de infraestrutura em 30% e melhorando resiliência operacional.",
+          "Liderou equipes cross-funcionais para entregar um produto full-stack construído com React + FastAPI + AWS, alinhando decisões técnicas com objetivos de produto e negócio.",
+          "Desenvolveu features aprimoradas com IA usando APIs de IA Generativa e FastMCP (Python) para fornecer experiências de usuário personalizadas e capacidades de IA integradas no produto.",
+          "Tech: Go, Python, FastAPI, React, Kubernetes, Istio, ArgoCD, AWS, CI/CD, arquitetura event-driven, APIs de IA Generativa."
         ]
       },
       {

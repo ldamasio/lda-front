@@ -2,12 +2,12 @@
   "meta": {
     "title": "Leandro Damasio. Willkommen auf meiner persönlichen Seite",
     "desc": [
-      "Ich bin ein KI-Ingenieur bei Enforce (BTG Pactual Group) mit Sitz in São Paulo, Brasilien.",
-      "Ich entwickle produktionsreife KI-Systeme für den Finanz- und Rechtssektor, in denen Zuverlässigkeit, Observability und Governance keine Optionen, sondern das Fundament sind. Meine Arbeit konzentriert sich darauf, KI-Systeme sicher für den Einsatz in realen Entscheidungsprozessen zu machen, insbesondere in regulierten Umfeldern.",
-      "Meine Arbeit liegt an der Schnittstelle von KI, Softwarearchitektur und Infrastruktur. Ich entwerfe agentische Architekturen, definiere Runtime-Kontrollschleifen und erstelle Evaluations- und Monitoring-Pipelines für LLM-basierte Systeme. Ich arbeite hands-on mit Vektorsuche unter Verwendung von pgvector und ParadeDB, Prompt- und Kontext-Governance sowie der sicheren Integration interner und externer Datenquellen.",
-      "Ich lege großen Wert auf Versionierung, Auditierbarkeit und Rückverfolgbarkeit, um sicherzustellen, dass KI-Systeme technische, rechtliche und Risikogebote erfüllen, während sie in der Produktion weiterentwickelt werden.",
-      "Über meine Rolle bei Enforce hinaus bin ich im Bereich AI-First-Entwicklung und in agentischen Systemen außerhalb des Unternehmensumfelds aktiv. Ich bin der Schöpfer und Verwalter eines Open-Source-Monorepos bei RBX Systems, in dem ich an KI-Agenten, Code-Agenten und System-Level-Tooling arbeite, immer mit Fokus auf Architektur und langfristige Wartbarkeit.",
-      "Ich genieße die Zusammenarbeit in den Bereichen Software Engineering, DevOps, UX und Produktmanagement und interessiere mich besonders für agentische Runtimes, Memory- und Kontextmanagement sowie die Grenze zwischen Modellfähigkeiten und Systemsteuerung."
+      "Ich bin AI Engineer bei Enforce (BTG Pactual Group) mit Sitz in São Paulo, Brasilien.",
+      "Ich baue produktionsreife KI-Systeme für die Finanz- und Rechtsdomänen, wo Zuverlässigkeit, Observability und Governance keine Optionen sind, sondern das Fundament bilden. Meine Arbeit konzentriert sich darauf, KI-Systeme sicher für den Einsatz in echten Entscheidungsprozessen zu machen, besonders in regulierten Umgebungen.",
+      "Meine Arbeit liegt an der Schnittstelle von KI, Softwarearchitektur und Infrastruktur. Ich entwerfe Agentenarchitekturen, definiere Runtime-Kontrollschleifen und baue Evaluierungs- und Monitoring-Pipelines für LLM-basierte Systeme. Ich arbeite praktisch mit Vektorsuche unter Verwendung von pgvector und ParadeDB, Prompt- und Kontext-Governance sowie sicherer Integration mit internen und externen Datenquellen.",
+      "Ich lege großen Wert auf Versionierung, Auditierbarkeit und Rückverfolgbarkeit und stelle sicher, dass KI-Systeme technische, rechtliche und Risikoorfordernungen erfüllen, während sie sich in der Produktion weiterentwickeln.",
+      "Über meine Rolle bei Enforce hinaus bin ich aktiv in der KI-first-Entwicklung und in agentsystemen außerhalb des Unternehmensumfelds. Ich bin der Schöpfer und Betreuer eines Open-Source-Monorepos bei RBX Systems, wo ich an KI-Agenten, Code-Agenten und System-Level-Tools arbeite, immer mit Fokus auf Architektur und langfristiger Wartbarkeit.",
+      "Ich arbeite gerne zusammen über Software Engineering, DevOps, UX und Product hinweg und interessiere mich besonders für Agent-Runtimes, Speicher- und Kontextmanagement sowie die Grenze zwischen Modellfähigkeiten und Systemkontrolle."
     ],
     "links": {
       "curriculum": "https://www.leandrodamasio.com/de/cv",
@@ -35,9 +35,9 @@
       "devops": "DevOps",
       "cloud": "Cloud",
       "data": "Daten",
-      "aiml": "KI und Maschinelles Lernen",
+      "aiml": "KI und maschinelles Lernen",
       "softwareArchitecture": "Softwarearchitektur",
-      "observability": "Observabilität"
+      "observability": "Observability"
     },
     "cv": {
       "professionalExperience": "Berufserfahrung",
@@ -50,12 +50,12 @@
   },
   "aboutMe": {
     "title": "Über mich",
-    "desc": "Ich bin ein KI-Ingenieur bei Enforce (BTG Pactual Group) mit Sitz in São Paulo, Brasilien. Ich entwickle produktionsreife KI-Systeme für den Finanz- und Rechtssektor.",
-    "bio": "Leandro Damasio begann seine Karriere als Ingenieur in den 1990er Jahren mit der PHP-Sprache. Seitdem hat er sich als erfahrener und innovativer Softwareentwickler hervorgetan und an Entwicklungsprojekten für grosse Unternehmen und Institutionen wie FAPESP, NPL Brasil, Global Hitss, Arte Arena und Stefanini gearbeitet.",
+    "desc": "Ich bin AI Engineer bei Enforce (BTG Pactual Group) mit Sitz in São Paulo, Brasilien. Ich baue produktionsreife KI-Systeme für die Finanz- und Rechtsdomänen.",
+    "bio": "Leandro Damasio begann seine Karriere als Ingenieur in den 1990er Jahren mit der Sprache PHP. Seitdem hat er sich als erfahrener und innovativer Softwareingenieur hervorgetan und an Entwicklungsprojekten für große Unternehmen und Institutionen wie FAPESP, NPL Brasil, Global Hitss, Arte Arena und Stefanini gearbeitet.",
     "values": [
       "Innovation",
       "Ergebnisse",
-      "Kollaboration",
+      "Zusammenarbeit",
       "Effizienz",
       "Sicherheit",
       "Agilität"
@@ -65,7 +65,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "Der ROBSON BOT, ein Open-Source-Bot für den Handel mit Kryptowährungen, der in Python geschrieben ist, nutzt eine asynchrone und mandantenfähige Architektur für Entscheidungen, die auf probabilistischen und technischen Analysen basieren. Er beinhaltet Risikomanagement, Signalverteilung, Handelsstrategien, eine React-Plattform für das Dashboard und Kubernetes für die Sicherheit bei mehreren Nutzern.",
+        "description": "ROBSON BOT, ein Open-Source-Kryptowährungshandelsbot in Python, nutzt eine asynchrone und Multi-Mandanten-Architektur für Entscheidungen auf der Grundlage von wahrscheinlichkeitstheoretischen und technischen Analysen. Er umfasst Risikomanagement, Signalverteilung, Handelsstrategien, eine React-Plattform für das Dashboard und Kubernetes für die Sicherheit bei mehreren Benutzern.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
@@ -76,7 +76,7 @@
       },
       {
         "name": "Finanzbetrugserkennung RF XGBoost",
-        "description": "Dieses Projekt konzentriert sich auf die Entwicklung eines robusten Betrugserkennungssystems unter Verwendung von Algorithmen für maschinelles Lernen. Es vergleicht die Leistung zweier populärer Ensemble-Methoden: Random Forest und XGBoost, bei der Klassifizierung von Finanztransaktionen als betrügerisch oder legitim. Die Modelle werden auf einem realen Finanzdatensatz trainiert und evaluiert.",
+        "description": "Dieses Projekt konzentriert sich auf die Entwicklung eines robusten Betrugserkennungssystems unter Verwendung von Algorithmen für maschinelles Lernen. Es vergleicht die Leistung von zwei beliebten Ensemble-Methoden: Random Forest und XGBoost bei der Klassifizierung von Finanztransaktionen als betrügerisch oder legitim. Die Modelle werden auf einem echten Finanzdatensatz trainiert und evaluiert.",
         "repositories": [
           "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
         ],
@@ -86,8 +86,8 @@
         ]
       },
       {
-        "name": "Produktkatalog Leads",
-        "description": "Software zur Vertriebsverwaltung mit Produktkatalog und Kundendatenerfassung.",
+        "name": "Produktkatalog-Leads",
+        "description": "Vertriebsmanagementsoftware mit Produktkatalog und Kundendatenerfassung.",
         "repositories": [
           "https://github.com/ldamasio/product-catalog-leads"
         ],
@@ -98,7 +98,7 @@
       },
       {
         "name": "GPT4 LangChain Chatbot ",
-        "description": "Dieses Projekt zeigt die Entwicklung eines intelligenten Chatbots unter Verwendung des leistungsstarken Sprachmodells GPT-4 und des LangChain-Frameworks. Es demonstriert, wie eine Konversations-KI aufgebaut werden kann, die Benutzeranfragen auf natürliche und ansprechende Weise verstehen und beantworten kann.",
+        "description": "Dieses Projekt zeigt die Entwicklung eines intelligenten Chatbots unter Verwendung des leistungsstarken Sprachmodells GPT-4 und des LangChain-Frameworks. Es demonstriert, wie man eine konversationelle KI aufbauen kann, die Benutzeranfragen auf natürliche und ansprechende Weise verstehen und beantworten kann.",
         "repositories": [
           "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
         ],
@@ -109,7 +109,7 @@
       },
       {
         "name": "MSX API v1.0",
-        "description": "Eine RESTful API in Python unter Verwendung von FastAPI, die das Erstellen, Lesen, Aktualisieren und Löschen von Fahrzeugdatensätzen mit grundlegender Authentifizierung und automatischen Dokumentationsfunktionen ermöglicht. Sie wurde mit TDD erstellt und verwendet Bibliotheken wie pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "description": "Eine RESTful-API in Python unter Verwendung von FastAPI, die das Erstellen, Lesen, Aktualisieren und Löschen von Fahrzeugdatensätzen mit grundlegenden Authentifizierungs- und automatischen Dokumentationsfunktionen ermöglicht. Sie wurde mit TDD erstellt und verwendet Bibliotheken wie pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
         "repositories": [
           "https://github.com/ldamasio/msx-api-001"
         ],
@@ -120,7 +120,7 @@
       },
       {
         "name": "Space",
-        "description": "Space Arena ERP. Frontend in React und Next.js. Robuste, sichere, zuverlässige und optimierte Backends, gebaut mit Go, PHP, Laravel, die eine RESTful API für die Bereiche Produktion, Administration und Management sowie eine Schnittstelle für die Interaktion mit Endkunden bieten. Es verwendet moderne Architekturmuster, um Skalierbarkeit und Wartbarkeit zu gewährleisten.",
+        "description": "Space Arena ERP. Frontend in React und Next.js. Robuste, sichere, zuverlässige und optimierte Backends, gebaut mit Go, PHP, Laravel, bieten eine RESTful-API für die Bereiche Produktion, Verwaltung und Management sowie eine Ebene für die Interaktion mit Endkunden. Es verwendet moderne Architekturmuster, um Skalierbarkeit und Wartbarkeit zu gewährleisten.",
         "repositories": [
           "https://github.com/Arte-Arena/space-backend",
           "https://github.com/Arte-Arena/space-frontend",
@@ -139,17 +139,35 @@
     "name": "Leandro Damasio",
     "headline": "Principal Software Engineer | Cloud- und DevOps-Spezialist | KI/ML-Ingenieur",
     "location": "São Paulo, SP - Brasilien",
-    "resume": "Ergebnisorientierter Full-Stack Software Engineer und KI/ML-Spezialist mit über 10 Jahren Erfahrung in der Entwicklung und Bereitstellung skalierbarer Datenprodukte, fortschrittlicher Vorhersagemodelle und robuster Cloud-nativer Lösungen. Umfassende Expertise über den gesamten Softwareentwicklungszyklus hinweg, von der Architekturplanung über die Implementierung bis zur DevOps-Automatisierung in Industrie, Finanzwesen, Handel und Forschung. Kompetenter Einsatz von Python, JavaScript und führenden Cloud-Plattformen zur Förderung von Innovation und zur Lösung komplexer Herausforderungen. Anwendung asynchroner Kommunikation und verteilter Aufgabenverwaltung zur Erstellung hochoptimierter Systeme, die sichere und stabile Leistung zur Erfüllung kritischer Geschäftsanforderungen gewährleisten. Engagement für agile Methoden, Förderung der kollaborativen Kundenbindung und der kontinuierlichen Lieferung.",
+    "resume": "Ergebnisorientierter Full-Stack-Softwareingenieur und KI/ML-Spezialist mit über 10 Jahren Erfahrung in der Architektur und Bereitstellung skalierbarer Datenprodukte, fortschrittlicher Vorhersagemodelle und robuster Cloud-nativer Lösungen. Zeigt umfassende Expertise über den gesamten Softwareentwicklungszyklus hinweg, von Architekturdesign über Implementierung bis DevOps-Automatisierung, in den Industrie-, Finanz-, Handels- und Forschungssektoren. Nutzt kompetent Python, JavaScript und führende Cloud-Plattformen, um Innovation zu fördern und komplexe Herausforderungen zu lösen. Verwendet asynchrone Kommunikation und verteilte Aufgabenverwaltung, um hochoptimierte Systeme zu erstellen und sichere und stabile Leistung zur Erfüllung kritischer geschäftlicher Anforderungen zu gewährleisten. Engagiert in agilen Methodologien, Förderung der kollaborativen Kundeneinbindung und kontinuierliche Bereitstellung.",
     "professionalExperience": [
       {
-        "company": "Arte Arena",
-        "title": "Tech Lead und Principal Software Engineer",
-        "dates": "Oktober 2024 – März 2025",
+        "company": "Enforce",
+        "title": "AI Engineer",
+        "dates": "Oktober 2025 – Heute",
         "description": [
-          "Führung der Modernisierung von Altsystemen durch die Entwicklung einer Cloud-nativen SaaS-Plattform, Beschleunigung der Feature-Bereitstellung um 85 % durch Microservices und CI/CD-Optimierung.",
-          "Architektur ereignisgesteuerter Workflows mit Kubernetes, Istio und ArgoCD, Reduzierung der Infrastrukturkosten um 30 %.",
-          "Führung funktionsübergreifender Teams zur Bereitstellung eines Full-Stack-Produkts mit React, FastAPI und AWS.",
-          "Entwicklung innovativer KI-Produkte unter Nutzung generativer KI-APIs zur Schaffung personalisierter Benutzererlebnisse."
+          "Enforce ist Teil der BTG Pactual Group und konzentriert sich auf Distressed Credit und Asset Management.",
+          "Entwarf und implementierte \"Forja\", eine interne LLM-Experimentierungs- und Governance-Plattform mit RAG-Pipelines, Vektordatenbanken (pgvector/ParadeDB) und Prompt-Versionierung, Reduzierung der Zeit zum Testen neuer KI-Workflows von Tagen auf Stunden für Daten- und Produktteams.",
+          "Baute \"Prompt-Maker\", ein FastAPI-Backend zur Zentralisierung der Prompt- und Workflow-Governance, Ermöglichung konsistenter, auditierbarer Nutzung von Generativer KI über mehrere interne Systeme hinweg.",
+          "Entwickelte den konversationellen Assistenten \"Atena\", Verbindung von LLMs mit Rechts- und Finanzdaten über Retrieval-Pipelines und Embeddings, signifikante Reduzierung der Analysezeit für komplexe Dokumente und Fälle.",
+          "Trug zur Analytics-Plattform \"Fase\" für Rechtsfragen bei, Integration von KI-Komponenten in Kreditrecovering- und Rechtsworkflows, Verbesserung der Sichtbarkeit und Entscheidungsunterstützung für High-Volume-Portfolios.",
+          "Strukturierte eine Kubernetes (k3s) + ArgoCD + GitOps-Umgebung für KI-Dienste, Standardisierung von Deployments, Isolierung und Monitoring von GenAI-Workloads.",
+          "Förderte Best Practices für AI Engineering — Versionierung, Observability, Bewertung und Compliance-bewusstes Design — um sicherzustellen, dass KI-Systeme robust, nachverfolgbar und auf Finanzsektoranforderungen ausgerichtet sind.",
+          "Tech: Python, FastAPI, Kubernetes (k3s), ArgoCD, GitOps, Postgres/ParadeDB, pgvector, RAG-Pipelines, LLMs, Embeddings, CI/CD, Observability."
+        ]
+      },
+      {
+        "company": "Arte Arena",
+        "title": "Principal Software Engineer",
+        "dates": "November 2024 – Oktober 2025",
+        "description": [
+          "Tech Lead & Principal Software Engineer, Leitung der Modernisierung von Legacy-Systemen zu einer Cloud-nativen SaaS-Plattform.",
+          "Migrierte eine kritische Laravel-API zu Go, Erreichung eines 42% schnelleren Deployment-Zyklus und 39% Reduzierung der Computekosten bei gleichzeitiger Verbesserung der Skalierbarkeit und Zuverlässigkeit.",
+          "Leitete das Design einer Cloud-nativen SaaS-Plattform unter Verwendung von Python FastAPI und Microservices, Beschleunigung der Feature-Bereitstellung um 85% durch Modularisierung und verbessertes CI/CD.",
+          "Architekturierte Event-driven-Workflows mit Kubernetes, Istio und ArgoCD, Senkung der Infrastrukturkosten um 30% und Verbesserung der betrieblichen Resilienz.",
+          "Leitete Cross-Funktions-Teams zur Bereitstellung eines Full-Stack-Produkts, gebaut mit React + FastAPI + AWS, Ausrichtung technischer Entscheidungen an Produkt- und Geschäftszielen.",
+          "Entwickelte KI-verbesserte Features unter Verwendung von Generativer KI-APIs und FastMCP (Python), um personalisierte Benutzererfahrungen und eingebettete KI-Fähigkeiten im Produkt zu bieten.",
+          "Tech: Go, Python, FastAPI, React, Kubernetes, Istio, ArgoCD, AWS, CI/CD, Event-driven-Architektur, Generative KI-APIs."
         ]
       },
       {
@@ -157,9 +175,9 @@
         "title": "Senior Software Engineer",
         "dates": "Oktober 2024 – März 2025",
         "description": [
-          "Überarbeitung der Suchmaschine der Virtuellen Bibliothek von FAPESP (Apache Solr), Verbesserung der Abfrage-Reaktionszeit um 37 % durch Datenindexierungsoptimierungen.",
-          "Leitung eines globalen Full-Stack-Teams zur Bereitstellung einer Laravel-basierten Anwendung für die akademische Forschungsförderung.",
-          "Behebung kritischer Fehler in Django-Systemen, Verbesserung der Stabilität für über 500.000 monatliche Nutzer."
+          "Überarbeitete die Suchmaschine der Virtuellen Bibliothek FAPESP (Apache Solr), Verbesserung der Abfrage-Antwortzeit um 37% durch Datenindexierungsoptimierungen.",
+          "Leitete ein globales Full-Stack-Team zur Bereitstellung einer Laravel-basierten Anwendung für die akademische Forschungsförderung.",
+          "Löste kritische Bugs in Django-Systemen, Verbesserung der Stabilität für über 500.000 monatliche Nutzer."
         ]
       },
       {
@@ -167,9 +185,9 @@
         "title": "Software Engineer",
         "dates": "Dezember 2019 – Januar 2022",
         "description": [
-          "Automatisierung von Datenpipelines mit Node.js und AWS, Reduzierung der manuellen Bearbeitungszeit um 50 %.",
-          "Integration von Google Cloud Document AI zur automatisierten Dokumentenanalyse, Steigerung der betrieblichen Effizienz.",
-          "Entwicklung und Implementierung benutzerdefinierter Smart Contracts im Ethereum-Netzwerk, Gewährleistung der Sicherheit und Integrität von Kryptowährungstransaktionen."
+          "Automatisierte Datenpipelines unter Verwendung von Node.js und AWS, Reduzierung der manuellen Verarbeitungszeit um 50%.",
+          "Integrierte Google Cloud Document AI zur automatisierten Dokumentenanalyse, Steigerung der betrieblichen Effizienz.",
+          "Entwickelte und implementierte benutzerdefinierte Smart Contracts im Ethereum-Netzwerk, Gewährleistung der Sicherheit und Integrität von Kryptowährungstransaktionen."
         ]
       },
       {
@@ -177,9 +195,9 @@
         "title": "Software Engineer",
         "dates": "Februar 2017 - April 2019",
         "description": [
-          "Entwurf eines skalierbaren Data Lakes mit Hadoop und Spark, Ermöglichung von Echtzeitanalysen für Unternehmenskunden.",
-          "Reduzierung der Bereitstellungszyklen um 23 % durch CI/CD-Pipeline-Automatisierung (ArgoCD, Docker).",
-          "Bereitstellung von Full-Stack-Anwendungen mit React und Nest.js für Kunden im Finanzsektor."
+          "Entwarf einen skalierbaren Data Lake mit Hadoop und Spark, Ermöglichung von Echtzeitanalysen für Unternehmenskunden.",
+          "Reduzierte Deployment-Zyklen um 23% durch CI/CD-Pipeline-Automatisierung (ArgoCD, Docker).",
+          "Bereitstellte Full-Stack-Anwendungen unter Verwendung von React und Nest.js für Kunden des Finanzsektors."
         ]
       }
     ],
@@ -230,30 +248,30 @@
     "keyAchievements": [
       {
         "area": "KI/ML",
-        "description": "Implementierung von MLOps-Pipelines mit Kubeflow zum Trainieren und Bereitstellen von Modellen zur Bedarfsprognose, Reduzierung der Trainingszeit um 40 % und Verbesserung der Modellgenauigkeit um 14 %."
+        "description": "Implementierte MLOps-Pipelines mit Kubeflow zum Trainieren und Bereitstellen von Nachfrageprognosemodellen, Reduzierung der Trainingszeit um 40% und Verbesserung der Modellgenauigkeit um 14%."
       },
       {
         "area": "Cloud",
-        "description": "Migration von über 17 Legacy-Systemen zu AWS/GCP, Erreichung einer Verfügbarkeit von 99,9 %."
+        "description": "Migrierte über 17 Legacy-Systeme zu AWS/GCP, Erreichung einer Verfügbarkeit von 99,9%."
       },
       {
         "area": "Full Cycle Delivery",
-        "description": "Leitung von über 8 End-to-End-Produktlaunches in verschiedenen Sektoren, von Fintech bis F&E."
+        "description": "Leitete über 8 End-to-End-Produktlaunches in verschiedenen Sektoren, von Fintech bis F&E."
       }
     ]
   },
   "works": [
-    "Aufsichtsperson der Ethik-Disziplin im Bachelorstudiengang Öffentliche Verwaltung an der Hochschule für Verwaltung und Management der Staatlichen Universität Santa Catarina",
-    "Gründungspräsident des Nationalen Verbands der Studierenden der Öffentlichen Verwaltung",
-    "Forscher an der Wirtschaftshochschule São Paulo der Getúlio Vargas Stiftung in Partnerschaft mit der Victor Civita Stiftung, in einem vergleichenden Forschungsprojekt zur Leistung in der Grundbildung im Bundesstaat São Paulo: Schulmanagement und Qualität der Bildung: eine Studie an zehn Schulen in São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
+    "Aufsichtsperson der Ethik-Disziplin im Bachelorstudiengang Public Service Administration an der Higher School of Administration and Management der Staatlichen Universität Santa Catarina",
+    "Gründungspräsident der Nationalen Föderation der Studierenden der öffentlichen Verwaltung",
+    "Forscher verbunden mit der School of Business Administration des Staates São Paulo der Getúlio Vargas Stiftung in Partnerschaft mit der Victor Civita Stiftung, in einem vergleichenden Forschungsprojekt über Leistung in der Grundbildung des Staates São Paulo: Schulmanagement und Bildungsqualität: eine Studie über zehn Schulen in São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
     "Gründungspräsident des Rotaract Club São Paulo Aclimação",
-    "Analyst für öffentliche Politik bei e-Stratégia Pública",
-    "Technischer Berater des Kabinetts des Bürgermeisters von Florianópolis",
-    "Statistikmanager des Städtischen Bildungssekretariats der Stadtverwaltung von Florianópolis, Santa Catarina",
+    "Public Policy Analyst bei e-Stratégia Pública",
+    "Technischer Berater des Kabinetts des Bürgermeisters der Gemeinde Florianópolis",
+    "Statistikmanager der Städtischen Bildungssekretariats der Stadtverwaltung Florianópolis, Santa Catarina",
     "Präsident des Think Tanks Instituto PVBLICA",
-    "Kandidat für den Stadtrat für PPS in Urussanga (SC)",
-    "Vereinbarungsmanager der Stadtverwaltung von Urussanga",
-    "Kandidat für den Stadtrat für PSOL in São José (SC)",
+    "Kandidat für den Stadtrat für die PPS in Urussanga (SC)",
+    "Vereinbarungsmanager der Stadtverwaltung Urussanga",
+    "Kandidat für den Stadtrat für die PSOL in São José (SC)",
     "Full-Stack-Entwickler bei NPL Brasil",
     "Senior Python-Entwickler bei Global Hitss",
     "Senior Python-Entwickler bei Stefanini / Fapesp",
@@ -261,6 +279,6 @@
   ],
   "honors": [
     "Paul-Harris-Fellow - Rotary Club São Paulo Aclimação",
-    "Verdienstauszeichnung - Hochschule für Verwaltung und Management - Universität des Staates Santa Catarina - ESAG/UDESC"
+    "Verdienstauszeichnung - Higher School of Administration and Management - Universität des Staates Santa Catarina - ESAG/UDESC"
   ]
 }

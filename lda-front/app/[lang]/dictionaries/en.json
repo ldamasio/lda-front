@@ -3,7 +3,7 @@
     "title": "Leandro Damasio. Welcome to My Personal Page",
     "desc": [
       "I am an AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil.",
-      "I build production-grade AI systems for financial and legal domains, where reliability, observability, and governance are not optional, they are the foundation. My work focuses on making AI systems safe to operate in real decision-making workflows, especially in regulated environments.",
+      "I build production-grade AI systems for financial and legal domains, where reliability, observability, and governance are not optional, they are foundation. My work focuses on making AI systems safe to operate in real decision-making workflows, especially in regulated environments.",
       "My work sits at the intersection of AI, software architecture, and infrastructure. I design agentic architectures, define runtime control loops, and build evaluation and monitoring pipelines for LLM-based systems. I work hands-on with vector search using pgvector and ParadeDB, prompt and context governance, and secure integration with internal and external data sources.",
       "I place strong emphasis on versioning, auditability, and traceability, ensuring AI systems meet technical, legal, and risk requirements as they evolve in production.",
       "Beyond my role at Enforce, I am active in AI-first development and agentic systems beyond the corporate setting. I am the creator and maintainer of an open-source monorepo at RBX Systems, where I work on AI agents, code agents, and system-level tooling, always with a focus on architecture and long-term maintainability.",
@@ -98,7 +98,7 @@
       },
       {
         "name": "GPT4 LangChain Chatbot ",
-        "description": "This project showcases the development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
+        "description": "This project showcases development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
         "repositories": [
           "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
         ],
@@ -109,7 +109,7 @@
       },
       {
         "name": "MSX API v1.0",
-        "description": "A RESTful API in Python, using FastAPI, that allows the creation, reading, updating, and deletion of vehicle records, with basic authentication and automatic documentation features. It was built with TDD and uses libraries such as pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "description": "A RESTful API in Python, using FastAPI, that allows creation, reading, updating, and deletion of vehicle records, with basic authentication and automatic documentation features. It was built with TDD and uses libraries such as pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
         "repositories": [
           "https://github.com/ldamasio/msx-api-001"
         ],
@@ -120,7 +120,7 @@
       },
       {
         "name": "Space",
-        "description": "Space Arena ERP. Frontend in React and Next.js. Robust, secure, reliable, and optimized backends built with Go, PHP, Laravel, offering a RESTful API for the production, administration, and management sectors, as well as a layer for interaction with end customers. It utilizes modern architectural patterns to ensure scalability and maintainability.",
+        "description": "Space Arena ERP. Frontend in React and Next.js. Robust, secure, reliable, and optimized backends built with Go, PHP, Laravel, offering a RESTful API for production, administration, and management sectors, as well as a layer for interaction with end customers. It utilizes modern architectural patterns to ensure scalability and maintainability.",
         "repositories": [
           "https://github.com/Arte-Arena/space-backend",
           "https://github.com/Arte-Arena/space-frontend",
@@ -139,17 +139,35 @@
     "name": "Leandro Damasio",
     "headline": "Principal Software Engineer | Cloud and DevOps Specialist | AI/ML Engineer",
     "location": "São Paulo, SP - Brazil",
-    "resume": "Results-oriented Full-Stack Software Engineer and AI/ML Specialist with over 10 years of experience architecting and deploying scalable data products, advanced predictive models, and robust cloud-native solutions. Demonstrates comprehensive expertise across the entire software development lifecycle, spanning architectural design, implementation, and DevOps automation, within industrial, financial, commercial, and research sectors. Proficiently utilizes Python, JavaScript, and leading cloud platforms to foster innovation and solve complex challenges. Employs asynchronous communication and distributed task management to build highly optimized systems, ensuring secure and stable performance to meet critical business demands. Committed to agile methodologies, promoting collaborative client engagement and continuous delivery.",
+    "resume": "Results-oriented Full-Stack Software Engineer and AI/ML Specialist with over 10 years of experience architecting and deploying scalable data products, advanced predictive models, and robust cloud-native solutions. Demonstrates comprehensive expertise across entire software development lifecycle, spanning architectural design, implementation, and DevOps automation, within industrial, financial, commercial, and research sectors. Proficiently utilizes Python, JavaScript, and leading cloud platforms to foster innovation and solve complex challenges. Employs asynchronous communication and distributed task management to build highly optimized systems, ensuring secure and stable performance to meet critical business demands. Committed to agile methodologies, promoting collaborative client engagement and continuous delivery.",
     "professionalExperience": [
       {
-        "company": "Arte Arena",
-        "title": "Tech Lead and Principal Software Engineer",
-        "dates": "October 2024 – March 2025",
+        "company": "Enforce",
+        "title": "AI Engineer",
+        "dates": "October 2025 – Present",
         "description": [
-          "Led the modernization of legacy systems by designing a cloud-native SaaS platform, accelerating feature deployment by 85% through microservices and CI/CD optimization.",
-          "Architected event-driven workflows using Kubernetes, Istio, and ArgoCD, reducing infrastructure costs by 30%.",
-          "Led cross-functional teams to deliver a full-stack product with React, FastAPI, and AWS.",
-          "Developed innovative AI products leveraging generative AI APIs to create personalized user experiences."
+          "Enforce is part of BTG Pactual Group and focuses on distressed credit and asset management.",
+          "Designed and implemented \"Forja\", an internal LLM experimentation and governance platform with RAG pipelines, vector databases (pgvector/ParadeDB) and prompt versioning, reducing the time to test new AI workflows from days to hours for data and product teams.",
+          "Built \"Prompt-Maker\", a FastAPI backend to centralize prompt and workflow governance, enabling consistent, auditable use of Generative AI across multiple internal systems.",
+          "Developed the conversational assistant \"Atena\", connecting LLMs to legal and financial data through retrieval pipelines and embeddings, significantly reducing analysis time for complex documents and cases.",
+          "Contributed to the legal analytics platform \"Fase\", integrating AI components into credit recovery and legal workflows, improving visibility and decision support for high-volume portfolios.",
+          "Structured a Kubernetes (k3s) + ArgoCD + GitOps environment for AI services, standardizing deployments, isolation and monitoring of GenAI workloads.",
+          "Promoted AI Engineering best practices — versioning, observability, evaluation and compliance-aware design — to ensure that AI systems are robust, traceable and aligned with financial-sector requirements.",
+          "Tech: Python, FastAPI, Kubernetes (k3s), ArgoCD, GitOps, Postgres/ParadeDB, pgvector, RAG pipelines, LLMs, embeddings, CI/CD, observability."
+        ]
+      },
+      {
+        "company": "Arte Arena",
+        "title": "Principal Software Engineer",
+        "dates": "November 2024 – October 2025",
+        "description": [
+          "Tech Lead & Principal Software Engineer, leading modernization of legacy systems into a cloud-native SaaS platform.",
+          "Migrated a critical Laravel API to Go, achieving a 42% faster deployment cycle and 39% reduction in compute costs, while improving scalability and reliability.",
+          "Led the design of a cloud-native SaaS platform using Python FastAPI and microservices, accelerating feature delivery by 85% through modularization and improved CI/CD.",
+          "Architected event-driven workflows with Kubernetes, Istio and ArgoCD, cutting infrastructure costs by 30% and improving operational resilience.",
+          "Led cross-functional teams to deliver a full-stack product built with React + FastAPI + AWS, aligning technical decisions with product and business goals.",
+          "Developed AI-enhanced features using Generative AI APIs and FastMCP (Python) to provide personalized user experiences and embedded AI capabilities in the product.",
+          "Tech: Go, Python, FastAPI, React, Kubernetes, Istio, ArgoCD, AWS, CI/CD, event-driven architecture, Generative AI APIs."
         ]
       },
       {
@@ -157,7 +175,7 @@
         "title": "Senior Software Engineer",
         "dates": "October 2024 – March 2025",
         "description": [
-          "Revamped the FAPESP Virtual Library's search engine (Apache Solr), improving query response time by 37% through data indexing optimizations.",
+          "Revamped FAPESP Virtual Library's search engine (Apache Solr), improving query response time by 37% through data indexing optimizations.",
           "Directed a global full-stack team to deliver a Laravel-based application for academic research funding.",
           "Resolved critical bugs in Django systems, improving stability for over 500,000 monthly users."
         ]
@@ -243,9 +261,9 @@
     ]
   },
   "works": [
-    "Monitor of the Ethics discipline in the Undergraduate Course of Public Service Administration at the Higher School of Administration and Management of the State University of Santa Catarina",
-    "Founding President of the National Federation of Public Administration Students",
-    "Researcher linked to the School of Business Administration of the State of São Paulo of the Getúlio Vargas Foundation in partnership with the Victor Civita Foundation, in a comparative research project on Performance in Basic Education in the State of São Paulo: School management and quality of Education: a study on ten schools in São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
+    "Monitor of Ethics discipline in Undergraduate Course of Public Service Administration at Higher School of Administration and Management of State University of Santa Catarina",
+    "Founding President of National Federation of Public Administration Students",
+    "Researcher linked to School of Business Administration of State of São Paulo of Getúlio Vargas Foundation in partnership with Victor Civita Foundation, in a comparative research project on Performance in Basic Education in State of São Paulo: School management and quality of Education: a study on ten schools in São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
     "Founding President of the Rotaract Club São Paulo Aclimação",
     "Public Policy Analyst at e-Stratégia Pública",
     "Technical Advisor to the Cabinet of the Municipal Mayor of Florianópolis",

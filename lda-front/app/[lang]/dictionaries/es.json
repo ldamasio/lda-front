@@ -3,11 +3,11 @@
     "title": "Leandro Damasio. Bienvenido a mi página personal",
     "desc": [
       "Soy un Ingeniero de IA en Enforce (Grupo BTG Pactual), con sede en São Paulo, Brasil.",
-      "Construyo sistemas de IA de grado de producción para los dominios financiero y legal, donde la confiabilidad, la observabilidad y el gobierno no son opcionales, son la base. Mi trabajo se centra en hacer que los sistemas de IA sean seguros para operar en flujos de trabajo de toma de decisiones reales, especialmente en entornos regulados.",
-      "Mi trabajo se sitúa en la intersección de la IA, la arquitectura de software y la infraestructura. Diseño arquitecturas de agentes, defino bucles de control de tiempo de ejecución y construyo pipelines de evaluación y monitoreo para sistemas basados en LLM. Trabajo de manera práctica con búsqueda vectorial usando pgvector y ParadeDB, gobierno de prompts y contexto, e integración segura con fuentes de datos internas y externas.",
-      "Pongo un fuerte énfasis en la versión, auditabilidad y trazabilidad, asegurando que los sistemas de IA cumplan con los requisitos técnicos, legales y de riesgo a medida que evolucionan en producción.",
-      "Más allá de mi rol en Enforce, soy activo en el desarrollo enfocado en IA y sistemas de agentes fuera del entorno corporativo. Soy el creador y mantenedor de un monorepo de código abierto en RBX Systems, donde trabajo en agentes de IA, agentes de código y herramientas a nivel de sistema, siempre con un enfoque en la arquitectura y la mantenibilidad a largo plazo.",
-      "Disfruto colaborando entre Ingeniería de Software, DevOps, UX y Producto, y estoy especialmente interesado en los tiempos de ejecución de agentes, la gestión de memoria y contexto, y el límite entre las capacidades del modelo y el control a nivel de sistema."
+      "Construyo sistemas de IA de grado de producción para los dominios financiero y legal, donde la confiabilidad, la observabilidad y la gobernanza no son opcionales, son la base. Mi trabajo se centra en hacer que los sistemas de IA sean seguros para operar en flujos de trabajo de toma de decisiones reales, especialmente en entornos regulados.",
+      "Mi trabajo se sitúa en la intersección de la IA, la arquitectura de software y la infraestructura. Diseño arquitecturas de agentes, defino bucles de control de tiempo de ejecución y construyo pipelines de evaluación y monitoreo para sistemas basados en LLM. Trabajo de manera práctica con búsqueda vectorial usando pgvector y ParadeDB, gobernanza de prompts y contexto, e integración segura con fuentes de datos internas y externas.",
+      "Pongo un fuerte énfasis en el versionado, la auditabilidad y la trazabilidad, asegurando que los sistemas de IA cumplan con los requisitos técnicos, legales y de riesgo a medida que evolucionan en producción.",
+      "Más allá de mi rol en Enforce, estoy activo en el desarrollo centrado en IA y sistemas de agentes fuera del entorno corporativo. Soy el creador y mantenedor de un monorepo de código abierto en RBX Systems, donde trabajo en agentes de IA, agentes de código y herramientas a nivel de sistema, siempre con un enfoque en la arquitectura y la mantenibilidad a largo plazo.",
+      "Disfruto colaborando entre Ingeniería de Software, DevOps, UX y Producto, y estoy especialmente interesado en runtimes de agentes, gestión de memoria y contexto, y el límite entre las capacidades del modelo y el control a nivel de sistema."
     ],
     "links": {
       "curriculum": "https://www.leandrodamasio.com/es/cv",
@@ -65,7 +65,7 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "ROBSON BOT, un bot de negociación de criptomonedas de código abierto en Python, utiliza una arquitectura asíncrona y multiinquilino para decisiones basadas en análisis probabilísticos y técnicos. Incluye gestión de riesgos, difusión de señales, estrategias de negociación, una plataforma React para el panel y Kubernetes para la seguridad multiusuario.",
+        "description": "ROBSON BOT, un bot de comercio de criptomonedas de código abierto en Python, utiliza una arquitectura asíncrona y multiinquilino para decisiones basadas en análisis probabilísticos y técnicos. Incluye gestión de riesgos, distribución de señales, estrategias de comercio, una plataforma React para el panel y Kubernetes para la seguridad multiusuario.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
@@ -76,7 +76,7 @@
       },
       {
         "name": "Detección de Fraude Financiero RF XGBoost",
-        "description": "Este proyecto se centra en desarrollar un sistema robusto de detección de fraude utilizando algoritmos de aprendizaje automático. Compara el rendimiento de dos métodos de conjunto populares: Random Forest y XGBoost, en la clasificación de transacciones financieras como fraudulentas o legítimas. Los modelos se entrenan y evalúan en un conjunto de datos financieros del mundo real.",
+        "description": "Este proyecto se centra en el desarrollo de un sistema robusto de detección de fraude utilizando algoritmos de aprendizaje automático. Compara el rendimiento de dos métodos de ensemble populares: Random Forest y XGBoost, en la clasificación de transacciones financieras como fraudulentas o legítimas. Los modelos se entrenan y evalúan en un conjunto de datos financieros del mundo real.",
         "repositories": [
           "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
         ],
@@ -109,7 +109,7 @@
       },
       {
         "name": "MSX API v1.0",
-        "description": "Una API RESTful en Python, utilizando FastAPI, que permite la creación, lectura, actualización y eliminación de registros de vehículos, con funcionalidades básicas de autenticación y documentación automática. Fue construida con TDD y utiliza bibliotecas como pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
+        "description": "Una API RESTful en Python, usando FastAPI, que permite la creación, lectura, actualización y eliminación de registros de vehículos, con funcionalidades básicas de autenticación y documentación automática. Se construyó con TDD y usa bibliotecas como pydantic, SQL Alchemy, Alembic, PyJWT, argon2.",
         "repositories": [
           "https://github.com/ldamasio/msx-api-001"
         ],
@@ -120,7 +120,7 @@
       },
       {
         "name": "Space",
-        "description": "Space Arena ERP. Frontend en React y Next.js. Backends robustos, seguros, confiables y optimizados, construidos con Go, PHP, Laravel, ofreciendo una API RESTful para los sectores de producción, administración y gerencia, además de una capa para la interacción con los clientes finales. Utiliza patrones de arquitectura modernos para garantizar la escalabilidad y la mantenibilidad.",
+        "description": "Space Arena ERP. Frontend en React y Next.js. Backends robustos, seguros, confiables y optimizados construidos con Go, PHP, Laravel, ofreciendo una API RESTful para los sectores de producción, administración y gestión, así como una capa para la interacción con clientes finales. Utiliza patrones de arquitectura modernos para garantizar escalabilidad y mantenibilidad.",
         "repositories": [
           "https://github.com/Arte-Arena/space-backend",
           "https://github.com/Arte-Arena/space-frontend",
@@ -139,27 +139,45 @@
     "name": "Leandro Damasio",
     "headline": "Ingeniero de Software Principal | Especialista en Nube y DevOps | Ingeniero de IA/ML",
     "location": "São Paulo, SP - Brasil",
-    "resume": "Ingeniero de Software Full-Stack y Especialista en IA/ML orientado a resultados, con más de 10 años de experiencia en la arquitectura e implementación de productos de datos escalables, modelos predictivos avanzados y soluciones nativas de la nube robustas. Demuestra una experiencia integral en todo el ciclo de vida del desarrollo de software, que abarca el diseño arquitectónico, la implementación y la automatización de DevOps, en los sectores industrial, financiero, comercial y de investigación. Utiliza con destreza Python, JavaScript y las principales plataformas de la nube para fomentar la innovación y resolver desafíos complejos. Emplea la comunicación asíncrona y la gestión de tareas distribuidas para construir sistemas altamente optimizados, garantizando un rendimiento seguro y estable para satisfacer las demandas críticas del negocio. Comprometido con las metodologías ágiles, promoviendo la participación colaborativa del cliente y la entrega continua.",
+    "resume": "Ingeniero de Software Full-Stack y Especialista en IA/ML orientado a resultados, con más de 10 años de experiencia en la arquitectura e implementación de productos de datos escalables, modelos predictivos avanzados y soluciones nativas de la nube robustas. Demuestra una experiencia integral en todo el ciclo de vida del desarrollo de software, abarcando el diseño arquitectónico, la implementación y la automatización de DevOps, en los sectores industrial, financiero, comercial y de investigación. Utiliza hábilmente Python, JavaScript y las principales plataformas de la nube para fomentar la innovación y resolver desafíos complejos. Emplea la comunicación asíncrona y la gestión de tareas distribuidas para construir sistemas altamente optimizados, garantizando un rendimiento seguro y estable para satisfacer las demandas comerciales críticas. Comprometido con las metodologías ágiles, promoviendo la participación colaborativa del cliente y la entrega continua.",
     "professionalExperience": [
       {
-        "company": "Arte Arena",
-        "title": "Líder Técnico e Ingeniero de Software Principal",
-        "dates": "Octubre 2024 – Marzo 2025",
+        "company": "Enforce",
+        "title": "Ingeniero de IA",
+        "dates": "Octubre 2025 – Presente",
         "description": [
-          "Lideró la modernización de sistemas heredados diseñando una plataforma SaaS nativa de la nube, acelerando la implementación de funciones en un 85% a través de microservicios y optimización de CI/CD.",
-          "Arquitectó flujos de trabajo basados en eventos utilizando Kubernetes, Istio y ArgoCD, reduciendo los costos de infraestructura en un 30%.",
-          "Lideró equipos multifuncionales para entregar un producto full-stack con React, FastAPI y AWS.",
-          "Desarrolló productos de IA innovadores aprovechando las API de IA generativa para crear experiencias de usuario personalizadas."
+          "Enforce forma parte del Grupo BTG Pactual y se centra en crédito distressed y gestión de activos.",
+          "Diseñó e implementó \"Forja\", una plataforma interna de experimentación y gobernanza de LLM con pipelines RAG, bases de datos vectoriales (pgvector/ParadeDB) y versionado de prompts, reduciendo el tiempo para probar nuevos workflows de IA de días a horas para equipos de datos y producto.",
+          "Construyó \"Prompt-Maker\", un backend FastAPI para centralizar la gobernanza de prompts y workflows, permitiendo el uso consistente y auditable de IA Generativa en múltiples sistemas internos.",
+          "Desarrolló el asistente conversacional \"Atena\", conectando LLMs a datos legales y financieros a través de pipelines de recuperación y embeddings, reduciendo significativamente el tiempo de análisis para documentos y casos complejos.",
+          "Contribuyó a la plataforma de analytics legales \"Fase\", integrando componentes de IA en workflows de recuperación de crédito y legales, mejorando la visibilidad y el soporte de decisión para portfolios de alto volumen.",
+          "Estructuró un entorno Kubernetes (k3s) + ArgoCD + GitOps para servicios de IA, estandarizando deployments, aislamiento y monitoreo de workloads de GenAI.",
+          "Promovió las mejores prácticas de AI Engineering — versionado, observabilidad, evaluación y diseño consciente de cumplimiento — para asegurar que los sistemas de IA sean robustos, rastreables y alineados con los requisitos del sector financiero.",
+          "Tech: Python, FastAPI, Kubernetes (k3s), ArgoCD, GitOps, Postgres/ParadeDB, pgvector, RAG pipelines, LLMs, embeddings, CI/CD, observabilidad."
+        ]
+      },
+      {
+        "company": "Arte Arena",
+        "title": "Ingeniero de Software Principal",
+        "dates": "Noviembre 2024 – Octubre 2025",
+        "description": [
+          "Tech Lead & Principal Software Engineer, liderando la modernización de sistemas heredados a una plataforma SaaS cloud-native.",
+          "Migró una API Laravel crítica a Go, logrando un ciclo de deployment 42% más rápido y una reducción del 39% en costos de computación, mientras mejoraba la escalabilidad y confiabilidad.",
+          "Lideró el diseño de una plataforma SaaS cloud-native usando Python FastAPI y microservicios, acelerando la entrega de features en 85% a través de la modularización y CI/CD mejorado.",
+          "Arquitectó workflows event-driven con Kubernetes, Istio y ArgoCD, reduciendo los costos de infraestructura en 30% y mejorando la resiliencia operacional.",
+          "Lideró equipos cross-funcionales para entregar un producto full-stack construido con React + FastAPI + AWS, alineando decisiones técnicas con objetivos de producto y negocio.",
+          "Desarrolló features mejoradas con IA usando APIs de IA Generativa y FastMCP (Python) para proporcionar experiencias de usuario personalizadas y capacidades de IA integradas en el producto.",
+          "Tech: Go, Python, FastAPI, React, Kubernetes, Istio, ArgoCD, AWS, CI/CD, arquitectura event-driven, APIs de IA Generativa."
         ]
       },
       {
         "company": "Stefanini / FAPESP",
-        "title": "Ingeniero de Software Sénior",
+        "title": "Ingeniero de Software Senior",
         "dates": "Octubre 2024 – Marzo 2025",
         "description": [
-          "Rediseñó el motor de búsqueda de la Biblioteca Virtual de la FAPESP (Apache Solr), mejorando el tiempo de respuesta de las consultas en un 37% mediante optimizaciones de indexación de datos.",
-          "Dirigió un equipo global full-stack para entregar una aplicación basada en Laravel para la financiación de la investigación académica.",
-          "Resolvió errores críticos en sistemas Django, mejorando la estabilidad para más de 500 mil usuarios mensuales."
+          "Rediseñó el motor de búsqueda de la Biblioteca Virtual de la FAPESP (Apache Solr), mejorando el tiempo de respuesta de consultas en 37% a través de optimizaciones de indexación de datos.",
+          "Dirigió un equipo global full-stack para entregar una aplicación basada en Laravel para financiación de investigación académica.",
+          "Resolvió errores críticos en sistemas Django, mejorando la estabilidad para más de 500,000 usuarios mensuales."
         ]
       },
       {
@@ -167,8 +185,8 @@
         "title": "Ingeniero de Software",
         "dates": "Diciembre 2019 – Enero 2022",
         "description": [
-          "Automatizó los pipelines de datos utilizando Node.js y AWS, reduciendo el tiempo de procesamiento manual en un 50%.",
-          "Integró Google Cloud Document AI para el análisis automatizado de documentos, aumentando la eficiencia operativa.",
+          "Automatizó pipelines de datos usando Node.js y AWS, reduciendo el tiempo de procesamiento manual en 50%.",
+          "Integró Google Cloud Document AI para el análisis automatizado de documentos, aumentando la eficiencia operacional.",
           "Desarrolló e implementó contratos inteligentes personalizados en la red Ethereum, garantizando la seguridad e integridad de las transacciones de criptomonedas."
         ]
       },
@@ -178,29 +196,29 @@
         "dates": "Febrero 2017 - Abril 2019",
         "description": [
           "Diseñó un data lake escalable con Hadoop y Spark, permitiendo análisis en tiempo real para clientes empresariales.",
-          "Redujo los ciclos de implementación en un 23% mediante la automatización de pipelines CI/CD (ArgoCD, Docker).",
-          "Entregó aplicaciones full-stack utilizando React y Nest.js para clientes del sector financiero."
+          "Redució los ciclos de deployment en 23% a través de la automatización de pipelines CI/CD (ArgoCD, Docker).",
+          "Entregó aplicaciones full-stack usando React y Nest.js para clientes del sector financiero."
         ]
       }
     ],
     "education": [
       {
-        "degree": "Bachiller en Ingeniería Informática",
+        "degree": "Licenciatura en Ingeniería Informática",
         "institution": "UNIVESP",
         "dates": "Julio 2022 - Mayo 2027 (estimado)"
       },
       {
-        "degree": "Máster en Administración y Gobierno Público",
+        "degree": "Maestría en Administración Pública y Gobierno",
         "institution": "EAESP/FGV",
         "dates": "Enero 2009 - Mayo 2021"
       },
       {
-        "degree": "Bachiller en Administración Pública",
+        "degree": "Licenciatura en Administración Pública",
         "institution": "ESAG/UDESC",
         "dates": "Julio 2004 - Agosto 2008"
       },
       {
-        "degree": "Bachiller en Filosofía",
+        "degree": "Licenciatura en Filosofía",
         "institution": "CFH/UFSC",
         "dates": "Enero 2004 - Junio 2008"
       }
@@ -230,11 +248,11 @@
     "keyAchievements": [
       {
         "area": "IA/ML",
-        "description": "Implementó pipelines MLOps con Kubeflow para entrenar e implementar modelos de previsión de demanda, reduciendo el tiempo de entrenamiento en un 40% y mejorando la precisión del modelo en un 14%."
+        "description": "Implementó pipelines MLOps con Kubeflow para entrenar e implementar modelos de pronóstico de demanda, reduciendo el tiempo de entrenamiento en 40% y mejorando la precisión del modelo en 14%."
       },
       {
         "area": "Nube",
-        "description": "Migró más de 17 sistemas heredados a AWS/GCP, logrando un tiempo de actividad del 99,9%."
+        "description": "Migró más de 17 sistemas heredados a AWS/GCP, logrando un tiempo de actividad del 99.9%."
       },
       {
         "area": "Entrega de Ciclo Completo",
@@ -243,9 +261,9 @@
     ]
   },
   "works": [
-    "Monitor de la disciplina de Ética en el Curso de Grado en Administración de Servicios Públicos en la Escuela Superior de Administración y Gerencia de la Universidad del Estado de Santa Catarina",
+    "Monitor de la disciplina de Ética en el Curso de Pregrado en Administración de Servicios Públicos en la Escuela Superior de Administración y Gestión de la Universidad Estatal de Santa Catarina",
     "Presidente Fundador de la Federación Nacional de Estudiantes de Administración Pública",
-    "Investigador vinculado a la Escuela de Administración de Empresas del Estado de São Paulo de la Fundación Getúlio Vargas en colaboración con la Fundación Victor Civita, en un proyecto de investigación comparativa sobre el Desempeño en la Educación Básica del Estado de São Paulo: Gestión escolar y calidad de la Educación: un estudio sobre diez escuelas paulistas - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
+    "Investigador vinculado a la Escuela de Administración de Empresas del Estado de São Paulo de la Fundación Getúlio Vargas en asociación con la Fundación Victor Civita, en un proyecto de investigación comparativa sobre el Rendimiento en la Educación Básica del Estado de São Paulo: Gestión escolar y calidad de la Educación: un estudio sobre diez escuelas en São Paulo - https://pesquisa-eaesp.fgv.br/sites/gvpesquisa.fgv.br/files/arquivos/abrucio_-_gestao_escolar_e_qualidade_da_educacao_um_estudo_sobre_dez_escolas_paulistas.pdf",
     "Presidente Fundador del Club Rotaract São Paulo Aclimação",
     "Analista de Políticas Públicas en e-Stratégia Pública",
     "Asesor Técnico del Gabinete del Alcalde Municipal de Florianópolis",
@@ -261,6 +279,6 @@
   ],
   "honors": [
     "Compañero Paul Harris - Rotary Club São Paulo Aclimação",
-    "Honor al Mérito - Escuela Superior de Administración y Gerencia - Universidad del Estado de Santa Catarina - ESAG/UDESC"
+    "Honor al Mérito - Escuela Superior de Administración y Gestión - Universidad del Estado de Santa Catarina - ESAG/UDESC"
   ]
 }
