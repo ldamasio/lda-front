@@ -36,7 +36,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
         <h1 className={styles.title}>{t.meta.title}</h1>
         <div className={styles.description}>
           {t.meta.desc.map((p: string, i: number) => (
-             <p key={i} className="mb-4">{p}</p>
+            <p key={i} className="mb-4">{p}</p>
           ))}
         </div>
 
@@ -122,7 +122,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
                 <Card className="w-[100%] mt-4 p-4">
                   <CardDescription className="p-4 flex flex-wrap gap-4">
                     {t.curriculum.skills.map((skill: string, index: number) => (
-                      <p key={index} className="bg-gray-100 p-2 rounded-md">
+                      <p key={index} className="bg-secondary p-2 rounded-md">
                         {skill}
                       </p>
                     ))}

@@ -55,10 +55,10 @@
 
 .projectCard,
 .linkCard {
-  border: 1px solid #ddd;
+  border: 1px solid hsl(var(--border));
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
+  border-radius: var(--radius);
 }
 
 .projectCard h3,
@@ -86,12 +86,14 @@
 }
 
 @media (max-width: 640px) {
+
   .projectCard,
   .linkCard,
   .curriculumCard {
     padding: 0.75rem;
     margin-bottom: 0.75rem;
   }
+
   .title {
     font-size: 1.25rem;
   }
