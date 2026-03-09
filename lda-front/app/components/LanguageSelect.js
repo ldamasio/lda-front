@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import Image from 'next/image';
 
 const languages = [
   { value: 'en', label: 'English', flag: 'gb' },
@@ -43,13 +44,12 @@ const LanguageSelect = ({ currentPath }) => {
           {languages.map((language) => (
             <SelectItem key={language.value} value={language.value}>
               <div className="flex items-center gap-2">
-                <img 
+                <Image 
                   src={`https://flagcdn.com/w20/${language.flag}.png`}
-                  srcSet={`https://flagcdn.com/w40/${language.flag}.png 2x`}
-                  width="20"
-                  height="15"
+                  width={20}
+                  height={15}
                   className="rounded-sm object-contain"
-                  alt="" 
+                  alt={`${language.label} flag`} 
                 />
                 <span>{language.label}</span>
               </div>

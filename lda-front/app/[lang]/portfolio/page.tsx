@@ -1,11 +1,11 @@
 import { getDictionary } from '../dictionaries-server'
 import { NavMenu } from '../../components/NavigationMenu'
-import { ExternalLink, Github, Code } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
+import Image from 'next/image'
 import { Project } from '../types'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -44,9 +44,11 @@ export default async function PortfolioPage({ params: { lang } }: { params: { la
             <Card key={index} className="glass-institutional group flex flex-col h-full overflow-hidden hover:border-primary/50 transition-all duration-300">
               {project.images && project.images[0] && (
                 <div className="relative h-48 w-full overflow-hidden border-b border-border bg-muted">
-                  <img 
+                  <Image 
                     src={project.images[0]} 
                     alt={project.name}
+                    width={800}
+                    height={400}
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

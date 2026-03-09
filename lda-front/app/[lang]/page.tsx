@@ -1,16 +1,7 @@
 // [lang]/page.tsx
 import { getDictionary } from './dictionaries-server'
 import styles from './page.module.css';
-import { Project, Experience, Education, Achievement } from './types';
 import { NavMenu } from '../components/NavigationMenu';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Award, BookOpen, Brain, Briefcase, Code, Link, University } from "lucide-react";
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
   const t = await getDictionary(lang);
