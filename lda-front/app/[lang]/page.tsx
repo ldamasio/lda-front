@@ -55,7 +55,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               <div>
                 {Object.entries(t.portfolio.highlights).map(([key, project]) => (
                   <Card className={styles.projectCard} key={key}>
-                    <a href={(project as Project).repositories[0]}>
+                    <a href={(project as Project).repositories[0]} target="_blank" rel="noopener noreferrer">
                       <h3>{(project as Project).name}</h3>
                     </a>
                     <p>{(project as Project).description}</p>
@@ -80,12 +80,12 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
               </h2>
               <div>
                 <div className={styles.linkCard}>
-                  <a href={t.meta.links.github}>
+                  <a href={t.meta.links.github} target="_blank" rel="noopener noreferrer">
                     <h3>GitHub</h3>
                   </a>
                 </div>
                 <div className={styles.linkCard}>
-                  <a href={t.meta.links.linkedin}>
+                  <a href={t.meta.links.linkedin} target="_blank" rel="noopener noreferrer">
                     <h3>LinkedIn</h3>
                   </a>
                 </div>

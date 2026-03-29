@@ -65,24 +65,13 @@
     "highlights": [
       {
         "name": "Robson Bot",
-        "description": "O ROBSON BOT, um bot de negociação de criptomoedas de código aberto em Python, utiliza arquitetura assíncrona e multilocatário para decisões baseadas em análises probabilísticas e técnicas. Inclui gerenciamento de risco, disseminação de sinais, estratégias de negociação, plataforma React para o painel e Kubernetes para segurança em múltiplos usuários.",
+        "description": "ROBSON BOT, an open-source cryptocurrency trading bot in Python, uses asynchronous and multi-tenant architecture for decisions based on probabilistic and technical analysis. Includes risk management, signal dissemination, trading strategies, React platform for dashboard, and Kubernetes for multi-user security.",
         "repositories": [
           "https://github.com/ldamasio/robson"
         ],
         "technologies": "python, django, react, docker, kubernetes, git",
         "images": [
           "https://repository-images.githubusercontent.com/230934403/2b4751cb-8714-4f5c-aebc-d257f65c0231"
-        ]
-      },
-      {
-        "name": "Financial Fraud Detection RF XGBoost",
-        "description": "This project focuses on developing a robust fraud detection system using machine learning algorithms. It compares the performance of two popular ensemble methods: Random Forest and XGBoost, in classifying financial transactions as fraudulent or legitimate. The models are trained and evaluated on a real-world financial dataset.",
-        "repositories": [
-          "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
-        ],
-        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
-        "images": [
-          ""
         ]
       },
       {
@@ -97,12 +86,12 @@
         ]
       },
       {
-        "name": "GPT4 LangChain Chatbot ",
-        "description": "This project showcases development of an intelligent chatbot using the powerful GPT-4 language model and the LangChain framework. It demonstrates how to build a conversational AI capable of understanding and responding to user queries in a natural and engaging way.",
+        "name": "wt",
+        "description": "CLI tool for Git worktree management with environment profiles. Enables rapid switching between isolated development contexts, each with its own environment variables and configurations.",
         "repositories": [
-          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+          "https://github.com/ldamasio/wt"
         ],
-        "technologies": "gpt-4, langchain, openai, python",
+        "technologies": "bash, shell, git, worktree",
         "images": [
           ""
         ]
@@ -119,16 +108,12 @@
         ]
       },
       {
-        "name": "Space",
-        "description": "Space Arena ERP. Frontend in React and Next.js. Robust, secure, reliable, and optimized backends built with Go, PHP, Laravel, offering a RESTful API for production, administration, and management sectors, as well as a layer for interaction with end customers. It utilizes modern architectural patterns to ensure scalability and maintainability.",
+        "name": "Mint Workstation Ansible Bootstrap",
+        "description": "Ansible playbooks for automated provisioning of Linux Mint workstations. Configures complete development environment with tools, dotfiles, and system preferences in a reproducible way.",
         "repositories": [
-          "https://github.com/Arte-Arena/space-backend",
-          "https://github.com/Arte-Arena/space-frontend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/k8s"
+          "https://github.com/ldamasio/mint-workstation-ansible"
         ],
-        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "technologies": "ansible, linux, mint, devops, automation",
         "images": [
           ""
         ]

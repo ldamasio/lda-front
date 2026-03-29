@@ -75,17 +75,6 @@
         ]
       },
       {
-        "name": "金融欺诈检测 RF XGBoost",
-        "description": "该项目专注于使用机器学习算法开发强大的欺诈检测系统。它比较了两种流行的集成方法：随机森林和 XGBoost 在将金融交易分类为欺诈性或合法性方面的性能。这些模型在真实的金融数据集上进行训练和评估。",
-        "repositories": [
-          "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
-        ],
-        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
-        "images": [
-          ""
-        ]
-      },
-      {
         "name": "x.sh",
         "description": "人类和代理的治理执行运行时。一个本地优先的 shell 包装器，将真实命令转换为持久、因果、机器可读的证据，在实际执行和 AI 解释之间创建严格的信任边界。",
         "repositories": [
@@ -97,12 +86,12 @@
         ]
       },
       {
-        "name": "GPT4 LangChain 聊天机器人",
-        "description": "该项目展示了使用强大的 GPT-4 语言模型和 LangChain 框架开发智能聊天机器人。它演示了如何构建一个能够以自然且引人入胜的方式理解和响应用户查询的对话式人工智能。",
+        "name": "wt",
+        "description": "用于 Git worktree 管理的 CLI 工具，支持环境配置文件。可在隔离的开发环境之间快速切换，每个环境都有自己的环境变量和配置。",
         "repositories": [
-          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+          "https://github.com/ldamasio/wt"
         ],
-        "technologies": "gpt-4, langchain, openai, python",
+        "technologies": "bash, shell, git, worktree",
         "images": [
           ""
         ]
@@ -119,16 +108,12 @@
         ]
       },
       {
-        "name": "Space",
-        "description": "Space Arena ERP。前端使用 React 和 Next.js。后端使用 Go、PHP、Laravel 构建，稳健、安全、可靠且优化，为生产、管理和行政部门提供 RESTful API，并为最终客户互动提供接口。它利用现代架构模式来确保可扩展性和可维护性。",
+        "name": "Mint Workstation Ansible Bootstrap",
+        "description": "用于自动化配置 Linux Mint 工作站的 Ansible Playbook。以可重现的方式配置完整的开发环境，包括工具、dotfiles 和系统首选项。",
         "repositories": [
-          "https://github.com/Arte-Arena/space-backend",
-          "https://github.com/Arte-Arena/space-frontend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/k8s"
+          "https://github.com/ldamasio/mint-workstation-ansible"
         ],
-        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "technologies": "ansible, linux, mint, devops, automation",
         "images": [
           ""
         ]

@@ -75,17 +75,6 @@
         ]
       },
       {
-        "name": "Détection de Fraude Financier RF XGBoost",
-        "description": "Ce projet se concentre sur le développement d'un système robuste de détection de fraude utilisant des algorithmes d'apprentissage automatique. Il compare les performances de deux méthodes d'ensemble populaires : Random Forest et XGBoost, dans la classification des transactions financières comme frauduleuses ou légitimes. Les modèles sont entraînés et évalués sur un ensemble de données financières du monde réel.",
-        "repositories": [
-          "https://github.com/ldamasio/Financial-Fraud-Detection-RF-XGBoost"
-        ],
-        "technologies": "random forest, xgboost, scikit-learn, pandas, numpy",
-        "images": [
-          ""
-        ]
-      },
-      {
         "name": "x.sh",
         "description": "Un runtime d'exécution gouverné pour humains et agents. Un wrapper de shell local-first qui transforme les commandes réels en preuves causales durables et lisibles par machine, créant une frontière de confiance stricte entre l'exécution réelle et l'interprétation de l'IA.",
         "repositories": [
@@ -97,12 +86,12 @@
         ]
       },
       {
-        "name": "GPT4 LangChain Chatbot ",
-        "description": "Ce projet présente le développement d'un chatbot intelligent utilisant le puissant modèle de langage GPT-4 et le framework LangChain. Il démontre comment construire une IA conversationnelle capable de comprendre et de répondre aux requêtes des utilisateurs de manière naturelle et engageante.",
+        "name": "wt",
+        "description": "Outil CLI pour la gestion des worktrees Git avec profils d'environnement. Permet de basculer rapidement entre des contextes de développement isolés, chacun avec ses propres variables d'environnement et configurations.",
         "repositories": [
-          "https://github.com/ldamasio/GPT4-LangChain-Chatbot"
+          "https://github.com/ldamasio/wt"
         ],
-        "technologies": "gpt-4, langchain, openai, python",
+        "technologies": "bash, shell, git, worktree",
         "images": [
           ""
         ]
@@ -119,16 +108,12 @@
         ]
       },
       {
-        "name": "Space",
-        "description": "Space Arena ERP. Frontend en React et Next.js. Backends robustes, sécurisés, fiables et optimisés construits avec Go, PHP, Laravel, offrant une API RESTful pour les secteurs de la production, de l'administration et de la gestion, ainsi qu'une couche pour l'interaction avec les clients finaux. Il utilise des modèles d'architecture modernes pour assurer l'extensibilité et la maintenabilité.",
+        "name": "Mint Workstation Ansible Bootstrap",
+        "description": "Playbooks Ansible pour le provisionnement automatisé de workstations Linux Mint. Configure un environnement de développement complet avec outils, dotfiles et préférences système de manière reproductible.",
         "repositories": [
-          "https://github.com/Arte-Arena/space-backend",
-          "https://github.com/Arte-Arena/space-frontend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/space-client-backend",
-          "https://github.com/Arte-Arena/k8s"
+          "https://github.com/ldamasio/mint-workstation-ansible"
         ],
-        "technologies": "PHP, Laravel, MySQL, Docker, Kubernetes, Git",
+        "technologies": "ansible, linux, mint, devops, automation",
         "images": [
           ""
         ]

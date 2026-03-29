@@ -57,38 +57,11 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
   const t = dictionary;
   const pathname = usePathname();
 
-  const components = [
-    {
-      title: t.portfolio.highlights[0].name,
-      href: `/${lang}${t.portfolio.highlights[0].repositories[0]}`,
-      description: t.portfolio.highlights[0].description,
-    },
-    {
-      title: t.portfolio.highlights[1].name,
-      href: `/${lang}${t.portfolio.highlights[1].repositories[0]}`,
-      description: t.portfolio.highlights[1].description,
-    },
-    {
-      title: t.portfolio.highlights[2].name,
-      href: `/${lang}${t.portfolio.highlights[2].repositories[0]}`,
-      description: t.portfolio.highlights[2].description,
-    },
-    {
-      title: t.portfolio.highlights[3].name,
-      href: `/${lang}${t.portfolio.highlights[3].repositories[0]}`,
-      description: t.portfolio.highlights[3].description,
-    },
-    {
-      title: t.portfolio.highlights[4].name,
-      href: `/${lang}${t.portfolio.highlights[4].repositories[0]}`,
-      description: t.portfolio.highlights[4].description,
-    },
-    {
-      title: t.portfolio.highlights[5].name,
-      href: `/${lang}${t.portfolio.highlights[5].repositories[0]}`,
-      description: t.portfolio.highlights[5].description,
-    },
-  ];
+  const components = t.portfolio.highlights.map((project) => ({
+    title: project.name,
+    href: project.repositories[0],
+    description: project.description,
+  }));
 
   return (
     <NavigationMenu className="mb-8">
@@ -174,16 +147,21 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
+  const isExternal = href?.startsWith('http');
+
   return (
     <li>
       <NavigationMenuLink asChild>
         <a
           ref={ref}
+          href={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
