@@ -64,83 +64,85 @@ export function NavMenu({ lang, dictionary }: { lang: string, dictionary: Dictio
   }));
 
   return (
-    <NavigationMenu className="mb-8">
-      <NavigationMenuList className="flex flex-col w-full md:flex-row gap-2 md:gap-0">
+    <div className="sticky top-0 z-50 flex justify-center w-full px-4 pt-6 pointer-events-none">
+      <NavigationMenu className="glass-institutional pointer-events-auto rounded-full px-4 py-2 mb-8">
+        <NavigationMenuList className="flex flex-row items-center gap-1">
 
-        <NavigationMenuItem>
-          <Link href={`/${lang}/`} legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-        </NavigationMenuItem>
-
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>
-            {t.meta.menu.aboutMe}
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href={`/${lang}/skills`} title={`${t.meta.menu.skills}`}>
-                {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/cv`} title={`${t.meta.menu.curriculumVitae}`}>
-                {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/portfolio`} title={`${t.meta.menu.portfolio}`}>
-                {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/biography`} title={`${t.meta.menu.biography}`}>
-                {t.curriculum.location}
-              </ListItem>
-              <ListItem href={`/${lang}/works`} title={`${t.meta.menu.works}`}>
-                {t.aboutMe.desc}
-              </ListItem>
-              <ListItem href={`/${lang}/honors`} title={`${t.meta.menu.honors}`}>
-                {t.aboutMe.desc}
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href={`/${lang}/`} legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent")}>
+                  Home
+                </NavigationMenuLink>
+              </Link>
+          </NavigationMenuItem>
 
 
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{t.meta.menu.portfolio}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-accent">
+              {t.meta.menu.aboutMe}
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <ListItem href={`/${lang}/skills`} title={`${t.meta.menu.skills}`}>
+                  {t.aboutMe.desc}
                 </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href={`/${lang}/cv`} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              {t.meta.menu.curriculumVitae}
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href={`/${lang}/contact`} legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact
+                <ListItem href={`/${lang}/cv`} title={`${t.meta.menu.curriculumVitae}`}>
+                  {t.aboutMe.desc}
+                </ListItem>
+                <ListItem href={`/${lang}/portfolio`} title={`${t.meta.menu.portfolio}`}>
+                  {t.aboutMe.desc}
+                </ListItem>
+                <ListItem href={`/${lang}/biography`} title={`${t.meta.menu.biography}`}>
+                  {t.curriculum.location}
+                </ListItem>
+                <ListItem href={`/${lang}/works`} title={`${t.meta.menu.works}`}>
+                  {t.aboutMe.desc}
+                </ListItem>
+                <ListItem href={`/${lang}/honors`} title={`${t.meta.menu.honors}`}>
+                  {t.aboutMe.desc}
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+
+
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-accent">{t.meta.menu.portfolio}</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="hidden md:block">
+            <Link href={`/${lang}/cv`} legacyBehavior passHref>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent")}>
+                {t.meta.menu.curriculumVitae}
               </NavigationMenuLink>
             </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <LanguageSelect currentPath={pathname} />
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href={`/${lang}/contact`} legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent")}>
+                  Contact
+                </NavigationMenuLink>
+              </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <LanguageSelect currentPath={pathname} />
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   )
 }
 

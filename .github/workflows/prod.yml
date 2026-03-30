@@ -1,6 +1,9 @@
 name: lda-front - Production CI/CD Pipeline
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -9,13 +12,13 @@ on:
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     steps:
       - uses: actions/checkout@v4.1.1
 
       - name: Setup Environment for Production
         run: |
-          image_name=ldamasio/lda-front
+          image_name=ldamasio/lda-prod
           echo "image_name=$image_name" >> $GITHUB_ENV
           tag_name="$image_name:0.0.${{ github.run_number }}"
 

@@ -3,48 +3,56 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import Image from 'next/image';
 
 const languages = [
-  { value: 'en', label: 'English', icon: '🇬🇧' },
-  { value: 'de', label: 'Deutsch', icon: '🇩🇪' },
-  { value: 'fr', label: 'Français', icon: '🇫🇷' },
-  { value: 'it', label: 'Italiano', icon: '🇮🇹' },
-  { value: 'es', label: 'Español', icon: '🇪🇸' },
-  { value: 'pt', label: 'Português', icon: '🇵🇹' },
-  { value: 'zh', label: '中文', icon: '🇨🇳' },
+  { value: 'en', label: 'English', flag: 'gb' },
+  { value: 'de', label: 'Deutsch', flag: 'de' },
+  { value: 'fr', label: 'Français', flag: 'fr' },
+  { value: 'it', label: 'Italiano', flag: 'it' },
+  { value: 'es', label: 'Español', flag: 'es' },
+  { value: 'pt', label: 'Português', flag: 'pt' },
+  { value: 'zh', label: '中文', flag: 'cn' },
 ];
 
 const LanguageSelect = ({ currentPath }) => {
   const router = useRouter();
-  const pathname = currentPath;
+  const currentLanguageCode = currentPath?.split('/')[1] || 'en';
 
-  const handleChange = (event) => {
+  const handleChange = (value) => {
     // Substitui o código da linguagem na URL atual
-    const segments = pathname.split('/');
+    const segments = currentPath ? currentPath.split('/') : ['', 'en'];
     if (segments.length > 1) {
-      segments[1] = event;
+      segments[1] = value;
       const newPath = segments.join('/') || '/';
       router.push(newPath);
     } else {
-      router.push(`/${event}`);
+      router.push(`/${value}`);
     }
   };
-
-  const currentLanguage = pathname?.split('/')[1] || 'en';
 
   return (
     <div className='md:ml-4 w-full md:w-auto'>
       <Select
-        value={currentLanguage}
+        value={currentLanguageCode}
         onValueChange={handleChange}
       >
-        <SelectTrigger>
-          <SelectValue />
+        <SelectTrigger className="w-full md:w-[150px]">
+          <SelectValue className="flex items-center gap-2" />
         </SelectTrigger>
         <SelectContent>
           {languages.map((language) => (
             <SelectItem key={language.value} value={language.value}>
-              {language.icon} {language.label}
+              <div className="flex items-center gap-2">
+                <Image 
+                  src={`https://flagcdn.com/w20/${language.flag}.png`}
+                  width={20}
+                  height={15}
+                  className="rounded-sm object-contain"
+                  alt={`${language.label} flag`} 
+                />
+                <span>{language.label}</span>
+              </div>
             </SelectItem>
           ))}
         </SelectContent>
@@ -53,4 +61,4 @@ const LanguageSelect = ({ currentPath }) => {
   );
 };
 
-export default LanguageSelect;
+export default LanguageSelect;

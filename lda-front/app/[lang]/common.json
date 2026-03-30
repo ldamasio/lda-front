@@ -6,12 +6,13 @@
       "Java",
       "JavaScript",
       "TypeScript",
+      "Rust",
       "PHP",
       "SQL",
       "Kotlin",
       "Dart",
       "C++",
-      "Solidity"    
+      "Solidity"
     ],
     "fullStackDevelopment": [
       "FastAPI",
@@ -24,12 +25,14 @@
       "JUnit",
       "Node.js",
       "Next.js",
+      "Bun",
       "Nest.js",
       "Restul API",
       "GraphQL",
       "React Native",
       "Flutter",
-      "Blockchain"
+      "Blockchain",
+      "MCP (Model Context Protocol)"
     ],
     "devOps": [
       "Docker",
@@ -37,7 +40,13 @@
       "Kubernetes",
       "Istio",
       "ArgoCD",
-      "Pulumi"
+      "Pulumi",
+      "Ansible",
+      "Linux",
+      "Bash Script",
+      "Git Flow",
+      "Nginx",
+      "Traefik"
     ],
     "cloud": [
       "AWS (EC2, S3, Lambda, EKS, Route53)",
@@ -66,7 +75,11 @@
       "Kubeflow",
       "Scikit-learn",
       "NLP",
-      "Predictive Analytics"
+      "Predictive Analytics",
+      "Agentic Runtimes",
+      "LLM Memory Governance",
+      "RAG Systems",
+      "Agentic Workflows"
     ],
     "softwareArchitecture": [
       "SOLID",
@@ -76,13 +89,16 @@
       "MVC",
       "MVT",
       "MVVM",
-      "Event-Driven Systems"
+      "Event-Driven Systems",
+      "Agentic Architecture",
+      "Program Analysis"
     ],
     "observability": [
       "OpenTelemetry",
       "Prometheus",
       "ELK Stack",
-      "Grafana"
+      "Grafana",
+      "Runtime Instrumentation"
     ]
   }
 }
