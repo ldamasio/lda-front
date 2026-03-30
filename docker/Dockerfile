@@ -1,7 +1,7 @@
 FROM node:20
 WORKDIR /app
 COPY lda-front/package*.json ./
-RUN npm install
+RUN npm ci
 COPY lda-front/ .
 RUN npm run build
 EXPOSE 3000

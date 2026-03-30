@@ -1,5 +1,6 @@
 # Dependencies
 node_modules
+lda-front/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -7,10 +8,14 @@ yarn-error.log*
 # Next.js
 .next
 out
+lda-front/.next
+lda-front/out
 
 # Production
 build
 dist
+lda-front/build
+lda-front/dist
 
 # Testing
 coverage
