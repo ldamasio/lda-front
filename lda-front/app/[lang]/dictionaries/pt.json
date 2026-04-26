@@ -1,13 +1,12 @@
 {
   "meta": {
-    "title": "Leandro Damasio. Bem vindo à Minha Página Pessoal",
+    "title": "Leandro Damasio",
     "desc": [
-      "Sou um Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil.",
-      "Construo sistemas de IA prontos para produção para os domínios financeiro e jurídico, onde confiabilidade, observabilidade e governança não são opcionais, são a base. Meu trabalho foca em tornar os sistemas de IA seguros para operar em fluxos de decisão reais, especialmente em ambientes regulados.",
-      "Meu trabalho situa-se na intersecção entre IA, arquitetura de software e infraestrutura. Projeto arquiteturas de agentes, defino loops de controle de runtime e construo pipelines de avaliação e monitoramento para sistemas baseados em LLM. Trabalho de forma prática com busca vetorial usando pgvector e ParadeDB, governança de prompts e contexto, e integração segura com fontes de dados internas e externas.",
-      "Coloco forte ênfase em versionamento, auditabilidade e rastreabilidade, garantindo que os sistemas de IA atendam aos requisitos técnicos, legais e de risco conforme evoluem em produção.",
-      "Além do meu papel na Enforce, sou ativo no desenvolvimento focado em IA e sistemas de agentes além do ambiente corporativo. Sou o criador e mantenedor de um monorepo de código aberto na RBX Systems, onde trabalho em agentes de IA, agentes de código e ferramentas de nível de sistema, sempre com foco em arquitetura e manutenibilidade de longo prazo.",
-      "Gosto de colaborar entre Engenharia de Software, DevOps, UX e Produto, e tenho interesse especial em runtimes de agentes, gerenciamento de memória e contexto, e a fronteira entre as capacidades do modelo e o controle em nível de sistema."
+      "Engenheiro de Computação. Sistemas de IA para finanças e ambientes de alta confiabilidade.",
+      "Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico onde confiabilidade, observabilidade e governança são requisitos de base.",
+      "Trabalho abrange IA, arquitetura de software e infraestrutura: arquiteturas de agentes, loops de controle de runtime, pipelines de avaliação e monitoramento para sistemas baseados em LLM. Experiência prática com busca vetorial usando pgvector e ParadeDB, governança de prompts e integração segura com fontes de dados internas e externas.",
+      "Fundador e mantenedor da RBX Systems, monorepo open-source de agentes de IA, agentes de código e ferramentas de nível de sistema com foco em arquitetura e manutenibilidade de longo prazo.",
+      "Baseado no Brasil, atuando entre Zürich e São Paulo. Disponível para projetos selecionados."
     ],
     "links": {
       "curriculum": "https://www.leandrodamasio.com/pt/cv",
@@ -49,9 +48,9 @@
     }
   },
   "aboutMe": {
-    "title": "Sobre mim",
-    "desc": "Sou um Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil. Construo sistemas de IA prontos para produção para os domínios financeiro e jurídico.",
-    "bio": "Leandro Damasio começou sua carreira como Engineer nos anos 1990, com a linguagem PHP. Desde então, ele se destacou como um engenheiro de software experiente e inovador, trabalhando em projetos de desenvolvimento de grandes empresas e instituições como a FAPESP, NPL Brasil, Global Hitss, Arte Arena e Stefanini.",
+    "title": "Sobre",
+    "desc": "Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico.",
+    "bio": "Leandro Damasio atua como engenheiro de software desde os anos 1990, iniciando com PHP. Trabalhou em projetos de software para grandes empresas e instituições como FAPESP, NPL Brasil, Global Hitss, Arte Arena e Stefanini.",
     "values": [
       "Inovação",
       "Resultados",
@@ -209,7 +208,7 @@
       }
     ],
     "languages": [
-      "Inlgês",
+      "Inglês",
       "Alemão",
       "Italiano",
       "Francês",

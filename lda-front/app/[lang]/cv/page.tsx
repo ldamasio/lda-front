@@ -1,267 +1,346 @@
-import { getDictionary } from '../dictionaries-server';
-import styles from '../page.module.css';
-import { Experience, Education, Achievement } from '../types';
-import { NavMenu } from '../../components/NavigationMenu';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../../components/ui/card";
-import { Award, BookOpen, Brain, Briefcase, Download, Link, University, Code, Database, Server, Cloud, CpuIcon } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import common from '../common.json';
+import { getDictionary } from "../dictionaries-server";
+import { EyebrowSection } from "@/components/ui/eyebrow-section";
+import { StatusPill } from "@/components/ui/status-pill";
+import { Experience, Education, Achievement } from "../types";
+import common from "../common.json";
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: string } }) {
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   const t = await getDictionary(lang);
   return {
-    title: `${t.curriculum.name} - Curriculum Vitae`,
+    title: `Curriculum Vitae · ${t.curriculum.name}`,
     description: t.curriculum.headline,
   };
 }
 
-export default async function CV({ params: { lang } }: { params: { lang: string } }) {
+const SKILL_CATEGORY_LABELS: Record<string, string> = {
+  languages:           "Languages",
+  fullStackDevelopment: "Full Stack",
+  devOps:              "DevOps",
+  cloud:               "Cloud",
+  data:                "Data",
+  AIML:                "AI / ML",
+  softwareArchitecture: "Architecture",
+  observability:       "Observability",
+};
+
+export default async function CVPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   const t = await getDictionary(lang);
+  const experiences: Experience[] =
+    t.curriculum.professionalExperience ?? t.curriculum.ProfessionalExperience ?? [];
+  const educations: Education[] =
+    t.curriculum.education ?? t.curriculum.Education ?? [];
+  const achievements: Achievement[] =
+    t.curriculum.keyAchievements ?? t.curriculum.KeyAchievements ?? [];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className={styles.main}>
-        <NavMenu lang={lang} dictionary={t} />
-
-        <div className="flex justify-between items-center w-full mb-6">
-          <h1 className="text-3xl font-bold">{t.meta.menu.curriculumVitae}</h1>
-          {t.meta.links.cvPdfLink && (
-            <Button variant="outline" size="sm" className="flex items-center gap-2">
-              <Download className="w-4 h-4" />
-              <a href={t.meta.links.cvPdfLink} target="_blank" rel="noopener noreferrer">
-                Download PDF
-              </a>
-            </Button>
+    <div
+      className="w-full mx-auto px-8"
+      style={{
+        maxWidth: "var(--content-width)",
+        paddingTop: "120px",
+        paddingBottom: "var(--space-32)",
+      }}
+    >
+      {/* ── Header ─────────────────────────────────────────── */}
+      <div
+        className="pb-8 mb-12"
+        style={{ borderBottom: "1px solid var(--surface-hairline)" }}
+      >
+        <p className="t-eyebrow mb-2">{t.curriculum.location}</p>
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <h1 className="t-h1 mb-2" style={{ color: "var(--text-primary)" }}>
+              {t.curriculum.name}
+            </h1>
+            <p className="t-lead" style={{ color: "var(--text-secondary)" }}>
+              {t.curriculum.headline}
+            </p>
+          </div>
+          {t.meta.links?.cvPdfLink && (
+            <a
+              href={t.meta.links.cvPdfLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="t-mono shrink-0"
+              style={{
+                color: "var(--text-label)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--surface-divider)",
+                paddingBottom: "1px",
+                marginTop: "4px",
+              }}
+            >
+              Download PDF
+            </a>
           )}
         </div>
+        <p
+          className="t-body mt-6"
+          style={{
+            color: "var(--text-secondary)",
+            maxWidth: "var(--prose-width)",
+          }}
+        >
+          {t.curriculum.resume}
+        </p>
+      </div>
 
-        <Card className="w-full mb-8">
-          <CardHeader>
-            <CardTitle className="text-2xl">{t.curriculum.name}</CardTitle>
-            <CardDescription className="text-lg">{t.curriculum.headline}</CardDescription>
-            <CardDescription>{t.curriculum.location}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="dark:text-gray-100">{t.curriculum.resume}</p>
-          </CardContent>
-        </Card>
+      <div className="flex gap-16 flex-col lg:flex-row">
+        {/* ── Main column ──────────────────────────────────── */}
+        <div className="flex-1 min-w-0">
 
-        <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-            <Brain className="w-6 h-6 text-primary" />
-            {t.meta.menu.skills}
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {t.curriculum.skills.map((skill: string, index: number) => (
-              <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-            <Briefcase className="w-6 h-6 text-primary" />
-            {t.meta.cv.professionalExperience}
-          </h2>
-          {(t.curriculum.ProfessionalExperience || t.curriculum.professionalExperience)?.map((experience: Experience, index: number) => (
-            <Card key={index} className="w-full mb-4">
-              <CardHeader>
-                <CardTitle>
-                  {experience.Company || experience.company} - {experience.Title || experience.title}
-                </CardTitle>
-                <CardDescription className="italic">
-                  {experience.Dates || experience.dates}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc pl-5 space-y-2">
-                  {(experience.Description || experience.description)?.map((desc, i) => (
-                    <li key={i} className="text-gray-300">
-                      {desc}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </section>
-
-        <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-            <University className="w-6 h-6 text-primary" />
-            {t.meta.cv.education}
-          </h2>
-          {(t.curriculum.Education || t.curriculum.education)?.map((education: Education, index: number) => (
-            <Card key={index} className="w-full mb-4">
-              <CardHeader>
-                <CardTitle>
-                  {education.Degree || education.degree}
-                </CardTitle>
-                <CardDescription>
-                  {education.Institution || education.institution} • {education.Dates || education.dates}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </section>
-
-        {(t.curriculum.languages && t.curriculum.languages.length > 0) && (
-          <section className="mb-8">
-            <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-              <BookOpen className="w-6 h-6 text-primary" />
-              {t.meta.cv.languages}
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {t.curriculum.languages.map((language: string, index: number) => (
-                <span key={index} className="bg-gray-900 px-3 py-1 rounded-md text-sm">
-                  {language}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-            <Award className="w-6 h-6 text-primary" />
-            {t.meta.cv.keyAchievements}
-          </h2>
-          {(t.curriculum.KeyAchievements || t.curriculum.keyAchievements)?.map((achievement: Achievement, index: number) => (
-            <Card key={index} className="w-full mb-4">
-              <CardHeader>
-                <CardTitle>
-                  {achievement.Area || achievement.area}
-                </CardTitle>
-                <CardContent className="pt-4">
-                  <p className="text-gray-300">
-                    {achievement.Description || achievement.description}
-                  </p>
-                </CardContent>
-              </CardHeader>
-            </Card>
-          ))}
-        </section>
-
-        {(t.honors && t.honors.length > 0) && (
-          <section className="mb-8">
-            <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-              <Award className="w-6 h-6 text-primary" />
-              {t.meta.menu.honors}
-            </h2>
-            <Card>
-              <CardContent className="pt-6">
-                <ul className="list-disc pl-5 space-y-2">
-                  {t.honors.map((honor: string, index: number) => (
-                    <li key={index} className="text-gray-300">
-                      {honor}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </section>
-        )}
-
-        {/* Habilidades Detalhadas */}
-        <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-            <Brain className="w-6 h-6 text-primary" />
-            {t.meta.cv.detailedSkills}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {Object.entries(common.skills).map(([category, skills]) => {
-              // Ícones para categorias
-              const categoryIcons: Record<string, React.ReactNode> = {
-                languages: <Code className="w-5 h-5 text-primary" />,
-                fullStackDevelopment: <CpuIcon className="w-5 h-5 text-primary" />,
-                devOps: <Server className="w-5 h-5 text-primary" />,
-                cloud: <Cloud className="w-5 h-5 text-primary" />,
-                data: <Database className="w-5 h-5 text-primary" />,
-                AIML: <Brain className="w-5 h-5 text-primary" />,
-                softwareArchitecture: <CpuIcon className="w-5 h-5 text-primary" />,
-                observability: <Server className="w-5 h-5 text-primary" />
-              };
-              // Estrutura para ícones de skills individuais (pode ser expandida)
-              const skillIcons: Record<string, React.ReactNode> = {
-                Python: <Code className="w-4 h-4 text-blue-500" />, // Exemplo
-                // Adicione mais skills e ícones conforme desejado
-              };
+          {/* Professional Experience */}
+          <EyebrowSection
+            eyebrow={t.meta.cv.professionalExperience}
+            heading=""
+            className="mb-6"
+          />
+          <div className="space-y-6 mb-14">
+            {experiences.map((exp, i) => {
+              const company = exp.company ?? exp.Company ?? "";
+              const title   = exp.title   ?? exp.Title   ?? "";
+              const dates   = exp.dates   ?? exp.Dates   ?? "";
+              const desc    = exp.description ?? exp.Description ?? [];
               return (
-                <div key={category}>
-                  <h3 className="font-semibold mb-2 capitalize flex items-center gap-2">
-                    {categoryIcons[category] || <Code className="w-5 h-5 text-primary" />}
-                    {category.replace(/([A-Z])/g, ' $1')}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {(skills as string[]).map((skill, idx) => (
-                      <Card key={idx} className="px-3 py-1 rounded-md shadow-sm bg-gray-50 border border-gray-200 text-sm flex items-center gap-2">
-                        {skillIcons[skill]}
-                        <span>{skill}</span>
-                      </Card>
-                    ))}
+                <div
+                  key={i}
+                  className="p-5 rounded-ds-md"
+                  style={{
+                    background: "var(--surface-card)",
+                    border: "1px solid var(--surface-hairline)",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                >
+                  <div className="flex items-start justify-between gap-3 flex-wrap mb-1">
+                    <div>
+                      <p
+                        className="t-mono uppercase mb-1"
+                        style={{
+                          fontSize: "10px",
+                          letterSpacing: "0.1em",
+                          color: "var(--text-label)",
+                        }}
+                      >
+                        {company}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "15px",
+                          fontWeight: 400,
+                          color: "var(--text-primary)",
+                        }}
+                      >
+                        {title}
+                      </p>
+                    </div>
+                    <StatusPill
+                      status={i === 0 ? "active" : "shipped"}
+                      className="shrink-0 mt-0.5"
+                    />
                   </div>
+                  <p
+                    className="t-mono mb-4"
+                    style={{ fontSize: "10px", color: "var(--text-label)" }}
+                  >
+                    {dates}
+                  </p>
+                  <ul className="space-y-2">
+                    {desc.map((line, j) => (
+                      <li
+                        key={j}
+                        className="t-caption"
+                        style={{
+                          color: "var(--text-secondary)",
+                          paddingLeft: "1em",
+                          textIndent: "-0.8em",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "var(--text-disabled)",
+                            marginRight: "0.3em",
+                          }}
+                        >
+                          ·
+                        </span>
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
           </div>
-        </section>
 
-        {(t.works && t.works.length > 0) && (
-          <section className="mb-8">
-            <h2 className="flex items-center gap-2 text-xl font-bold mb-4">
-              <Briefcase className="w-6 h-6 text-primary" />
-              {t.meta.cv.additionalWorks}
-            </h2>
-            <Card>
-              <CardContent className="pt-6">
-                <ul className="list-disc pl-5 space-y-2">
-                  {t.works.map((work: string, index: number) => (
-                    <li key={index} className="text-gray-300">
-                      {work}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </section>
-        )}
-
-        <div className="flex justify-center mt-6">
-          <div className="flex space-x-4">
-            {t.meta.links.github && (
-              <Button variant="outline" size="sm" className="flex items-center gap-2">
-                <Link className="w-4 h-4" />
-                <a href={t.meta.links.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </Button>
-            )}
-            {t.meta.links.linkedin && (
-              <Button variant="outline" size="sm" className="flex items-center gap-2">
-                <Link className="w-4 h-4" />
-                <a href={t.meta.links.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </Button>
-            )}
-            {t.meta.links.email && (
-              <Button variant="outline" size="sm" className="flex items-center gap-2">
-                <Link className="w-4 h-4" />
-                <a href={`mailto:${t.meta.links.email}`}>
-                  Email
-                </a>
-              </Button>
-            )}
+          {/* Education */}
+          <EyebrowSection
+            eyebrow={t.meta.cv.education}
+            heading=""
+            className="mb-6"
+          />
+          <div className="space-y-4 mb-14">
+            {educations.map((edu, i) => {
+              const degree      = edu.degree      ?? edu.Degree      ?? "";
+              const institution = edu.institution ?? edu.Institution ?? "";
+              const dates       = edu.dates       ?? edu.Dates       ?? "";
+              return (
+                <div
+                  key={i}
+                  className="px-5 py-4 rounded-ds-md"
+                  style={{
+                    background: "var(--surface-card)",
+                    border: "1px solid var(--surface-hairline)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 400,
+                      color: "var(--text-primary)",
+                      marginBottom: "2px",
+                    }}
+                  >
+                    {degree}
+                  </p>
+                  <p className="t-mono" style={{ color: "var(--text-label)", fontSize: "11px" }}>
+                    {institution} · {dates}
+                  </p>
+                </div>
+              );
+            })}
           </div>
+
+          {/* Key Achievements */}
+          {achievements.length > 0 && (
+            <>
+              <EyebrowSection
+                eyebrow={t.meta.cv.keyAchievements}
+                heading=""
+                className="mb-6"
+              />
+              <div className="space-y-4 mb-14">
+                {achievements.map((ach, i) => {
+                  const area = ach.area ?? ach.Area ?? "";
+                  const desc = ach.description ?? ach.Description ?? "";
+                  return (
+                    <div
+                      key={i}
+                      className="px-5 py-4 rounded-ds-md"
+                      style={{
+                        background: "var(--surface-card)",
+                        border: "1px solid var(--surface-hairline)",
+                      }}
+                    >
+                      <p
+                        className="t-mono uppercase mb-2"
+                        style={{
+                          fontSize: "10px",
+                          letterSpacing: "0.1em",
+                          color: "var(--accent-brass)",
+                        }}
+                      >
+                        {area}
+                      </p>
+                      <p className="t-caption" style={{ color: "var(--text-secondary)" }}>
+                        {desc}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
+
+        {/* ── Sidebar ──────────────────────────────────────── */}
+        <aside style={{ width: 280, flexShrink: 0 }}>
+
+          {/* Languages */}
+          {t.curriculum.languages?.length > 0 && (
+            <div className="mb-10">
+              <p className="t-eyebrow mb-4">{t.meta.cv.languages}</p>
+              <div className="flex flex-wrap gap-2">
+                {t.curriculum.languages.map((lang: string, i: number) => (
+                  <span
+                    key={i}
+                    className="t-mono px-3 py-1 rounded-ds-sm"
+                    style={{
+                      fontSize: "11px",
+                      color: "var(--text-secondary)",
+                      background: "var(--surface-raised)",
+                      border: "1px solid var(--surface-hairline)",
+                    }}
+                  >
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Skill overview */}
+          {t.curriculum.skills?.length > 0 && (
+            <div className="mb-10">
+              <p className="t-eyebrow mb-4">{t.meta.cv.detailedSkills}</p>
+              <div className="flex flex-wrap gap-2">
+                {t.curriculum.skills.map((skill: string, i: number) => (
+                  <span
+                    key={i}
+                    className="t-mono px-3 py-1 rounded-ds-sm"
+                    style={{
+                      fontSize: "11px",
+                      color: "var(--text-secondary)",
+                      background: "var(--surface-raised)",
+                      border: "1px solid var(--surface-hairline)",
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Detailed skills by category */}
+          <div className="space-y-6">
+            {Object.entries(common.skills).map(([category, skills]) => (
+              <div key={category}>
+                <p
+                  className="t-eyebrow mb-3"
+                  style={{ color: "var(--text-disabled)", fontSize: "9px" }}
+                >
+                  {SKILL_CATEGORY_LABELS[category] ?? category}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {(skills as string[]).map((skill, i) => (
+                    <span
+                      key={i}
+                      className="t-mono"
+                      style={{
+                        fontSize: "10px",
+                        color: "var(--text-label)",
+                        background: "var(--surface-raised)",
+                        border: "1px solid var(--surface-hairline)",
+                        borderRadius: "var(--radius-xs)",
+                        padding: "2px 6px",
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </div>
   );

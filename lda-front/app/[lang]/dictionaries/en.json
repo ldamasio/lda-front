@@ -1,13 +1,12 @@
 {
   "meta": {
-    "title": "Leandro Damasio. Welcome to My Personal Page",
+    "title": "Leandro Damasio",
     "desc": [
-      "I am an AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil.",
-      "I build production-grade AI systems for financial and legal domains, where reliability, observability, and governance are not optional, they are foundation. My work focuses on making AI systems safe to operate in real decision-making workflows, especially in regulated environments.",
-      "My work sits at the intersection of AI, software architecture, and infrastructure. I design agentic architectures, define runtime control loops, and build evaluation and monitoring pipelines for LLM-based systems. I work hands-on with vector search using pgvector and ParadeDB, prompt and context governance, and secure integration with internal and external data sources.",
-      "I place strong emphasis on versioning, auditability, and traceability, ensuring AI systems meet technical, legal, and risk requirements as they evolve in production.",
-      "Beyond my role at Enforce, I am active in AI-first development and agentic systems beyond the corporate setting. I am the creator and maintainer of an open-source monorepo at RBX Systems, where I work on AI agents, code agents, and system-level tooling, always with a focus on architecture and long-term maintainability.",
-      "I enjoy collaborating across Software Engineering, DevOps, UX, and Product, and I am especially interested in agentic runtimes, memory and context management, and the boundary between model capabilities and system-level control."
+      "Computer Engineer. AI systems for finance and high-reliability environments.",
+      "AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil. Builds production-grade AI systems for financial and legal domains where reliability, observability, and governance are not optional.",
+      "Work spans AI, software architecture, and infrastructure: agentic architectures, runtime control loops, evaluation and monitoring pipelines for LLM-based systems. Hands-on with vector search using pgvector and ParadeDB, prompt governance, and secure integration with internal and external data sources.",
+      "Founder and maintainer of RBX Systems, an open-source monorepo of AI agents, code agents, and system-level tooling focused on architecture and long-term maintainability.",
+      "Based in Brazil, working across Zürich and São Paulo. Available for selected engagements."
     ],
     "links": {
       "curriculum": "https://www.leandrodamasio.com/en/cv",
@@ -49,9 +48,9 @@
     }
   },
   "aboutMe": {
-    "title": "About Me",
-    "desc": "I am an AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil. I build production-grade AI systems for financial and legal domains.",
-    "bio": "Leandro Damasio began his career as an Engineer in the 1990s, with the PHP language. Since then, he has distinguished himself as an experienced and innovative software engineer, working on development projects for major companies and institutions such as FAPESP, NPL Brasil, Global Hitss, Arte Arena, and Stefanini.",
+    "title": "About",
+    "desc": "AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil. Builds production-grade AI systems for financial and legal domains.",
+    "bio": "Leandro Damasio has worked as a software engineer since the 1990s, beginning with PHP. Has since worked on software projects for major companies and institutions including FAPESP, NPL Brasil, Global Hitss, Arte Arena, and Stefanini.",
     "values": [
       "Innovation",
       "Results",
