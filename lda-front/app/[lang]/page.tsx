@@ -227,6 +227,63 @@ export default function Home({
       </section>
       </FadeIn>
 
+      {/* ── Speaking & Writing ───────────────────────────────── */}
+      <FadeIn>
+      <section className="mb-24">
+        <EyebrowSection
+          eyebrow="Speaking & Writing"
+          heading="Publications"
+          className="mb-8"
+        />
+        <div style={{ maxWidth: "var(--prose-width)" }}>
+          <a
+            href="/how-ai-coding-agents-read-code.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/pub flex items-baseline justify-between gap-6 py-4 border-b border-surface-hairline"
+            style={{ textDecoration: "none" }}
+          >
+            <div className="flex-1 min-w-0">
+              <p className="t-mono mb-1" style={{ color: "var(--text-label)" }}>
+                Paper · PDF
+              </p>
+              <p
+                className="text-ink-secondary group-hover/pub:text-ink-primary transition-colors"
+                style={{ fontSize: "15px", lineHeight: 1.45 }}
+              >
+                How AI Coding Agents Read Code: Runtime Architecture of Inspection, Memory and Control
+              </p>
+            </div>
+            <p className="t-mono shrink-0" style={{ color: "var(--text-disabled)" }}>
+              2025
+            </p>
+          </a>
+          <a
+            href="/ai-agents-montreal.pptx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/pub flex items-baseline justify-between gap-6 py-4 border-b border-surface-hairline"
+            style={{ textDecoration: "none" }}
+          >
+            <div className="flex-1 min-w-0">
+              <p className="t-mono mb-1" style={{ color: "var(--text-label)" }}>
+                Talk · Slides · AI Agents Meetup, Montréal
+              </p>
+              <p
+                className="text-ink-secondary group-hover/pub:text-ink-primary transition-colors"
+                style={{ fontSize: "15px", lineHeight: 1.45 }}
+              >
+                AI Agents: Practical Architectures
+              </p>
+            </div>
+            <p className="t-mono shrink-0" style={{ color: "var(--text-disabled)" }}>
+              2024
+            </p>
+          </a>
+        </div>
+      </section>
+      </FadeIn>
+
       {/* ── Contact ──────────────────────────────────────────── */}
       <FadeIn>
       <section id="contact">
