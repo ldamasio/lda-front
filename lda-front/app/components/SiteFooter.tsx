@@ -1,7 +1,9 @@
 import * as React from "react"
+import { getUiText } from "../[lang]/ui-text"
 
-export function SiteFooter() {
+export function SiteFooter({ lang }: { lang: string }) {
   const year = new Date().getFullYear()
+  const ui = getUiText(lang)
 
   return (
     <footer
@@ -39,7 +41,7 @@ export function SiteFooter() {
             color: "var(--text-disabled)",
           }}
         >
-          &copy; {year} Leandro Damasio. All rights reserved.
+          &copy; {year} Leandro Damasio. {ui.allRightsReserved}
         </p>
       </div>
     </footer>

@@ -6,12 +6,18 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { PROFESSIONAL_WORK, PERSONAL_WORK } from "@/app/data/work";
 import { NOTES } from "@/app/data/notes";
+import { getDictionary } from "./dictionaries-server";
+import { getUiText } from "./ui-text";
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
+  const t = await getDictionary(lang);
   return {
-    title: "Leandro Damasio",
-    description:
-      "Computer Engineer. AI systems for finance and high-reliability environments.",
+    title: t.meta.title,
+    description: t.meta.desc[0],
   };
 }
 
@@ -31,11 +37,98 @@ const CONTACT_LINKS = [
   { label: "linkedin.com/in/ldamasio", href: "https://www.linkedin.com/in/ldamasio/" },
 ];
 
-export default function Home({
+interface DictionaryExperience {
+  company?: string;
+  Company?: string;
+  title?: string;
+  Title?: string;
+  dates?: string;
+  Dates?: string;
+  description?: string[];
+  Description?: string[];
+}
+
+interface DictionaryProject {
+  name?: string;
+  description?: string;
+  repositories?: string[];
+  technologies?: string;
+}
+
+interface HomeDictionary {
+  curriculum?: {
+    professionalExperience?: DictionaryExperience[];
+    ProfessionalExperience?: DictionaryExperience[];
+  };
+  portfolio?: {
+    highlights?: DictionaryProject[];
+  };
+}
+
+function firstParagraph(value: unknown): string {
+  if (Array.isArray(value)) return String(value[0] ?? "");
+  return String(value ?? "");
+}
+
+function localizedProfessionalWork(t: HomeDictionary) {
+  const experiences = t.curriculum?.professionalExperience ?? t.curriculum?.ProfessionalExperience ?? [];
+
+  return PROFESSIONAL_WORK.map((item) => {
+    const match = experiences.find((exp) => {
+      const company = String(exp.company ?? exp.Company ?? "").toLowerCase();
+      return (
+        item.client.toLowerCase().includes(company.split(" ")[0]) ||
+        company.includes(item.client.toLowerCase().split(" ")[0])
+      );
+    });
+
+    if (!match) return item;
+
+    return {
+      ...item,
+      role: match.title ?? match.Title ?? item.role,
+      years: match.dates ?? match.Dates ?? item.years,
+      description: firstParagraph(match.description ?? match.Description) || item.description,
+    };
+  });
+}
+
+function localizedPersonalWork(t: HomeDictionary) {
+  const highlights = t.portfolio?.highlights ?? [];
+
+  return PERSONAL_WORK.map((item) => {
+    const match = highlights.find((project) => {
+      const repo = project.repositories?.[0] ?? "";
+      return (
+        repo === item.repo ||
+        String(project.name ?? "").toLowerCase().includes(item.slug.replaceAll("-", " "))
+      );
+    });
+
+    if (!match) return item;
+
+    return {
+      ...item,
+      role: match.name ?? item.role,
+      description: match.description ?? item.description,
+      stack: typeof match.technologies === "string"
+        ? match.technologies.split(",").map((tech: string) => tech.trim()).filter(Boolean)
+        : item.stack,
+    };
+  });
+}
+
+export default async function Home({
   params: { lang },
 }: {
   params: { lang: string };
 }) {
+  const t = await getDictionary(lang);
+  const ui = getUiText(lang);
+  const professionalWork = localizedProfessionalWork(t);
+  const personalWork = localizedPersonalWork(t);
+  const heroDescription = Array.isArray(t.meta.desc) ? t.meta.desc : [t.meta.desc];
+
   return (
     <div
       className="w-full mx-auto px-8"
@@ -51,7 +144,7 @@ export default function Home({
               className="t-eyebrow mb-4"
               style={{ color: "var(--text-label)" }}
             >
-              Brazil · Zürich
+              {t.curriculum.location}
             </p>
             <h1
               className="t-display mb-6 text-balance"
@@ -63,18 +156,17 @@ export default function Home({
               className="t-lead mb-3"
               style={{ color: "var(--text-secondary)" }}
             >
-              Computer Engineer. AI systems for finance and high-reliability
-              environments.
+              {heroDescription[0]}
             </p>
             <p className="t-body mb-10" style={{ color: "var(--text-label)" }}>
-              Based in Brazil, working across Zürich and São Paulo.
+              {heroDescription[heroDescription.length - 1] ?? ui.based}
             </p>
             <div className="flex items-center gap-3">
               <Button variant="brass" asChild>
-                <a href="#work">Selected work</a>
+                <a href="#work">{ui.selectedWork}</a>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href={`/${lang}/notes`}>Notes</Link>
+                <Link href={`/${lang}/notes`}>{ui.notes}</Link>
               </Button>
             </div>
           </div>
@@ -106,15 +198,15 @@ export default function Home({
       <FadeIn delay={80}>
       <section id="work" className="mb-24">
         <EyebrowSection
-          eyebrow="Selected Projects"
-          heading="Work"
+          eyebrow={ui.selectedProjects}
+          heading={ui.work}
           subheading="2017–2026"
           className="mb-8"
         />
 
         {/* Professional */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          {PROFESSIONAL_WORK.map((item) => (
+          {professionalWork.map((item) => (
             <WorkCard
               key={item.slug}
               client={item.client}
@@ -137,10 +229,10 @@ export default function Home({
             className="t-eyebrow mb-4"
             style={{ color: "var(--text-disabled)" }}
           >
-            Personal tools
+            {ui.personalTools}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {PERSONAL_WORK.map((item) => (
+            {personalWork.map((item) => (
               <WorkCard
                 key={item.slug}
                 client={item.client}
@@ -161,8 +253,8 @@ export default function Home({
       <FadeIn>
       <section className="mb-24">
         <EyebrowSection
-          eyebrow="Capabilities"
-          heading="Technical expertise"
+          eyebrow={ui.capabilities}
+          heading={ui.technicalExpertise}
           className="mb-8"
         />
         <div style={{ maxWidth: "var(--prose-width)" }}>
@@ -183,8 +275,8 @@ export default function Home({
       <FadeIn>
       <section className="mb-24">
         <EyebrowSection
-          eyebrow="Writing"
-          heading="Notes"
+          eyebrow={ui.writing}
+          heading={ui.notes}
           className="mb-8"
         />
         <div style={{ maxWidth: "var(--prose-width)" }}>
@@ -232,7 +324,7 @@ export default function Home({
       <section className="mb-24">
         <EyebrowSection
           eyebrow="Speaking & Writing"
-          heading="Publications"
+          heading={ui.publications}
           className="mb-8"
         />
         <div style={{ maxWidth: "var(--prose-width)" }}>
@@ -288,8 +380,8 @@ export default function Home({
       <FadeIn>
       <section id="contact">
         <EyebrowSection
-          eyebrow="Contact"
-          heading="Available for selected engagements."
+          eyebrow={ui.contact}
+          heading={ui.available}
           className="mb-6"
         />
         <div style={{ maxWidth: "var(--prose-width)" }}>

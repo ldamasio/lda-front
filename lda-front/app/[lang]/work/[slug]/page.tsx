@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StatusPill } from "@/components/ui/status-pill";
 import { WORK } from "@/app/data/work";
+import { getUiText } from "../../ui-text";
 
 const LANGS = ["en", "de", "es", "fr", "it", "pt", "zh"];
 
@@ -31,6 +32,7 @@ export default function WorkDetailPage({
 }) {
   const item = WORK.find((w) => w.slug === params.slug);
   if (!item) notFound();
+  const ui = getUiText(params.lang);
 
   return (
     <div
@@ -53,7 +55,7 @@ export default function WorkDetailPage({
           fontSize: "var(--text-xs)",
         }}
       >
-        ← Back
+        ← {ui.back}
       </Link>
 
       {/* Header */}
@@ -89,7 +91,7 @@ export default function WorkDetailPage({
             className="pt-6 mt-6"
             style={{ borderTop: "1px solid var(--surface-hairline)" }}
           >
-            <p className="t-eyebrow mb-4">Stack</p>
+            <p className="t-eyebrow mb-4">{ui.stack}</p>
             <p className="t-mono" style={{ color: "var(--text-secondary)" }}>
               {item.stack.join(" · ")}
             </p>
@@ -129,7 +131,7 @@ export default function WorkDetailPage({
                 boxShadow: "var(--shadow-card)",
               }}
             >
-              <p className="t-eyebrow mb-6">Metrics</p>
+              <p className="t-eyebrow mb-6">{ui.metrics}</p>
               <dl className="space-y-5">
                 {item.metrics.map((m) => (
                   <div key={m.label}>

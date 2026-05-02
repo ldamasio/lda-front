@@ -15,26 +15,30 @@ const LANGUAGES = [
   { code: "zh", label: "ZH" },
 ]
 
-const NAV_ITEMS = [
-  { label: "Work",    anchor: "#work"    },
-  { label: "Notes",   path: "/notes"     },
-  { label: "Contact", anchor: "#contact" },
-]
-
 interface NavPillProps {
   lang: string
+  labels: {
+    work: string
+    notes: string
+    contact: string
+  }
 }
 
-export function NavPill({ lang }: NavPillProps) {
+export function NavPill({ lang, labels }: NavPillProps) {
   const pathname = usePathname()
   const homePath = `/${lang}`
+  const navItems = [
+    { label: labels.work, anchor: "#work" },
+    { label: labels.notes, path: "/notes" },
+    { label: labels.contact, anchor: "#contact" },
+  ]
 
-  const hrefFor = (item: (typeof NAV_ITEMS)[number]) => {
+  const hrefFor = (item: (typeof navItems)[number]) => {
     if ("anchor" in item) return `${homePath}/${item.anchor}`
     return `${homePath}${item.path}`
   }
 
-  const isActive = (item: (typeof NAV_ITEMS)[number]) => {
+  const isActive = (item: (typeof navItems)[number]) => {
     if ("anchor" in item) return pathname === homePath || pathname === `${homePath}/`
     return pathname.startsWith(`${homePath}${item.path}`)
   }
@@ -58,7 +62,7 @@ export function NavPill({ lang }: NavPillProps) {
           boxShadow: "var(--shadow-nav)",
         }}
       >
-        {NAV_ITEMS.map((item, i) => (
+        {navItems.map((item, i) => (
           <React.Fragment key={item.label}>
             {i > 0 && <Divider />}
             <Link

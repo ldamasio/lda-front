@@ -1,5 +1,6 @@
 import { getDictionary } from "../dictionaries-server";
 import { EyebrowSection } from "@/components/ui/eyebrow-section";
+import { getUiText } from "../ui-text";
 
 const CONTACT_LINKS = [
   { label: "leandro@rbxsystems.ch", href: "mailto:leandro@rbxsystems.ch" },
@@ -19,7 +20,13 @@ export async function generateMetadata({
   };
 }
 
-export default function ContactPage() {
+export default function ContactPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
+  const ui = getUiText(lang);
+
   return (
     <div
       className="w-full mx-auto px-8"
@@ -30,8 +37,8 @@ export default function ContactPage() {
       }}
     >
       <EyebrowSection
-        eyebrow="Contact"
-        heading="Available for selected engagements."
+        eyebrow={ui.contact}
+        heading={ui.available}
         className="mb-10"
         style={{ maxWidth: "var(--prose-width)" }}
       />

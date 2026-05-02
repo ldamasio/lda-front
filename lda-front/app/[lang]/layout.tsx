@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import localFont from "next/font/local";
 import { NavPill } from "../components/NavPill";
 import { SiteFooter } from "../components/SiteFooter";
+import { getUiText } from "./ui-text";
 
 const geist = localFont({
   src: "../fonts/GeistVF.woff",
@@ -40,15 +41,24 @@ export default function RootLayout({
   children: React.ReactNode;
   params: LangParams;
 }>) {
+  const ui = getUiText(params.lang);
+
   return (
     <html
       lang={params.lang}
       className={`dark ${geist.variable} ${geistMono.variable}`}
     >
       <body>
-        <NavPill lang={params.lang} />
+        <NavPill
+          lang={params.lang}
+          labels={{
+            work: ui.work,
+            notes: ui.notes,
+            contact: ui.contact,
+          }}
+        />
         <main>{children}</main>
-        <SiteFooter />
+        <SiteFooter lang={params.lang} />
       </body>
     </html>
   );

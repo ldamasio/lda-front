@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EyebrowSection } from "@/components/ui/eyebrow-section";
 import { NOTES } from "@/app/data/notes";
+import { getUiText } from "../ui-text";
 
 export const metadata = {
   title: "Notes · Leandro Damasio",
@@ -12,6 +13,8 @@ export default function NotesPage({
 }: {
   params: { lang: string };
 }) {
+  const ui = getUiText(lang);
+
   return (
     <div
       className="w-full mx-auto px-8"
@@ -22,8 +25,8 @@ export default function NotesPage({
       }}
     >
       <EyebrowSection
-        eyebrow="Writing"
-        heading="Notes"
+        eyebrow={ui.writing}
+        heading={ui.notes}
         className="mb-10"
         style={{ maxWidth: "var(--prose-width)" }}
       />
