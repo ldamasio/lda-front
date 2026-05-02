@@ -9,8 +9,8 @@ const cookieName = "i18nlang";
 
 function getDomainLocale(request: NextRequest): string | null {
   const host = request.headers.get("host")?.split(":")[0].toLowerCase();
-  if (host === "rbxsystems.ch" || host === "www.rbxsystems.ch") return "en";
-  if (host === "rbx.ia.br" || host === "www.rbx.ia.br") return "pt";
+  if (host === "rbxsystems.ch" || host?.endsWith(".rbxsystems.ch")) return "en";
+  if (host === "rbx.ia.br" || host?.endsWith(".rbx.ia.br")) return "pt";
   return null;
 }
 
