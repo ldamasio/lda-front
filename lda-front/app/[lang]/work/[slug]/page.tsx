@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { StatusPill } from "@/components/ui/status-pill";
 import { WORK } from "@/app/data/work";
 import { getUiText } from "../../ui-text";
+import { getDictionary } from "../../dictionaries-server";
+import { localizedWorkItem } from "../../localized-work";
 
 const LANGS = ["en", "de", "es", "fr", "it", "pt", "zh"];
 
@@ -17,21 +19,25 @@ export async function generateMetadata({
 }: {
   params: { lang: string; slug: string };
 }) {
-  const item = WORK.find((w) => w.slug === params.slug);
-  if (!item) return {};
+  const baseItem = WORK.find((w) => w.slug === params.slug);
+  if (!baseItem) return {};
+  const t = await getDictionary(params.lang);
+  const item = localizedWorkItem(baseItem, t);
   return {
     title: `${item.role} — ${item.client} · Leandro Damasio`,
     description: item.description,
   };
 }
 
-export default function WorkDetailPage({
+export default async function WorkDetailPage({
   params,
 }: {
   params: { lang: string; slug: string };
 }) {
-  const item = WORK.find((w) => w.slug === params.slug);
-  if (!item) notFound();
+  const baseItem = WORK.find((w) => w.slug === params.slug);
+  if (!baseItem) notFound();
+  const t = await getDictionary(params.lang);
+  const item = localizedWorkItem(baseItem, t);
   const ui = getUiText(params.lang);
 
   return (

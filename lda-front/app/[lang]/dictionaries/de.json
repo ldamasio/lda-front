@@ -120,6 +120,17 @@
       }
     ]
   },
+  "workOverrides": {
+    "rbx-systems": {
+      "role": "Gründer",
+      "description": "AI-first-Infrastruktur und Werkzeuge für regulierte und hochzuverlässige Umgebungen. Open-Source-Monorepo für KI-Agenten, Code-Agenten und systemnahe Werkzeuge. Architekturfokus: langfristige Wartbarkeit, Observability und minimale externe Abhängigkeiten."
+    },
+    "strategos": {
+      "role": "Strategos — Strategische Runtime",
+      "description": "Agentische Runtime für Langfristplanung und Mehrszenarioanalysen. Strukturierte Entscheidungsunterstützung mit expliziter Nachverfolgung von Annahmen, Risikoregistern und Ergebniszuordnung. Gebaut für persönliche und organisationale Nutzung in Umgebungen mit geringer Gewissheit.",
+      "stack": ["Python", "TypeScript", "LLMs"]
+    }
+  },
   "curriculum": {
     "name": "Leandro Damasio",
     "headline": "Principal Software Engineer | Cloud- und DevOps-Spezialist | KI/ML-Ingenieur",

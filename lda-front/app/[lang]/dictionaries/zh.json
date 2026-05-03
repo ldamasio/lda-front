@@ -120,6 +120,17 @@
       }
     ]
   },
+  "workOverrides": {
+    "rbx-systems": {
+      "role": "创始人",
+      "description": "面向监管和高可靠性环境的 AI-first 基础设施与工具。开源 monorepo 覆盖 AI agents、代码 agents 和系统级工具。架构重点是长期可维护性、可观测性和最少外部依赖。"
+    },
+    "strategos": {
+      "role": "Strategos — 战略运行时",
+      "description": "用于长周期规划和多场景分析的 agentic runtime。提供结构化决策支持，显式跟踪假设、风险登记和结果归因。面向低确定性环境中的个人和组织使用。",
+      "stack": ["Python", "TypeScript", "LLMs"]
+    }
+  },
   "curriculum": {
     "name": "Leandro Damasio",
     "headline": "首席软件工程师 | 云和 DevOps 专家 | 人工智能/机器学习工程师",

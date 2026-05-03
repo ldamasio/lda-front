@@ -4,10 +4,10 @@ import { EyebrowSection } from "@/components/ui/eyebrow-section";
 import { WorkCard } from "@/components/ui/work-card";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
-import { PROFESSIONAL_WORK, PERSONAL_WORK } from "@/app/data/work";
 import { getDictionary } from "./dictionaries-server";
 import { getUiText } from "./ui-text";
 import { formatNoteDate, getAllNotes } from "@/lib/notes";
+import { localizedPersonalWork, localizedProfessionalWork } from "./localized-work";
 
 export const dynamic = "force-dynamic";
 
@@ -38,87 +38,6 @@ const CONTACT_LINKS = [
   { label: "github.com/ldamasio",   href: "https://github.com/ldamasio" },
   { label: "linkedin.com/in/ldamasio", href: "https://www.linkedin.com/in/ldamasio/" },
 ];
-
-interface DictionaryExperience {
-  company?: string;
-  Company?: string;
-  title?: string;
-  Title?: string;
-  dates?: string;
-  Dates?: string;
-  description?: string[];
-  Description?: string[];
-}
-
-interface DictionaryProject {
-  name?: string;
-  description?: string;
-  repositories?: string[];
-  technologies?: string;
-}
-
-interface HomeDictionary {
-  curriculum?: {
-    professionalExperience?: DictionaryExperience[];
-    ProfessionalExperience?: DictionaryExperience[];
-  };
-  portfolio?: {
-    highlights?: DictionaryProject[];
-  };
-}
-
-function firstParagraph(value: unknown): string {
-  if (Array.isArray(value)) return String(value[0] ?? "");
-  return String(value ?? "");
-}
-
-function localizedProfessionalWork(t: HomeDictionary) {
-  const experiences = t.curriculum?.professionalExperience ?? t.curriculum?.ProfessionalExperience ?? [];
-
-  return PROFESSIONAL_WORK.map((item) => {
-    const match = experiences.find((exp) => {
-      const company = String(exp.company ?? exp.Company ?? "").toLowerCase();
-      return (
-        item.client.toLowerCase().includes(company.split(" ")[0]) ||
-        company.includes(item.client.toLowerCase().split(" ")[0])
-      );
-    });
-
-    if (!match) return item;
-
-    return {
-      ...item,
-      role: match.title ?? match.Title ?? item.role,
-      years: match.dates ?? match.Dates ?? item.years,
-      description: firstParagraph(match.description ?? match.Description) || item.description,
-    };
-  });
-}
-
-function localizedPersonalWork(t: HomeDictionary) {
-  const highlights = t.portfolio?.highlights ?? [];
-
-  return PERSONAL_WORK.map((item) => {
-    const match = highlights.find((project) => {
-      const repo = project.repositories?.[0] ?? "";
-      return (
-        repo === item.repo ||
-        String(project.name ?? "").toLowerCase().includes(item.slug.replaceAll("-", " "))
-      );
-    });
-
-    if (!match) return item;
-
-    return {
-      ...item,
-      role: match.name ?? item.role,
-      description: match.description ?? item.description,
-      stack: typeof match.technologies === "string"
-        ? match.technologies.split(",").map((tech: string) => tech.trim()).filter(Boolean)
-        : item.stack,
-    };
-  });
-}
 
 export default async function Home({
   params: { lang },

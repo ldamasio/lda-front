@@ -132,16 +132,16 @@ export const WORK: WorkItem[] = [
 
   /* ── Personal tools ──────────────────────────────────────── */
   {
-    slug: "rtk",
+    slug: "playlist-fs",
     kind: "personal",
     client: "RBX Systems",
-    role: "RTK — Rust Token Killer",
+    role: "playlist-fs",
     years: "2025–present",
     description:
-      "Claude Code proxy that filters and compresses tool output at the shell layer. Transparent hook-based rewriting of common dev commands — zero overhead, 60–90% token reduction on routine operations. Includes analytics, per-command savings tracking, and a discovery mode for missed optimization opportunities.",
-    stack: ["Rust", "Bash"],
+      "Playlists as filesystem projections over a canonical music library. A local-first, file-based toolkit where playlists are symlinked filesystem views. No daemon, no cloud, no login. Just files, symlinks, and shell.",
+    stack: ["Shell", "Bash", "Filesystem", "Symlinks"],
     status: "in-production",
-    repo: "https://github.com/ldamasio/rtk",
+    repo: "https://github.com/ldamasio/playlist-fs",
   },
   {
     slug: "xsh",
