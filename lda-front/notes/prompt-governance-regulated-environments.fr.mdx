@@ -1,0 +1,33 @@
+---
+title: "Gouvernance des prompts dans les environnements IA réglementés"
+date: "2025-12-10"
+readTime: "8 min"
+tags: ["IA","Gouvernance"]
+description: "Comment versionner, auditer et contrôler les prompts dans les systèmes financiers et juridiques où chaque interaction avec le modèle engage la responsabilité opérationnelle."
+---
+La gouvernance des prompts consiste à traiter les prompts comme des artefacts de production: versionnés, testés, audités et attribuables. Dans les environnements réglementés, ce n'est pas optionnel.
+
+## Pourquoi les prompts sont des responsabilités
+
+Chaque prompt envoyé à un modèle dans un système financier ou juridique est une entrée de décision. Les régulateurs attendent de l'explicabilité et de la reproductibilité. Un prompt modifié sans trace qui produit aujourd'hui une réponse différente est un échec d'audit.
+
+Ajouter des logs ne suffit pas. Les logs enregistrent ce qui s'est passé. La gouvernance contrôle ce qui peut se passer.
+
+## Quatre couches de gouvernance
+
+**Registre.** Tout prompt en production doit vivre dans un registre versionné, avec identifiant stable, version, statut, propriétaire, hash du contenu et dates d'approbation ou de dépréciation. Aucun prompt ne doit s'exécuter en production sans statut approuvé.
+
+**Portes de changement.** Promouvoir un prompt de brouillon à approuvé exige une revue de diff, des évaluations avec seuils définis et l'enregistrement de l'approbateur, de la date et du résultat.
+
+**Pipelines d'évaluation.** Chaque version de prompt a besoin d'un jeu de tests avec entrées et sorties attendues. Exactitude, taux de refus, cohérence et latence doivent être mesurés au niveau du prompt.
+
+**Attribution à l'exécution.** Chaque appel au modèle doit porter prompt_id, prompt_version, caller_id et les données nécessaires à la reproduction de la décision. Cela crée une chaîne causale complète.
+
+## Ce que cela évite
+
+- dérive silencieuse des prompts;
+- changements non approuvés en production;
+- impossibilité de savoir quelle version a produit une réponse;
+- décisions impossibles à reproduire.
+
+Le point de départ minimal est simple: une table Postgres comme registre, une étape CI qui exécute les évaluations en PR et un middleware qui refuse les prompts non approuvés. Les systèmes plus mûrs ajoutent une API de gouvernance, des tableaux de bord et une dépréciation automatique.

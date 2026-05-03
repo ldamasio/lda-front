@@ -1,0 +1,30 @@
+---
+title: "KI-Governance für Finanzsysteme: eine Praktikerperspektive"
+date: "2025-06-03"
+readTime: "9 Min."
+tags: ["KI","Governance"]
+description: "Was KI-Governance auf Implementierungsebene bedeutet: Modellrisiko, Evaluation Gates, Observability und Verantwortlichkeiten."
+---
+KI-Governance in Finanzdienstleistungen ist keine vage Ambition mehr, sondern eine operative Anforderung. Die Lücke zwischen Richtlinien und implementierten Kontrollen ist dort, wo Audits Probleme finden.
+
+## Modellrisiko für LLMs
+
+Sprachmodelle sind aus Risikosicht ebenfalls Modelle. Sie brauchen Inventar, vorgesehenen Einsatz, Grenzen, Owner, unabhängige Validierung, laufendes Monitoring und Dokumentation materieller Änderungen.
+
+Die Herausforderung: LLMs erzeugen Text. Jede Anwendung muss definieren, was Performance bedeutet und welche Änderungen an Prompt, Retrieval-Korpus oder Modellversion materiell sind.
+
+## Evaluation Gates
+
+Gates blockieren Deployments, wenn Modell oder Prompt Kriterien nicht erfüllen. Für juristische Systeme können das Extraktionsgenauigkeit, Ablehnungsrate außerhalb des Scopes, Konsistenz und maximale Latenz sein.
+
+Schwellenwerte sind nicht universell. Sie müssen mit Risiko, Compliance und Business anhand der Folgen eines Fehlers festgelegt werden.
+
+## Observability
+
+KI-Systeme brauchen Metriken auf Infrastruktur-, Anwendungs- und Governance-Ebene. Neben Latenz und Fehlern zählen Prompt-Version, Modell, Kosten, Cache, Fallback, Ergebnisverteilung und Nutzung alter Versionen.
+
+## Operative Verantwortung
+
+Echte Governance beantwortet vor dem Incident: Wer genehmigt Deployments, wer erhält Alerts, wann wird pausiert, wie werden Overrides erfasst und wie werden frühere Entscheidungen reproduziert?
+
+Governance, die nie unter Druck getestet wurde, kann im Ernstfall versagen. Dokumentation muss kurz, aktuell und überprüfbar sein.

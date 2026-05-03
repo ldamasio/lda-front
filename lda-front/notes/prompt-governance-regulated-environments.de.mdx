@@ -1,0 +1,33 @@
+---
+title: "Prompt-Governance in regulierten KI-Umgebungen"
+date: "2025-12-10"
+readTime: "8 Min."
+tags: ["KI","Governance"]
+description: "Wie Prompts in Finanz- und Rechtssystemen versioniert, auditiert und kontrolliert werden, wenn jede Modellinteraktion ein operatives Risiko darstellt."
+---
+Prompt-Governance bedeutet, Prompts als Produktionsartefakte zu behandeln: versioniert, getestet, auditiert und zurechenbar. In regulierten Umgebungen ist das keine Option, sondern Pflicht.
+
+## Warum Prompts Risiken sind
+
+Jeder Prompt, der ein Modell in einem Finanz- oder Rechtssystem erreicht, ist eine Entscheidungseingabe. Regulatoren erwarten Erklärbarkeit und Reproduzierbarkeit. Ein still geänderter Prompt, der heute eine andere Antwort erzeugt, ist ein Audit-Fehler.
+
+Logging allein reicht nicht. Logs zeigen, was passiert ist. Governance kontrolliert, was passieren darf.
+
+## Vier Governance-Schichten
+
+**Registry.** Jeder Produktionsprompt braucht einen versionierten Eintrag mit stabiler ID, Version, Status, Owner, Content-Hash sowie Freigabe- und Deprecation-Daten. Ohne Freigabe darf kein Prompt produktiv laufen.
+
+**Change Gates.** Der Weg von Draft zu Approved erfordert Diff-Review, bestandene Evaluierungen mit klaren Schwellenwerten und einen nachvollziehbaren Freigabenachweis.
+
+**Evaluation Pipelines.** Jede Prompt-Version braucht Tests mit erwarteten Ein- und Ausgaben. Korrektheit, Ablehnungsrate, Konsistenz und Latenz werden pro Prompt bewertet.
+
+**Runtime Attribution.** Jeder Modellaufruf trägt prompt_id, prompt_version, caller_id und Daten zur Reproduktion. So entsteht eine kausale Kette von Entscheidung zu Prompt-Version und Evaluierungszustand.
+
+## Was dadurch verhindert wird
+
+- stille Prompt-Drift;
+- ungeprüfte Änderungen in Produktion;
+- unbekannte Prompt-Versionen bei Entscheidungen;
+- nicht reproduzierbare Antworten.
+
+Ein minimaler Start ist eine Postgres-Tabelle als Registry, ein CI-Schritt für Evaluierungen und Middleware, die nicht freigegebene Prompts blockiert. Reifere Systeme ergänzen Governance-APIs, Dashboards und automatische Deprecation.

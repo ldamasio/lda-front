@@ -1,0 +1,30 @@
+---
+title: "Recherche vectorielle dans le retrieval sensible à la conformité"
+date: "2025-08-15"
+readTime: "7 min"
+tags: ["IA","Infrastructure"]
+description: "pgvector et ParadeDB pour le RAG financier, où les résultats de recherche sont des preuves et non des suggestions."
+---
+Le RAG traite la recherche comme une infrastructure. Dans les environnements sensibles à la conformité, les résultats de recherche sont des preuves. Et une preuve a des exigences au-delà de la pertinence.
+
+## Ce qui change quand le résultat est une preuve
+
+Le retrieval classique optimise la pertinence. Le retrieval probatoire exige aussi attribution, stabilité et complétude. Chaque chunk doit renvoyer au document, à sa version et au journal d'accès. La même requête sur le même corpus doit produire un résultat stable ou explicable.
+
+Dans les systèmes financiers et juridiques, ne pas retrouver un document pertinent est une faute distincte d'un manque de précision. "Le modèle ne savait pas" n'est pas acceptable si le document était disponible.
+
+## pgvector et ParadeDB
+
+pgvector garde la recherche vectorielle dans Postgres. Pour la conformité, l'avantage est architectural: transactions, permissions et logs restent dans la même base. ParadeDB ajoute BM25 à Postgres pour un retrieval hybride sans Elasticsearch séparé.
+
+La recherche hybride compte parce que les documents réglementaires combinent sémantique et termes exacts: clauses, identifiants et définitions.
+
+## Schéma minimal
+
+Un chunk attribuable exige chunk_id, source_document_id, version, index, texte original, embedding, ingestion_run_id et timestamp. Chaque requête doit enregistrer query_id, embedding, top_k, chunks retournés, scores et contexte de l'appelant.
+
+Cela répond à la question d'audit: quels documents ont été utilisés, de quelle version du corpus et par qui?
+
+## Latence et auditabilité
+
+Les index approximatifs échangent précision contre vitesse. En conformité, ce choix doit être explicite. Quand l'échelle le permet, la recherche exacte devrait rester le défaut.

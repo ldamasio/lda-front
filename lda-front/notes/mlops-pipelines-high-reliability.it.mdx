@@ -1,0 +1,28 @@
+---
+title: "MLOps per ambienti ad alta affidabilità"
+date: "2025-04-18"
+readTime: "6 min"
+tags: ["IA","Infrastruttura"]
+description: "Pattern con Kubeflow, ArgoCD e GitOps per pipeline ML dove errori del modello hanno conseguenze."
+---
+I deploy ML ad alta affidabilità differiscono dal MLOps comune per un punto: il costo di un modello sbagliato in produzione non è solo esperienza degradata, ma decisione downstream errata.
+
+## Architettura di pipeline
+
+La pipeline di training è un sistema di produzione. Parametri, versioni dataset e configurazioni di preprocessing devono essere input espliciti. Pesi, preprocessori, report e snapshot richiedono versionamento degli artefatti. L'esecuzione deve essere riproducibile.
+
+Kubeflow fornisce l'orchestrazione. Ogni step deve girare in container isolato con dipendenze fissate, e gli artefatti intermedi devono andare in storage content-addressed, come S3 o MinIO.
+
+## Gate di deploy
+
+Il passaggio da modello addestrato a modello deployato è un gate. Confronta risultati con soglie, valuta contro il modello corrente, rivede il changelog e registra l'approvazione.
+
+Con ArgoCD e GitOps, la promozione ideale apre una PR che cambia il riferimento dell'artefatto. Il merge è il gate di approvazione e il deploy diventa auditabile.
+
+## Rollback
+
+Rollback del modello non significa solo tornare di versione. Significa ripristinare esattamente l'artefatto precedente, identificato da hash, in pochi minuti e senza nuovo training. La procedura va testata.
+
+## Monitoraggio
+
+Oltre a latenza ed errori, bisogna monitorare distribuzione delle predizioni, distribuzione delle feature e correlazione con metriche di business. Prima del deploy deve essere chiaro quale metrica segnalerà un errore silenzioso, in quanto tempo e a chi.

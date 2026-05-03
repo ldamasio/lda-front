@@ -1,0 +1,32 @@
+---
+title: "Runtime agentici: dall'orchestrazione al controllo"
+date: "2025-10-22"
+readTime: "10 min"
+tags: ["IA","Architettura"]
+description: "I framework di orchestrazione danno capacità agli agenti. I control plane danno fiducia agli operatori."
+---
+La discussione sui sistemi agentici si concentra spesso sulle capacità: strumenti, pianificazione, numero di passi. È utile per le demo, ma insufficiente per la produzione.
+
+In produzione la domanda è diversa: cosa può vedere, interrompere e limitare l'operatore mentre l'agente esegue?
+
+## Orchestrazione e controllo
+
+L'orchestrazione è la logica interna dell'agente: selezione degli strumenti, sequenza dei passi, recupero dagli errori e gestione del contesto. Il controllo è la capacità esterna di osservare, limitare e intervenire senza dipendere dal ragionamento interno.
+
+Gli incidenti non nascono solo dallo strumento sbagliato. Il rischio maggiore è non poter fermare, spiegare o limitare un'esecuzione inattesa.
+
+## Primitive di controllo
+
+**Visibilità dell'esecuzione.** L'operatore deve sapere cosa sta facendo l'agente, cosa ha fatto negli ultimi passi e quali tool call sono pendenti. Servono eventi strutturati.
+
+**Condizioni di interruzione.** Regole devono sospendere o terminare l'esecuzione quando budget, tempo, sequenza di strumenti o policy vengono violati.
+
+**Gate di approvazione.** Azioni irreversibili, scritture e chiamate esterne sensibili richiedono approvazione prima dell'esecuzione.
+
+**Replay e attribuzione.** Un'esecuzione deve poter essere ricostruita da stato iniziale, input, output degli strumenti e risposte del modello.
+
+## Il contratto operativo
+
+Un runtime agentico di produzione deve dichiarare cosa è osservabile, cosa è vincolabile, quando si ferma e quali prove conserva.
+
+I framework creano agenti capaci. Il control plane crea sistemi operabili.

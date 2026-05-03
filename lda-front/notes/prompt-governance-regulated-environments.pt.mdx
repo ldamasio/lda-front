@@ -1,0 +1,33 @@
+---
+title: "Governança de prompts em ambientes regulados de IA"
+date: "2025-12-10"
+readTime: "8 min"
+tags: ["IA","Governança"]
+description: "Como versionar, auditar e controlar prompts em sistemas financeiros e jurídicos onde cada interação com o modelo é um passivo operacional."
+---
+Governança de prompts é a disciplina de tratar prompts como artefatos de produção: versionados, testados, auditados e atribuíveis. Em ambientes regulados isso não é opcional.
+
+## Por que prompts são passivos
+
+Cada prompt que chega a um modelo em um sistema financeiro ou jurídico é uma entrada de decisão. Reguladores esperam explicabilidade e reprodutibilidade. Um prompt alterado sem registro que produz uma resposta diferente hoje é uma falha de auditoria.
+
+Adicionar logs não basta. Logs registram o que aconteceu. Governança controla o que pode acontecer.
+
+## Quatro camadas de governança
+
+**Registro.** Todo prompt em produção deve existir em um registro versionado, com identificador estável, versão, status, responsável, hash de conteúdo e datas de aprovação ou depreciação. Nenhum prompt deve executar em produção sem status aprovado.
+
+**Portões de mudança.** Promover um prompt de rascunho para aprovado exige revisão de diff, execução de avaliações com limites definidos e registro de quem aprovou, quando e com qual resultado.
+
+**Pipelines de avaliação.** Cada versão de prompt precisa de um conjunto de testes com entradas e saídas esperadas. Correção, taxa de recusa, consistência e latência devem ser medidos no nível do prompt, não apenas globalmente.
+
+**Atribuição em runtime.** Cada chamada ao modelo deve carregar prompt_id, prompt_version, caller_id e dados suficientes para reproduzir a decisão. Isso cria uma cadeia causal completa entre decisão, versão do prompt e estado da avaliação.
+
+## O que isso evita
+
+- drift silencioso de prompts;
+- mudanças não aprovadas chegando à produção;
+- incapacidade de saber qual versão gerou uma resposta;
+- decisões impossíveis de reproduzir depois.
+
+O ponto de partida mínimo é simples: uma tabela Postgres para o registro, uma etapa de CI que roda avaliações em PRs e um middleware que rejeita chamadas a prompts não aprovados. Sistemas mais maduros adicionam API dedicada de governança, dashboards de avaliação e depreciação automática de versões antigas.

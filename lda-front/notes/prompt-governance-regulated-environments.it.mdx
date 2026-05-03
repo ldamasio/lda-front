@@ -1,0 +1,33 @@
+---
+title: "Governance dei prompt in ambienti IA regolamentati"
+date: "2025-12-10"
+readTime: "8 min"
+tags: ["IA","Governance"]
+description: "Come versionare, auditare e controllare prompt in sistemi finanziari e legali dove ogni interazione con il modello è una responsabilità operativa."
+---
+La governance dei prompt significa trattare i prompt come artefatti di produzione: versionati, testati, auditabili e attribuibili. Negli ambienti regolamentati non è opzionale.
+
+## Perché i prompt sono responsabilità
+
+Ogni prompt che raggiunge un modello in un sistema finanziario o legale è un input decisionale. I regolatori si aspettano spiegabilità e riproducibilità. Un prompt modificato senza traccia che oggi produce una risposta diversa è un fallimento di audit.
+
+Aggiungere log non basta. I log registrano ciò che è accaduto. La governance controlla ciò che può accadere.
+
+## Quattro livelli di governance
+
+**Registro.** Ogni prompt in produzione deve vivere in un registro versionato, con identificatore stabile, versione, stato, owner, hash del contenuto e date di approvazione o deprecazione. Nessun prompt dovrebbe eseguire senza stato approvato.
+
+**Gate di modifica.** Promuovere un prompt da draft ad approved richiede review del diff, valutazioni con soglie definite e registrazione di chi ha approvato, quando e con quale risultato.
+
+**Pipeline di valutazione.** Ogni versione richiede un set di test con input e output attesi. Accuratezza, rifiuto, consistenza e latenza vanno misurati per prompt.
+
+**Attribuzione runtime.** Ogni chiamata al modello deve includere prompt_id, prompt_version, caller_id e dati sufficienti per riprodurre la decisione. Questo crea una catena causale completa.
+
+## Cosa previene
+
+- drift silenzioso dei prompt;
+- modifiche non approvate in produzione;
+- impossibilità di sapere quale versione ha prodotto una risposta;
+- decisioni non riproducibili.
+
+Il punto di partenza minimo è una tabella Postgres come registro, uno step CI per le valutazioni e middleware che blocchi prompt non approvati. Sistemi più maturi aggiungono API di governance, dashboard e deprecazione automatica.

@@ -1,0 +1,30 @@
+---
+title: "Vektorsuche in compliance-sensitivem Retrieval"
+date: "2025-08-15"
+readTime: "7 Min."
+tags: ["KI","Infrastruktur"]
+description: "pgvector und ParadeDB für RAG in Finanzumgebungen, in denen Suchergebnisse Belege sind."
+---
+RAG behandelt Suche als Infrastruktur. In compliance-sensitiven Umgebungen sind Suchergebnisse Belege. Belege haben Anforderungen jenseits von Relevanz.
+
+## Was sich ändert, wenn Ergebnisse Belege sind
+
+Normales Retrieval optimiert Relevanz. Belegorientiertes Retrieval braucht zusätzlich Attribution, Stabilität und Vollständigkeit. Jeder Chunk muss auf Dokument, Version und Zugriffsnachweis zeigen. Dieselbe Anfrage gegen dasselbe Korpus sollte stabile oder erklärbare Ergebnisse liefern.
+
+In Finanz- und Rechtssystemen ist das Nichtfinden eines relevanten Dokuments ein eigener Fehler. "Das Modell wusste es nicht" reicht nicht, wenn das Dokument verfügbar war.
+
+## pgvector und ParadeDB
+
+pgvector hält Vektorsuche in Postgres. Für Compliance ist der Vorteil architektonisch: Transaktionen, Berechtigungen und Logs bleiben in derselben Datenbank. ParadeDB ergänzt BM25 und ermöglicht hybrides Retrieval ohne separaten Elasticsearch-Cluster.
+
+Hybride Suche ist wichtig, weil regulatorische Dokumente Semantik und exakte Begriffe mischen: Klauseln, IDs und Definitionen.
+
+## Minimales Schema
+
+Ein zurechenbarer Chunk braucht chunk_id, source_document_id, Dokumentversion, Chunk-Index, Originaltext, Embedding, ingestion_run_id und Zeitstempel. Jede Anfrage protokolliert query_id, Embedding, top_k, zurückgegebene Chunks, Scores und Aufruferkontext.
+
+So lässt sich beantworten, welche Dokumente in einer Entscheidung verwendet wurden, aus welcher Korpusversion und durch wen.
+
+## Latenz und Auditierbarkeit
+
+Approximate Indexes tauschen Präzision gegen Geschwindigkeit. In Compliance-Kontexten muss diese Entscheidung explizit sein. Wo die Skalierung es erlaubt, sollte exakte Suche der Standard bleiben.

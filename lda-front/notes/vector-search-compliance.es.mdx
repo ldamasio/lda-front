@@ -1,0 +1,30 @@
+---
+title: "Búsqueda vectorial en retrieval sensible a compliance"
+date: "2025-08-15"
+readTime: "7 min"
+tags: ["IA","Infraestructura"]
+description: "pgvector y ParadeDB para RAG financiero, donde los resultados de búsqueda son evidencia y no simples sugerencias."
+---
+RAG trata la búsqueda como infraestructura. En entornos sensibles a compliance, los resultados de búsqueda son evidencia. Y la evidencia tiene requisitos más allá de la relevancia.
+
+## Qué cambia cuando el resultado es evidencia
+
+El retrieval común optimiza relevancia. El retrieval probatorio también exige atribución, estabilidad y completitud. Cada chunk debe apuntar a documento, versión y registro de acceso. La misma consulta contra el mismo corpus debe producir resultados estables o explicables.
+
+En sistemas financieros y legales, no recuperar un documento relevante es una falla distinta de devolver algo poco preciso. "El modelo no sabía" no es aceptable si el documento estaba disponible.
+
+## pgvector y ParadeDB
+
+pgvector mantiene la búsqueda vectorial dentro de Postgres. En compliance, la ventaja es arquitectónica: transacciones, permisos y logs permanecen en la misma base. ParadeDB añade BM25 a Postgres, habilitando retrieval híbrido sin Elasticsearch separado.
+
+La búsqueda híbrida importa porque los documentos regulatorios mezclan semántica con términos exactos: cláusulas, identificadores y definiciones.
+
+## Esquema mínimo
+
+Un chunk atribuible necesita chunk_id, source_document_id, versión del documento, índice, texto original, embedding, ingestion_run_id y timestamp. Cada consulta debe registrar query_id, embedding, top_k, chunks devueltos, scores y contexto del llamador.
+
+Esto responde la pregunta de auditoría: qué documentos se usaron, de qué versión del corpus y por quién.
+
+## Latencia y auditabilidad
+
+Los índices aproximados intercambian precisión por velocidad. En compliance, esa decisión debe ser explícita. Cuando la escala lo permite, la búsqueda exacta debería ser el estándar.
