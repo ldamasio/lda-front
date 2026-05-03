@@ -1,0 +1,74 @@
+---
+title: "AI governance for financial systems: a practitioner view"
+date: "2025-06-03"
+readTime: "9 min"
+tags: ["AI","Governance"]
+description: "What AI governance actually means at the implementation layer — not the policy layer. Covers model risk management, evaluation gates, observability requirements, and the organizational structures that make governance real rather than nominal."
+---
+AI governance in financial services is increasingly a regulatory requirement and decreasingly a vague aspiration. The gap between policy-level governance documents and implemented governance controls is where auditors are now spending their time.
+
+This note covers the implementation layer — what governance looks like in running systems, not in compliance frameworks.
+
+**Model risk management extended to LLMs**
+
+SR 11-7, the Fed's model risk management guidance, defines a model as a system that applies statistical or mathematical methods to estimate outcomes. Large language models are models under this definition. SR 11-7 compliance requires:
+
+- Model inventory entry with intended use, limitations, and owner
+- Validation by a party independent of development
+- Ongoing monitoring with defined performance thresholds and escalation triggers
+- Documentation of material changes (including prompt changes, retrieval corpus updates, and model version upgrades)
+
+The challenge: SR 11-7 was written for quantitative models with numeric outputs and measurable error rates. LLMs produce text. Adapting the framework requires defining what "performance" means for each LLM application, and what constitutes a "material change."
+
+**Evaluation gates in practice**
+
+Evaluation gates are automated checks that block deployment when a model or prompt change fails defined quality thresholds. In practice, the hard part is not running the evaluations — it is defining the acceptance criteria.
+
+For a legal document extraction system, acceptance criteria might include:
+- Extraction accuracy on a held-out validation set: ≥ 94%
+- Refusal rate on out-of-scope queries: ≥ 98%
+- Consistency: same document, same query, same result class across 10 runs: ≥ 99%
+
+These numbers are not industry standards. They are negotiated with risk, compliance, and the business unit based on the downstream consequences of extraction errors. Setting them requires understanding how the model output is used, not just how accurate it is in the abstract.
+
+**Observability requirements**
+
+Production AI systems in financial services need observability at three layers:
+
+Infrastructure layer: standard — latency, error rates, throughput, resource utilization.
+
+Application layer: request volume by model and prompt version, token consumption, cost per operation, cache hit rates.
+
+Governance layer: this is the layer most systems lack. Required metrics:
+- Prompt version distribution across production requests (are outdated prompts still being called?)
+- Evaluation coverage: what percentage of production input patterns are covered by the evaluation set?
+- Anomaly rate: requests that fall outside the distribution of the training/evaluation data
+- Human review rate: for systems with human-in-the-loop gates, what percentage of outputs are being reviewed vs. auto-approved?
+
+Governance layer metrics require instrumentation decisions made at system design time. They cannot be added reliably after the fact.
+
+**Organizational structures**
+
+Governance controls are implemented by humans and can be circumvented by humans. The organizational questions matter as much as the technical ones:
+
+- Who owns the model inventory, and how is it kept current?
+- Who has authority to approve production deployments of new model versions?
+- Who has authority to emergency-override evaluation gates, and is that override logged?
+- Who reviews governance metrics, and at what frequency?
+- What is the escalation path when a governance metric breaches threshold?
+
+The answers need to be written down, owned by specific roles, and tested. Governance that has never been tested under pressure is governance that may not function under pressure.
+
+**The documentation standard**
+
+For each AI system in production, governance documentation should cover:
+
+1. System card: intended use, known limitations, risk classification
+2. Model provenance: which model version, from which provider, accessed via which API version
+3. Prompt registry: all prompts in production, with version history and approval records
+4. Evaluation report: most recent evaluation run results against current acceptance criteria
+5. Change log: all material changes since last validation, with approvals
+6. Monitoring report: current governance layer metrics vs. thresholds
+7. Incident log: any triggered alerts or override events since last review
+
+This documentation does not need to be comprehensive to be useful. It needs to be current and accurate. A 10-page document that is 6 months out of date is worse than a 2-page document updated last week.

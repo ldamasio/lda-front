@@ -5,9 +5,11 @@ import { WorkCard } from "@/components/ui/work-card";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { PROFESSIONAL_WORK, PERSONAL_WORK } from "@/app/data/work";
-import { NOTES } from "@/app/data/notes";
 import { getDictionary } from "./dictionaries-server";
 import { getUiText } from "./ui-text";
+import { formatNoteDate, getAllNotes } from "@/lib/notes";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params: { lang },
@@ -128,6 +130,7 @@ export default async function Home({
   const professionalWork = localizedProfessionalWork(t);
   const personalWork = localizedPersonalWork(t);
   const heroDescription = Array.isArray(t.meta.desc) ? t.meta.desc : [t.meta.desc];
+  const notes = await getAllNotes(lang);
 
   return (
     <div
@@ -280,7 +283,7 @@ export default async function Home({
           className="mb-8"
         />
         <div style={{ maxWidth: "var(--prose-width)" }}>
-          {NOTES.map((note) => (
+          {notes.map((note) => (
             <Link
               key={note.slug}
               href={`/${lang}/notes/${note.slug}`}
@@ -303,11 +306,7 @@ export default async function Home({
               </div>
               <div className="shrink-0 text-right">
                 <p className="t-mono" style={{ color: "var(--text-label)" }}>
-                  {new Date(note.date).toLocaleDateString("en-GB", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
+                  {formatNoteDate(note.date, lang)}
                 </p>
                 <p className="t-mono" style={{ color: "var(--text-disabled)" }}>
                   {note.readTime}

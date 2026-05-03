@@ -277,3 +277,67 @@
   border-spacing: 0;
   width: 100%;
 }
+
+.note-prose {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+}
+
+.note-prose p {
+  margin-bottom: 1.25rem;
+}
+
+.note-prose h2,
+.note-prose h3 {
+  color: var(--text-primary);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+}
+
+.note-prose h2 {
+  font-size: var(--text-2xl);
+}
+
+.note-prose h3 {
+  font-size: var(--text-xl);
+}
+
+.note-prose strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.note-prose ul,
+.note-prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.note-prose li {
+  margin-bottom: 0.35rem;
+}
+
+.note-prose hr {
+  border-color: var(--surface-divider);
+  margin: 2.5rem 0;
+}
+
+.note-prose pre {
+  background: var(--surface-raised);
+  border: 1px solid var(--surface-hairline);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  line-height: var(--lh-relaxed);
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.note-prose code {
+  font-family: var(--font-geist-mono), monospace;
+}

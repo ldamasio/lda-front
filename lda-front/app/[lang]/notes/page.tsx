@@ -1,19 +1,22 @@
 import Link from "next/link";
 import { EyebrowSection } from "@/components/ui/eyebrow-section";
-import { NOTES } from "@/app/data/notes";
 import { getUiText } from "../ui-text";
+import { formatNoteDate, getAllNotes } from "@/lib/notes";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Notes · Leandro Damasio",
   description: "Writing on AI systems, governance, and infrastructure.",
 };
 
-export default function NotesPage({
+export default async function NotesPage({
   params: { lang },
 }: {
   params: { lang: string };
 }) {
   const ui = getUiText(lang);
+  const notes = await getAllNotes(lang);
 
   return (
     <div
@@ -32,7 +35,7 @@ export default function NotesPage({
       />
 
       <div style={{ maxWidth: "var(--prose-width)" }}>
-        {NOTES.map((note) => (
+        {notes.map((note) => (
           <Link
             key={note.slug}
             href={`/${lang}/notes/${note.slug}`}
@@ -61,10 +64,7 @@ export default function NotesPage({
             </div>
             <div className="shrink-0 text-right min-w-[80px]">
               <p className="t-mono" style={{ color: "var(--text-label)" }}>
-                {new Date(note.date).toLocaleDateString("en-GB", {
-                  year: "numeric",
-                  month: "short",
-                })}
+                {formatNoteDate(note.date, lang)}
               </p>
               <p className="t-mono" style={{ color: "var(--text-disabled)" }}>
                 {note.readTime}

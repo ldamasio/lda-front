@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { NOTES, getNoteBySlug } from "@/app/data/notes";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
+import { formatNoteDate, getAllNotes, getNote, NOTE_LANGS } from "@/lib/notes";
+import { getUiText } from "../../ui-text";
 
-const LANGS = ["en", "de", "es", "fr", "it", "pt", "zh"];
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
-  return LANGS.flatMap((lang) =>
-    NOTES.map((note) => ({ lang, slug: note.slug }))
+  const englishNotes = await getAllNotes("en");
+  return NOTE_LANGS.flatMap((lang) =>
+    englishNotes.map((note) => ({ lang, slug: note.slug }))
   );
 }
 
@@ -15,7 +19,7 @@ export async function generateMetadata({
 }: {
   params: { lang: string; slug: string };
 }) {
-  const note = getNoteBySlug(params.slug);
+  const note = await getNote(params.slug, params.lang);
   if (!note) return {};
   return {
     title: `${note.title} · Leandro Damasio`,
@@ -23,113 +27,14 @@ export async function generateMetadata({
   };
 }
 
-function renderBody(body: string) {
-  const blocks = body.split(/\n\n+/);
-
-  return blocks.map((block, i) => {
-    const trimmed = block.trim();
-    if (!trimmed) return null;
-
-    // Horizontal rule
-    if (trimmed === "---") {
-      return (
-        <hr
-          key={i}
-          style={{
-            borderColor: "var(--surface-divider)",
-            margin: "2.5rem 0",
-          }}
-        />
-      );
-    }
-
-    // Standalone bold line → subheading
-    if (/^\*\*.+\*\*$/.test(trimmed)) {
-      return (
-        <h3
-          key={i}
-          className="t-h3 mb-3"
-          style={{ color: "var(--text-primary)", marginTop: "2rem" }}
-        >
-          {trimmed.slice(2, -2)}
-        </h3>
-      );
-    }
-
-    // Bullet list
-    if (trimmed.startsWith("- ")) {
-      const items = trimmed
-        .split("\n")
-        .filter((l) => l.startsWith("- "))
-        .map((l) => l.slice(2));
-      return (
-        <ul
-          key={i}
-          className="mb-4 pl-4 space-y-1"
-          style={{ listStyleType: "none" }}
-        >
-          {items.map((item, j) => (
-            <li
-              key={j}
-              className="t-body"
-              style={{
-                color: "var(--text-secondary)",
-                paddingLeft: "1em",
-                textIndent: "-1em",
-              }}
-            >
-              <span style={{ color: "var(--text-disabled)", marginRight: "0.5em" }}>·</span>
-              {item.replace(/\*\*(.+?)\*\*/g, "$1")}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-
-    // Code block
-    if (trimmed.startsWith("```")) {
-      const code = trimmed.replace(/^```\w*\n?/, "").replace(/\n?```$/, "");
-      return (
-        <pre
-          key={i}
-          className="mb-4 p-4 overflow-x-auto rounded-ds-sm"
-          style={{
-            background: "var(--surface-raised)",
-            border: "1px solid var(--surface-hairline)",
-            fontFamily: "var(--font-geist-mono), monospace",
-            fontSize: "12px",
-            color: "var(--text-secondary)",
-            lineHeight: "var(--lh-relaxed)",
-          }}
-        >
-          <code>{code}</code>
-        </pre>
-      );
-    }
-
-    // Default paragraph (inline bold → strong)
-    const withBold = trimmed.replace(
-      /\*\*(.+?)\*\*/g,
-      '<strong style="color:var(--text-primary);font-weight:500">$1</strong>'
-    );
-    return (
-      <p
-        key={i}
-        className="t-body mb-5"
-        style={{ color: "var(--text-secondary)" }}
-        dangerouslySetInnerHTML={{ __html: withBold }}
-      />
-    );
-  });
-}
-
-export default function NoteDetailPage({
+export default async function NoteDetailPage({
   params,
 }: {
   params: { lang: string; slug: string };
 }) {
-  const note = getNoteBySlug(params.slug);
+  const note = await getNote(params.slug, params.lang);
   if (!note) notFound();
+  const ui = getUiText(params.lang);
 
   return (
     <div
@@ -152,18 +57,14 @@ export default function NoteDetailPage({
           fontSize: "var(--text-xs)",
         }}
       >
-        ← Notes
+        ← {ui.notes}
       </Link>
 
       {/* Note header */}
       <div style={{ maxWidth: "var(--prose-width)" }}>
         <div className="flex items-center gap-4 mb-4 flex-wrap">
           <p className="t-mono" style={{ color: "var(--text-label)" }}>
-            {new Date(note.date).toLocaleDateString("en-GB", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            {formatNoteDate(note.date, params.lang)}
           </p>
           <span style={{ color: "var(--surface-divider)" }}>·</span>
           <p className="t-mono" style={{ color: "var(--accent-personal)" }}>
@@ -198,7 +99,16 @@ export default function NoteDetailPage({
         </p>
 
         {/* Body */}
-        <div>{renderBody(note.body)}</div>
+        <article className="note-prose">
+          <MDXRemote
+            source={note.content}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
+        </article>
       </div>
     </div>
   );
