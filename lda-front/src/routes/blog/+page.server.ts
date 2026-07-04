@@ -4,14 +4,10 @@ import { getLocaleHref } from '$lib/locale';
 
 export const load: PageServerLoad = async ({ url }) => {
   const locale = resolveLocale(url.hostname);
-  const copy = getHomeCopy(locale);
-  const posts = getBlogPosts(locale);
-  const alternateHref = getLocaleHref(locale, `${url.pathname}${url.search}`);
-
   return {
     locale,
-    copy,
-    posts,
-    alternateHref,
+    copy: getHomeCopy(locale),
+    posts: getBlogPosts(locale),
+    alternateHref: getLocaleHref(locale, `${url.pathname}${url.search}`),
   };
 };
