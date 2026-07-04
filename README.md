@@ -1,20 +1,11 @@
-# lda-front
+# lda-front workspace
 
-Frontend pessoal de Leandro Damasio em SvelteKit.
+Frontend pessoal de Leandro Damasio.
 
-## Desenvolvimento
+- App ativo: `lda-front/`
+- Stack: SvelteKit + TypeScript
+- Idiomas: PT-BR em `leandrodamasio.rbx.ia.br` e EN em `leandrodamasio.rbxsystems.ch`
+- Conteúdo editorial: notas carregadas de `notes/*.mdx` com fallback para S3 público em `rbx-content/lda/notes/*.mdx`
+- Contato: formulário via RBX Comms + WhatsApp, sem alterar o copy literal do site
 
-```bash
-cd lda-front/lda-front
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-npm run start
-```
-
-O site resolve PT-BR em `leandrodamasio.rbx.ia.br` e EN em `leandrodamasio.rbxsystems.ch`.
+Referência histórica do design system: `Leandro Damasio Design System/`
