@@ -1,12 +1,20 @@
 # lda-front
 
-Para instalar o ambiente de desenvolvimento do frontend na máquina local: 
+Frontend pessoal de Leandro Damasio em SvelteKit.
 
-    cd lda-front
-    npm i
-    npm run dev
+## Desenvolvimento
 
-Este é um projeto que faz uso do react, nextjs e shadcn.
+```bash
+cd lda-front/lda-front
+npm install
+npm run dev
+```
 
+## Build
 
+```bash
+npm run build
+npm run start
+```
 
+O site resolve PT-BR em `leandrodamasio.rbx.ia.br` e EN em `leandrodamasio.rbxsystems.ch`.

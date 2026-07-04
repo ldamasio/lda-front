@@ -87,6 +87,10 @@ web_modules/
 .next
 out
 
+# SvelteKit build output
+.svelte-kit
+build
+
 # Nuxt.js build / generate output
 .nuxt
 dist
