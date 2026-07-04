@@ -1,0 +1,59 @@
+---
+title: "Busca vetorial na borda do compliance: pgvector, ParadeDB e auditabilidade"
+date: "2025-08-15"
+readTime: "7 min"
+tags: ["Infraestrutura"]
+description: "pgvector e ParadeDB para RAG em ambientes financeiros. O que muda quando resultados de recuperação viram evidência, não sugestão."
+---
+Retrieval-augmented generation trata busca como infraestrutura. Em ambientes sensíveis a compliance, resultados de busca são evidência — e evidência tem requisitos que scores de relevância sozinhos não atendem.
+
+## O que muda quando resultados são evidência
+
+Information retrieval padrão otimiza relevância: retornar os documentos mais propensos a serem úteis para a consulta. Recuperação como evidência precisa também otimizar para:
+
+- Atribuição: cada chunk recuperado rastreável ao documento, versão e registro de acesso de origem
+- Estabilidade: a mesma consulta contra o mesmo corpus retorna os mesmos resultados ranqueados (ou a diferença é explicável)
+- Completude: o sistema de recuperação consegue demonstrar que pesquisou todo o corpus autorizado
+
+Em sistemas RAG financeiros e jurídicos, falhar em recuperar documentos relevantes é um tipo de falha diferente de um erro de precisão. "O modelo não sabia" não é aceitável se o documento estava no corpus e a recuperação o perdeu.
+
+## pgvector e ParadeDB
+
+pgvector fornece busca aproximada de vizinhos mais próximos dentro do Postgres. A principal vantagem em contextos de compliance: tudo fica em um banco só, transações se aplicam e o log de acesso é o mesmo usado para toda a base.
+
+ParadeDB estende o Postgres com indexação BM25 (texto completo) ao lado da busca vetorial, permitindo recuperação híbrida sem um cluster Elasticsearch separado. A recuperação híbrida importa para documentos regulatórios: a busca vetorial captura similaridade semântica, BM25 captura termos exatos, números de cláusula e definições.
+
+A decisão arquitetural de manter a recuperação dentro do Postgres não é primariamente uma decisão de performance. É uma decisão de arquitetura de auditoria. Um banco, um log de acesso, um modelo de permissão.
+
+## Schema para recuperação atribuível
+
+Schema mínimo viável para um chunk store atribuível:
+
+- chunk_id: identificador estável
+- source_document_id: FK para o registro do documento
+- source_document_version: no momento da ingestão
+- chunk_index: posição dentro do documento
+- chunk_text: texto original
+- embedding: representação vetorial
+- ingested_at: timestamp
+- ingestion_run_id: FK para o log de auditoria da ingestão
+
+Cada consulta de recuperação é registrada com: query_id, query_embedding, top_k solicitado, chunk_ids retornados, scores e o contexto do caller (user/system/agent).
+
+Esse schema responde à pergunta de auditoria: "Para esta decisão, quais documentos foram recuperados, de qual versão do corpus, e quem ou o que solicitou?"
+
+## Trade-offs de latência vs. auditabilidade
+
+Índices de ANN (HNSW, IVFFlat) trocam precisão por velocidade. Em contextos de compliance, esse trade-off precisa de uma decisão explícita: é aceitável perder documentos relevantes em troca de p99 menores?
+
+Para muitos casos financeiros, busca exata na escala de corpora internos (tipicamente dezenas de milhões de chunks, não bilhões) é viável dentro de budgets aceitáveis. O padrão deveria ser busca exata, com ANN como escolha explícita e documentada quando a escala exigir.
+
+## O problema de avaliação
+
+Qualidade de busca vetorial costuma ser medida por recall@k em um benchmark. Qualidade de recuperação para compliance também requer:
+
+- Medir gaps de recuperação: documentos que deveriam ter sido recuperados e não foram
+- Monitorar drift de embeddings: conforme o modelo muda, a qualidade piora para consultas existentes?
+- Testar contra ciclos regulatórios: quando novas regulações surgem, o sistema consegue recuperá-las para consultas anteriores?
+
+Esses são requisitos operacionais, não tarefas de benchmark pontuais. O sistema de recuperação precisa de infraestrutura contínua de avaliação.

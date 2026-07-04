@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { PageData } from './$types';
   import LocaleSwitch from '$lib/LocaleSwitch.svelte';
+  import type { PageData } from './$types';
 
   export let data: PageData;
 
@@ -12,7 +12,7 @@
 
 <svelte:head>
   <title>{data.copy.writing.title}</title>
-  <meta name="description" content={data.copy.writing.body} />
+  <meta name="description" content={data.copy.writing.title} />
 </svelte:head>
 
 <div class="page-shell">
@@ -21,7 +21,7 @@
       <span class="brand-mark">LD</span>
       <div>
         <p class="eyebrow">{data.copy.writing.eyebrow}</p>
-        <p class="brand-subline">{data.copy.ui.archive}</p>
+        <p class="brand-subline">{data.copy.writing.title}</p>
       </div>
     </div>
     <nav class="pill-nav">
@@ -36,21 +36,21 @@
       <div class="section-heading section-heading-wide">
         <p class="eyebrow">{data.copy.writing.eyebrow}</p>
         <h1 class="archive-title">{data.copy.writing.title}</h1>
-        <p>{data.copy.writing.body}</p>
       </div>
 
       <div class="archive-list">
-        {#each data.posts as post}
-          <article class="archive-item">
-            <p class="post-meta">{post.date} · {post.readTime}</p>
-            <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
-            <p>{post.excerpt}</p>
-            <div class="post-tags">
-              {#each post.tags as tag}
-                <span>{tag}</span>
-              {/each}
+        {#each data.notes as note}
+          <a class="archive-item" href={`/blog/${note.slug}`}>
+            <div>
+              <p class="post-meta">{note.tags.join(' · ')}</p>
+              <h2>{note.title}</h2>
+              <p class="archive-desc">{note.description}</p>
             </div>
-          </article>
+            <div class="archive-meta">
+              <p>{note.dateLabel}</p>
+              <p>{note.readTime}</p>
+            </div>
+          </a>
         {/each}
       </div>
     </section>

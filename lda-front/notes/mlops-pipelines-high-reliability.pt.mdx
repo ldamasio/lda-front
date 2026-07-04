@@ -1,0 +1,57 @@
+---
+title: "GitOps para cargas de trabalho de IA: ArgoCD, k3s e o problema da reprodutibilidade"
+date: "2025-01-01"
+readTime: "6 min"
+tags: ["DevOps"]
+description: "Kubeflow, ArgoCD e padrões GitOps para pipelines de ML onde falhas de modelo têm consequências downstream."
+---
+Deploys de ML em ambientes de alta confiabilidade diferem do MLOps padrão em um ponto central: o custo de um modelo ruim chegar à produção não é uma experiência pior para o usuário, mas um erro de decisão downstream com consequência mensurável.
+
+Isso muda as prioridades de design.
+
+## Arquitetura de pipeline
+
+O pipeline de treinamento é um sistema de produção, não um artefato de ciência de dados. Ele roda sob os mesmos padrões de infraestrutura de qualquer workload de produção: versionado, reproduzível e auditável.
+
+Requisitos mínimos:
+- Execuções parametrizadas: todos os hyperparameters, versões de dataset e configurações de preprocessing são parâmetros de entrada, não valores hardcoded
+- Versionamento de artefatos: pesos do modelo, preprocessadores, relatórios de avaliação e snapshots de dados de treino são armazenados com identificadores content-addressed
+- Execução reproduzível: dados os mesmos parâmetros e a mesma versão do dataset, o pipeline produz o mesmo modelo treinado (ou a diferença é documentada e aceitável)
+
+Kubeflow Pipelines fornece a camada de orquestração. A configuração crítica: cada passo roda em um container isolado com dependências pinadas, e os artefatos intermediários são armazenados em um content-addressed store (MinIO ou S3) antes de o próximo passo começar. Nada de passar artefatos em memória entre etapas.
+
+## Deployment gating
+
+A transição de "modelo treinado" para "modelo implantado" é um gate, não uma promoção. O gate verifica:
+
+1. Resultados de avaliação versus thresholds de aceitação (automático)
+2. Comparação com o modelo atual em produção em um conjunto de teste hold-out (automático)
+3. Revisão do changelog: o que mudou desde o último modelo aprovado (manual ou semi-automático)
+4. Registro de aprovação: quem aprovou o deploy, quando, com base em qual run de avaliação
+
+Em termos de ArgoCD + GitOps: o pipeline de avaliação escreve os resultados em um model registry. Um passo de promoção checa os resultados contra os thresholds configurados e, se passar, abre um PR no repositório de deployment com a nova referência do modelo. O PR é o gate de aprovação — merge é deploy.
+
+Esse padrão torna o deploy auditável por padrão. Cada deploy é um commit no git com revisão de PR e um relatório de avaliação anexado.
+
+## Mecanismos de rollback
+
+Para deploys de modelo, rollback não é "reimplantar a versão anterior" — é "identificar e restaurar o artefato exato que estava em produção".
+
+Requisitos:
+- Cada deploy registra o ID do artefato do modelo (hash de conteúdo), não apenas um rótulo de versão
+- O sistema de deploy consegue restaurar um artefato anterior em menos de 5 minutos sem exigir novo treinamento
+- Rollback é testado regularmente em ambientes não produtivos
+
+O modo de falha comum: procedimentos de rollback existem na documentação mas nunca foram testados. Quando um rollback é necessário sob pressão, o processo falha porque uma dependência mudou, um caminho de armazenamento mudou ou o restore requer permissões não configuradas.
+
+## Monitoramento de falhas específicas do modelo
+
+Monitoramento padrão de infraestrutura (latência, taxa de erro) é necessário, mas não suficiente. Monitoramento específico de modelo:
+
+- Distribuição de predições: o modelo está produzindo saídas na distribuição esperada? Mudanças bruscas na distribuição de classes indicam shift de entrada ou mudança de comportamento.
+- Distribuição de features: as entradas estão dentro da distribuição vista no treino? Inputs fora da distribuição produzem saídas menos confiáveis.
+- Correlação com métricas de negócio: para modelos conectados a processos downstream, monitore a métrica de negócio junto com a métrica do modelo. Um modelo com alta acurácia técnica que está causando falhas operacionais tem um problema que métricas técnicas não revelam.
+
+A infraestrutura de monitoramento é definida no momento do deploy. A pergunta antes de publicar é: "Se este modelo começar a falhar silenciosamente, qual métrica vai avisar, em quanto tempo e quem vai ver o alerta?"
+
+Se essa pergunta não tiver resposta clara, o modelo não está pronto para produção.

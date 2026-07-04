@@ -1,5 +1,6 @@
 import type { PageServerLoad } from './$types';
-import { getBlogPosts, getHomeCopy, resolveLocale } from '$lib/content';
+import { getHomeCopy, resolveLocale } from '$lib/content';
+import { getAllNotes, formatNoteDate } from '$lib/notes';
 import { getLocaleHref } from '$lib/locale';
 
 export const load: PageServerLoad = async ({ url }) => {
@@ -7,7 +8,7 @@ export const load: PageServerLoad = async ({ url }) => {
   return {
     locale,
     copy: getHomeCopy(locale),
-    posts: getBlogPosts(locale),
+    notes: (await getAllNotes(locale)).map((note) => ({ ...note, dateLabel: formatNoteDate(note.date) })),
     alternateHref: getLocaleHref(locale, `${url.pathname}${url.search}`),
   };
 };

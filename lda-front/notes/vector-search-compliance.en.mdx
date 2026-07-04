@@ -1,0 +1,59 @@
+---
+title: "Vector search at the edge of compliance: pgvector, ParadeDB, and auditability"
+date: "2025-08-15"
+readTime: "7 min"
+tags: ["Infrastructure"]
+description: "pgvector and ParadeDB for RAG in financial environments. What changes when retrieval results are evidence, not suggestions — and how to build systems that satisfy both relevance and auditability requirements."
+---
+Retrieval-augmented generation treats search as infrastructure. In compliance-sensitive environments, search results are evidence — and evidence has requirements that relevance scores alone do not satisfy.
+
+**What changes when results are evidence**
+
+Standard information retrieval optimizes for relevance: return the documents most likely to be useful to this query. Evidence retrieval must also optimize for:
+
+- Attributability: every retrieved chunk traceable to its source document, version, and access record
+- Stability: the same query against the same corpus returns the same ranked results (or the difference is explainable)
+- Completeness: the retrieval system can demonstrate that it searched the full authorized corpus
+
+In financial and legal RAG systems, a failure to retrieve relevant documents is a different kind of failure than a precision failure. "The model didn't know" is not acceptable if the document was in the corpus and retrieval missed it.
+
+**pgvector and ParadeDB**
+
+pgvector provides approximate nearest neighbor search inside Postgres. Its primary advantage in compliance contexts: everything is in one database, transactions apply, and the access log is the same access log used for every other table.
+
+ParadeDB extends Postgres with BM25 (full-text) indexing alongside vector search, enabling hybrid retrieval without a separate Elasticsearch cluster. Hybrid retrieval matters for compliance documents: vector search captures semantic similarity, BM25 captures exact term matches for regulatory identifiers, clause numbers, and defined terms.
+
+The architecture choice — keeping retrieval inside Postgres — is not primarily a performance choice. It is an audit architecture choice. One database, one access log, one permission model.
+
+**Schema design for attributable retrieval**
+
+Minimum viable schema for an attributable chunk store:
+
+- chunk_id: stable identifier
+- source_document_id: FK to document registry
+- source_document_version: at ingestion time
+- chunk_index: position within document
+- chunk_text: original text
+- embedding: vector representation
+- ingested_at: timestamp
+- ingestion_run_id: FK to ingestion audit log
+
+Every retrieval query is logged with: query_id, query_embedding, top_k requested, chunk_ids returned, scores, and the caller context (user/system/agent).
+
+This schema answers the audit question: "For this decision, which documents were retrieved, from which version of the corpus, and who or what requested them?"
+
+**Latency vs. auditability tradeoffs**
+
+Approximate nearest neighbor (ANN) indexes (HNSW, IVFFlat) trade accuracy for speed. In compliance contexts, this tradeoff needs an explicit policy decision: is it acceptable to miss relevant documents in exchange for p99 latency targets?
+
+For many financial retrieval use cases, exact search at the scale of internal document corpora (typically tens of millions of chunks, not billions) is feasible within acceptable latency budgets. The default should be exact search with ANN as an explicit, documented choice when scale requires it.
+
+**The retrieval evaluation problem**
+
+Vector search quality is typically measured by recall@k on a benchmark set. Compliance retrieval quality also requires:
+
+- Measuring retrieval gaps: documents that should have been retrieved but were not
+- Monitoring embedding drift: as the model changes, does retrieval quality degrade for existing queries
+- Testing against regulatory update cycles: when new regulations are issued, can the system retrieve them accurately for queries that predate the update
+
+These are operational requirements, not one-time evaluation tasks. The retrieval system needs ongoing evaluation infrastructure, not just an initial benchmark.

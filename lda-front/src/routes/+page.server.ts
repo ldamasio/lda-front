@@ -1,17 +1,14 @@
 import type { PageServerLoad } from './$types';
-import { getBlogPosts, getHomeCopy, resolveLocale } from '$lib/content';
+import { getHomeCopy, resolveLocale } from '$lib/content';
+import { getAllNotes, formatNoteDate } from '$lib/notes';
 import { getLocaleHref } from '$lib/locale';
 
 export const load: PageServerLoad = async ({ url }) => {
   const locale = resolveLocale(url.hostname);
-  const copy = getHomeCopy(locale);
-  const posts = getBlogPosts(locale);
-  const alternateHref = getLocaleHref(locale, `${url.pathname}${url.search}`);
-
   return {
     locale,
-    copy,
-    posts,
-    alternateHref,
+    copy: getHomeCopy(locale),
+    notes: (await getAllNotes(locale)).slice(0, 4).map((note) => ({ ...note, dateLabel: formatNoteDate(note.date) })),
+    alternateHref: getLocaleHref(locale, `${url.pathname}${url.search}`),
   };
 };

@@ -1,0 +1,74 @@
+---
+title: "Governando IA em sistemas de alta confiabilidade: notas de um praticante"
+date: "2025-04-18"
+readTime: "9 min"
+tags: ["IA", "Arquitetura"]
+description: "O que governança de IA realmente significa na camada de implementação."
+---
+A governança de IA em serviços financeiros é cada vez mais uma exigência regulatória e cada vez menos uma aspiração vaga. A lacuna entre documentos de governança em nível de política e controles implementados é onde os auditores passam o tempo.
+
+Esta nota cobre a camada de implementação — como a governança aparece em sistemas em produção, e não em frameworks de compliance.
+
+## Model risk management estendido para LLMs
+
+SR 11-7, a orientação do Fed para gestão de risco de modelos, define um modelo como um sistema que aplica métodos estatísticos ou matemáticos para estimar resultados. Large language models são modelos sob essa definição. A conformidade com SR 11-7 exige:
+
+- Entrada no inventário de modelos com uso pretendido, limitações e responsável
+- Validação por uma parte independente do desenvolvimento
+- Monitoramento contínuo com limites de desempenho e gatilhos de escalada definidos
+- Documentação de mudanças materiais (incluindo mudanças em prompts, atualizações do corpus de recuperação e upgrades de versão do modelo)
+
+O desafio: SR 11-7 foi escrito para modelos quantitativos com saídas numéricas e taxas de erro mensuráveis. LLMs produzem texto. Adaptar esse framework exige definir o que "desempenho" significa para cada aplicação e o que constitui uma "mudança material".
+
+## Evaluation gates na prática
+
+Evaluation gates são verificações automáticas que bloqueiam deploy quando uma mudança de modelo ou prompt falha em limites de qualidade definidos. Na prática, a parte difícil não é rodar as avaliações — é definir critérios de aceitação.
+
+Para um sistema de extração de documentos jurídicos, critérios de aceitação podem incluir:
+- Accuracy em um conjunto de validação separado: ≥ 94%
+- Taxa de recusa em consultas fora de escopo: ≥ 98%
+- Consistência: mesmo documento, mesma consulta, mesma classe de resultado em 10 execuções: ≥ 99%
+
+Esses números não são padrões de mercado. Eles são negociados com risco, compliance e a unidade de negócio com base nas consequências downstream dos erros.
+
+## Requisitos de observabilidade
+
+Sistemas de IA em produção em serviços financeiros precisam de observabilidade em três camadas:
+
+Camada de infraestrutura: padrão — latência, taxa de erro, throughput, utilização de recursos.
+
+Camada de aplicação: volume de requests por modelo e versão de prompt, consumo de tokens, custo por operação, taxa de cache.
+
+Camada de governança: a camada que a maioria dos sistemas não tem. Métricas necessárias:
+- Distribuição de versões de prompt nas requests de produção (prompts antigos ainda estão sendo usados?)
+- Cobertura de avaliação: que porcentagem dos padrões de entrada em produção está coberta pelo conjunto de avaliação?
+- Taxa de anomalia: requests fora da distribuição de treino/avaliação
+- Taxa de revisão humana: em sistemas com gates humanos, quantos outputs são revisados versus aprovados automaticamente?
+
+Métricas da camada de governança exigem decisões de instrumentação feitas no design do sistema. Não podem ser adicionadas de forma confiável depois.
+
+## Estruturas organizacionais
+
+Controles de governança são implementados por pessoas e podem ser contornados por pessoas. As perguntas organizacionais importam tanto quanto as técnicas:
+
+- Quem é dono do inventário de modelos e como ele é mantido atualizado?
+- Quem tem autoridade para aprovar deploys de novas versões de modelo?
+- Quem tem autoridade para fazer override emergencial de gates de avaliação e esse override é logado?
+- Quem revisa métricas de governança e com que frequência?
+- Qual é o caminho de escalada quando uma métrica de governança viola o limite?
+
+As respostas precisam estar escritas, vinculadas a papéis específicos e testadas. Governança que nunca foi testada sob pressão pode não funcionar sob pressão.
+
+## O padrão de documentação
+
+Para cada sistema de IA em produção, a documentação de governança deveria cobrir:
+
+1. System card: uso pretendido, limitações conhecidas, classificação de risco
+2. Model provenance: qual versão do modelo, de qual provedor, acessada por qual versão de API
+3. Prompt registry: todos os prompts em produção, com histórico de versões e registros de aprovação
+4. Evaluation report: resultados do run de avaliação mais recente contra os critérios atuais
+5. Change log: todas as mudanças materiais desde a última validação, com aprovações
+6. Monitoring report: métricas atuais da camada de governança versus limites
+7. Incident log: alertas disparados ou overrides desde a última revisão
+
+A documentação não precisa ser extensa para ser útil. Ela precisa estar atualizada e correta.
