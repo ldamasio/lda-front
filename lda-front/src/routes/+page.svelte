@@ -23,7 +23,7 @@
     <div class="brand">
       <span class="brand-mark">LD</span>
       <div>
-        <p class="eyebrow">{data.copy.hero.eyebrow}</p>
+        {#if data.copy.hero.eyebrow}<p class="eyebrow">{data.copy.hero.eyebrow}</p>{/if}
         <p class="brand-subline">{data.copy.hero.location}</p>
       </div>
     </div>

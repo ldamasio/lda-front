@@ -59,7 +59,7 @@ const COPY: Record<Locale, SiteCopy> = {
       contact: 'Contato',
     },
     hero: {
-      eyebrow: 'Engenharia autoral',
+      eyebrow: '',
       title: 'Leandro Damasio',
       lead: 'Engenheiro de Computação. Sistemas de IA e interfaces para ambientes de alta confiabilidade.',
       body: 'Constrói produtos digitais, plataformas de automação e sistemas operacionais com rigor institucional. O foco é confiabilidade, observabilidade e clareza operacional.',
@@ -121,7 +121,7 @@ const COPY: Record<Locale, SiteCopy> = {
       contact: 'Contact',
     },
     hero: {
-      eyebrow: 'Authorial engineering',
+      eyebrow: '',
       title: 'Leandro Damasio',
       lead: 'Computer Engineer. AI systems and interfaces for high-reliability environments.',
       body: 'Builds digital products, automation platforms and operational systems with institutional rigor. The emphasis is reliability, observability and operational clarity.',
