@@ -63,6 +63,14 @@
       </aside>
     </section>
 
+    <section class="content-section">
+      <div class="section-heading section-heading-wide">
+        <p class="eyebrow">{data.copy.team.eyebrow}</p>
+        <h2>{data.copy.team.title}</h2>
+      </div>
+      <p class="body">{data.copy.team.body}</p>
+    </section>
+
     <section id="work" class="content-section">
       <div class="section-heading section-heading-wide">
         <p class="eyebrow">{data.copy.work.selectedProjects}</p>

@@ -41,6 +41,11 @@ export type HomeCopy = {
     location: string;
     status: string;
   };
+  team: {
+    eyebrow: string;
+    title: string;
+    body: string;
+  };
   work: {
     eyebrow: string;
     title: string;
@@ -127,10 +132,14 @@ const EN: HomeCopy = {
       'AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil. Builds production-grade AI systems for financial and legal domains where reliability, observability, and governance are not optional.',
       'Work spans AI, software architecture, and infrastructure: agentic architectures, runtime control loops, evaluation and monitoring pipelines for LLM-based systems. Hands-on with vector search using pgvector and ParadeDB, prompt governance, and secure integration with internal and external data sources.',
       'Founder and maintainer of RBX Systems, an open-source monorepo of AI agents, code agents, and system-level tooling focused on architecture and long-term maintainability.',
-      'On a personal level, I am a strong problem solver with a passion for innovation. I thrive in collaborative environments and enjoy working with multidisciplinary teams. I am highly organized and able to prioritize tasks to deliver high-quality results on time.',
     ],
     location: 'Brazil · Zürich / São Paulo',
     status: 'Available for selected engagements.',
+  },
+  team: {
+    eyebrow: 'Team',
+    title: 'Collaboration and multidisciplinary work',
+    body: 'On a personal level, I am a strong problem solver with a passion for innovation. I thrive in collaborative environments and enjoy working with multidisciplinary teams. I am highly organized and able to prioritize tasks to deliver high-quality results on time.',
   },
   work: {
     eyebrow: 'Selected Projects',
@@ -325,10 +334,14 @@ const PT: HomeCopy = {
       'Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico onde confiabilidade, observabilidade e governança são requisitos de base.',
       'Trabalho abrange IA, arquitetura de software e infraestrutura: arquiteturas de agentes, loops de controle de runtime, pipelines de avaliação e monitoramento para sistemas baseados em LLM. Experiência prática com busca vetorial usando pgvector e ParadeDB, governança de prompts e integração segura com fontes de dados internas e externas.',
       'Fundador e mantenedor da RBX Systems, monorepo open-source de agentes de IA, agentes de código e ferramentas de nível de sistema com foco em arquitetura e manutenibilidade de longo prazo.',
-      'Em um nível pessoal, sou um forte solucionador de problemas com paixão por inovação. Eu prospero em ambientes colaborativos e gosto de trabalhar com equipes multidisciplinares. Sou altamente organizado e capaz de priorizar tarefas para entregar resultados de alta qualidade a tempo.',
     ],
     location: 'Brasil · Zürich / São Paulo',
     status: 'Disponível para projetos selecionados.',
+  },
+  team: {
+    eyebrow: 'Equipe',
+    title: 'Colaboração e trabalho multidisciplinar',
+    body: 'Em um nível pessoal, sou um forte solucionador de problemas com paixão por inovação. Eu prospero em ambientes colaborativos e gosto de trabalhar com equipes multidisciplinares. Sou altamente organizado e capaz de priorizar tarefas para entregar resultados de alta qualidade a tempo.',
   },
   work: {
     eyebrow: 'Projetos selecionados',
