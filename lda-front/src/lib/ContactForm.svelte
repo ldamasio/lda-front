@@ -79,7 +79,16 @@
   }
 </script>
 
-<section class="contact-shell">
+<section class="contact-shell" aria-busy={status === "submitting"}>
+  {#if status === "submitting"}
+    <div class="freeze-overlay" role="status" aria-live="polite" aria-label={ui.altchaLoading}>
+      <div class="freeze-panel">
+        <p class="eyebrow">{title}</p>
+        <h3>{ui.altchaLoading}</h3>
+        <p>{labels.submitting}</p>
+      </div>
+    </div>
+  {/if}
   <div class="contact-copy">
     <p class="eyebrow">{title}</p>
     <h3>{note}</h3>
@@ -94,46 +103,48 @@
     </div>
   {:else}
     <form class="form-card" on:submit|preventDefault={handleSubmit}>
-      <input class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off" bind:value={website} />
+      <fieldset class="form-fieldset" disabled={status === 'submitting'}>
+        <input class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off" bind:value={website} />
 
-      <div class="row">
+        <div class="row">
+          <label>
+            <span>{labels.name}</span>
+            <input bind:value={name} placeholder={labels.namePlaceholder} required />
+          </label>
+          <label>
+            <span>{labels.email}</span>
+            <input bind:value={email} placeholder={labels.emailPlaceholder} />
+          </label>
+        </div>
+
         <label>
-          <span>{labels.name}</span>
-          <input bind:value={name} placeholder={labels.namePlaceholder} required />
+          <span>{labels.phone}</span>
+          <input bind:value={phone} placeholder={labels.phonePlaceholder} />
         </label>
+
         <label>
-          <span>{labels.email}</span>
-          <input bind:value={email} placeholder={labels.emailPlaceholder} />
+          <span>{labels.message}</span>
+          <textarea bind:value={message} placeholder={labels.messagePlaceholder} rows="5" required></textarea>
         </label>
-      </div>
 
-      <label>
-        <span>{labels.phone}</span>
-        <input bind:value={phone} placeholder={labels.phonePlaceholder} />
-      </label>
+        <label class="checkbox-row">
+          <input type="checkbox" bind:checked={whatsappOptIn} />
+          <span>{labels.whatsappOptIn}</span>
+        </label>
 
-      <label>
-        <span>{labels.message}</span>
-        <textarea bind:value={message} placeholder={labels.messagePlaceholder} rows="5" required></textarea>
-      </label>
+        <div class="challenge-row">
+          <AltchaWidget challengeurl={challengeUrl} ui={ui} onstatechange={(payload) => (altchaPayload = payload)} />
+          <p>{labels.submit}</p>
+        </div>
 
-      <label class="checkbox-row">
-        <input type="checkbox" bind:checked={whatsappOptIn} />
-        <span>{labels.whatsappOptIn}</span>
-      </label>
+        {#if status === 'error'}
+          <p class="error" role="alert">{errorText}</p>
+        {/if}
 
-      <div class="challenge-row">
-        <AltchaWidget challengeurl={challengeUrl} ui={ui} onstatechange={(payload) => (altchaPayload = payload)} />
-        <p>{labels.submit}</p>
-      </div>
-
-      {#if status === 'error'}
-        <p class="error" role="alert">{errorText}</p>
-      {/if}
-
-      <button class="submit" type="submit" disabled={status === 'submitting'}>
-        {status === 'submitting' ? labels.submitting : labels.submit}
-      </button>
+        <button class="submit" type="submit" disabled={status === 'submitting'}>
+          {status === 'submitting' ? labels.submitting : labels.submit}
+        </button>
+      </fieldset>
     </form>
   {/if}
 </section>
@@ -175,6 +186,52 @@
     border: 1px solid var(--line);
     border-radius: 0.95rem;
     background: rgba(255, 255, 255, 0.02);
+  }
+
+  .form-fieldset {
+    display: grid;
+    gap: 0.9rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .form-fieldset:disabled {
+    opacity: 0.72;
+  }
+
+  .freeze-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgba(5, 5, 7, 0.68);
+    backdrop-filter: blur(10px);
+  }
+
+  .freeze-panel {
+    width: min(32rem, 100%);
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 1rem;
+    background: rgba(10, 10, 11, 0.96);
+    box-shadow: var(--shadow);
+  }
+
+  .freeze-panel h3 {
+    margin: 0.25rem 0 0.35rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--fg);
+  }
+
+  .freeze-panel p {
+    margin: 0;
+    color: var(--fg-2);
+    font-size: 0.9rem;
   }
 
   .form-success {
