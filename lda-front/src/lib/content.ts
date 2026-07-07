@@ -1,3 +1,5 @@
+import { readContaboObject } from '$lib/s3';
+
 export type Locale = 'pt-BR' | 'en';
 
 export type WorkStatus = 'active' | 'shipped' | 'production' | 'in-progress';
@@ -116,6 +118,142 @@ const COMMON_LINKS: LinkItem[] = [
   { label: 'linkedin.com/in/ldamasio', href: 'https://www.linkedin.com/in/ldamasio/' },
 ];
 
+const HOME_BUNDLE_KEY = 'translations-home';
+const LEGACY_TRANSLATION_BUNDLE_KEY = 'translations-legacy';
+const HOME_BUNDLE_TTL_MS = 5 * 60 * 1000;
+const LEGACY_BUNDLE_TTL_MS = 15 * 60 * 1000;
+
+type CachedCopy = {
+  loadedAt: number;
+  copy: HomeCopy;
+};
+
+type LegacyTranslationArchive = {
+  sourceCommit: string;
+  locales: Record<string, unknown>;
+};
+
+type CachedLegacyCopy = {
+  loadedAt: number;
+  archive: LegacyTranslationArchive;
+};
+
+const HOME_COPY_CACHE = new Map<Locale, CachedCopy>();
+const LEGACY_COPY_CACHE = new Map<Locale, CachedLegacyCopy>();
+
+function homeBundleKey(locale: Locale): string {
+  return `site/${locale}/${HOME_BUNDLE_KEY}/index.md`;
+}
+
+function legacyBundleKey(locale: Locale): string {
+  return `site/${locale}/${LEGACY_TRANSLATION_BUNDLE_KEY}/index.md`;
+}
+
+function stripFrontmatter(raw: string): string {
+  const normalized = raw.replace(/\r?\n/g, '\n');
+  if (!normalized.startsWith('---\n')) {
+    return normalized;
+  }
+
+  const end = normalized.indexOf('\n---\n', 4);
+  if (end === -1) {
+    return normalized;
+  }
+
+  return normalized.slice(end + 5);
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function mergeDeep<T>(base: T, override: unknown): T {
+  if (!isPlainObject(base) || !isPlainObject(override)) {
+    return (override as T) ?? base;
+  }
+
+  const result: Record<string, unknown> = { ...base };
+  for (const [key, value] of Object.entries(override)) {
+    const current = (base as Record<string, unknown>)[key];
+    if (Array.isArray(value)) {
+      result[key] = value;
+      continue;
+    }
+
+    if (isPlainObject(current) && isPlainObject(value)) {
+      result[key] = mergeDeep(current, value);
+      continue;
+    }
+
+    result[key] = value;
+  }
+
+  return result as T;
+}
+
+async function readRemoteHomeCopy(locale: Locale): Promise<Partial<HomeCopy> | null> {
+  try {
+    const bodyText = await readContaboObject(homeBundleKey(locale));
+    if (!bodyText) {
+      return null;
+    }
+
+    const body = stripFrontmatter(bodyText).trim();
+    if (!body) {
+      return null;
+    }
+
+    return JSON.parse(body) as Partial<HomeCopy>;
+  } catch {
+    return null;
+  }
+}
+
+async function loadHomeCopy(locale: Locale): Promise<HomeCopy> {
+  const cached = HOME_COPY_CACHE.get(locale);
+  if (cached && Date.now() - cached.loadedAt < HOME_BUNDLE_TTL_MS) {
+    return cached.copy;
+  }
+
+  const remote = await readRemoteHomeCopy(locale);
+  const copy = remote ? mergeDeep(COPY[locale], remote) : COPY[locale];
+  HOME_COPY_CACHE.set(locale, { loadedAt: Date.now(), copy });
+  return copy;
+}
+
+async function readRemoteLegacyArchive(locale: Locale): Promise<LegacyTranslationArchive | null> {
+  try {
+    const bodyText = await readContaboObject(legacyBundleKey(locale));
+    if (!bodyText) {
+      return null;
+    }
+
+    const body = stripFrontmatter(bodyText).trim();
+    if (!body) {
+      return null;
+    }
+
+    return JSON.parse(body) as LegacyTranslationArchive;
+  } catch {
+    return null;
+  }
+}
+
+async function loadLegacyArchive(locale: Locale): Promise<LegacyTranslationArchive | null> {
+  const cached = LEGACY_COPY_CACHE.get(locale);
+  if (cached && Date.now() - cached.loadedAt < LEGACY_BUNDLE_TTL_MS) {
+    return cached.archive;
+  }
+
+  const archive = await readRemoteLegacyArchive(locale);
+  if (!archive) {
+    return null;
+  }
+
+  LEGACY_COPY_CACHE.set(locale, { loadedAt: Date.now(), archive });
+  return archive;
+}
+
 const EN: HomeCopy = {
   locale: 'en',
   htmlLang: 'en',
@@ -129,11 +267,11 @@ const EN: HomeCopy = {
     title: 'Leandro Damasio',
     lead: 'Computer Engineer. AI systems for finance and high-reliability environments.',
     body: [
-      'AI Engineer at Enforce (BTG Pactual Group), based in São Paulo, Brazil. Builds production-grade AI systems for financial and legal domains where reliability, observability, and governance are not optional.',
+      'AI Engineer at Enforce (BTG Pactual Group), based in São Paulo. Builds production-grade AI systems for financial and legal domains where reliability, observability, and governance are not optional.',
       'Work spans AI, software architecture, and infrastructure: agentic architectures, runtime control loops, evaluation and monitoring pipelines for LLM-based systems. Hands-on with vector search using pgvector and ParadeDB, prompt governance, and secure integration with internal and external data sources.',
       'Founder and maintainer of RBX Systems, an open-source monorepo of AI agents, code agents, and system-level tooling focused on architecture and long-term maintainability.',
     ],
-    location: 'Brazil · Zürich / São Paulo',
+    location: 'São Paulo',
     status: 'Available for selected engagements.',
   },
   team: {
@@ -331,11 +469,11 @@ const PT: HomeCopy = {
     title: 'Leandro Damasio',
     lead: 'Engenheiro de Computação. Sistemas de IA para finanças e ambientes de alta confiabilidade.',
     body: [
-      'Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo, Brasil. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico onde confiabilidade, observabilidade e governança são requisitos de base.',
+      'Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico onde confiabilidade, observabilidade e governança são requisitos de base.',
       'Trabalho abrange IA, arquitetura de software e infraestrutura: arquiteturas de agentes, loops de controle de runtime, pipelines de avaliação e monitoramento para sistemas baseados em LLM. Experiência prática com busca vetorial usando pgvector e ParadeDB, governança de prompts e integração segura com fontes de dados internas e externas.',
       'Fundador e mantenedor da RBX Systems, monorepo open-source de agentes de IA, agentes de código e ferramentas de nível de sistema com foco em arquitetura e manutenibilidade de longo prazo.',
     ],
-    location: 'Brasil · Zürich / São Paulo',
+    location: 'São Paulo',
     status: 'Disponível para projetos selecionados.',
   },
   team: {
@@ -529,6 +667,10 @@ export function resolveLocale(hostname: string): Locale {
   return hostname.endsWith('.ch') ? 'en' : 'pt-BR';
 }
 
-export function getHomeCopy(locale: Locale): HomeCopy {
-  return COPY[locale];
+export async function getHomeCopy(locale: Locale): Promise<HomeCopy> {
+  return await loadHomeCopy(locale);
+}
+
+export async function getLegacyTranslationArchive(locale: Locale): Promise<LegacyTranslationArchive | null> {
+  return await loadLegacyArchive(locale);
 }

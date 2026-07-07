@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ url }) => {
   const locale = resolveLocale(url.hostname);
   return {
     locale,
-    copy: getHomeCopy(locale),
+    copy: await getHomeCopy(locale),
     notes: (await getAllNotes(locale)).map((note) => ({ ...note, dateLabel: formatNoteDate(note.date) })),
     alternateHref: getLocaleHref(locale, `${url.pathname}${url.search}`),
   };
