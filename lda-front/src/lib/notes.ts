@@ -1,6 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+import { readContaboObject } from '$lib/s3';
+
 export type Locale = 'pt-BR' | 'en';
 export type NoteLocale = 'pt' | 'en';
 
@@ -27,8 +29,6 @@ export type Note = NoteMeta & {
 
 const NOTE_DIR = path.join(process.cwd(), 'notes');
 const NOTES_PREFIX = 'lda/notes/';
-const CONTABO_ENDPOINT = process.env.CONTABO_S3_ENDPOINT ?? 'https://eu2.contabostorage.com';
-const CONTABO_BUCKET = process.env.CONTABO_S3_CONTENT_BUCKET ?? 'rbx-content';
 
 export const NOTE_SLUGS = [
   'prompt-governance-regulated-environments',
@@ -179,14 +179,7 @@ async function readLocalNote(fileName: string): Promise<string | null> {
 }
 
 async function readRemoteNote(fileName: string): Promise<string | null> {
-  const url = `${CONTABO_ENDPOINT.replace(/\/$/, '')}/${CONTABO_BUCKET}/${NOTES_PREFIX}${fileName}`;
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    return await response.text();
-  } catch {
-    return null;
-  }
+  return await readContaboObject(`${NOTES_PREFIX}${fileName}`);
 }
 
 async function readNoteSource(slug: string, locale: Locale): Promise<string | null> {

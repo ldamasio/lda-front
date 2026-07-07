@@ -14,7 +14,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
   return {
     locale,
-    copy: getHomeCopy(locale),
+    copy: await getHomeCopy(locale),
     note: {
       ...note,
       dateLabel: formatNoteDate(note.date),

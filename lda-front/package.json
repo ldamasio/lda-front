@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "start": "node build"
+    "start": "node build",
+    "publish:i18n": "node scripts/publish-i18n-bundles.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.2.0",

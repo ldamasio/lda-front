@@ -64,7 +64,7 @@ const COPY: Record<Locale, SiteCopy> = {
       lead: 'Engenheiro de Computação. Sistemas de IA e interfaces para ambientes de alta confiabilidade.',
       body: 'Constrói produtos digitais, plataformas de automação e sistemas operacionais com rigor institucional. O foco é confiabilidade, observabilidade e clareza operacional.',
       status: 'Disponível para projetos selecionados',
-      location: 'Brasil · São Paulo / Zürich',
+      location: 'São Paulo',
       availability: 'PT-BR primeiro no domínio .rbx.ia.br. EN primeiro no .rbxsystems.ch.',
     },
     highlights: [
@@ -126,7 +126,7 @@ const COPY: Record<Locale, SiteCopy> = {
       lead: 'Computer Engineer. AI systems and interfaces for high-reliability environments.',
       body: 'Builds digital products, automation platforms and operational systems with institutional rigor. The emphasis is reliability, observability and operational clarity.',
       status: 'Available for selected engagements',
-      location: 'Brazil · São Paulo / Zürich',
+      location: 'São Paulo',
       availability: 'PT-BR leads on .rbx.ia.br. EN leads on .rbxsystems.ch.',
     },
     highlights: [
