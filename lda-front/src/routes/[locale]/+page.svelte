@@ -2,9 +2,12 @@
   import { onMount } from 'svelte';
   import LocaleSwitch from '$lib/LocaleSwitch.svelte';
   import ContactForm from '$lib/ContactForm.svelte';
+  import { getLocalePathSegment } from '$lib/locale';
   import type { PageData } from './$types';
 
   export let data: PageData;
+  let localePath = '';
+  $: localePath = getLocalePathSegment(data.copy.locale) ?? '';
 
   onMount(() => {
     document.documentElement.lang = data.copy.htmlLang;
@@ -28,9 +31,9 @@
       </div>
     </div>
     <nav class="pill-nav">
-      <a href="#work">{data.copy.nav.work}</a>
-      <a href="#writing">{data.copy.nav.writing}</a>
-      <a href="#contact">{data.copy.nav.contact}</a>
+      <a href={`/${localePath}#work`}>{data.copy.nav.work}</a>
+      <a href={`/${localePath}#writing`}>{data.copy.nav.writing}</a>
+      <a href={`/${localePath}#contact`}>{data.copy.nav.contact}</a>
     </nav>
     <LocaleSwitch label={data.copy.ui.switchLocale} options={data.localeOptions} />
   </header>
@@ -45,8 +48,8 @@
           <p class="body">{paragraph}</p>
         {/each}
         <div class="hero-actions">
-          <a class="button button-primary" href="#work">{data.copy.nav.work}</a>
-          <a class="button button-secondary" href="#contact">{data.copy.nav.contact}</a>
+          <a class="button button-primary" href={`/${localePath}#work`}>{data.copy.nav.work}</a>
+          <a class="button button-secondary" href={`/${localePath}#contact`}>{data.copy.nav.contact}</a>
         </div>
       </div>
 
@@ -134,12 +137,12 @@
                 <span>{tag}</span>
               {/each}
             </div>
-            <a class="post-link" href={`/blog/${note.slug}`}>{data.copy.ui.readArticle}</a>
+            <a class="post-link" href={`/${localePath}/blog/${note.slug}`}>{data.copy.ui.readArticle}</a>
           </article>
         {/each}
       </div>
 
-      <a class="archive-link" href="/blog">{data.copy.ui.viewFullArchive}</a>
+      <a class="archive-link" href={`/${localePath}/blog`}>{data.copy.ui.viewFullArchive}</a>
     </section>
 
     <section class="content-section">
