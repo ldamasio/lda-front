@@ -2,10 +2,14 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { getHomeCopy, resolveLocale } from '$lib/content';
 import { getNote, formatNoteDate } from '$lib/notes';
-import { getLocaleOptions } from '$lib/locale';
+import { getLocaleOptions, isRouteLocaleSegment } from '$lib/locale';
 
 export const load: PageServerLoad = async ({ params, url }) => {
-  const locale = resolveLocale(url.hostname);
+  if (!isRouteLocaleSegment(params.locale)) {
+    throw error(404, 'Not found');
+  }
+
+  const locale = resolveLocale(url.hostname, params.locale);
   const note = await getNote(params.slug, locale);
   if (!note) {
     throw error(404, 'Not found');

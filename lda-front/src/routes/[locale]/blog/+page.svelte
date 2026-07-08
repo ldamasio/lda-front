@@ -1,9 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import LocaleSwitch from '$lib/LocaleSwitch.svelte';
+  import { getLocalePathSegment } from '$lib/locale';
   import type { PageData } from './$types';
 
   export let data: PageData;
+  let localePath = '';
+  $: localePath = getLocalePathSegment(data.copy.locale) ?? '';
 
   onMount(() => {
     document.documentElement.lang = data.copy.htmlLang;
@@ -25,8 +28,8 @@
       </div>
     </div>
     <nav class="pill-nav">
-      <a href="/">{data.copy.ui.home}</a>
-      <a href="/#contact">{data.copy.nav.contact}</a>
+      <a href={`/${localePath}`}>{data.copy.ui.home}</a>
+      <a href={`/${localePath}#contact`}>{data.copy.nav.contact}</a>
     </nav>
     <LocaleSwitch label={data.copy.ui.switchLocale} options={data.localeOptions} />
   </header>
@@ -40,7 +43,7 @@
 
       <div class="archive-list">
         {#each data.notes as note}
-          <a class="archive-item" href={`/blog/${note.slug}`}>
+          <a class="archive-item" href={`/${localePath}/blog/${note.slug}`}>
             <div>
               <p class="post-meta">{note.tags.join(' · ')}</p>
               <h2>{note.title}</h2>

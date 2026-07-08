@@ -1,23 +1,19 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { getHomeCopy, resolveLocale } from '$lib/content';
-import { getNote, formatNoteDate } from '$lib/notes';
-import { getLocaleOptions } from '$lib/locale';
+import { getAllNotes, formatNoteDate } from '$lib/notes';
+import { getLocaleOptions, isRouteLocaleSegment } from '$lib/locale';
 
 export const load: PageServerLoad = async ({ params, url }) => {
-  const locale = resolveLocale(url.hostname);
-  const note = await getNote(params.slug, locale);
-  if (!note) {
+  if (!isRouteLocaleSegment(params.locale)) {
     throw error(404, 'Not found');
   }
 
+  const locale = resolveLocale(url.hostname, params.locale);
   return {
     locale,
     copy: await getHomeCopy(locale),
-    note: {
-      ...note,
-      dateLabel: formatNoteDate(note.date),
-    },
+    notes: (await getAllNotes(locale)).map((note) => ({ ...note, dateLabel: formatNoteDate(note.date) })),
     localeOptions: getLocaleOptions(locale, `${url.pathname}${url.search}`),
   };
 };

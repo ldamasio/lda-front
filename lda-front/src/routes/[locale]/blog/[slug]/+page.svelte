@@ -2,9 +2,12 @@
   import { onMount } from 'svelte';
   import LocaleSwitch from '$lib/LocaleSwitch.svelte';
   import NoteBody from '$lib/NoteBody.svelte';
+  import { getLocalePathSegment } from '$lib/locale';
   import type { PageData } from './$types';
 
   export let data: PageData;
+  let localePath = '';
+  $: localePath = getLocalePathSegment(data.copy.locale) ?? '';
 
   onMount(() => {
     document.documentElement.lang = data.copy.htmlLang;
@@ -26,8 +29,8 @@
       </div>
     </div>
     <nav class="pill-nav">
-      <a href="/blog">{data.copy.ui.back}</a>
-      <a href="/">{data.copy.ui.home}</a>
+      <a href={`/${localePath}/blog`}>{data.copy.ui.back}</a>
+      <a href={`/${localePath}`}>{data.copy.ui.home}</a>
     </nav>
     <LocaleSwitch label={data.copy.ui.switchLocale} options={data.localeOptions} />
   </header>

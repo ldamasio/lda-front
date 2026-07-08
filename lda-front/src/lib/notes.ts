@@ -1,10 +1,7 @@
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-
 import { readContaboObject } from '$lib/s3';
+import type { Locale } from './locale';
 
-export type Locale = 'pt-BR' | 'en';
-export type NoteLocale = 'pt' | 'en';
+export type NoteLocale = 'pt' | 'en' | 'de' | 'es' | 'fr' | 'it' | 'zh';
 
 export type NoteBlock =
   | { type: 'heading'; html: string }
@@ -27,7 +24,6 @@ export type Note = NoteMeta & {
   blocks: NoteBlock[];
 };
 
-const NOTE_DIR = path.join(process.cwd(), 'notes');
 const NOTES_PREFIX = 'lda/notes/';
 
 export const NOTE_SLUGS = [
@@ -39,7 +35,8 @@ export const NOTE_SLUGS = [
 ] as const;
 
 function toNoteLocale(locale: Locale): NoteLocale {
-  return locale === 'pt-BR' ? 'pt' : 'en';
+  if (locale === 'pt-BR') return 'pt';
+  return locale;
 }
 
 function escapeHtml(value: string): string {
@@ -170,14 +167,6 @@ function parseBlocks(body: string): NoteBlock[] {
   return blocks;
 }
 
-async function readLocalNote(fileName: string): Promise<string | null> {
-  try {
-    return await readFile(path.join(NOTE_DIR, fileName), 'utf8');
-  } catch {
-    return null;
-  }
-}
-
 async function readRemoteNote(fileName: string): Promise<string | null> {
   return await readContaboObject(`${NOTES_PREFIX}${fileName}`);
 }
@@ -185,7 +174,7 @@ async function readRemoteNote(fileName: string): Promise<string | null> {
 async function readNoteSource(slug: string, locale: Locale): Promise<string | null> {
   const suffix = toNoteLocale(locale);
   const fileName = `${slug}.${suffix}.mdx`;
-  return (await readRemoteNote(fileName)) ?? (await readLocalNote(fileName));
+  return await readRemoteNote(fileName);
 }
 
 function parseNote(raw: string, slug: string): Note {

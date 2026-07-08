@@ -1,6 +1,5 @@
 import { readContaboObject } from '$lib/s3';
-
-export type Locale = 'pt-BR' | 'en';
+import { resolveLocale as resolveRouteLocale, type Locale } from './locale';
 
 export type WorkStatus = 'active' | 'shipped' | 'production' | 'in-progress';
 
@@ -191,7 +190,7 @@ function mergeDeep<T>(base: T, override: unknown): T {
   return result as T;
 }
 
-async function readRemoteHomeCopy(locale: Locale): Promise<Partial<HomeCopy> | null> {
+async function readRemoteHomeCopy(locale: Locale): Promise<HomeCopy | null> {
   try {
     const bodyText = await readContaboObject(homeBundleKey(locale));
     if (!bodyText) {
@@ -203,7 +202,7 @@ async function readRemoteHomeCopy(locale: Locale): Promise<Partial<HomeCopy> | n
       return null;
     }
 
-    return JSON.parse(body) as Partial<HomeCopy>;
+    return JSON.parse(body) as HomeCopy;
   } catch {
     return null;
   }
@@ -215,8 +214,11 @@ async function loadHomeCopy(locale: Locale): Promise<HomeCopy> {
     return cached.copy;
   }
 
-  const remote = await readRemoteHomeCopy(locale);
-  const copy = remote ? mergeDeep(COPY[locale], remote) : COPY[locale];
+  const copy = await readRemoteHomeCopy(locale);
+  if (!copy) {
+    throw new Error(`missing home translation bundle for ${locale}`);
+  }
+
   HOME_COPY_CACHE.set(locale, { loadedAt: Date.now(), copy });
   return copy;
 }
@@ -259,7 +261,7 @@ const EN: HomeCopy = {
   htmlLang: 'en',
   nav: {
     work: 'Work',
-    writing: 'Writing',
+    writing: 'Notes',
     contact: 'Contact',
   },
   hero: {
@@ -441,7 +443,7 @@ const EN: HomeCopy = {
     home: 'Home',
     notes: 'Notes',
     back: 'Back',
-    switchLocale: 'PT-BR / EN',
+    switchLocale: 'Language',
     readArticle: 'Read article',
     viewFullArchive: 'View full archive',
     sendAnother: 'Send another',
@@ -461,7 +463,7 @@ const PT: HomeCopy = {
   htmlLang: 'pt-BR',
   nav: {
     work: 'Trabalho',
-    writing: 'Escrita',
+    writing: 'Notas',
     contact: 'Contato',
   },
   hero: {
@@ -643,7 +645,7 @@ const PT: HomeCopy = {
     home: 'Início',
     notes: 'Notas',
     back: 'Voltar',
-    switchLocale: 'PT-BR / EN',
+    switchLocale: 'Idioma',
     readArticle: 'Ler artigo',
     viewFullArchive: 'Ver arquivo completo',
     sendAnother: 'Enviar outra',
@@ -658,13 +660,13 @@ const PT: HomeCopy = {
   footer: '© 2026 Leandro Damasio. Todos os direitos reservados.',
 };
 
-const COPY: Record<Locale, HomeCopy> = {
+const COPY: Partial<Record<Locale, HomeCopy>> = {
   en: EN,
   'pt-BR': PT,
 };
 
-export function resolveLocale(hostname: string): Locale {
-  return hostname.endsWith('.ch') ? 'en' : 'pt-BR';
+export function resolveLocale(hostname: string, routeLocale?: string | null): Locale {
+  return resolveRouteLocale(hostname, routeLocale);
 }
 
 export async function getHomeCopy(locale: Locale): Promise<HomeCopy> {
