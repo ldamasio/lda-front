@@ -14,8 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMAGE_NAME: ldamasio/lda-prod
-  INFRA_REPO: rbxrobotica/rbx-infra
+  IMAGE_NAME: ghcr.io/rbxrobotica/lda-prod
   INFRA_APP: lda-prod
 
 jobs:
@@ -26,9 +25,8 @@ jobs:
 
       - name: Validate required secrets
         run: |
-          test -n "${{ secrets.DOCKERHUB_USER }}"
-          test -n "${{ secrets.DOCKERHUB_PWD }}"
-          test -n "${{ secrets.RBX_INFRA_TOKEN }}"
+          test -n "${{ secrets.GHCR_RBX_PAT }}"
+          test -n "${{ secrets.RBX_INFRA_PAT }}"
 
       - name: Set image tag
         id: tag
@@ -37,11 +35,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Docker Login
+      - name: Login to GHCR
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_PWD }}
+          registry: ghcr.io
+          username: ldamasio
+          password: ${{ secrets.GHCR_RBX_PAT }}
 
       - name: Build and push Docker frontend image
         uses: docker/build-push-action@v5
@@ -49,17 +48,24 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: |
-            ${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.sha }}
-            ${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Notify rbx-infra
-        uses: peter-evans/repository-dispatch@v3
+      # Promote image tag to rbx-infra (fleet standard, rbx-infra issue #168)
+      - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.RBX_INFRA_TOKEN }}
-          repository: ${{ env.INFRA_REPO }}
-          event-type: image-updated
-          client-payload: >-
-            {"app":"${{ env.INFRA_APP }}","image":"${{ env.IMAGE_NAME }}","tag":"${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.sha }}","source_repo":"${{ github.repository }}","source_sha":"${{ github.sha }}"}
+          repository: rbxrobotica/rbx-infra
+          token: ${{ secrets.RBX_INFRA_PAT }}
+          path: rbx-infra
+
+      - name: Promote image tag to rbx-infra
+        run: |
+          cd rbx-infra
+          K=apps/prod/${{ env.INFRA_APP }}/kustomization.yml
+          yq -i '(.images[] | select(.name == "ghcr.io/rbxrobotica/lda-prod") | .newTag) = "${{ steps.tag.outputs.sha }}"' "$K"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$K"
+          git diff --cached --quiet || git commit -m "chore(${{ env.INFRA_APP }}): bump image to ${{ steps.tag.outputs.sha }}"
+          git push
