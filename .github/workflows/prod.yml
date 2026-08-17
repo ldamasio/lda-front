@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: lda-front-production
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   IMAGE_NAME: ghcr.io/rbxrobotica/lda-prod
@@ -20,6 +20,9 @@ env:
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
+    # Guard: workflow_dispatch can target any branch or tag; only main may
+    # build and promote the production image.
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
@@ -30,7 +33,7 @@ jobs:
 
       - name: Set image tag
         id: tag
-        run: echo "sha=sha-$(echo "$GITHUB_SHA" | cut -c1-7)" >> "$GITHUB_OUTPUT"
+        run: echo "sha=sha-${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -58,14 +61,41 @@ jobs:
           repository: rbxrobotica/rbx-infra
           token: ${{ secrets.RBX_INFRA_PAT }}
           path: rbx-infra
+          # Full history so the rebase in the push retry loop always has a
+          # common ancestor with a moved main.
+          fetch-depth: 0
 
       - name: Promote image tag to rbx-infra
         run: |
           cd rbx-infra
           K=apps/prod/${{ env.INFRA_APP }}/kustomization.yml
+          # yq -i reserializes the whole file even when the selector matches
+          # nothing, which would turn a no-op into a false promotion commit.
+          # Probe read-only first and only rewrite when the GHCR entry exists.
+          if ! yq -e '.images[] | select(.name == "ghcr.io/rbxrobotica/lda-prod")' "$K" >/dev/null; then
+            if yq -e '.images[] | select(.name == "docker.io/ldamasio/lda-prod")' "$K" >/dev/null; then
+              echo "overlay still points at docker.io; skipping promotion (ghcr flip pending in rbx-infra)"
+              exit 0
+            fi
+            echo "no known lda-prod image entry in $K" >&2
+            exit 1
+          fi
           yq -i '(.images[] | select(.name == "ghcr.io/rbxrobotica/lda-prod") | .newTag) = "${{ steps.tag.outputs.sha }}"' "$K"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add "$K"
-          git diff --cached --quiet || git commit -m "chore(${{ env.INFRA_APP }}): bump image to ${{ steps.tag.outputs.sha }}"
-          git push
+          if git diff --cached --quiet; then
+            echo "tag already at ${{ steps.tag.outputs.sha }}; nothing to promote"
+            exit 0
+          fi
+          git commit -m "chore(${{ env.INFRA_APP }}): bump image to ${{ steps.tag.outputs.sha }}"
+          # Bounded retry against non-fast-forward races with other fleet
+          # repos promoting concurrently. Rebase; never force-push.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          git push origin HEAD:main
