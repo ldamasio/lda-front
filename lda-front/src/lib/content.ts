@@ -345,15 +345,6 @@ const EN: HomeCopy = {
     personalTitle: 'Personal tools',
     personal: [
       {
-        client: 'RTK · Rust Token Killer',
-        role: 'Author',
-        years: '2024',
-        tech: 'Rust',
-        line: 'Token-level audit tool for LLM prompt chains. Detects leakage and governance violations.',
-        status: 'production',
-        statusLabel: 'In production',
-      },
-      {
         client: 'x.sh',
         role: 'Author',
         years: '2023–present',
@@ -546,15 +537,6 @@ const PT: HomeCopy = {
     ],
     personalTitle: 'Ferramentas pessoais',
     personal: [
-      {
-        client: 'RTK · Rust Token Killer',
-        role: 'Autor',
-        years: '2024',
-        tech: 'Rust',
-        line: 'Ferramenta de auditoria em nível de token para cadeias de prompt de LLM. Detecta vazamento e violações de governança.',
-        status: 'production',
-        statusLabel: 'Em produção',
-      },
       {
         client: 'x.sh',
         role: 'Autor',
