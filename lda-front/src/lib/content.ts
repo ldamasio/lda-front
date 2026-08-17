@@ -345,6 +345,15 @@ const EN: HomeCopy = {
     personalTitle: 'Personal tools',
     personal: [
       {
+        client: 'Robson',
+        role: 'Author',
+        years: '2019–present',
+        tech: 'Rust · PostgreSQL · Binance Futures',
+        line: 'Execution and risk management engine for crypto futures at fixed 1x leverage. The operator decides the entry; Robson governs the exit.',
+        status: 'production',
+        statusLabel: 'In production',
+      },
+      {
         client: 'x.sh',
         role: 'Author',
         years: '2023–present',
@@ -537,6 +546,15 @@ const PT: HomeCopy = {
     ],
     personalTitle: 'Ferramentas pessoais',
     personal: [
+      {
+        client: 'Robson',
+        role: 'Autor',
+        years: '2019–presente',
+        tech: 'Rust · PostgreSQL · Binance Futures',
+        line: 'Motor de execução e gestão de risco para futuros de cripto com alavancagem fixa 1x. O operador decide a entrada; o Robson governa a saída.',
+        status: 'production',
+        statusLabel: 'Em produção',
+      },
       {
         client: 'x.sh',
         role: 'Autor',
