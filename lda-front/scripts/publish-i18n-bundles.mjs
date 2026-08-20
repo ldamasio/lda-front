@@ -79,6 +79,11 @@ function getCurrentHomeBundles() {
   return {
     en: parseJsObject(source, "const EN: HomeCopy = ", { COMMON_LINKS: commonLinks }),
     ptBR: parseJsObject(source, "const PT: HomeCopy = ", { COMMON_LINKS: commonLinks }),
+    de: parseJsObject(source, "const DE: HomeCopy = ", { COMMON_LINKS: commonLinks }),
+    es: parseJsObject(source, "const ES: HomeCopy = ", { COMMON_LINKS: commonLinks }),
+    fr: parseJsObject(source, "const FR: HomeCopy = ", { COMMON_LINKS: commonLinks }),
+    it: parseJsObject(source, "const IT: HomeCopy = ", { COMMON_LINKS: commonLinks }),
+    zh: parseJsObject(source, "const ZH: HomeCopy = ", { COMMON_LINKS: commonLinks }),
   };
 }
 
@@ -139,18 +144,32 @@ async function saveAndPublishPage(key, locale, frontmatter, bundle) {
 }
 
 async function main() {
-  const { en, ptBR } = getCurrentHomeBundles();
+  const { en, ptBR, de, es, fr, it, zh } = getCurrentHomeBundles();
   const legacyArchive = getLegacyArchive();
 
+  const homeBundles = {
+    'pt-BR': ptBR,
+    en,
+    de,
+    es,
+    fr,
+    it,
+    zh,
+  };
+
   const results = [];
-  results.push(await saveAndPublishPage('translations-home', 'pt-BR', {
-    title: 'Home translation bundle',
-    description: 'Portuguese home content bundle stored as JSON in S3.',
-  }, ptBR));
-  results.push(await saveAndPublishPage('translations-home', 'en', {
-    title: 'Home translation bundle',
-    description: 'English home content bundle stored as JSON in S3.',
-  }, en));
+  for (const [locale, bundle] of Object.entries(homeBundles)) {
+    try {
+      results.push(await saveAndPublishPage('translations-home', locale, {
+        title: 'Home translation bundle',
+        description: `Home content bundle (${locale}) stored as JSON in S3.`,
+      }, bundle));
+    } catch (error) {
+      // CMS only allows pt-BR/en locales today; keep going so the supported
+      // locales still publish. Extras fall back to app-local literals at runtime.
+      console.warn(`skipped ${locale}: ${error.message}`);
+    }
+  }
   results.push(await saveAndPublishPage('translations-legacy', 'pt-BR', {
     title: 'Legacy translation archive',
     description: `Archive of legacy Next translation bundles from ${LEGACY_SOURCE_COMMIT}.`,
