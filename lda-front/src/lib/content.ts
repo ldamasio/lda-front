@@ -115,6 +115,7 @@ const COMMON_LINKS: LinkItem[] = [
   { label: 'leandro@rbxsystems.ch', href: 'mailto:leandro@rbxsystems.ch' },
   { label: 'github.com/ldamasio', href: 'https://github.com/ldamasio' },
   { label: 'linkedin.com/in/ldamasio', href: 'https://www.linkedin.com/in/ldamasio/' },
+  { label: 'ORCID 0009-0009-1690-6783', href: 'https://orcid.org/0009-0009-1690-6783' },
 ];
 
 const HOME_BUNDLE_KEY = 'translations-home';
@@ -271,9 +272,10 @@ const EN: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Computer Engineer. AI systems for finance and high-reliability environments.',
+    lead: 'AI Engineer. AI systems for finance and high-reliability environments.',
     body: [
       'AI Engineer at Enforce (BTG Pactual Group), based in São Paulo. Builds production-grade AI systems for financial and legal domains where reliability, observability, and governance are not optional.',
+      'Undergraduate student in Computer Engineering at Universidade Virtual do Estado de São Paulo (UNIVESP), with graduation expected in 2027.',
       'Work spans AI, software architecture, and infrastructure: agentic architectures, runtime control loops, evaluation and monitoring pipelines for LLM-based systems. Hands-on with vector search using pgvector and ParadeDB, prompt governance, and secure integration with internal and external data sources.',
       'Founder and maintainer of RBX Systems, an open-source monorepo of AI agents, code agents, and system-level tooling focused on architecture and long-term maintainability.',
     ],
@@ -419,6 +421,12 @@ const EN: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: "Master's dissertation · FGV EAESP",
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -473,9 +481,10 @@ const PT: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Engenheiro de Computação. Sistemas de IA para finanças e ambientes de alta confiabilidade.',
+    lead: 'Engenheiro de IA. Sistemas de IA para finanças e ambientes de alta confiabilidade.',
     body: [
       'Engenheiro de IA na Enforce (Grupo BTG Pactual), baseado em São Paulo. Constrói sistemas de IA prontos para produção para os domínios financeiro e jurídico onde confiabilidade, observabilidade e governança são requisitos de base.',
+      'Cursa Engenharia de Computação na Universidade Virtual do Estado de São Paulo (UNIVESP), com conclusão prevista para 2027.',
       'Trabalho abrange IA, arquitetura de software e infraestrutura: arquiteturas de agentes, loops de controle de runtime, pipelines de avaliação e monitoramento para sistemas baseados em LLM. Experiência prática com busca vetorial usando pgvector e ParadeDB, governança de prompts e integração segura com fontes de dados internas e externas.',
       'Fundador e mantenedor da RBX Systems, monorepo open-source de agentes de IA, agentes de código e ferramentas de nível de sistema com foco em arquitetura e manutenibilidade de longo prazo.',
     ],
@@ -621,6 +630,12 @@ const PT: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: 'Dissertação de mestrado · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -675,9 +690,10 @@ const DE: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Computeringenieur. KI-Systeme für Finanzen und Umgebungen mit hohen Zuverlässigkeitsanforderungen.',
+    lead: 'KI-Ingenieur. KI-Systeme für Finanzen und Umgebungen mit hohen Zuverlässigkeitsanforderungen.',
     body: [
       'KI-Ingenieur bei Enforce (BTG Pactual Group), mit Standort in São Paulo. Entwickelt produktionsreife KI-Systeme für Finanz- und Rechtsdomänen, in denen Zuverlässigkeit, Observability und Governance keine optionalen Extras sind.',
+      'Er studiert Computer Engineering an der Universidade Virtual do Estado de São Paulo (UNIVESP); der Abschluss ist für 2027 vorgesehen.',
       'Das Arbeitsfeld umfasst KI, Softwarearchitektur und Infrastruktur: agentische Architekturen, Runtime-Kontrollschleifen sowie Evaluierungs- und Monitoring-Pipelines für LLM-basierte Systeme. Praxiserfahrung mit Vektorsuche mittels pgvector und ParadeDB, Prompt-Governance und sicherer Integration interner wie externer Datenquellen.',
       'Gründer und Maintainer von RBX Systems, einem Open-Source-Monorepo mit KI-Agenten, Code-Agenten und System-Tooling mit Fokus auf Architektur und langfristige Wartbarkeit.',
     ],
@@ -823,6 +839,12 @@ const DE: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: 'Masterarbeit · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -877,9 +899,10 @@ const ES: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Ingeniero de Computación. Sistemas de IA para finanzas y entornos de alta confiabilidad.',
+    lead: 'Ingeniero de IA. Sistemas de IA para finanzas y entornos de alta confiabilidad.',
     body: [
       'Ingeniero de IA en Enforce (Grupo BTG Pactual), con base en São Paulo. Construye sistemas de IA listos para producción para los dominios financiero y jurídico, donde la confiabilidad, la observabilidad y la gobernanza no son opcionales.',
+      'Cursa Ingeniería de Computación en la Universidade Virtual do Estado de São Paulo (UNIVESP), con graduación prevista para 2027.',
       'Su trabajo abarca IA, arquitectura de software e infraestructura: arquitecturas de agentes, bucles de control de runtime y pipelines de evaluación y monitoreo para sistemas basados en LLM. Experiencia práctica con búsqueda vectorial usando pgvector y ParadeDB, gobernanza de prompts e integración segura con fuentes de datos internas y externas.',
       'Fundador y mantenedor de RBX Systems, un monorepo open-source de agentes de IA, agentes de código y herramientas a nivel de sistema enfocadas en arquitectura y mantenibilidad a largo plazo.',
     ],
@@ -1025,6 +1048,12 @@ const ES: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: 'Tesis de maestría · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -1079,9 +1108,10 @@ const FR: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Ingénieur en informatique. Systèmes d’IA pour la finance et les environnements à haute exigence de fiabilité.',
+    lead: 'Ingénieur IA. Systèmes d’IA pour la finance et les environnements à haute exigence de fiabilité.',
     body: [
       'Ingénieur IA chez Enforce (Groupe BTG Pactual), basé à São Paulo. Conçoit des systèmes d’IA prêts pour la production pour les domaines financier et juridique, où fiabilité, observabilité et gouvernance ne sont pas optionnelles.',
+      'Il suit actuellement des études de génie informatique à l’Universidade Virtual do Estado de São Paulo (UNIVESP), avec une fin de cursus prévue en 2027.',
       'Son travail couvre l’IA, l’architecture logicielle et l’infrastructure : architectures d’agents, boucles de contrôle du runtime, pipelines d’évaluation et de supervision pour systèmes fondés sur les LLM. Pratique de la recherche vectorielle avec pgvector et ParadeDB, de la gouvernance des prompts et de l’intégration sécurisée de sources de données internes et externes.',
       'Fondateur et mainteneur de RBX Systems, un monorepo open source d’agents IA, d’agents de code et d’outils système axés sur l’architecture et la maintenabilité à long terme.',
     ],
@@ -1227,6 +1257,12 @@ const FR: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: 'Mémoire de master · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -1281,9 +1317,10 @@ const IT: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: 'Ingegnere informatico. Sistemi di IA per la finanza e ambienti ad alta affidabilità.',
+    lead: 'Ingegnere IA. Sistemi di IA per la finanza e ambienti ad alta affidabilità.',
     body: [
       'Ingegnere IA presso Enforce (Gruppo BTG Pactual), con base a São Paulo. Sviluppa sistemi di IA pronti per la produzione per i domini finanziario e giuridico, dove affidabilità, osservabilità e governance non sono opzionali.',
+      'Studia Ingegneria informatica presso l’Universidade Virtual do Estado de São Paulo (UNIVESP), con conclusione del corso prevista per il 2027.',
       'Il lavoro spazia tra IA, architettura software e infrastruttura: architetture di agenti, loop di controllo del runtime, pipeline di valutazione e monitoraggio per sistemi basati su LLM. Esperienza pratica con ricerca vettoriale tramite pgvector e ParadeDB, governance dei prompt e integrazione sicura con fonti di dati interne ed esterne.',
       'Fondatore e manutentore di RBX Systems, un monorepo open-source di agenti IA, agenti di codice e strumenti a livello di sistema orientati all’architettura e alla manutenibilità a lungo termine.',
     ],
@@ -1429,6 +1466,12 @@ const IT: HomeCopy = {
         href: '/ai-agents-montreal.pptx',
         year: '2024',
       },
+      {
+        meta: 'Tesi di master · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
+      },
     ],
   },
   contact: {
@@ -1483,9 +1526,10 @@ const ZH: HomeCopy = {
   hero: {
     eyebrow: '',
     title: 'Leandro Damasio',
-    lead: '计算机工程师。面向金融与高可靠性环境的 AI 系统。',
+    lead: '人工智能工程师。面向金融与高可靠性环境的 AI 系统。',
     body: [
       'Enforce（BTG Pactual 集团）AI 工程师，常驻圣保罗。面向金融与法律领域构建生产级 AI 系统——在这些领域中，可靠性、可观测性与治理是基础要求。',
+      '目前在圣保罗州虚拟大学（UNIVESP）攻读计算机工程本科学位，预计于 2027 年毕业。',
       '工作横跨 AI、软件架构与基础设施：智能体架构、运行时控制回路、面向 LLM 系统的评估与监控流水线。在 pgvector 与 ParadeDB 向量检索、提示词治理以及内外部数据源的安全集成方面具有丰富的实践经验。',
       'RBX Systems 创始人与维护者：一个开源 monorepo，涵盖 AI 智能体、代码智能体与系统级工具，专注于架构与长期可维护性。',
     ],
@@ -1630,6 +1674,12 @@ const ZH: HomeCopy = {
         title: 'AI Agents: Practical Architectures',
         href: '/ai-agents-montreal.pptx',
         year: '2024',
+      },
+      {
+        meta: '硕士论文 · FGV EAESP',
+        title: 'Desenvolvimento institucional do INEP: conjuntura crítica e trajetória',
+        href: 'https://pesquisa-eaesp.fgv.br/teses-dissertacoes/desenvolvimento-institucional-do-inep-conjuntura-critica-e-trajetoria',
+        year: '2011',
       },
     ],
   },
