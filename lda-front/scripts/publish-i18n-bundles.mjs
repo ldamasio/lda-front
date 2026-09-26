@@ -8,26 +8,22 @@ const CMS_SERVICE_KEY = process.env.CMS_SERVICE_KEY;
 const LEGACY_SOURCE_COMMIT = process.env.LEGACY_SOURCE_COMMIT ?? '84fd945';
 const REPO_ROOT = process.cwd();
 
-if (!CMS_SERVICE_KEY) {
-  throw new Error('CMS_SERVICE_KEY is required');
-}
-
-function extractObjectLiteral(source, marker) {
+function extractLiteral(source, marker, opening, closing) {
   const start = source.indexOf(marker);
   if (start === -1) {
     throw new Error(`marker not found: ${marker}`);
   }
 
-  const braceStart = source.indexOf('{', start);
-  if (braceStart === -1) {
-    throw new Error(`opening brace not found for: ${marker}`);
+  const literalStart = source.indexOf(opening, start + marker.length);
+  if (literalStart === -1) {
+    throw new Error(`opening ${opening} not found for: ${marker}`);
   }
 
   let depth = 0;
   let quote = null;
   let escaped = false;
 
-  for (let i = braceStart; i < source.length; i += 1) {
+  for (let i = literalStart; i < source.length; i += 1) {
     const ch = source[i];
 
     if (quote) {
@@ -50,32 +46,40 @@ function extractObjectLiteral(source, marker) {
       continue;
     }
 
-    if (ch === '{') {
+    if (ch === opening) {
       depth += 1;
       continue;
     }
 
-    if (ch === '}') {
+    if (ch === closing) {
       depth -= 1;
       if (depth === 0) {
-        return source.slice(braceStart, i + 1);
+        return source.slice(literalStart, i + 1);
       }
     }
   }
 
-  throw new Error(`unterminated object for: ${marker}`);
+  throw new Error(`unterminated ${opening} literal for: ${marker}`);
 }
 
-function parseJsObject(source, marker, context = {}) {
-  const literal = extractObjectLiteral(source, marker);
+function parseJsLiteral(source, marker, opening, closing, context = {}) {
+  const literal = extractLiteral(source, marker, opening, closing);
   const keys = Object.keys(context);
   const values = Object.values(context);
   return Function(...keys, `return (${literal});`)(...values);
 }
 
+function parseJsObject(source, marker, context = {}) {
+  return parseJsLiteral(source, marker, '{', '}', context);
+}
+
+function parseJsArray(source, marker, context = {}) {
+  return parseJsLiteral(source, marker, '[', ']', context);
+}
+
 function getCurrentHomeBundles() {
   const source = readFileSync(resolve(REPO_ROOT, 'src/lib/content.ts'), 'utf8');
-  const commonLinks = parseJsObject(source, "const COMMON_LINKS: LinkItem[] = " );
+  const commonLinks = parseJsArray(source, 'const COMMON_LINKS: LinkItem[] = ');
   return {
     en: parseJsObject(source, "const EN: HomeCopy = ", { COMMON_LINKS: commonLinks }),
     ptBR: parseJsObject(source, "const PT: HomeCopy = ", { COMMON_LINKS: commonLinks }),
@@ -85,6 +89,23 @@ function getCurrentHomeBundles() {
     it: parseJsObject(source, "const IT: HomeCopy = ", { COMMON_LINKS: commonLinks }),
     zh: parseJsObject(source, "const ZH: HomeCopy = ", { COMMON_LINKS: commonLinks }),
   };
+}
+
+function validateHomeBundles(bundles) {
+  const locales = Object.entries(bundles);
+  const referenceLinks = locales[0]?.[1]?.contact?.links;
+  if (!Array.isArray(referenceLinks) || referenceLinks.length < 2 ||
+      referenceLinks.some((link) => typeof link?.label !== 'string' || typeof link?.href !== 'string')) {
+    throw new Error('COMMON_LINKS must parse as a non-empty LinkItem array');
+  }
+
+  for (const [locale, bundle] of locales) {
+    if (!Array.isArray(bundle.contact?.links) ||
+        JSON.stringify(bundle.contact.links) !== JSON.stringify(referenceLinks)) {
+      throw new Error(`${locale}: contact.links must contain the complete COMMON_LINKS array`);
+    }
+  }
+  return { locales: locales.length, linksPerLocale: referenceLinks.length };
 }
 
 function getLegacyArchive() {
@@ -144,7 +165,17 @@ async function saveAndPublishPage(key, locale, frontmatter, bundle) {
 }
 
 async function main() {
-  const { en, ptBR, de, es, fr, it, zh } = getCurrentHomeBundles();
+  const bundles = getCurrentHomeBundles();
+  const validation = validateHomeBundles(bundles);
+  if (process.argv.includes('--validate-only')) {
+    console.log(JSON.stringify(validation));
+    return;
+  }
+  if (!CMS_SERVICE_KEY) {
+    throw new Error('CMS_SERVICE_KEY is required');
+  }
+
+  const { en, ptBR, de, es, fr, it, zh } = bundles;
   const legacyArchive = getLegacyArchive();
 
   const homeBundles = {
